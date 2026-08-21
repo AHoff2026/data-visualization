@@ -1,8 +1,9 @@
 // ---------- home-page featured charts ----------
-import { el, clear } from "./util.js?v=7c14341d";
-import { getFlowMeta, getSeries } from "./store.js?v=7c14341d";
-import { lineChart, autosize } from "./chart.js?v=7c14341d";
-import { seedPicks, scanRecords, toSeries } from "./series.js?v=7c14341d";
+import { el, clear } from "./util.js?v=2ff14d1d";
+import { editable, textOf } from "./edits.js?v=2ff14d1d";
+import { getFlowMeta, getSeries } from "./store.js?v=2ff14d1d";
+import { lineChart, autosize } from "./chart.js?v=2ff14d1d";
+import { seedPicks, scanRecords, toSeries } from "./series.js?v=2ff14d1d";
 
 /** Small, meaningful, quick-loading series that open the publication. */
 export const FEATURED = [
@@ -27,9 +28,19 @@ export async function renderFeatured(host, catalog) {
   host.appendChild(grid);
 
   await Promise.all(FEATURED.map(async (f) => {
-    const cell = el("a", { class: "feat", href: `#/d/${f.slug}` },
-      el("div", { class: "feat__t" }, f.title),
-      el("div", { class: "figure__sub" }, f.note));
+    // Each card's headline and note are editable from the landing page.
+    const SC = "/featured/" + f.slug;
+    const t = el("div", { class: "feat__t" }, textOf(SC, "title", f.title));
+    const note = el("div", { class: "figure__sub" }, textOf(SC, "note", f.note));
+    editable(t, SC, "title", f.title);
+    editable(note, SC, "note", f.note);
+    const cell = el("a", { class: "feat", href: `#/d/${f.slug}` }, t, note);
+    // in edit mode a click should place the caret, not follow the link
+    cell.addEventListener("click", (e) => {
+      if (document.documentElement.dataset.editing === "1" &&
+          (e.target === t || e.target === note || t.contains(e.target) || note.contains(e.target)))
+        e.preventDefault();
+    });
     const box = el("div", { style: { marginTop: ".7rem", minHeight: "180px" } });
     cell.appendChild(box);
     grid.appendChild(cell);
