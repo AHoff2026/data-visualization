@@ -88,12 +88,12 @@ async function runOne(slug) {
       rec.fail.push(`S5 chart too small ${JSON.stringify(p.bbox)}`);
 
     // ---- S6 all three views render
-    for (const [label, sel] of [["Small multiples", ".sm-grid"], ["Table", "table.data"]]) {
+    for (const [label, sel] of [["Country snapshots", ".sm-grid"], ["Table", "table.data"]]) {
       await page.getByRole("button", { name: label, exact: true }).click();
       try { await page.waitForSelector(sel, { timeout: 15000 }); }
       catch { rec.fail.push(`S6 ${label} view did not render`); }
     }
-    await page.getByRole("button", { name: "Lines", exact: true }).click();
+    await page.getByRole("button", { name: "Trends", exact: true }).click();
     await page.waitForSelector("svg.chart", { timeout: 15000 });
 
     // ---- S7 tooltip on hover

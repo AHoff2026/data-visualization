@@ -1,9 +1,9 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=1dd8c366";
-import { getFlowMeta, getSeries } from "./store.js?v=1dd8c366";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=1dd8c366";
-import { dataTable } from "./table.js?v=1dd8c366";
-import { editable, textOf } from "./edits.js?v=1dd8c366";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=bd0ea277";
+import { getFlowMeta, getSeries } from "./store.js?v=bd0ea277";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=bd0ea277";
+import { dataTable } from "./table.js?v=bd0ea277";
+import { editable, textOf } from "./edits.js?v=bd0ea277";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -356,7 +356,7 @@ export async function renderExplorer(host, slug, catalog) {
       if (res.scale)
         box.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".55rem" } },
           res.scale === "own"
-            ? "Each panel is on its own vertical scale — the range is printed under it. "
+            ? "Each panel is on its own vertical scale, with its range printed underneath. "
             : "All panels share one vertical scale, so heights are directly comparable. ",
           el("button", { class: "chip", style: { marginLeft: ".3rem" },
             onclick: () => { ui.smScale = res.scale === "own" ? "shared" : "own";
@@ -448,7 +448,7 @@ export async function renderExplorer(host, slug, catalog) {
     const row1 = el("div", { class: "ctlrow" });
 
     const seg = el("div", { class: "seg", role: "group", "aria-label": "View" });
-    for (const [k, lbl] of [["lines", "Lines"], ["small", "Small multiples"], ["table", "Table"]])
+    for (const [k, lbl] of [["lines", "Trends"], ["small", "Country snapshots"], ["table", "Table"]])
       seg.appendChild(el("button", { "aria-pressed": String(ui.view === k),
         onclick: () => { ui.view = k; buildControls(); draw(); } }, lbl));
     row1.appendChild(seg);
