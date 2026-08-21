@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=bd0ea277";
-import { getCatalog } from "./store.js?v=bd0ea277";
-import { renderExplorer, topicLabel } from "./explorer.js?v=bd0ea277";
-import { renderFeatured } from "./featured.js?v=bd0ea277";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=7c14341d";
+import { getCatalog } from "./store.js?v=7c14341d";
+import { renderExplorer, topicLabel } from "./explorer.js?v=7c14341d";
+import { renderFeatured } from "./featured.js?v=7c14341d";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf }
-  from "./edits.js?v=bd0ea277";
+  from "./edits.js?v=7c14341d";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -154,7 +154,7 @@ async function pageDataset(slug) {
   const m = main();
   m.dispatchEvent(new Event("explorer:teardown"));
   if (!f) { clear(m); m.appendChild(el("div", { class: "center-note" }, "Unknown dataset.")); return; }
-  document.title = `${f.name} · Data Visualization`;
+  document.title = `${f.name} · Forest and the Trees`;
   await renderExplorer(m, slug, CAT);
 }
 
@@ -170,7 +170,7 @@ async function route(force = false) {
     buildRail(parts[1]);
     await pageDataset(decodeURIComponent(parts[1]));
   } else {
-    document.title = "Data Visualization";
+    document.title = "Forest and the Trees";
     buildRail(null);
     pageHome();
   }

@@ -1,8 +1,8 @@
 // ---------- home-page featured charts ----------
-import { el, clear } from "./util.js?v=bd0ea277";
-import { getFlowMeta, getSeries } from "./store.js?v=bd0ea277";
-import { lineChart, autosize } from "./chart.js?v=bd0ea277";
-import { seedPicks, scanRecords, toSeries } from "./series.js?v=bd0ea277";
+import { el, clear } from "./util.js?v=7c14341d";
+import { getFlowMeta, getSeries } from "./store.js?v=7c14341d";
+import { lineChart, autosize } from "./chart.js?v=7c14341d";
+import { seedPicks, scanRecords, toSeries } from "./series.js?v=7c14341d";
 
 /** Small, meaningful, quick-loading series that open the publication. */
 export const FEATURED = [
