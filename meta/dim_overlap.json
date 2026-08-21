@@ -396,17 +396,6 @@
   "b_det": 0.2
  },
  {
-  "slug": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
-  "flow": "Public expenditure on disability and sickness benefits",
-  "a": "Spending type",
-  "b": "Program",
-  "a_n": 3,
-  "b_n": 9,
-  "fill": 0.41,
-  "a_det": 0.33,
-  "b_det": 0.89
- },
- {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
   "flow": "Education and earnings (EARNINGS) (full dataset)",
   "a": "Place of birth",
@@ -440,17 +429,6 @@
   "b_det": 0.67
  },
  {
-  "slug": "OECD.ELS.SPD__DF_PUB_FAM",
-  "flow": "Public expenditure on families",
-  "a": "Spending type",
-  "b": "Program",
-  "a_n": 3,
-  "b_n": 7,
-  "fill": 0.43,
-  "a_det": 0.33,
-  "b_det": 0.86
- },
- {
   "slug": "OECD.SDD.TPS__DF_PDB",
   "flow": "Productivity database",
   "a": "Economic activity",
@@ -471,17 +449,6 @@
   "fill": 0.45,
   "a_det": 0.6,
   "b_det": 0.25
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_PRV",
-  "flow": "Public and private social expenditure",
-  "a": "Spending type",
-  "b": "Program",
-  "a_n": 3,
-  "b_n": 49,
-  "fill": 0.47,
-  "a_det": 0.0,
-  "b_det": 0.8
  },
  {
   "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
@@ -636,39 +603,6 @@
   "fill": 0.5,
   "a_det": 0.5,
   "b_det": 0.4
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
-  "flow": "Public expenditure on disability and sickness benefits",
-  "a": "Measured as",
-  "b": "Prices",
-  "a_n": 4,
-  "b_n": 3,
-  "fill": 0.5,
-  "a_det": 0.5,
-  "b_det": 0.0
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_FAM",
-  "flow": "Public expenditure on families",
-  "a": "Measured as",
-  "b": "Prices",
-  "a_n": 4,
-  "b_n": 3,
-  "fill": 0.5,
-  "a_det": 0.5,
-  "b_det": 0.0
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_PRV",
-  "flow": "Public and private social expenditure",
-  "a": "Measured as",
-  "b": "Prices",
-  "a_n": 4,
-  "b_n": 3,
-  "fill": 0.5,
-  "a_det": 0.5,
-  "b_det": 0.0
  },
  {
   "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
@@ -829,17 +763,6 @@
   "flow": "Education and earnings (EARNINGS) (full dataset)",
   "a": "Indicator",
   "b": "Age at migration",
-  "a_n": 2,
-  "b_n": 4,
-  "fill": 0.62,
-  "a_det": 0.5,
-  "b_det": 0.75
- },
- {
-  "slug": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93",
-  "flow": "Employment by professional status (ICSE-93)",
-  "a": "Measured as",
-  "b": "Worker status",
   "a_n": 2,
   "b_n": 4,
   "fill": 0.62,

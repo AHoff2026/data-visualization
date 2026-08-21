@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=38945d4c";
-import { getFlowMeta, getSeries } from "./store.js?v=38945d4c";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=38945d4c";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=38945d4c";
-import { dataTable } from "./table.js?v=38945d4c";
-import { editable, textOf } from "./edits.js?v=38945d4c";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=59657250";
+import { getFlowMeta, getSeries } from "./store.js?v=59657250";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=59657250";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=59657250";
+import { dataTable } from "./table.js?v=59657250";
+import { editable, textOf } from "./edits.js?v=59657250";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -508,6 +508,7 @@ export async function renderExplorer(host, slug, catalog) {
     // The indicator and its unit are one axis, not two: an indicator mostly
     // determines its unit, so two menus produce a grid that is empty by
     // construction. Offer the combinations the data actually contains.
+    const inert = [];
     const mI = dimIndex["MEASURE"], uI = dimIndex["UNIT_MEASURE"];
     const merged = new Set();
     if (mI !== undefined && uI !== undefined
@@ -560,6 +561,14 @@ export async function renderExplorer(host, slug, catalog) {
       if (d.id in tech) continue;          // lives under Advanced
       if (merged.has(i)) continue;         // shown in the combined Indicator dial
       const has = state.avail[i];
+      // A dial with one reachable value cannot change anything: the current
+      // selection has already decided it. Age is a real choice until you pick an
+      // income quartile, at which point the source only publishes the total.
+      if (has.size <= 1 && !partial) {
+        if (has.size === 1) ui.picks[i] = [...has][0];
+        inert.push(d.name);
+        continue;
+      }
       const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
       const resid = new Set(d.residual || []);
       const order = d.ids.map((_, j) => j)
@@ -575,6 +584,10 @@ export async function renderExplorer(host, slug, catalog) {
       row1.appendChild(el("div", { class: "field" },
         el("label", { title: d.def || "" }, d.name), sel));
     }
+    if (inert.length)
+      row1.appendChild(el("span", { class: "figure__sub", style: { alignSelf: "flex-end",
+        paddingBottom: ".35rem" } },
+        `${inert.join(", ")} ${inert.length === 1 ? "has" : "have"} a single value here`));
     controls.appendChild(row1);
 
     const techIds = Object.keys(tech).filter(id => dimIndex[id] !== undefined
