@@ -267,16 +267,21 @@ export async function renderExplorer(host, slug, catalog) {
     } else {
       lineChart(box, list, { height: 400, unit,
         ariaLabel: `${meta.name}. ${unit}. ${list.length} series.` });
-      const lg = el("div", { class: "legend" });
-      for (const s of list)
-        lg.appendChild(el("span", { class: "legend__i" },
-          el("span", { class: "dotmark", style: { background: s.color } }), s.label));
-      figure.appendChild(lg);
+      const coloured = list.filter(s => !s.context);
+      if (coloured.length > 1) {
+        const lg = el("div", { class: "legend" });
+        for (const s of coloured)
+          lg.appendChild(el("span", { class: "legend__i" },
+            el("span", { class: "dotmark", style: { background: s.color } }), s.label));
+        figure.appendChild(lg);
+      }
     }
 
     figure.appendChild(el("div", { class: "figure__foot" },
-      el("span", {}, `${list.length} of ${d.ids.length} ${d.name.toLowerCase()} shown` +
-        (list.some(s => s.context) ? ` · ${list.filter(s => s.context).length} in grey (palette holds ${SERIES_SLOTS} colours — use Small multiples to see all)` : "")),
+      el("span", {}, `Showing ${list.length} of ${d.ids.length} · ${plural(d.name)}` +
+        (list.some(s => s.context)
+          ? ` · ${list.filter(s => s.context).length} drawn in grey and labelled on the chart, because the palette holds ${SERIES_SLOTS} distinct colours`
+          : "")),
       el("span", {}, "Source: OECD · ",
         el("a", { href: meta.source_url, target: "_blank", rel: "noopener" },
           `${meta.agency} ${meta.id}`))));
@@ -490,6 +495,13 @@ export async function renderExplorer(host, slug, catalog) {
 }
 
 // ============================================================ helpers
+function plural(name) {
+  const n = String(name).toLowerCase();
+  if (/s$/.test(n)) return n;
+  if (/(ch|sh|x|z)$/.test(n)) return n + "es";
+  if (/[^aeiou]y$/.test(n)) return n.slice(0, -1) + "ies";
+  return n + "s";
+}
 function fatal(host, msg) {
   clear(host);
   host.appendChild(el("div", { class: "center-note" }, msg));

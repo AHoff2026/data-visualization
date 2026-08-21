@@ -283,3 +283,25 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
 }
 .standfirst a { color: var(--accent); }
 .standfirst p { margin: 0 0 .5em; }
+
+/* ---- home card grid: borders on cells, so empty tracks stay paper ---- */
+.cardgrid {
+  display: grid; gap: 0;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  background: var(--paper);
+  border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden;
+}
+.cardgrid__i {
+  display: block; padding: .9rem 1rem 1rem; text-decoration: none;
+  border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  min-height: 6.25rem; transition: background .12s ease;
+}
+.cardgrid__i:hover { background: var(--accent-soft); }
+.cardgrid__t {
+  font-family: var(--serif); font-size: 1rem; font-weight: 600;
+  line-height: 1.25; margin-bottom: .28rem;
+}
+.cardgrid__m {
+  font-size: .6875rem; color: var(--ink-muted); margin-top: .45rem;
+  font-variant-numeric: tabular-nums;
+}

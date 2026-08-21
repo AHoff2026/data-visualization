@@ -118,16 +118,15 @@ function pageHome() {
     sec.appendChild(el("h2", { style: { marginBottom: ".2rem" } }, g.name));
     sec.appendChild(el("p", { class: "figure__sub", style: { marginBottom: ".9rem" } },
       `${g.flows.length} dataset${g.flows.length === 1 ? "" : "s"}`));
-    const grid = el("div", { style: { display: "grid", gap: "1px", background: "var(--rule)",
-      border: "1px solid var(--rule)", borderRadius: "3px", overflow: "hidden",
-      gridTemplateColumns: "repeat(auto-fill, minmax(15.5rem, 1fr))" } });
+    const grid = el("div", { class: "cardgrid" });
     for (const f of g.flows.sort((a, b) => a.name.localeCompare(b.name)))
-      grid.appendChild(el("a", { href: `#/d/${f.slug}`,
-        style: { background: "var(--paper)", padding: ".85rem .95rem", textDecoration: "none",
-          display: "block", minHeight: "5.5rem" } },
-        el("div", { style: { fontFamily: "var(--serif)", fontSize: "1rem", fontWeight: "600",
-          lineHeight: "1.25", marginBottom: ".3rem" } }, f.name),
-        el("div", { class: "figure__sub" }, topicLabel(CAT, f.topic).split(" › ").slice(1).join(" › ") || "—")));
+      grid.appendChild(el("a", { class: "cardgrid__i", href: `#/d/${f.slug}` },
+        el("div", { class: "cardgrid__t" }, f.name),
+        el("div", { class: "figure__sub" },
+          topicLabel(CAT, f.topic).split(" › ").slice(1).join(" › ") || "—"),
+        el("div", { class: "cardgrid__m" },
+          `${(f.n_obs || 0).toLocaleString("en-GB")} observations` +
+          (f.periods ? ` · ${f.periods[0]}–${f.periods[1]}` : ""))));
     sec.appendChild(grid);
     m.appendChild(sec);
   }

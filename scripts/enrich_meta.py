@@ -35,6 +35,14 @@ def sanitize(s):
     out.append(html.escape(s[pos:], quote=False))
     txt = "".join(out)
     txt = re.sub(r'(<br>\s*){3,}', '<br><br>', txt)
+    # OECD often uses the raw URL as the link text; show the site instead
+    def relabel(m):
+        inner = m.group(2).strip()
+        if re.match(r'^https?://', inner):
+            host = re.sub(r'^https?://(www\.)?', '', inner).split('/')[0]
+            return f'{m.group(1)}{host}</a>'
+        return m.group(0)
+    txt = re.sub(r'(<a [^>]*>)(.*?)</a>', relabel, txt, flags=re.S)
     return txt.strip()
 
 def parse_kv(title):

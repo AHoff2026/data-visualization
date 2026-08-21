@@ -99,23 +99,30 @@ export function lineChart(host, series, opts = {}) {
   }
   svg.appendChild(gH);
 
-  // ---- direct labels at line ends, de-collided
-  if (directLabels && hot.length) {
-    const ends = hot.map(s => {
+  // ---- direct labels at line ends, de-collided.
+  // Context lines are labelled too: with more series than palette slots,
+  // identity must not rest on colour alone.
+  if (directLabels && live.length) {
+    const ends = live.map(s => {
       const last = s.points[s.points.length - 1];
       return { s, x: sx(last.x), y: sy(last.y), v: last.y };
     }).sort((a, b) => a.y - b.y);
-    const MIN = 13;
+    const MIN = 12.5;
     for (let i = 1; i < ends.length; i++)
       if (ends[i].y - ends[i - 1].y < MIN) ends[i].y = ends[i - 1].y + MIN;
     const over = ends.length ? ends[ends.length - 1].y - (m.t + ih) : 0;
     if (over > 0) for (const e of ends) e.y -= over;
     const gL = svgEl("g");
     for (const e of ends) {
+      const short = truncate(e.s.label, Math.floor(labelRoom / 6.1));
       const t = svgEl("text", { class: "serieslabel", x: m.l + iw + 8,
-        y: Math.max(m.t + 8, e.y) + 3.5, fill: e.s.color });
-      t.textContent = truncate(e.s.label, Math.floor(labelRoom / 6.1));
-      const ttl = svgEl("title"); ttl.textContent = e.s.label; t.appendChild(ttl);
+        y: Math.max(m.t + 8, e.y) + 3.5,
+        fill: e.s.context ? "var(--ink-muted)" : e.s.color });
+      if (e.s.context) t.setAttribute("font-weight", "500");
+      t.textContent = short;
+      if (short !== e.s.label) {
+        const ttl = svgEl("title"); ttl.textContent = e.s.label; t.appendChild(ttl);
+      }
       gL.appendChild(t);
     }
     svg.appendChild(gL);
