@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=2f531cbd";
 
 export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
@@ -163,17 +163,36 @@ export function lineChart(host, series, opts = {}) {
         fill: s.context ? "var(--context)" : s.color, stroke: "var(--paper)", "stroke-width": 2 }));
     }
     if (!rows.length) { tip.dataset.show = "0"; return; }
-    rows.sort((a, b) => b.p.y - a.p.y);
+
+    // Minimalist read-out: the period, the series nearest the pointer, and one
+    // line placing it among the rest. A twelve-row dump is unreadable.
+    const ry = (ev.clientY - r.top) / r.height * height;
+    let near = rows[0], nd = Infinity;
+    for (const q of rows) {
+      const d = Math.abs(sy(q.p.y) - ry);
+      if (d < nd) { nd = d; near = q; }
+    }
+    const vals = rows.map(q => q.p.y).sort((a, b) => a - b);
+    const rank = vals.length - vals.indexOf(near.p.y);
+
     clear(tip);
-    tip.appendChild(el("div", { class: "tooltip__t" }, rows[0].p.period));
-    for (const { s, p } of rows.slice(0, 12))
-      tip.appendChild(el("div", { class: "tooltip__r" },
-        el("span", { class: "dotmark", style: { background: s.context ? "var(--context)" : s.color } }),
-        el("span", {}, truncate(s.label, 26)),
-        el("b", {}, fmtNum(p.y, decimals) + (unit ? ` ${unit}` : ""))));
-    if (rows.length > 12)
-      tip.appendChild(el("div", { class: "tooltip__r",
-        style: { color: "var(--ink-muted)" } }, `+${rows.length - 12} more`));
+    tip.appendChild(el("div", { class: "tip__p" }, near.p.period));
+    tip.appendChild(el("div", { class: "tip__s" },
+      el("span", { class: "dotmark", style: { background: near.s.color } }),
+      truncate(near.s.label, 26)));
+    tip.appendChild(el("div", { class: "tip__v" },
+      fmtNum(near.p.y, decimals) + shortUnit(unit)));
+
+    // emphasise the nearest point
+    clear(marks);
+    for (const { s: ss, p } of rows)
+      marks.appendChild(svgEl("circle", { cx, cy: sy(p.y),
+        r: ss === near.s ? 5 : 3,
+        fill: ss === near.s ? ss.color : "var(--paper)",
+        stroke: ss === near.s ? "var(--paper)" : ss.color,
+        "stroke-width": ss === near.s ? 2 : 1.5,
+        opacity: ss === near.s ? 1 : .75 }));
+
     tip.dataset.show = "1";
     const tw = tip.offsetWidth, th = tip.offsetHeight;
     const hx = cx / W * host.clientWidth;
@@ -185,6 +204,26 @@ export function lineChart(host, series, opts = {}) {
   hit.addEventListener("pointerleave", hide);
   hit.addEventListener("pointerdown", move);
   return svg;
+}
+
+/** A unit as a symbol, not a sentence: "Percentage of employment" -> "%". */
+export function shortUnit(name) {
+  const n = String(name || "").toLowerCase();
+  if (!n) return "";
+  if (n.includes("percent") || n.startsWith("%")) return "%";
+  if (n.includes("per thousand")) return "\u2030";
+  if (n.includes("dollar")) return " $";
+  if (n.includes("euro")) return " \u20ac";
+  if (n.includes("hour")) return " h";
+  if (n.includes("index")) return "";
+  if (n.includes("year")) return " yr";
+  return "";
+}
+
+function ord(n) {
+  const t = n % 100;
+  if (t >= 11 && t <= 13) return n + "th";
+  return n + ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
 }
 
 function truncate(s, n) {

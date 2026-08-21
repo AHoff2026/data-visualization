@@ -1,6 +1,6 @@
 // ---------- pure series logic, shared by the explorer and the home page ----------
-import { periodToNum } from "./util.js";
-import { slotVar, SERIES_SLOTS } from "./chart.js";
+import { periodToNum } from "./util.js?v=2f531cbd";
+import { slotVar, SERIES_SLOTS } from "./chart.js?v=2f531cbd";
 
 export const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -68,9 +68,12 @@ export function toSeries(meta, live, breakdownIdx, entities, slotOf) {
   for (const e of entities) {
     const r = byEnt.get(e);
     if (!r) continue;
-    const f = r.m ? Math.pow(10, r.m) : 1;
+    // OECD's UNIT_MULT is unreliable: it is 3 ("Thousands") on percentage series
+    // in DF_INVPT_I and 0 ("Units") on labour-force counts that are in fact
+    // thousands. Their own Data Explorer hides the field. Show the published
+    // value unchanged and explain the scale in "How to read this".
     const points = r.t.map((ti, j) => ({
-      x: periodToNum(meta.periods[ti]), y: r.v[j] * f, period: meta.periods[ti],
+      x: periodToNum(meta.periods[ti]), y: r.v[j], period: meta.periods[ti],
     })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
     if (!points.length) continue;
     const slot = slotOf ? slotOf(e) : out.length;
