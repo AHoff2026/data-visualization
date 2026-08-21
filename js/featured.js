@@ -39,7 +39,7 @@ export async function renderFeatured(host, catalog) {
     try {
       const meta = await getFlowMeta(f.slug);
       const bi = meta.dims.findIndex(d => d.id === (meta.area_dim || meta.dims[0].id));
-      const records = await getSeries(f.slug,
+      const { records } = await getSeries(f.slug,
         meta.layout === "parts" ? catalog.default_countries : null);
       if (!records.length) throw new Error("no records");
       const picks = seedPicks(meta, records, bi);
