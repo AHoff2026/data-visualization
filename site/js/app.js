@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=daeb1107";
-import { getCatalog } from "./store.js?v=daeb1107";
-import { renderExplorer, topicLabel } from "./explorer.js?v=daeb1107";
-import { renderFeatured } from "./featured.js?v=daeb1107";
-import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf }
-  from "./edits.js?v=daeb1107";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=4ef585ff";
+import { getCatalog } from "./store.js?v=4ef585ff";
+import { renderExplorer, topicLabel } from "./explorer.js?v=4ef585ff";
+import { renderFeatured } from "./featured.js?v=4ef585ff";
+import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
+  from "./edits.js?v=4ef585ff";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -211,6 +211,7 @@ function initEditing() {
 async function boot() {
   initTheme();
   initEditing();
+  await loadBaked(new URL("../data/overrides.json", import.meta.url).href);
   try { CAT = await getCatalog(); }
   catch (e) {
     main().innerHTML =

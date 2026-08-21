@@ -4,6 +4,9 @@
 // to) and can be exported as JSON to be baked into the build permanently.
 const KEY = "dv.edits.v1";
 let store = load();
+// Baked-in overrides shipped with the site. Local edits layer on top of these,
+// so a change made in the browser still wins until it is exported and baked in.
+let baked = {};
 let editing = false;
 const listeners = new Set();
 
@@ -15,15 +18,30 @@ function persist() {
   try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {}
 }
 
-/** The text to show for a field: an override if one exists, else the original. */
-export const textOf = (scope, field, original) =>
-  (store[scope] && store[scope][field] !== undefined) ? store[scope][field] : original;
+/** Load the shipped overrides. Called once at boot, before the first render. */
+export async function loadBaked(url) {
+  try {
+    const r = await fetch(url);
+    if (r.ok) baked = await r.json();
+  } catch { /* the site works fine without them */ }
+}
+
+/** The text to show: a local edit, else a baked override, else the original. */
+export function textOf(scope, field, original) {
+  if (store[scope] && store[scope][field] !== undefined) return store[scope][field];
+  if (baked[scope] && baked[scope][field] !== undefined) return baked[scope][field];
+  return original;
+}
+
+/** What an unedited field reverts to — the baked text, not the OECD original. */
+export const baseOf = (scope, field, original) =>
+  (baked[scope] && baked[scope][field] !== undefined) ? baked[scope][field] : original;
 
 export const isEdited = (scope, field) =>
   !!(store[scope] && store[scope][field] !== undefined);
 
 export function setText(scope, field, value, original) {
-  if (value === original) {
+  if (value === baseOf(scope, field, original)) {
     if (store[scope]) { delete store[scope][field];
       if (!Object.keys(store[scope]).length) delete store[scope]; }
   } else {
@@ -57,6 +75,7 @@ export function editable(node, scope, field, original, { plain = true } = {}) {
   node.classList.add("editable");
   if (isEdited(scope, field)) node.classList.add("is-edited");
 
+  original = baseOf(scope, field, original);
   const apply = (on) => {
     node.contentEditable = on ? "true" : "false";
     if (on) node.setAttribute("spellcheck", "true"); else node.removeAttribute("spellcheck");

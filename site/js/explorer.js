@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=daeb1107";
-import { getFlowMeta, getSeries } from "./store.js?v=daeb1107";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=daeb1107";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=daeb1107";
-import { dataTable } from "./table.js?v=daeb1107";
-import { editable, textOf } from "./edits.js?v=daeb1107";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=4ef585ff";
+import { getFlowMeta, getSeries } from "./store.js?v=4ef585ff";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=4ef585ff";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=4ef585ff";
+import { dataTable } from "./table.js?v=4ef585ff";
+import { editable, textOf } from "./edits.js?v=4ef585ff";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
