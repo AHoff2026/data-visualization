@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=2ff14d1d";
-import { getFlowMeta, getSeries } from "./store.js?v=2ff14d1d";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=2ff14d1d";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=2ff14d1d";
-import { dataTable } from "./table.js?v=2ff14d1d";
-import { editable, textOf } from "./edits.js?v=2ff14d1d";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=daeb1107";
+import { getFlowMeta, getSeries } from "./store.js?v=daeb1107";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=daeb1107";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=daeb1107";
+import { dataTable } from "./table.js?v=daeb1107";
+import { editable, textOf } from "./edits.js?v=daeb1107";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -567,6 +567,18 @@ export async function renderExplorer(host, slug, catalog) {
         d.def || (d.id === ui.breakdown ? null : d.code_defs?.[d.ids[ui.picks[i]]]), SCOPE));
     }
     sec.appendChild(dl);
+
+    // a derived unit must never read as an OECD-published figure
+    const derivedInfo = (meta.derived_units || {})[dims[dimIndex["UNIT_MEASURE"]]
+      ?.ids[ui.picks[dimIndex["UNIT_MEASURE"]]]];
+    if (derivedInfo)
+      sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem",
+        borderLeft: "2px solid var(--accent)", paddingLeft: ".6rem" } },
+        `Derived, not published by OECD: ${derivedInfo.method}. ` +
+        `The denominator is ${derivedInfo.total_code.replace(/\+/g, " + ")} on the ` +
+        `${derivedInfo.over.toLowerCase().replace(/_/g, " ")} dimension. ` +
+        `OECD publishes this table only as counts of persons, which mostly measures ` +
+        `country size; the share is exact arithmetic on their own figures.`));
 
     if (meta.unit_mult_published === "0" && /person|number|thousand/i.test(unit || ""))
       sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem" } },

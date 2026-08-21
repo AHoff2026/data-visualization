@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=2ff14d1d";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=daeb1107";
 
 export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
