@@ -2,6 +2,7 @@
 import { el, clear, $, $$, debounce, slugify } from "./util.js";
 import { getCatalog } from "./store.js";
 import { renderExplorer, topicLabel } from "./explorer.js";
+import { renderFeatured } from "./featured.js";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -112,6 +113,12 @@ function pageHome() {
     el("p", { class: "figure__sub", style: { marginTop: "1.1rem" } },
       `${CAT.flows.length} datasets · ${nObs ? nObs.toLocaleString("en-GB") + " observations · " : ""}` +
       `sourced live from OECD SDMX`)));
+
+  const feat = el("section", {});
+  m.appendChild(feat);
+  renderFeatured(feat, CAT);
+
+  m.appendChild(el("h2", { style: { marginBottom: "1.2rem" } }, "Every dataset"));
 
   for (const g of topTopics()) {
     const sec = el("section", { style: { marginBottom: "2.5rem" } });

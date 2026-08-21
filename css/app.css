@@ -305,3 +305,30 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
   font-size: .6875rem; color: var(--ink-muted); margin-top: .45rem;
   font-variant-numeric: tabular-nums;
 }
+
+/* ---- featured charts on the home page ---- */
+.featgrid {
+  display: grid; gap: 1.25rem; margin: 0 0 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+}
+.feat {
+  display: block; text-decoration: none; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 1.1rem 1.15rem 1rem; transition: border-color .12s ease;
+}
+.feat:hover { border-color: var(--rule-strong); }
+.feat__t {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+  line-height: 1.22; letter-spacing: -.012em; margin-bottom: .3rem;
+  text-wrap: balance;
+}
+.feat__f {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: .7rem; padding-top: .6rem; border-top: 1px solid var(--rule);
+  font-size: .6875rem; color: var(--ink-muted); font-variant-numeric: tabular-nums;
+}
+
+/* featured cards: chart sits directly above its footer, no stretch gap */
+.feat { display: flex; flex-direction: column; }
+.feat > div[style] { flex: 0 0 auto; }
+.featgrid { align-items: start; }
