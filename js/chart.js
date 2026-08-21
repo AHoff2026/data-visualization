@@ -1,0 +1,230 @@
+// ---------- hand-rolled editorial SVG charts ----------
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum } from "./util.js";
+
+export const SERIES_SLOTS = 8;
+export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
+
+const NS = "http://www.w3.org/2000/svg";
+const svgEl = (t, a = {}) => { const n = document.createElementNS(NS, t);
+  for (const [k, v] of Object.entries(a)) if (v !== null && v !== undefined) n.setAttribute(k, v);
+  return n; };
+
+/**
+ * Line chart.
+ * series: [{ id, label, color|null, points:[{x:Number,y:Number,period:String}], context:Bool }]
+ * Entities beyond the 8 categorical slots arrive with context:true and render gray.
+ */
+export function lineChart(host, series, opts = {}) {
+  const {
+    height = 380, yLabel = "", unit = "", decimals,
+    directLabels = true, showDots = null, yZero = false,
+  } = opts;
+
+  clear(host);
+  host.classList.add("chartbox");
+  const W = Math.max(320, host.clientWidth || 720);
+  const live = series.filter(s => s.points.length);
+  if (!live.length) {
+    host.appendChild(el("div", { class: "center-note" }, "No observations for this selection."));
+    return;
+  }
+
+  // ---- scales
+  let xs = [], ys = [];
+  for (const s of live) for (const p of s.points) { xs.push(p.x); ys.push(p.y); }
+  const x0 = Math.min(...xs), x1 = Math.max(...xs);
+  let y0 = Math.min(...ys), y1 = Math.max(...ys);
+  if (yZero) y0 = Math.min(0, y0);
+  const ticks = niceTicks(y0, y1, height < 200 ? 3 : 5);
+  const ty0 = Math.min(ticks[0], y0), ty1 = Math.max(ticks[ticks.length - 1], y1);
+
+  const labelRoom = directLabels ? Math.min(150, Math.max(64, W * .18)) : 12;
+  const m = { t: 12, r: labelRoom, b: 26, l: 46 };
+  const iw = Math.max(40, W - m.l - m.r), ih = Math.max(60, height - m.t - m.b);
+  const sx = v => m.l + (x1 === x0 ? iw / 2 : (v - x0) / (x1 - x0) * iw);
+  const sy = v => m.t + (ty1 === ty0 ? ih / 2 : ih - (v - ty0) / (ty1 - ty0) * ih);
+
+  const svg = svgEl("svg", { class: "chart", viewBox: `0 0 ${W} ${height}`,
+    role: "img", "aria-label": opts.ariaLabel || yLabel || "Line chart" });
+
+  // ---- gridlines + y ticks (recessive)
+  const gGrid = svgEl("g");
+  for (const t of ticks) {
+    const y = sy(t);
+    if (y < m.t - 1 || y > m.t + ih + 1) continue;
+    gGrid.appendChild(svgEl("line", { class: "gridline", x1: m.l, x2: m.l + iw, y1: y, y2: y }));
+    const tk = svgEl("text", { class: "tick", x: m.l - 7, y: y + 3.5, "text-anchor": "end" });
+    tk.textContent = fmtCompact(t);
+    gGrid.appendChild(tk);
+  }
+  svg.appendChild(gGrid);
+
+  // ---- x axis ticks
+  const gx = svgEl("g");
+  const span = x1 - x0;
+  const xt = niceTicks(x0, x1, Math.max(2, Math.min(8, Math.floor(iw / 78))))
+    .filter(v => v >= x0 - 1e-9 && v <= x1 + 1e-9);
+  const xticks = xt.length >= 2 ? xt : [x0, x1];
+  for (const v of xticks) {
+    const t = svgEl("text", { class: "tick", x: sx(v), y: m.t + ih + 17, "text-anchor": "middle" });
+    t.textContent = span < 3 ? v.toFixed(1).replace(/\.0$/, "") : String(Math.round(v));
+    gx.appendChild(t);
+  }
+  gx.appendChild(svgEl("line", { class: "axisline", x1: m.l, x2: m.l + iw,
+    y1: m.t + ih, y2: m.t + ih }));
+  svg.appendChild(gx);
+
+  const path = pts => pts.map((p, i) => `${i ? "L" : "M"}${sx(p.x).toFixed(2)},${sy(p.y).toFixed(2)}`).join("");
+
+  // ---- context lines first (behind), then highlighted
+  const ctx = live.filter(s => s.context), hot = live.filter(s => !s.context);
+  const gC = svgEl("g");
+  for (const s of ctx) {
+    const p = svgEl("path", { class: "line line--context", d: path(s.points) });
+    p.dataset.sid = s.id;
+    gC.appendChild(p);
+  }
+  svg.appendChild(gC);
+
+  const gH = svgEl("g");
+  const dotOn = showDots === null ? hot.some(s => s.points.length <= 30) : showDots;
+  for (const s of hot) {
+    gH.appendChild(svgEl("path", { class: "halo", d: path(s.points) }));
+    const p = svgEl("path", { class: "line", d: path(s.points), stroke: s.color });
+    p.dataset.sid = s.id;
+    gH.appendChild(p);
+    if (dotOn && s.points.length <= 40)
+      for (const pt of s.points)
+        gH.appendChild(svgEl("circle", { class: "dot", cx: sx(pt.x), cy: sy(pt.y), fill: s.color }));
+  }
+  svg.appendChild(gH);
+
+  // ---- direct labels at line ends, de-collided
+  if (directLabels && hot.length) {
+    const ends = hot.map(s => {
+      const last = s.points[s.points.length - 1];
+      return { s, x: sx(last.x), y: sy(last.y), v: last.y };
+    }).sort((a, b) => a.y - b.y);
+    const MIN = 13;
+    for (let i = 1; i < ends.length; i++)
+      if (ends[i].y - ends[i - 1].y < MIN) ends[i].y = ends[i - 1].y + MIN;
+    const over = ends.length ? ends[ends.length - 1].y - (m.t + ih) : 0;
+    if (over > 0) for (const e of ends) e.y -= over;
+    const gL = svgEl("g");
+    for (const e of ends) {
+      const t = svgEl("text", { class: "serieslabel", x: m.l + iw + 8,
+        y: Math.max(m.t + 8, e.y) + 3.5, fill: e.s.color });
+      t.textContent = truncate(e.s.label, Math.floor(labelRoom / 6.1));
+      const ttl = svgEl("title"); ttl.textContent = e.s.label; t.appendChild(ttl);
+      gL.appendChild(t);
+    }
+    svg.appendChild(gL);
+  }
+
+  host.appendChild(svg);
+
+  // ---- crosshair + tooltip
+  const tip = el("div", { class: "tooltip" });
+  host.appendChild(tip);
+  const cross = svgEl("line", { class: "crosshair", y1: m.t, y2: m.t + ih, opacity: 0 });
+  svg.appendChild(cross);
+  const marks = svgEl("g"); svg.appendChild(marks);
+
+  const allX = [...new Set(live.flatMap(s => s.points.map(p => p.x)))].sort((a, b) => a - b);
+  const hit = svgEl("rect", { x: m.l, y: m.t, width: iw, height: ih, fill: "transparent",
+    style: "cursor:crosshair" });
+  svg.appendChild(hit);
+
+  const hide = () => { cross.setAttribute("opacity", 0); clear(marks); tip.dataset.show = "0"; };
+  const move = (ev) => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) / r.width * W;
+    const xv = x0 + (px - m.l) / iw * (x1 - x0);
+    let best = allX[0], bd = Infinity;
+    for (const v of allX) { const d = Math.abs(v - xv); if (d < bd) { bd = d; best = v; } }
+    const cx = sx(best);
+    cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.setAttribute("opacity", 1);
+    clear(marks);
+    const rows = [];
+    for (const s of live) {
+      const p = s.points.find(q => q.x === best);
+      if (!p) continue;
+      rows.push({ s, p });
+      marks.appendChild(svgEl("circle", { cx, cy: sy(p.y), r: 4,
+        fill: s.context ? "var(--context)" : s.color, stroke: "var(--paper)", "stroke-width": 2 }));
+    }
+    if (!rows.length) { tip.dataset.show = "0"; return; }
+    rows.sort((a, b) => b.p.y - a.p.y);
+    clear(tip);
+    tip.appendChild(el("div", { class: "tooltip__t" }, rows[0].p.period));
+    for (const { s, p } of rows.slice(0, 12))
+      tip.appendChild(el("div", { class: "tooltip__r" },
+        el("span", { class: "dotmark", style: { background: s.context ? "var(--context)" : s.color } }),
+        el("span", {}, truncate(s.label, 26)),
+        el("b", {}, fmtNum(p.y, decimals) + (unit ? ` ${unit}` : ""))));
+    if (rows.length > 12)
+      tip.appendChild(el("div", { class: "tooltip__r",
+        style: { color: "var(--ink-muted)" } }, `+${rows.length - 12} more`));
+    tip.dataset.show = "1";
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    const hx = cx / W * host.clientWidth;
+    tip.style.left = Math.max(4, Math.min(host.clientWidth - tw - 4, hx + 14)) + "px";
+    tip.style.top = Math.max(4, Math.min(height - th - 4,
+      (ev.clientY - svg.getBoundingClientRect().top) - th - 12)) + "px";
+  };
+  hit.addEventListener("pointermove", move);
+  hit.addEventListener("pointerleave", hide);
+  hit.addEventListener("pointerdown", move);
+  return svg;
+}
+
+function truncate(s, n) {
+  s = String(s);
+  return s.length <= n ? s : s.slice(0, Math.max(3, n - 1)).trimEnd() + "…";
+}
+
+/** Small multiples: one panel per entity, each against a gray backdrop of all others. */
+export function smallMultiples(host, series, opts = {}) {
+  const { height = 84, unit = "", decimals, backdrop = true } = opts;
+  clear(host);
+  const live = series.filter(s => s.points.length);
+  if (!live.length) {
+    host.appendChild(el("div", { class: "center-note" }, "No observations for this selection."));
+    return;
+  }
+  let xs = [], ys = [];
+  for (const s of live) for (const p of s.points) { xs.push(p.x); ys.push(p.y); }
+  const x0 = Math.min(...xs), x1 = Math.max(...xs);
+  const y0 = Math.min(...ys), y1 = Math.max(...ys);
+
+  const grid = el("div", { class: "sm-grid" });
+  for (const s of live) {
+    const W = 200, H = height, m = { t: 6, r: 6, b: 4, l: 6 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const sx = v => m.l + (x1 === x0 ? iw / 2 : (v - x0) / (x1 - x0) * iw);
+    const sy = v => m.t + (y1 === y0 ? ih / 2 : ih - (v - y0) / (y1 - y0) * ih);
+    const path = pts => pts.map((p, i) => `${i ? "L" : "M"}${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join("");
+
+    const svg = svgEl("svg", { class: "chart", viewBox: `0 0 ${W} ${H}`,
+      preserveAspectRatio: "none", style: `height:${H}px` });
+    if (backdrop)
+      for (const o of live) {
+        if (o === s) continue;
+        svg.appendChild(svgEl("path", { d: path(o.points), fill: "none",
+          stroke: "var(--context)", "stroke-width": .75, opacity: .55 }));
+      }
+    svg.appendChild(svgEl("path", { d: path(s.points), fill: "none",
+      stroke: s.color || "var(--accent)", "stroke-width": 1.75, "stroke-linejoin": "round" }));
+    const last = s.points[s.points.length - 1];
+    svg.appendChild(svgEl("circle", { cx: sx(last.x), cy: sy(last.y), r: 2.5,
+      fill: s.color || "var(--accent)" }));
+
+    const cell = el("div", { class: "sm-cell", title: `${s.label} · ${last.period}: ${fmtNum(last.y, decimals)}${unit ? " " + unit : ""}` },
+      el("div", { class: "sm-cell__t" },
+        el("span", {}, truncate(s.label, 18)),
+        el("span", { class: "sm-cell__v" }, fmtCompact(last.y))),
+      svg);
+    grid.appendChild(cell);
+  }
+  host.appendChild(grid);
+}
