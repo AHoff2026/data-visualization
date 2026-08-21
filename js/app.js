@@ -152,8 +152,12 @@ async function pageDataset(slug) {
 }
 
 // ---------- router ----------
+let lastPath = null;
 async function route() {
-  const h = location.hash.replace(/^#/, "") || "/";
+  const raw = location.hash.replace(/^#/, "") || "/";
+  const h = raw.split("?")[0] || "/";
+  if (h === lastPath) return;      // query-only change: the explorer wrote it
+  lastPath = h;
   const parts = h.split("/").filter(Boolean);
   if (parts[0] === "d" && parts[1]) {
     buildRail(parts[1]);
