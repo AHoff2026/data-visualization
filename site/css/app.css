@@ -472,3 +472,10 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
   font-size: .625rem; color: var(--ink-muted); letter-spacing: .01em;
 }
 .figure__credit span:first-child { font-weight: 600; }
+
+/* ---- time-axis zoom ---- */
+.zoombar {
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  margin: 0 0 .5rem; font-size: .75rem; color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}

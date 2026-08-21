@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=49de8e44";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=82f6a282";
 
 export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
@@ -17,7 +17,7 @@ const svgEl = (t, a = {}) => { const n = document.createElementNS(NS, t);
 export function lineChart(host, series, opts = {}) {
   const {
     height = 380, yLabel = "", unit = "", decimals,
-    directLabels = true, showDots = null, yZero = false,
+    directLabels = true, showDots = null, yZero = false, onZoom = null,
   } = opts;
 
   clear(host);
@@ -140,6 +140,9 @@ export function lineChart(host, series, opts = {}) {
   const marks = svgEl("g"); svg.appendChild(marks);
 
   const allX = [...new Set(live.flatMap(s => s.points.map(p => p.x)))].sort((a, b) => a - b);
+  const brush = svgEl("rect", { y: m.t, height: ih, fill: "var(--accent)",
+    opacity: .12, x: 0, width: 0, "pointer-events": "none" });
+  svg.appendChild(brush);
   const hit = svgEl("rect", { x: m.l, y: m.t, width: iw, height: ih, fill: "transparent",
     style: "cursor:crosshair" });
   svg.appendChild(hit);
@@ -200,9 +203,39 @@ export function lineChart(host, series, opts = {}) {
     tip.style.top = Math.max(4, Math.min(height - th - 4,
       (ev.clientY - svg.getBoundingClientRect().top) - th - 12)) + "px";
   };
-  hit.addEventListener("pointermove", move);
-  hit.addEventListener("pointerleave", hide);
-  hit.addEventListener("pointerdown", move);
+  // ---- drag across the plot to zoom the time axis
+  let dragFrom = null;
+  const xAt = (ev) => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) / r.width * W;
+    return Math.min(m.l + iw, Math.max(m.l, px));
+  };
+  const clearBrush = () => { brush.setAttribute("width", 0); dragFrom = null; };
+
+  hit.addEventListener("pointerdown", (ev) => {
+    if (!onZoom) { move(ev); return; }
+    dragFrom = xAt(ev);
+    hide();
+    hit.setPointerCapture?.(ev.pointerId);
+  });
+  hit.addEventListener("pointermove", (ev) => {
+    if (dragFrom === null) { move(ev); return; }
+    const x = xAt(ev);
+    brush.setAttribute("x", Math.min(dragFrom, x));
+    brush.setAttribute("width", Math.abs(x - dragFrom));
+  });
+  const finish = (ev) => {
+    if (dragFrom === null) return;
+    const x = xAt(ev);
+    const px = Math.abs(x - dragFrom);
+    const from = x0 + (Math.min(dragFrom, x) - m.l) / iw * (x1 - x0);
+    const to   = x0 + (Math.max(dragFrom, x) - m.l) / iw * (x1 - x0);
+    clearBrush();
+    if (px > 6 && onZoom) onZoom(from, to);
+  };
+  hit.addEventListener("pointerup", finish);
+  hit.addEventListener("pointercancel", clearBrush);
+  hit.addEventListener("pointerleave", (ev) => { if (dragFrom === null) hide(); });
   return svg;
 }
 

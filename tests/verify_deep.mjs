@@ -108,6 +108,42 @@ for (const slug of slugs) {
         rec.fail.push(`D3 toggling "${name}" on added no series`);
     }
 
+    // ---------- D8 drag across the plot zooms the time axis, and resets
+    {
+      await page.locator("svg.chart").scrollIntoViewIfNeeded();
+      await page.waitForTimeout(150);
+      const bb = await page.locator("svg.chart").boundingBox();
+      const nX = await page.evaluate(() => {
+        const xs = new Set();
+        for (const p of document.querySelectorAll("svg.chart path.line")) {
+          const d = p.getAttribute("d") || "";
+          for (const m of d.matchAll(/[ML]([-\d.]+),/g)) xs.add(m[1]);
+        }
+        return xs.size;
+      });
+      if (bb && nX > 3) {
+        const before = await page.evaluate(() =>
+          [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
+        await page.mouse.move(bb.x + bb.width * 0.5, bb.y + bb.height * 0.5);
+        await page.mouse.down();
+        await page.mouse.move(bb.x + bb.width * 0.8, bb.y + bb.height * 0.5, { steps: 8 });
+        await page.mouse.up();
+        await page.waitForTimeout(450);
+        rec.checked++;
+        const bar = await page.locator(".zoombar").count();
+        const after = await page.evaluate(() =>
+          [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
+        if (!bar) rec.fail.push("D8 dragging did not zoom the time axis");
+        else {
+          await page.locator(".zoombar button").click();
+          await page.waitForTimeout(400);
+          const back = await page.evaluate(() =>
+            [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
+          if (back !== before) rec.fail.push("D8 reset did not restore the full period");
+        }
+      }
+    }
+
     // ---------- D7 the URL captures the view, and reloading it restores the view
     {
       const hash = await page.evaluate(() => location.hash);
