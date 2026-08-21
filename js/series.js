@@ -1,6 +1,6 @@
 // ---------- pure series logic, shared by the explorer and the home page ----------
-import { periodToNum } from "./util.js?v=59657250";
-import { slotVar, SERIES_SLOTS } from "./chart.js?v=59657250";
+import { periodToNum } from "./util.js?v=d259dcad";
+import { slotVar, SERIES_SLOTS } from "./chart.js?v=d259dcad";
 
 export const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -38,12 +38,24 @@ export function desiredPicks(meta) {
       });
       if (best >= 0 && bestScore >= (d.id === "UNIT_MEASURE" ? 3 : 5)) return best;
     }
+    // A total is the neutral place to start a cross-country comparison. OECD's
+    // own DEFAULT annotation often points at a sub-category — employees rather
+    // than all workers, 25-54 rather than every age — which quietly answers a
+    // narrower question than the reader asked.
+    for (const t of TOTALISH) { const j = d.ids.indexOf(t); if (j >= 0) return j; }
+    // Not every total is coded "_T": "All educational institutions",
+    // "All activities". Match on the label, preferring a plain total over one
+    // that excludes a residual category.
+    const byName = d.names
+      .map((n, j) => [j, String(n || "")])
+      .filter(([, n]) => /^(total|all\b)/i.test(n))
+      .sort((a, b) => (/exclud/i.test(a[1]) - /exclud/i.test(b[1])) || a[1].length - b[1].length);
+    if (byName.length) return byName[0][0];
     const code = od[d.id];
     if (code) {
       const j = d.ids.indexOf(String(code).split("+")[0]);
       if (j >= 0) return j;
     }
-    for (const t of TOTALISH) { const j = d.ids.indexOf(t); if (j >= 0) return j; }
     return -1;
   });
 }
@@ -130,6 +142,39 @@ export function seedPicks(meta, records, breakdownIdx, constrain = null) {
       if (ok) { picks[i] = want[i]; moved = true; }
     }
     if (!moved) break;
+  }
+
+  // A single-dial move can be blocked when two dials must move together —
+  // "all workers" may only exist alongside "all ages". Take the record inside
+  // the chosen unit that sits at the most preferred values at once, then let
+  // the greedy pass finish the job.
+  {
+    const score = (k) => {
+      let n = 0;
+      for (const i of order) if (k[i] === want[i]) n++;
+      return n;
+    };
+    let bestK = picks, bestN = score(picks);
+    for (const r of pool) {
+      const n = score(r.k);
+      if (n > bestN) { bestN = n; bestK = r.k; }
+    }
+    if (bestK !== picks) {
+      const next = [...bestK];
+      for (const i of order) {
+        if (next[i] === want[i]) continue;
+        const trial = [...next]; trial[i] = want[i];
+        const ok = records.some(r => {
+          for (let j = 0; j < D; j++) {
+            if (j === breakdownIdx) continue;
+            if (r.k[j] !== trial[j]) return false;
+          }
+          return true;
+        });
+        if (ok) next[i] = want[i];
+      }
+      return next;
+    }
   }
   return picks;
 }
