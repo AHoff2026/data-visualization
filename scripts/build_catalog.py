@@ -7,11 +7,12 @@ from collections import defaultdict
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 STRUCT = ROOT/"meta/struct"
 manifest = json.loads((ROOT/"meta/manifest.json").read_text())
-SAMPLE_COUNTRIES = ["DEU", "FRA", "GBR", "USA", "SWE", "DNK", "NOR", "FIN", "AUT", "ESP", "ITA", "CAN", "NLD"]
+SAMPLE_COUNTRIES = ["DEU", "DNK", "SWE", "NLD", "FRA", "GBR", "USA"]
 EXTRA_COUNTRIES = ["BEL", "ISL", "NZL"]
 AGGREGATES = ["EU27", "EU27_2020", "EU", "OECD", "OECD_REP"]
 DEFAULT_COUNTRIES = ["DEU", "DNK", "SWE", "NLD", "FRA", "GBR", "USA"]     # coloured on first load
-CORE_AREAS = SAMPLE_COUNTRIES + EXTRA_COUNTRIES + AGGREGATES
+CORE_AREAS = ["DEU","FRA","GBR","USA","SWE","DNK","NOR","FIN","AUT","ESP","ITA","CAN","NLD"] \
+    + EXTRA_COUNTRIES + AGGREGATES
 
 def slug(r): return f'{r["agency"]}__{r["flow"]}'
 
