@@ -14,7 +14,34 @@ DEFAULTS = json.loads((ROOT/"site/data/catalog.json").read_text())["default_coun
 TOTALISH = ["_T", "_Z", "TOT", "T"]
 CAP = 1_200_000          # bytes; above this the bundle is not worth shipping
 
+import re
+RATE = re.compile(r'percent|per cent|^%|share of', re.I)
+PERCAP = re.compile(r'per capita|per person|per head|per employee|per worker|per hour', re.I)
+RATIO = re.compile(r'\brate\b|ratio|per 1 ?000|per thousand|per 100', re.I)
+
+def unit_rank(name):
+    """Mirror of unitRank() in site/js/series.js — the bundle must contain the
+    unit the client will actually open on."""
+    n = name or ""
+    if RATE.search(n): return 6
+    if PERCAP.search(n): return 5
+    if RATIO.search(n): return 4
+    if re.search(r'index', n, re.I): return 3
+    if re.search(r'dollar|euro|currency|ppp', n, re.I): return 2
+    if re.match(r'^(persons?|number|thousands?|millions?|units?|households?|head)', n, re.I): return 0
+    return 1
+
 def default_pick(dim, oecd):
+    if dim["id"] in ("UNIT_MEASURE", "MEASURE"):
+        best, best_sc = None, -1
+        for j, nm in enumerate(dim["names"]):
+            sc = unit_rank(nm) if dim["id"] == "UNIT_MEASURE" else (
+                5 if re.search(r'\brate\b|percent|share|ratio|per capita', nm or "", re.I) else 1)
+            if oecd.get(dim["id"]) and dim["ids"][j] == str(oecd[dim["id"]]).split("+")[0]:
+                sc += 0.5
+            if sc > best_sc: best_sc, best = sc, j
+        if best is not None and best_sc >= (3 if dim["id"] == "UNIT_MEASURE" else 5):
+            return best
     code = oecd.get(dim["id"])
     if code:
         j = dim["ids"].index(code.split("+")[0]) if code.split("+")[0] in dim["ids"] else -1

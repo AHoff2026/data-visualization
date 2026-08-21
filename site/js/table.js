@@ -1,5 +1,5 @@
 // ---------- table view (also the accessibility relief for low-contrast marks) ----------
-import { el, clear, fmtNum } from "./util.js?v=2ff14d1d";
+import { el, clear, fmtNum } from "./util.js?v=daeb1107";
 
 export function dataTable(host, series, opts = {}) {
   const { unit = "", decimals } = opts;
