@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=7c14341d";
-import { getCatalog } from "./store.js?v=7c14341d";
-import { renderExplorer, topicLabel } from "./explorer.js?v=7c14341d";
-import { renderFeatured } from "./featured.js?v=7c14341d";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=2ff14d1d";
+import { getCatalog } from "./store.js?v=2ff14d1d";
+import { renderExplorer, topicLabel } from "./explorer.js?v=2ff14d1d";
+import { renderFeatured } from "./featured.js?v=2ff14d1d";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf }
-  from "./edits.js?v=7c14341d";
+  from "./edits.js?v=2ff14d1d";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -109,14 +109,15 @@ function pageHome() {
   const KICK = "An independent data publication";
   const hKick = el("p", { class: "kicker" }, textOf("/", "kicker", KICK));
   const hTitle = el("h1", {}, textOf("/", "title", H1));
+  const STAND = "Visualizations of data on wages, unions, social spending, " +
+    "inequalities, migration and taxation";
+  const hStand = el("p", { class: "standfirst" }, textOf("/", "standfirst", STAND));
   editable(hKick, "/", "kicker", KICK);
   editable(hTitle, "/", "title", H1);
+  editable(hStand, "/", "standfirst", STAND);
   m.appendChild(el("header", { style: { padding: "1.5rem 0 2.25rem", maxWidth: "44rem" } },
     hKick, hTitle,
-    el("p", { class: "standfirst" },
-      "Work, wages, unions, social spending, pensions, migration and taxation — drawn " +
-      "directly from the OECD's statistical services and rebuilt as charts you can " +
-      "actually read. Every country, every year, every breakdown."),
+    hStand,
     el("p", { class: "figure__sub", style: { marginTop: "1.1rem" } },
       `${CAT.flows.length} datasets · ${nObs ? nObs.toLocaleString("en-GB") + " observations · " : ""}` +
       `sourced live from OECD SDMX`)));

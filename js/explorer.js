@@ -1,9 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=7c14341d";
-import { getFlowMeta, getSeries } from "./store.js?v=7c14341d";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=7c14341d";
-import { dataTable } from "./table.js?v=7c14341d";
-import { editable, textOf } from "./edits.js?v=7c14341d";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=2ff14d1d";
+import { getFlowMeta, getSeries } from "./store.js?v=2ff14d1d";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=2ff14d1d";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=2ff14d1d";
+import { dataTable } from "./table.js?v=2ff14d1d";
+import { editable, textOf } from "./edits.js?v=2ff14d1d";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -63,21 +64,7 @@ export async function renderExplorer(host, slug, catalog) {
     return (multi.sort((a, b) => b.ids.length - a.ids.length)[0] || dims[0]).id;
   }
 
-  // ---- desired defaults, from OECD's own DEFAULT annotation, then totals
-  function desiredPicks() {
-    const want = new Array(D).fill(-1);
-    const od = meta.oecd_defaults || {};
-    dims.forEach((d, i) => {
-      const code = od[d.id];
-      if (code) {
-        const j = d.ids.indexOf(String(code).split("+")[0]);
-        if (j >= 0) { want[i] = j; return; }
-      }
-      for (const t of TOTALISH) { const j = d.ids.indexOf(t); if (j >= 0) { want[i] = j; return; } }
-    });
-    return want;
-  }
-
+  // desired defaults live in series.js, so the home page and the explorer agree
   // ============================================================ load
   let records = [];
   let partial = false;                 // true while only the first-paint bundle is loaded
@@ -112,19 +99,8 @@ export async function renderExplorer(host, slug, catalog) {
   // ---- seed picks from a REAL record closest to the desired defaults
   seedPicks();
   function seedPicks() {
-    const want = desiredPicks();
-    const bi = dimIndex[ui.breakdown];
-    let best = null, bestScore = -1;
-    for (const r of records) {
-      let s = 0;
-      for (let i = 0; i < D; i++) {
-        if (i === bi) continue;
-        if (want[i] >= 0 && r.k[i] === want[i]) s++;
-        else if (want[i] < 0) s += 0.01;
-      }
-      if (s > bestScore) { bestScore = s; best = r; if (s >= D - 1) break; }
-    }
-    if (best) ui.picks = [...best.k];
+    const best = sharedSeed(meta, records, dimIndex[ui.breakdown]);
+    if (best) ui.picks = best;
   }
 
   // ============================================================ availability
@@ -257,7 +233,7 @@ export async function renderExplorer(host, slug, catalog) {
     if (meta.desc_html) {
       // Show the opening paragraph only; the rest sits behind the button, so
       // every dataset page starts at the same height.
-      const chunks = String(meta.desc_html).split(/<br>\s*/).map(x => x.trim()).filter(Boolean);
+      const chunks = splitParagraphs(meta.desc_html);
       const lead = chunks[0] || "";
       const rest = chunks.slice(1).join("<br>");
 
@@ -628,6 +604,20 @@ export async function renderExplorer(host, slug, catalog) {
 }
 
 // ============================================================ helpers
+/** Split a description into paragraphs, whatever markup OECD used for them. */
+function splitParagraphs(html) {
+  let t = String(html || "").trim();
+  const parts = t
+    .split(/<\/p>\s*|<br>\s*(?:<br>\s*)*/i)
+    .map(x => x.replace(/^\s*<p[^>]*>/i, "").trim())
+    .filter(Boolean);
+  if (parts.length > 1) return parts;
+  // one long block: break after the first sentence that ends past 220 chars
+  const plain = parts[0] || t;
+  const m = /^([\s\S]{220,}?[.!?])\s+(?=[A-Z(])/.exec(plain);
+  return m ? [m[1], plain.slice(m[0].length)] : [plain];
+}
+
 /** Show any stored override for a field and make the node editable. */
 function mark(node, scope, field, original) {
   if (!scope) return node;
