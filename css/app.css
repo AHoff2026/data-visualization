@@ -444,3 +444,23 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
 /* description: the opening paragraph leads; the remainder is revealed */
 .desc__rest { margin-top: .6rem; }
 :root[data-editing="1"] .desc__rest[hidden] { display: block; opacity: .55; }
+
+/* ---- technical settings, folded away ---- */
+.advanced { margin: 0 0 .9rem; }
+.advanced > summary {
+  cursor: pointer; font-size: .75rem; color: var(--ink-muted);
+  list-style: none; display: inline-flex; align-items: center; gap: .3rem;
+  padding: .18rem 0;
+}
+.advanced > summary::-webkit-details-marker { display: none; }
+.advanced > summary::before { content: "▸"; font-size: .7em; }
+.advanced[open] > summary::before { content: "▾"; }
+.advanced > summary:hover { color: var(--ink); }
+
+/* ---- sidebar: additional topics ---- */
+.railmore {
+  display: block; width: 100%; text-align: left; margin-top: 1.4rem;
+  padding: .45rem .55rem .45rem 0; font-size: .75rem; font-weight: 600;
+  color: var(--accent); border-top: 1px solid var(--rule);
+}
+.railmore:hover { color: var(--ink); }
