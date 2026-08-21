@@ -72,15 +72,17 @@ async function runOne(slug) {
     rec.probe = p;
 
     // ---- S1 a chart exists with real geometry
+    const ranked = await page.locator("svg.chart rect[rx]").count();
     if (!p.hasSvg) rec.fail.push(`S1 no chart svg (${p.note.trim().slice(0,80)})`);
-    else if (p.nLines === 0) rec.fail.push("S1 chart has zero line paths");
-    else if (Math.min(...p.dlen) < 10) rec.fail.push("S1 a line path has empty geometry");
+    else if (p.nLines === 0 && ranked === 0) rec.fail.push("S1 chart has no marks");
+    else if (p.dlen.length && Math.min(...p.dlen) < 10)
+      rec.fail.push("S1 a line path has empty geometry");
     // ---- S2 labels are human, not codes
     const codey = p.chips.filter(c => /^[A-Z0-9_]{2,}$/.test(c));
     if (p.chips.length && codey.length === p.chips.length)
       rec.fail.push(`S2 selection labels unresolved (${codey.slice(0,3)})`);
     // ---- S3 axis ticks present
-    if (p.ticks.length < 3) rec.fail.push(`S3 too few axis ticks (${p.ticks.length})`);
+    if (p.ticks.length < 3 && !ranked) rec.fail.push(`S3 too few axis ticks (${p.ticks.length})`);
     // ---- S4 no console errors
     if (rec.errors.length) rec.fail.push(`S4 ${rec.errors.length} console error(s)`);
     // ---- S5 chart fills its box
@@ -88,13 +90,19 @@ async function runOne(slug) {
       rec.fail.push(`S5 chart too small ${JSON.stringify(p.bbox)}`);
 
     // ---- S6 all three views render
-    for (const [label, sel] of [["Country snapshots", ".sm-grid"], ["Table", "table.data"]]) {
+    // a dataset with no trend offers Ranking instead of Trends
+    const views = await page.locator(".seg button").allTextContents();
+    for (const [label, sel] of [["Country snapshots", ".sm-grid"], ["Table", "table.data"],
+                                ["Ranking", "svg.chart"]]) {
+      if (!views.includes(label)) continue;
       await page.getByRole("button", { name: label, exact: true }).click();
       try { await page.waitForSelector(sel, { timeout: 15000 }); }
       catch { rec.fail.push(`S6 ${label} view did not render`); }
     }
-    await page.getByRole("button", { name: "Trends", exact: true }).click();
+    const first = views.includes("Trends") ? "Trends" : "Ranking";
+    await page.getByRole("button", { name: first, exact: true }).click();
     await page.waitForSelector("svg.chart", { timeout: 15000 });
+    rec.chartOnly = first === "Ranking";
 
     // ---- S7 tooltip on hover
     await page.locator("svg.chart").scrollIntoViewIfNeeded();

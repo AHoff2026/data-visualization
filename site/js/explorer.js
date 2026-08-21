@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=59657250";
-import { getFlowMeta, getSeries } from "./store.js?v=59657250";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=59657250";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=59657250";
-import { dataTable } from "./table.js?v=59657250";
-import { editable, textOf } from "./edits.js?v=59657250";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=d259dcad";
+import { getFlowMeta, getSeries } from "./store.js?v=d259dcad";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=d259dcad";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=d259dcad";
+import { dataTable } from "./table.js?v=d259dcad";
+import { editable, textOf } from "./edits.js?v=d259dcad";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -40,6 +40,7 @@ export async function renderExplorer(host, slug, catalog) {
 
   const SCOPE = `/d/${slug}`;          // key for manual text overrides
   let everSeen = [];                   // codes that appear anywhere in the data
+  let userTouched = false;             // has the reader changed anything yet
   const dims = meta.dims;
   const areaDim = meta.area_dim && dims.some(d => d.id === meta.area_dim) ? meta.area_dim : null;
   const D = dims.length;
@@ -51,7 +52,7 @@ export async function renderExplorer(host, slug, catalog) {
     picks: new Array(D).fill(0),   // code index per dimension
     entities: [],                  // code indexes on the breakdown dim
     slots: new Map(),              // entity code index -> colour slot (stable)
-    view: "lines",
+    view: (meta.periods || []).length <= 2 ? "rank" : "lines",
     smScale: "auto",
     showAll: false,          // tier two of the area list
     xRange: null,            // [from, to] when the time axis is zoomed
@@ -88,6 +89,27 @@ export async function renderExplorer(host, slug, catalog) {
     try { await load(areas, { allowBundle: false }); }
     catch { return; }
     partial = false;
+    // The opening view was seeded from a slice of the data. Now that the whole
+    // dataset is here, seed again — otherwise the chart keeps whatever
+    // sub-category the bundle happened to contain. Only if the reader has not
+    // already made a choice.
+    if (!userTouched) {
+      seedPicks();
+      for (const [id, code] of Object.entries(meta.hidden_dims || {})) {
+        const i = dimIndex[id];
+        if (i === undefined) continue;
+        const j = dims[i].ids.indexOf(code);
+        if (j >= 0 && state.avail[i] && state.avail[i].has(j)) ui.picks[i] = j;
+      }
+      state = repair();
+      const has = state.avail[dimIndex[ui.breakdown]];
+      const kept = ui.entities.filter(e => has.has(e));
+      if (!kept.length) seedEntities(state.avail); else ui.entities = kept;
+      reslot();
+      buildControls();
+      draw();
+      return;
+    }
     state = repair();
     buildControls();
     if (!activeSeries(state.live).length) draw();
@@ -331,6 +353,7 @@ export async function renderExplorer(host, slug, catalog) {
 
   // ============================================================ draw
   let stopSize = null;
+  let lastNoTrend = false;
   function draw() {
     const y = window.scrollY;
     let list = activeSeries(state.live);
@@ -366,7 +389,24 @@ export async function renderExplorer(host, slug, catalog) {
     const box = el("div", { style: { minHeight: "400px" } });
     figure.appendChild(box);
 
-    if (!list.length) {
+    // A slice can be a single observation even when the dataset spans decades.
+    // Judge by what is actually plotted, not by the table's overall range.
+    const maxPts = list.length ? Math.max(...list.map(x => x.points.length)) : 0;
+    const noTrend = list.length > 0 && maxPts <= 2;
+    lastNoTrend = noTrend;
+    let switched = false;
+    if (ui.view === "lines" && noTrend) { ui.view = "rank"; switched = true; }
+
+    if (ui.view === "rank" && list.length) {
+      if (stopSize) stopSize();
+      let res = null;
+      stopSize = autosize(box, (h) => {
+        res = barChart(h, list, { unit, ariaLabel: `${meta.name}. ${unit}.` });
+      });
+      figure.appendChild(el("div", { class: "figure__sub", style: { marginTop: ".5rem" } },
+        `Latest available observation for each country` +
+        (res && res.period ? `, ${res.period} where available` : "") + (unit ? ` · ${unit}` : "")));
+    } else if (!list.length) {
       box.appendChild(el("div", { class: "center-note" },
         el("div", {}, "No series for this combination."),
         el("button", { class: "chip", onclick: () => { seedPicks(); state = repair();
@@ -419,6 +459,7 @@ export async function renderExplorer(host, slug, catalog) {
     figure.appendChild(el("div", { class: "figure__credit" },
       el("span", {}, `Chart © ${new Date().getFullYear()} Alex Hoffman · CC BY 4.0`)));
 
+    if (switched) buildControls();     // keep the view tabs honest
     window.scrollTo({ top: y });
     writeUrlState();
   }
@@ -461,6 +502,7 @@ export async function renderExplorer(host, slug, catalog) {
   function rebuild() { buildControls(); showNotice(); draw(); buildExplain(); }
 
   function applyChange(dimIdx, codeIdx) {
+    userTouched = true;
     ui.xRange = null;
     ui.picks[dimIdx] = codeIdx;
     const r = repair(dimIdx);
@@ -483,7 +525,11 @@ export async function renderExplorer(host, slug, catalog) {
     const row1 = el("div", { class: "ctlrow" });
 
     const seg = el("div", { class: "seg", role: "group", "aria-label": "View" });
-    for (const [k, lbl] of [["lines", "Trends"], ["small", "Country snapshots"], ["table", "Table"]])
+    const flat = (meta.periods || []).length <= 2 || ui.view === "rank" && lastNoTrend;
+    const views = flat
+      ? [["rank", "Ranking"], ["table", "Table"]]
+      : [["lines", "Trends"], ["rank", "Ranking"], ["small", "Country snapshots"], ["table", "Table"]];
+    for (const [k, lbl] of views)
       seg.appendChild(el("button", { "aria-pressed": String(ui.view === k),
         onclick: () => { ui.view = k; buildControls(); draw(); } }, lbl));
     row1.appendChild(seg);
@@ -676,6 +722,7 @@ export async function renderExplorer(host, slug, catalog) {
     const c = el("button", { class: "chip", "aria-pressed": String(on),
       title: d.code_defs?.[d.ids[i]] || d.names[i] || d.ids[i],
       onclick: async () => {
+        userTouched = true;
         if (ui.entities.includes(i)) ui.entities = ui.entities.filter(x => x !== i);
         else ui.entities = [...ui.entities, i];
         reslot();

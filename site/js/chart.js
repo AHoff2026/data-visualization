@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=59657250";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=d259dcad";
 
 export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
@@ -355,4 +355,85 @@ export function autosize(host, render) {
   });
   ro.observe(host);
   return () => { ro.disconnect(); cancelAnimationFrame(raf); };
+}
+
+/**
+ * Ranked bars, for data that has no trend to show.
+ * A cross-section published for a single year is not a time series; drawing it
+ * as one puts a lone dot in the middle of an empty plot. Ranked bars answer the
+ * question that data can actually answer: who is high, who is low, by how much.
+ */
+export function barChart(host, series, opts = {}) {
+  const { unit = "", decimals, height = null } = opts;
+  clear(host);
+  host.classList.add("chartbox");
+  const live = series.filter(s => s.points.length);
+  if (!live.length) {
+    host.appendChild(el("div", { class: "center-note" }, "No observations for this selection."));
+    return;
+  }
+  const rows = live.map(s => {
+    const p = s.points[s.points.length - 1];
+    return { label: s.label, color: s.color, v: p.y, period: p.period };
+  }).sort((a, b) => b.v - a.v);
+
+  const W = Math.max(320, host.clientWidth || 720);
+  const rowH = 30, pad = 12;
+  // a two-bar comparison still deserves a readable plot, not a sliver
+  const H = height || Math.max(150, rows.length * rowH + pad * 2);
+  const labelW = Math.min(200, Math.max(96, W * .24));
+  const valueW = 68;
+  const barW = Math.max(40, W - labelW - valueW - 16);
+  const lo = Math.min(0, ...rows.map(r => r.v));
+  const hi = Math.max(0, ...rows.map(r => r.v));
+  const scale = v => (hi === lo ? barW / 2 : (v - lo) / (hi - lo) * barW);
+  const zero = scale(0);
+
+  const svg = svgEl("svg", { class: "chart", viewBox: `0 0 ${W} ${H}`,
+    role: "img", "aria-label": opts.ariaLabel || "Ranked comparison" });
+  rows.forEach((r, i) => {
+    const y = pad + i * rowH;
+    const t = svgEl("text", { class: "tick", x: labelW - 8, y: y + rowH / 2 + 4,
+      "text-anchor": "end", fill: "var(--ink-2)" });
+    t.textContent = truncate(r.label, Math.floor(labelW / 6.2));
+    svg.appendChild(t);
+    const w = Math.abs(scale(r.v) - zero);
+    svg.appendChild(svgEl("rect", {
+      x: labelW + Math.min(zero, scale(r.v)), y: y + 5, width: Math.max(1, w),
+      height: rowH - 14, fill: r.color, rx: 2 }));
+    const v = svgEl("text", { class: "tick", x: labelW + barW + 10,
+      y: y + rowH / 2 + 4, fill: "var(--ink)" });
+    v.textContent = fmtNum(r.v, decimals) + (unit ? "" : "");
+    svg.appendChild(v);
+  });
+  svg.appendChild(svgEl("line", { class: "axisline", x1: labelW + zero,
+    x2: labelW + zero, y1: pad, y2: H - pad }));
+  host.appendChild(svg);
+
+  // per-bar read-out, matching the line chart's
+  const tip = el("div", { class: "tooltip" });
+  host.appendChild(tip);
+  const hide = () => { tip.dataset.show = "0"; };
+  rows.forEach((r, i) => {
+    const y = pad + i * rowH;
+    const band = svgEl("rect", { x: 0, y, width: W, height: rowH,
+      fill: "transparent", style: "cursor:default" });
+    band.addEventListener("pointermove", (ev) => {
+      clear(tip);
+      tip.appendChild(el("div", { class: "tip__p" }, r.period));
+      tip.appendChild(el("div", { class: "tip__s" },
+        el("span", { class: "dotmark", style: { background: r.color } }),
+        truncate(r.label, 26)));
+      tip.appendChild(el("div", { class: "tip__v" }, fmtNum(r.v, decimals) + shortUnit(unit)));
+      tip.dataset.show = "1";
+      const rect = svg.getBoundingClientRect();
+      const tw = tip.offsetWidth, th = tip.offsetHeight;
+      tip.style.left = Math.max(4, Math.min(host.clientWidth - tw - 4,
+        ev.clientX - rect.left + 12)) + "px";
+      tip.style.top = Math.max(4, ev.clientY - rect.top - th - 8) + "px";
+    });
+    band.addEventListener("pointerleave", hide);
+    svg.appendChild(band);
+  });
+  return { period: rows[0]?.period };
 }
