@@ -406,3 +406,41 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
 }
 .editable.is-edited { border-left: 2px solid var(--accent); padding-left: .45rem; margin-left: -.65rem; }
 :root[data-editing="1"] .standfirst.clamped { -webkit-line-clamp: unset; display: block; }
+
+/* ---- masthead must fit a phone: the nav wraps, and the OECD link (repeated
+   in every dataset footer) steps aside below 26rem of nav space ---- */
+.masthead__in { flex-wrap: wrap; row-gap: .35rem; }
+.masthead__nav { flex-wrap: wrap; }
+@media (max-width: 30rem) {
+  .masthead__nav a[href^="https://data-explorer"] { display: none; }
+  .wordmark { font-size: .95rem; }
+  .masthead__in { gap: .6rem; padding-left: .75rem; padding-right: .75rem; }
+  #editbar { top: 2.9rem; }
+  .editbar__in { padding-left: .75rem; padding-right: .75rem; font-size: .75rem; }
+}
+
+/* ---- minimalist hover read-out ---- */
+.tooltip { min-width: 0; padding: .55rem .65rem; }
+.tip__p {
+  font-size: .625rem; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.tip__s {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .8125rem; font-weight: 600; margin-top: .18rem; white-space: nowrap;
+}
+.tip__v {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 600;
+  line-height: 1.1; margin-top: .18rem; font-variant-numeric: tabular-nums;
+  display: flex; align-items: baseline; gap: .35rem;
+}
+.tip__u { font-family: var(--sans); font-size: .6875rem; font-weight: 500; color: var(--ink-muted); }
+.tip__r {
+  font-size: .6875rem; color: var(--ink-muted); margin-top: .3rem;
+  padding-top: .3rem; border-top: 1px solid var(--rule);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
+/* description: the opening paragraph leads; the remainder is revealed */
+.desc__rest { margin-top: .6rem; }
+:root[data-editing="1"] .desc__rest[hidden] { display: block; opacity: .55; }

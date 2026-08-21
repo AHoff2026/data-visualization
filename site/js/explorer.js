@@ -1,9 +1,9 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js";
-import { getFlowMeta, getSeries } from "./store.js";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js";
-import { dataTable } from "./table.js";
-import { editable, textOf } from "./edits.js";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=2f531cbd";
+import { getFlowMeta, getSeries } from "./store.js?v=2f531cbd";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=2f531cbd";
+import { dataTable } from "./table.js?v=2f531cbd";
+import { editable, textOf } from "./edits.js?v=2f531cbd";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -254,20 +254,28 @@ export async function renderExplorer(host, slug, catalog) {
     h.appendChild(kick);
     h.appendChild(title);
     if (meta.desc_html) {
-      const short = (meta.desc_text || "").length > 300;
-      const body = el("div", { class: "standfirst",
-        html: textOf(SCOPE, "desc", meta.desc_html),
+      // Show the opening paragraph only; the rest sits behind the button, so
+      // every dataset page starts at the same height.
+      const chunks = String(meta.desc_html).split(/<br>\s*/).map(x => x.trim()).filter(Boolean);
+      const lead = chunks[0] || "";
+      const rest = chunks.slice(1).join("<br>");
+
+      const body = el("div", { class: "standfirst", html: textOf(SCOPE, "desc", lead),
         style: { maxWidth: "44rem" } });
-      editable(body, SCOPE, "desc", meta.desc_html, { plain: false });
-      if (short) {
-        body.classList.add("clamped");
-        const more = el("button", { class: "chip", style: { marginTop: ".5rem" },
+      editable(body, SCOPE, "desc", lead, { plain: false });
+      h.appendChild(body);
+
+      if (rest) {
+        const more = el("div", { class: "standfirst desc__rest", hidden: true,
+          html: textOf(SCOPE, "desc_rest", rest), style: { maxWidth: "44rem" } });
+        editable(more, SCOPE, "desc_rest", rest, { plain: false });
+        const btn = el("button", { class: "chip", style: { marginTop: ".5rem" },
           onclick: () => {
-            const on = body.classList.toggle("clamped");
-            more.textContent = on ? "Read the full description" : "Show less";
+            more.hidden = !more.hidden;
+            btn.textContent = more.hidden ? "Read the full description" : "Show less";
           } }, "Read the full description");
-        h.append(body, more);
-      } else h.appendChild(body);
+        h.append(more, btn);
+      }
     }
     h.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".85rem" } },
       `${meta.n_series.toLocaleString("en-GB")} series · ` +
@@ -291,9 +299,12 @@ export async function renderExplorer(host, slug, catalog) {
     for (const e of ui.entities) {
       const r = byEnt.get(e);
       if (!r) continue;
-      const f = r.m ? Math.pow(10, r.m) : 1;
+    // OECD's UNIT_MULT is unreliable: it is 3 ("Thousands") on percentage series
+    // in DF_INVPT_I and 0 ("Units") on labour-force counts that are in fact
+    // thousands. Their own Data Explorer hides the field. Show the published
+    // value unchanged and explain the scale in "How to read this".
       const points = r.t.map((ti, j) => ({
-        x: periodToNum(meta.periods[ti]), y: r.v[j] * f, period: meta.periods[ti],
+        x: periodToNum(meta.periods[ti]), y: r.v[j], period: meta.periods[ti],
       })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
       if (!points.length) continue;
       const slot = ui.slots.get(e);
@@ -483,9 +494,6 @@ export async function renderExplorer(host, slug, catalog) {
         ui.entities = catalog.default_countries.map(c => d.ids.indexOf(c))
           .filter(i => i >= 0 && state.avail[dimIndex[ui.breakdown]].has(i));
         ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, "Sample countries"));
-    row2.appendChild(el("button", { class: "chip", onclick: async () => {
-      ui.entities = [...state.avail[dimIndex[ui.breakdown]]].sort((a, b) => a - b).slice(0, SERIES_SLOTS);
-      ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, `First ${SERIES_SLOTS}`));
     row2.appendChild(el("button", { class: "chip", onclick: () => {
       ui.entities = []; ui.slots.clear(); paintChips(); draw(); } }, "Clear"));
     controls.appendChild(row2);
@@ -545,15 +553,18 @@ export async function renderExplorer(host, slug, catalog) {
   function buildExplain() {
     clear(explain);
     const sec = el("section", { style: { marginTop: "2rem", maxWidth: "48rem" } });
-    sec.appendChild(el("h2", { style: { fontSize: "1.15rem", marginBottom: ".6rem" } },
-      "How to read this"));
+    const HEAD = "How to read this";
+    const head = el("h2", { style: { fontSize: "1.15rem", marginBottom: ".6rem" } },
+      textOf(SCOPE, "explainhead", HEAD));
+    editable(head, SCOPE, "explainhead", HEAD);
+    sec.appendChild(head);
 
     const dl = el("div", { style: { display: "grid", gap: ".55rem" } });
     const unit = unitLabel();
-    if (unit) dl.appendChild(explainRow("Unit", unit));
+    if (unit) dl.appendChild(explainRow("Unit", unit, null, SCOPE));
     const mi = dimIndex["MEASURE"];
     if (mi !== undefined) dl.appendChild(explainRow("Measure",
-      dims[mi].names[ui.picks[mi]], dims[mi].code_defs?.[dims[mi].ids[ui.picks[mi]]]));
+      dims[mi].names[ui.picks[mi]], dims[mi].code_defs?.[dims[mi].ids[ui.picks[mi]]], SCOPE));
 
     for (let i = 0; i < D; i++) {
       const d = dims[i];
@@ -562,7 +573,7 @@ export async function renderExplorer(host, slug, catalog) {
         ? `${ui.entities.length} selected of ${d.ids.length}`
         : d.names[ui.picks[i]];
       dl.appendChild(explainRow(d.name, cur,
-        d.def || (d.id === ui.breakdown ? null : d.code_defs?.[d.ids[ui.picks[i]]])));
+        d.def || (d.id === ui.breakdown ? null : d.code_defs?.[d.ids[ui.picks[i]]]), SCOPE));
     }
     sec.appendChild(dl);
 
@@ -581,14 +592,16 @@ export async function renderExplorer(host, slug, catalog) {
     explain.appendChild(sec);
   }
 
-  function explainRow(term, value, def) {
+  function explainRow(term, value, def, scope) {
     return el("div", { style: { borderTop: "1px solid var(--rule)", paddingTop: ".45rem" } },
       el("div", { style: { display: "flex", gap: ".7rem", flexWrap: "wrap", alignItems: "baseline" } },
         el("span", { style: { fontSize: ".625rem", letterSpacing: ".09em",
           textTransform: "uppercase", color: "var(--ink-muted)", fontWeight: "600",
           minWidth: "9rem" } }, term),
-        el("span", { style: { fontSize: ".875rem" } }, value || "—")),
-      def ? el("p", { class: "figure__sub", style: { margin: ".2rem 0 0 9.7rem" } }, def) : null);
+        mark(el("span", { style: { fontSize: ".875rem" } }, value || "—"),
+          scope, "row:" + term, value || "—")),
+      def ? mark(el("p", { class: "figure__sub", style: { margin: ".2rem 0 0 9.7rem" } }, def),
+        scope, "def:" + term, def) : null);
   }
 
   rebuild();
@@ -600,6 +613,15 @@ export async function renderExplorer(host, slug, catalog) {
 }
 
 // ============================================================ helpers
+/** Show any stored override for a field and make the node editable. */
+function mark(node, scope, field, original) {
+  if (!scope) return node;
+  const over = textOf(scope, field, original);
+  if (over !== original) node.textContent = over;
+  editable(node, scope, field, original);
+  return node;
+}
+
 function plural(name) {
   const n = String(name).toLowerCase();
   if (/s$/.test(n)) return n;

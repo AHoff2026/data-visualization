@@ -425,23 +425,6 @@
     "page": "200"
   },
   {
-    "tab_index": 26,
-    "url": "https://data-explorer.oecd.org/vis?tm=unions&pg=200&snb=508&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_FTPT%2540DF_FTPT&df[ag]=OECD.ELS.SAE&df[vs]=1.0&dq=.EMP.PS._T._T.EMP.MAIN._T.FT%2BPT..A&pd=2010,&to[TIME_PERIOD]=false",
-    "agency": "OECD.ELS.SAE",
-    "dsd": "DSD_FTPT",
-    "flow": "DF_FTPT",
-    "dataflow_id": "DSD_FTPT@DF_FTPT",
-    "version": "1.0",
-    "default_key": ".EMP.PS._T._T.EMP.MAIN._T.FT+PT..A",
-    "period": "2010,",
-    "last_n_mode": "",
-    "last_n": "",
-    "view": "",
-    "topic_raw": "",
-    "theme": "unions",
-    "page": "200"
-  },
-  {
     "tab_index": 27,
     "url": "https://data-explorer.oecd.org/vis?tm=unions&pg=200&snb=508&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_FTPT%2540DF_FTPT_INC_GEN&df[ag]=OECD.ELS.SAE&df[vs]=1.0&dq=.EMP_PT.PT_POP_SUB.M%2BF._T.EMP.MAIN._T.PT..A&pd=2010,&to[TIME_PERIOD]=false",
     "agency": "OECD.ELS.SAE",
