@@ -1,0 +1,9 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "dataviz", "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8231", "--directory",
+        "/Users/alexhoffman/Documents/data-visualization/site"],
+      "port": 8231 }
+  ]
+}

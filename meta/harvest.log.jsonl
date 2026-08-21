@@ -1,0 +1,105 @@
+{"step": "start", "n": 51, "t": "00:30:27"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_PUB_PRV", "ok": true, "bytes": 463427, "t": "00:30:28"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_PUB_DIS_SIC", "ok": true, "bytes": 463372, "t": "00:30:28"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_SOCX_AGG", "ok": true, "bytes": 462979, "t": "00:30:29"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_NET_GDP", "ok": true, "bytes": 462957, "t": "00:30:29"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_TUD", "ok": true, "bytes": 250989, "t": "00:30:29"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_PUB_FAM", "ok": true, "bytes": 463339, "t": "00:30:31"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_IPOP", "ok": true, "bytes": 433394, "t": "00:30:31"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_DPS", "ok": true, "bytes": 433199, "t": "00:30:31"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_CBC", "ok": true, "bytes": 251015, "t": "00:30:32"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_SUMTAB", "ok": true, "bytes": 671406, "t": "00:30:32"}
+{"step": "struct", "flow": "OECD.SDD.NAD__DF_TABLE2", "ok": true, "bytes": 1356902, "t": "00:30:33"}
+{"step": "struct", "flow": "OECD.SDD.NAD__DF_TABLE9A", "ok": true, "bytes": 1357480, "t": "00:30:33"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_AVD_DUR", "ok": true, "bytes": 419102, "t": "00:30:34"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93", "ok": true, "bytes": 849756, "t": "00:30:35"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_ALFS_EMP", "ok": true, "bytes": 851642, "t": "00:30:35"}
+{"step": "struct", "flow": "OECD.SDD.NAD__DF_TABLE5_T501", "ok": true, "bytes": 1180150, "t": "00:30:35"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_TEMP_D", "ok": true, "bytes": 422036, "t": "00:30:36"}
+{"step": "struct", "flow": "OECD.ELS.IMD__DF_MIG_EMP_EDU", "ok": true, "bytes": 376160, "t": "00:30:37"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_TEMP_I_GEN", "ok": true, "bytes": 421909, "t": "00:30:37"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_INVPT_I", "ok": true, "bytes": 420372, "t": "00:30:37"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD", "ok": true, "bytes": 399509, "t": "00:30:38"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_FTPT_COMMON", "ok": true, "bytes": 423557, "t": "00:30:39"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_FTPT_COMMON_INC", "ok": true, "bytes": 423673, "t": "00:31:14"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_DUR_I", "ok": true, "bytes": 419575, "t": "00:31:14"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_DUR_D", "ok": true, "bytes": 419480, "t": "00:31:16"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_FTPT_INC_GEN", "ok": true, "bytes": 423216, "t": "00:31:16"}
+{"step": "struct", "flow": "OECD.ELS.SAE__DF_FTPT", "ok": true, "bytes": 423287, "t": "00:31:17"}
+{"step": "struct", "flow": "OECD.CTP.TPS__DF_RSGLOBAL", "ok": true, "bytes": 1374061, "t": "00:31:17"}
+{"step": "struct", "flow": "OECD.STI.DEP__DF_HH", "ok": true, "bytes": 670300, "t": "00:31:17"}
+{"step": "struct", "flow": "OECD.STI.DEP__DF_IND", "ok": true, "bytes": 672265, "t": "00:31:33"}
+{"step": "struct", "flow": "OECD.ELS.SAE__GENDER_WAGE_GAP", "ok": true, "bytes": 279457, "t": "00:31:33"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR", "ok": true, "bytes": 575643, "t": "00:31:34"}
+{"step": "struct", "flow": "OECD.ELS.SAE__PAY_INCIDENCE", "ok": true, "bytes": 279574, "t": "00:31:34"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR", "ok": true, "bytes": 576001, "t": "00:31:36"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR", "ok": true, "bytes": 576030, "t": "00:31:36"}
+{"step": "struct", "flow": "OECD.SDD.NAD__DF_TABLE2_B6_VPVOP", "ok": true, "bytes": 1355536, "t": "00:31:43"}
+{"step": "struct", "flow": "OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB", "ok": true, "bytes": 1356423, "t": "00:31:43"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS", "ok": true, "bytes": 566435, "t": "00:31:50"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_HOU_EAR", "ok": true, "bytes": 670066, "t": "00:31:50"}
+{"step": "struct", "flow": "OECD.CTP.TPS__DF_TW_COMP", "ok": true, "bytes": 430797, "t": "00:31:51"}
+{"step": "struct", "flow": "OECD.ELS.IMD__DF_MIG_NUP_SEX", "ok": true, "bytes": 376278, "t": "00:31:52"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET", "ok": true, "bytes": 566410, "t": "00:31:52"}
+{"step": "struct", "flow": "OECD.ELS.JAI__DF_HOURSPOV", "ok": true, "bytes": 410392, "t": "00:32:08"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE", "ok": true, "bytes": 575969, "t": "00:32:08"}
+{"step": "struct", "flow": "OECD.EDU.IMEP__DF_LSO_EARN_ALL", "ok": true, "bytes": 576402, "t": "00:32:10"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q", "ok": true, "bytes": 671958, "t": "00:32:10"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q", "ok": true, "bytes": 671598, "t": "00:32:10"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q", "ok": true, "bytes": 671781, "t": "00:32:11"}
+{"step": "struct", "flow": "OECD.SDD.TPS__DF_PDB", "ok": true, "bytes": 680606, "t": "00:32:12"}
+{"step": "struct", "flow": "OECD.ELS.SPD__DF_PW", "ok": true, "bytes": 433218, "t": "00:32:27"}
+{"step": "struct", "flow": "OECD.GOV.GIP__DF_GOV_SPS_2023", "ok": true, "bytes": 385727, "t": "00:32:27"}
+{"step": "struct-done", "t": "00:32:28"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_NET_GDP", "ok": true, "bytes": 114769, "rows": 413, "t": "00:32:30"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_PUB_DIS_SIC", "ok": true, "bytes": 42771081, "rows": 119417, "t": "00:32:34"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_PUB_FAM", "ok": true, "bytes": 34628325, "rows": 97441, "t": "00:32:43"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_DPS", "ok": true, "bytes": 56268, "rows": 210, "t": "00:32:45"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_IPOP", "ok": true, "bytes": 848974, "rows": 2672, "t": "00:32:47"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_TUD", "ok": true, "bytes": 329343, "rows": 1826, "t": "00:32:48"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_CBC", "ok": true, "bytes": 221974, "rows": 1077, "t": "00:32:50"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_SUMTAB", "ok": true, "bytes": 15736738, "rows": 51400, "t": "00:32:58"}
+{"step": "data", "flow": "OECD.SDD.NAD__DF_TABLE2", "ok": true, "bytes": 166405102, "rows": 307419, "t": "00:33:20"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_PUB_PRV", "ok": true, "bytes": 487498442, "rows": 1494980, "t": "00:33:32"}
+{"step": "data", "flow": "OECD.SDD.NAD__DF_TABLE5_T501", "ok": true, "bytes": 165132170, "rows": 289690, "t": "00:34:15"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93", "ok": true, "bytes": 8239743, "rows": 26030, "t": "00:34:20"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_ALFS_EMP", "ok": true, "bytes": 27494230, "rows": 91857, "t": "00:34:29"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_AVD_DUR", "ok": true, "bytes": 2282000, "rows": 9603, "t": "00:34:32"}
+{"step": "data", "flow": "OECD.ELS.IMD__DF_MIG_EMP_EDU", "ok": true, "bytes": 1011486, "rows": 2712, "t": "00:34:34"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_INVPT_I", "ok": true, "bytes": 69143456, "rows": 228974, "t": "00:34:49"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_TEMP_D", "ok": true, "bytes": 24422184, "rows": 100428, "t": "00:34:57"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_TEMP_I_GEN", "ok": true, "bytes": 2747425, "rows": 7860, "t": "00:35:00"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD", "ok": true, "bytes": 61893926, "rows": 175075, "t": "00:35:27"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_FTPT_COMMON", "ok": true, "bytes": 115370565, "rows": 328116, "t": "00:36:02"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_FTPT_COMMON_INC", "ok": true, "bytes": 180171170, "rows": 435547, "t": "00:36:25"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_DUR_I", "ok": true, "bytes": 48969535, "rows": 169027, "t": "00:36:32"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_DUR_D", "ok": true, "bytes": 58525701, "rows": 258612, "t": "00:36:49"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_SOCX_AGG", "ok": true, "bytes": 982480612, "rows": 3060474, "t": "00:37:24"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_FTPT_INC_GEN", "ok": true, "bytes": 52940407, "rows": 143236, "t": "00:37:33"}
+{"step": "data", "flow": "OECD.ELS.SAE__DF_FTPT", "ok": true, "bytes": 333017019, "rows": 1005376, "t": "00:37:40"}
+{"step": "data", "flow": "OECD.STI.DEP__DF_HH", "ok": true, "bytes": 8495743, "rows": 20886, "t": "00:37:44"}
+{"step": "data", "flow": "OECD.STI.DEP__DF_IND", "ok": true, "bytes": 536981205, "rows": 1210576, "t": "00:38:42"}
+{"step": "data", "flow": "OECD.ELS.SAE__GENDER_WAGE_GAP", "ok": true, "bytes": 1102073, "rows": 3975, "t": "00:38:46"}
+{"step": "data", "flow": "OECD.ELS.SAE__PAY_INCIDENCE", "ok": true, "bytes": 1731274, "rows": 6190, "t": "00:38:47"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR", "ok": true, "bytes": 13722779, "rows": 22033, "t": "00:39:06"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR", "ok": true, "bytes": 39221768, "rows": 57621, "t": "00:39:12"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR", "ok": true, "bytes": 38611043, "rows": 57047, "t": "00:39:22"}
+{"step": "data", "flow": "OECD.ELS.IMD__DF_MIG_NUP_SEX", "ok": true, "bytes": 5290622, "rows": 14219, "t": "00:39:25"}
+{"step": "data", "flow": "OECD.CTP.TPS__DF_TW_COMP", "ok": true, "bytes": 45942928, "rows": 123969, "t": "00:39:38"}
+{"step": "data", "flow": "OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB", "ok": true, "bytes": 959265, "rows": 1548, "t": "00:39:41"}
+{"step": "data", "flow": "OECD.SDD.NAD__DF_TABLE2_B6_VPVOP", "ok": true, "bytes": 882155, "rows": 1647, "t": "00:39:43"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_HOU_EAR", "ok": true, "bytes": 9980295, "rows": 41663, "t": "00:39:48"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS", "ok": true, "bytes": 2607139, "rows": 5129, "t": "00:39:51"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET", "ok": true, "bytes": 3865710, "rows": 6433, "t": "00:39:53"}
+{"step": "data", "flow": "OECD.SDD.NAD__DF_TABLE9A", "ok": true, "bytes": 2556634258, "rows": 4559069, "t": "00:40:47"}
+{"step": "data", "flow": "OECD.ELS.JAI__DF_HOURSPOV", "ok": true, "bytes": 15721598, "rows": 42177, "t": "00:40:48"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE", "ok": true, "bytes": 34218650, "rows": 58596, "t": "00:40:57"}
+{"step": "data", "flow": "OECD.CTP.TPS__DF_RSGLOBAL", "ok": true, "bytes": 994652538, "rows": 2806826, "t": "00:41:05"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q", "ok": true, "bytes": 36922691, "rows": 119554, "t": "00:41:11"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q", "ok": true, "bytes": 120827456, "rows": 342745, "t": "00:41:24"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q", "ok": true, "bytes": 109095405, "rows": 328237, "t": "00:41:38"}
+{"step": "data", "flow": "OECD.GOV.GIP__DF_GOV_SPS_2023", "ok": true, "bytes": 626247, "rows": 1565, "t": "00:41:40"}
+{"step": "data", "flow": "OECD.ELS.SPD__DF_PW", "ok": true, "bytes": 182972, "rows": 625, "t": "00:41:42"}
+{"step": "data", "flow": "OECD.EDU.IMEP__DF_LSO_EARN_ALL", "ok": true, "bytes": 591055411, "rows": 999690, "t": "00:42:02"}
+{"step": "data", "flow": "OECD.SDD.TPS__DF_PDB", "ok": true, "bytes": 615016437, "rows": 1741540, "t": "00:42:42"}
+{"step": "done", "ok": 51, "t": "00:42:42"}

@@ -1,0 +1,512 @@
+[
+ {
+  "slug": "OECD.ELS.SPD__DF_NET_GDP",
+  "status": "ok",
+  "series": 39,
+  "obs": 412,
+  "rows": 412,
+  "layout": "single",
+  "bytes": 1568,
+  "src_mb": 0.1
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_PUB_PRV",
+  "status": "ok",
+  "series": 19336,
+  "obs": 584877,
+  "rows": 1494979,
+  "layout": "parts",
+  "bytes": 1677914,
+  "src_mb": 487.5
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "status": "ok",
+  "series": 2388,
+  "obs": 76228,
+  "rows": 119416,
+  "layout": "single",
+  "bytes": 245681,
+  "src_mb": 42.8
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "status": "ok",
+  "series": 39406,
+  "obs": 1187063,
+  "rows": 3060473,
+  "layout": "parts",
+  "bytes": 3118629,
+  "src_mb": 982.5
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_PUB_FAM",
+  "status": "ok",
+  "series": 2190,
+  "obs": 69702,
+  "rows": 97440,
+  "layout": "single",
+  "bytes": 235389,
+  "src_mb": 34.6
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_DPS",
+  "status": "ok",
+  "series": 209,
+  "obs": 209,
+  "rows": 209,
+  "layout": "single",
+  "bytes": 876,
+  "src_mb": 0.1
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_IPOP",
+  "status": "ok",
+  "series": 719,
+  "obs": 2671,
+  "rows": 2671,
+  "layout": "single",
+  "bytes": 8011,
+  "src_mb": 0.8
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_TUD",
+  "status": "ok",
+  "series": 42,
+  "obs": 1825,
+  "rows": 1825,
+  "layout": "single",
+  "bytes": 4477,
+  "src_mb": 0.3
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_CBC",
+  "status": "ok",
+  "series": 39,
+  "obs": 1076,
+  "rows": 1076,
+  "layout": "single",
+  "bytes": 2691,
+  "src_mb": 0.2
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_SUMTAB",
+  "status": "ok",
+  "series": 1368,
+  "obs": 51399,
+  "rows": 51399,
+  "layout": "single",
+  "bytes": 214384,
+  "src_mb": 15.7
+ },
+ {
+  "slug": "OECD.SDD.NAD__DF_TABLE2",
+  "status": "ok",
+  "series": 7915,
+  "obs": 306992,
+  "rows": 307418,
+  "layout": "parts",
+  "bytes": 1429497,
+  "src_mb": 166.4
+ },
+ {
+  "slug": "OECD.SDD.NAD__DF_TABLE9A",
+  "status": "ok",
+  "series": 146568,
+  "obs": 4554814,
+  "rows": 4559068,
+  "layout": "parts",
+  "bytes": 13048981,
+  "src_mb": 2556.6
+ },
+ {
+  "slug": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "status": "ok",
+  "series": 8978,
+  "obs": 288925,
+  "rows": 289689,
+  "layout": "parts",
+  "bytes": 1058863,
+  "src_mb": 165.1
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93",
+  "status": "ok",
+  "series": 637,
+  "obs": 26029,
+  "rows": 26029,
+  "layout": "single",
+  "bytes": 97268,
+  "src_mb": 8.2
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "status": "ok",
+  "series": 4011,
+  "obs": 91856,
+  "rows": 91856,
+  "layout": "single",
+  "bytes": 328293,
+  "src_mb": 27.5
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_AVD_DUR",
+  "status": "ok",
+  "series": 303,
+  "obs": 9602,
+  "rows": 9602,
+  "layout": "single",
+  "bytes": 34272,
+  "src_mb": 2.3
+ },
+ {
+  "slug": "OECD.ELS.IMD__DF_MIG_EMP_EDU",
+  "status": "ok",
+  "series": 334,
+  "obs": 2702,
+  "rows": 2711,
+  "layout": "single",
+  "bytes": 14023,
+  "src_mb": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_INVPT_I",
+  "status": "ok",
+  "series": 7461,
+  "obs": 228973,
+  "rows": 228973,
+  "layout": "single",
+  "bytes": 711526,
+  "src_mb": 69.1
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_TEMP_D",
+  "status": "ok",
+  "series": 3445,
+  "obs": 100231,
+  "rows": 100427,
+  "layout": "single",
+  "bytes": 325466,
+  "src_mb": 24.4
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_TEMP_I_GEN",
+  "status": "ok",
+  "series": 255,
+  "obs": 7659,
+  "rows": 7859,
+  "layout": "single",
+  "bytes": 22151,
+  "src_mb": 2.7
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
+  "status": "ok",
+  "series": 5994,
+  "obs": 174619,
+  "rows": 175074,
+  "layout": "single",
+  "bytes": 616852,
+  "src_mb": 61.9
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_FTPT_COMMON",
+  "status": "ok",
+  "series": 12051,
+  "obs": 328115,
+  "rows": 328115,
+  "layout": "parts",
+  "bytes": 1369569,
+  "src_mb": 115.4
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_FTPT_COMMON_INC",
+  "status": "ok",
+  "series": 15945,
+  "obs": 435546,
+  "rows": 435546,
+  "layout": "parts",
+  "bytes": 1879626,
+  "src_mb": 180.2
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_DUR_I",
+  "status": "ok",
+  "series": 5289,
+  "obs": 168825,
+  "rows": 169026,
+  "layout": "single",
+  "bytes": 670617,
+  "src_mb": 49.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_DUR_D",
+  "status": "ok",
+  "series": 8163,
+  "obs": 257619,
+  "rows": 258611,
+  "layout": "single",
+  "bytes": 801365,
+  "src_mb": 58.5
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_FTPT",
+  "status": "ok",
+  "series": 35268,
+  "obs": 1005375,
+  "rows": 1005375,
+  "layout": "parts",
+  "bytes": 4171146,
+  "src_mb": 333.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_FTPT_INC_GEN",
+  "status": "ok",
+  "series": 5018,
+  "obs": 143235,
+  "rows": 143235,
+  "layout": "single",
+  "bytes": 554274,
+  "src_mb": 52.9
+ },
+ {
+  "slug": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "status": "ok",
+  "series": 77912,
+  "obs": 2111047,
+  "rows": 2806825,
+  "layout": "parts",
+  "bytes": 3460352,
+  "src_mb": 994.7
+ },
+ {
+  "slug": "OECD.STI.DEP__DF_HH",
+  "status": "ok",
+  "series": 2383,
+  "obs": 20885,
+  "rows": 20885,
+  "layout": "single",
+  "bytes": 94854,
+  "src_mb": 8.5
+ },
+ {
+  "slug": "OECD.STI.DEP__DF_IND",
+  "status": "ok",
+  "series": 140196,
+  "obs": 1210330,
+  "rows": 1210575,
+  "layout": "parts",
+  "bytes": 5620589,
+  "src_mb": 537.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__GENDER_WAGE_GAP",
+  "status": "ok",
+  "series": 200,
+  "obs": 3974,
+  "rows": 3974,
+  "layout": "single",
+  "bytes": 19711,
+  "src_mb": 1.1
+ },
+ {
+  "slug": "OECD.ELS.SAE__PAY_INCIDENCE",
+  "status": "ok",
+  "series": 268,
+  "obs": 4575,
+  "rows": 6189,
+  "layout": "single",
+  "bytes": 21775,
+  "src_mb": 1.7
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "status": "ok",
+  "series": 7493,
+  "obs": 16546,
+  "rows": 22032,
+  "layout": "single",
+  "bytes": 112430,
+  "src_mb": 13.7
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
+  "status": "ok",
+  "series": 17357,
+  "obs": 42158,
+  "rows": 57620,
+  "layout": "single",
+  "bytes": 276201,
+  "src_mb": 39.2
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
+  "status": "ok",
+  "series": 15605,
+  "obs": 37615,
+  "rows": 57046,
+  "layout": "single",
+  "bytes": 240376,
+  "src_mb": 38.6
+ },
+ {
+  "slug": "OECD.ELS.IMD__DF_MIG_NUP_SEX",
+  "status": "ok",
+  "series": 690,
+  "obs": 13880,
+  "rows": 14218,
+  "layout": "single",
+  "bytes": 66907,
+  "src_mb": 5.3
+ },
+ {
+  "slug": "OECD.CTP.TPS__DF_TW_COMP",
+  "status": "ok",
+  "series": 4768,
+  "obs": 123968,
+  "rows": 123968,
+  "layout": "single",
+  "bytes": 511533,
+  "src_mb": 45.9
+ },
+ {
+  "slug": "OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB",
+  "status": "ok",
+  "series": 38,
+  "obs": 1545,
+  "rows": 1547,
+  "layout": "single",
+  "bytes": 11199,
+  "src_mb": 1.0
+ },
+ {
+  "slug": "OECD.SDD.NAD__DF_TABLE2_B6_VPVOP",
+  "status": "ok",
+  "series": 40,
+  "obs": 1644,
+  "rows": 1646,
+  "layout": "single",
+  "bytes": 10231,
+  "src_mb": 0.9
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_HOU_EAR",
+  "status": "ok",
+  "series": 238,
+  "obs": 41662,
+  "rows": 41662,
+  "layout": "single",
+  "bytes": 167976,
+  "src_mb": 10.0
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS",
+  "status": "ok",
+  "series": 342,
+  "obs": 3607,
+  "rows": 5128,
+  "layout": "single",
+  "bytes": 15096,
+  "src_mb": 2.6
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET",
+  "status": "ok",
+  "series": 411,
+  "obs": 4290,
+  "rows": 6432,
+  "layout": "single",
+  "bytes": 22978,
+  "src_mb": 3.9
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_HOURSPOV",
+  "status": "ok",
+  "series": 1936,
+  "obs": 42176,
+  "rows": 42176,
+  "layout": "single",
+  "bytes": 30652,
+  "src_mb": 15.7
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE",
+  "status": "ok",
+  "series": 4415,
+  "obs": 41599,
+  "rows": 58595,
+  "layout": "single",
+  "bytes": 215015,
+  "src_mb": 34.2
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
+  "status": "ok",
+  "series": 118291,
+  "obs": 651342,
+  "rows": 999689,
+  "layout": "parts",
+  "bytes": 3099772,
+  "src_mb": 591.1
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q",
+  "status": "ok",
+  "series": 1216,
+  "obs": 119553,
+  "rows": 119553,
+  "layout": "single",
+  "bytes": 419533,
+  "src_mb": 36.9
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q",
+  "status": "ok",
+  "series": 3488,
+  "obs": 342744,
+  "rows": 342744,
+  "layout": "parts",
+  "bytes": 1123052,
+  "src_mb": 120.8
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q",
+  "status": "ok",
+  "series": 3447,
+  "obs": 328236,
+  "rows": 328236,
+  "layout": "parts",
+  "bytes": 1113016,
+  "src_mb": 109.1
+ },
+ {
+  "slug": "OECD.SDD.TPS__DF_PDB",
+  "status": "ok",
+  "series": 57661,
+  "obs": 1741451,
+  "rows": 1741539,
+  "layout": "parts",
+  "bytes": 8069077,
+  "src_mb": 615.0
+ },
+ {
+  "slug": "OECD.GOV.GIP__DF_GOV_SPS_2023",
+  "status": "ok",
+  "series": 1159,
+  "obs": 1564,
+  "rows": 1564,
+  "layout": "single",
+  "bytes": 7417,
+  "src_mb": 0.6
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_PW",
+  "status": "ok",
+  "series": 624,
+  "obs": 624,
+  "rows": 624,
+  "layout": "single",
+  "bytes": 2990,
+  "src_mb": 0.2
+ }
+]
