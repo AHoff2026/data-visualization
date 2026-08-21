@@ -332,3 +332,11 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
 .feat { display: flex; flex-direction: column; }
 .feat > div[style] { flex: 0 0 auto; }
 .featgrid { align-items: start; }
+
+/* small multiples: borders on cells so empty tracks stay paper, not rule-colour */
+.sm-grid { gap: 0; background: var(--paper); }
+.sm-cell { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.sm-cell__r {
+  font-size: .625rem; color: var(--ink-muted); font-variant-numeric: tabular-nums;
+  margin-top: .1rem;
+}

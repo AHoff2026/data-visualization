@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum } from "./util.js";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js";
 
 export const SERIES_SLOTS = 8;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
@@ -49,13 +49,14 @@ export function lineChart(host, series, opts = {}) {
     role: "img", "aria-label": opts.ariaLabel || yLabel || "Line chart" });
 
   // ---- gridlines + y ticks (recessive)
+  const fmtTick = axisFormatter(ticks);
   const gGrid = svgEl("g");
   for (const t of ticks) {
     const y = sy(t);
     if (y < m.t - 1 || y > m.t + ih + 1) continue;
     gGrid.appendChild(svgEl("line", { class: "gridline", x1: m.l, x2: m.l + iw, y1: y, y2: y }));
     const tk = svgEl("text", { class: "tick", x: m.l - 7, y: y + 3.5, "text-anchor": "end" });
-    tk.textContent = fmtCompact(t);
+    tk.textContent = fmtTick(t);
     gGrid.appendChild(tk);
   }
   svg.appendChild(gGrid);
@@ -191,31 +192,54 @@ function truncate(s, n) {
   return s.length <= n ? s : s.slice(0, Math.max(3, n - 1)).trimEnd() + "…";
 }
 
-/** Small multiples: one panel per entity, each against a gray backdrop of all others. */
+/**
+ * Small multiples: one panel per entity, each against a grey backdrop of the others.
+ * scale "shared" makes panels comparable; "own" lets each panel show its own shape.
+ * "auto" picks: with a wide spread of magnitudes a shared scale flattens the small
+ * panels into straight lines, which hides exactly what the reader came for.
+ */
 export function smallMultiples(host, series, opts = {}) {
-  const { height = 84, unit = "", decimals, backdrop = true } = opts;
+  const { height = 84, unit = "", decimals, backdrop = true, scale = "auto" } = opts;
   clear(host);
   const live = series.filter(s => s.points.length);
   if (!live.length) {
     host.appendChild(el("div", { class: "center-note" }, "No observations for this selection."));
-    return;
+    return { scale: null };
   }
-  let xs = [], ys = [];
-  for (const s of live) for (const p of s.points) { xs.push(p.x); ys.push(p.y); }
+
+  const spans = live.map(s => {
+    const ys = s.points.map(p => p.y);
+    return { lo: Math.min(...ys), hi: Math.max(...ys) };
+  });
+  // Compare the largest panel with a low quantile rather than the median: it is
+  // the smallest panels that a shared scale flattens into straight lines.
+  const mags = spans.map(v => Math.max(Math.abs(v.hi), Math.abs(v.lo))).sort((a, b) => a - b);
+  const low = mags[Math.floor(mags.length * 0.2)] || mags[0] || 1;
+  const top = mags[mags.length - 1] || 1;
+  const mode = scale === "auto" ? (top / Math.max(low, 1e-9) > 10 ? "own" : "shared") : scale;
+
+  let xs = [];
+  for (const s of live) for (const p of s.points) xs.push(p.x);
   const x0 = Math.min(...xs), x1 = Math.max(...xs);
-  const y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const gLo = Math.min(...spans.map(v => v.lo));
+  const gHi = Math.max(...spans.map(v => v.hi));
 
   const grid = el("div", { class: "sm-grid" });
-  for (const s of live) {
-    const W = 200, H = height, m = { t: 6, r: 6, b: 4, l: 6 };
+  live.forEach((s, idx) => {
+    const W = 200, H = height, m = { t: 7, r: 7, b: 5, l: 7 };
     const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const lo = mode === "shared" ? gLo : spans[idx].lo;
+    const hi = mode === "shared" ? gHi : spans[idx].hi;
+    const pad = (hi - lo) * 0.08 || Math.abs(hi) * 0.08 || 1;
+    const yl = lo - pad, yh = hi + pad;
     const sx = v => m.l + (x1 === x0 ? iw / 2 : (v - x0) / (x1 - x0) * iw);
-    const sy = v => m.t + (y1 === y0 ? ih / 2 : ih - (v - y0) / (y1 - y0) * ih);
-    const path = pts => pts.map((p, i) => `${i ? "L" : "M"}${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join("");
+    const sy = v => m.t + (yh === yl ? ih / 2 : ih - (v - yl) / (yh - yl) * ih);
+    const path = pts => pts.map((p, i) =>
+      `${i ? "L" : "M"}${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join("");
 
     const svg = svgEl("svg", { class: "chart", viewBox: `0 0 ${W} ${H}`,
       preserveAspectRatio: "none", style: `height:${H}px` });
-    if (backdrop)
+    if (backdrop && mode === "shared")
       for (const o of live) {
         if (o === s) continue;
         svg.appendChild(svgEl("path", { d: path(o.points), fill: "none",
@@ -227,14 +251,18 @@ export function smallMultiples(host, series, opts = {}) {
     svg.appendChild(svgEl("circle", { cx: sx(last.x), cy: sy(last.y), r: 2.5,
       fill: s.color || "var(--accent)" }));
 
-    const cell = el("div", { class: "sm-cell", title: `${s.label} · ${last.period}: ${fmtNum(last.y, decimals)}${unit ? " " + unit : ""}` },
+    grid.appendChild(el("div", { class: "sm-cell",
+      title: `${s.label} · ${last.period}: ${fmtNum(last.y, decimals)}${unit ? " " + unit : ""}` },
       el("div", { class: "sm-cell__t" },
         el("span", {}, truncate(s.label, 18)),
         el("span", { class: "sm-cell__v" }, fmtCompact(last.y))),
-      svg);
-    grid.appendChild(cell);
-  }
+      svg,
+      mode === "own"
+        ? el("div", { class: "sm-cell__r" }, `${fmtCompact(spans[idx].lo)}–${fmtCompact(spans[idx].hi)}`)
+        : null));
+  });
   host.appendChild(grid);
+  return { scale: mode };
 }
 
 /**

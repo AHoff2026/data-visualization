@@ -27,6 +27,7 @@ export async function renderExplorer(host, slug, catalog) {
     entities: [],                  // code indexes on the breakdown dim
     slots: new Map(),              // entity code index -> colour slot (stable)
     view: "lines",
+    smScale: "auto",
     notice: null,
   };
 
@@ -263,8 +264,18 @@ export async function renderExplorer(host, slug, catalog) {
     } else if (ui.view === "table") {
       dataTable(box, list, { unit, filename: slug });
     } else if (ui.view === "small") {
-      smallMultiples(box, list.map((s, i) => ({ ...s,
-        color: slotVar(i % SERIES_SLOTS), context: false })), { unit, height: 78 });
+      const res = smallMultiples(box, list.map((s, i) => ({ ...s,
+        color: slotVar(i % SERIES_SLOTS), context: false })),
+        { unit, height: 78, scale: ui.smScale });
+      if (res.scale)
+        box.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".55rem" } },
+          res.scale === "own"
+            ? "Each panel is on its own vertical scale — the range is printed under it. "
+            : "All panels share one vertical scale, so heights are directly comparable. ",
+          el("button", { class: "chip", style: { marginLeft: ".3rem" },
+            onclick: () => { ui.smScale = res.scale === "own" ? "shared" : "own";
+              buildControls(); draw(); } },
+            res.scale === "own" ? "Use one shared scale" : "Give each its own scale")));
     } else {
       if (stopSize) stopSize();
       stopSize = autosize(box, (h) => lineChart(h, list, { height: 400, unit,

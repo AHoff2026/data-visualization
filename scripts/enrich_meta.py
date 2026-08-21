@@ -8,7 +8,18 @@ ROOT = pathlib.Path.home()/"Documents/data-visualization"
 STRUCT, FLOWS = ROOT/"meta/struct", ROOT/"site/data/flows"
 
 ALLOWED = {"p", "br", "a", "em", "strong", "b", "i", "ul", "ol", "li", "sup", "sub"}
-TAG = re.compile(r'<\s*(/?)\s*([a-zA-Z0-9]+)([^>]*?)/?\s*>')
+# Real HTML tags we recognise. Anything else after "<" is literal text — OECD
+# descriptions are full of things like "<1 month" and "< 3 months", which must
+# not be swallowed as markup.
+KNOWN = ALLOWED | {
+    "div", "span", "table", "thead", "tbody", "tr", "td", "th", "img", "hr",
+    "h1", "h2", "h3", "h4", "h5", "h6", "font", "small", "big", "u", "s",
+    "blockquote", "pre", "code", "script", "style", "html", "body", "head",
+    "dl", "dt", "dd", "section", "article", "figure", "figcaption", "nbsp",
+}
+# A tag body may not cross another "<": otherwise a false start such as
+# "<1 year, ..." swallows the real <p /> that follows it.
+TAG = re.compile(r'<\s*(/?)\s*([a-zA-Z0-9]+)([^<>]*?)/?\s*>')
 HREF = re.compile(r'href\s*=\s*"([^"]*)"|href\s*=\s*\'([^\']*)\'', re.I)
 
 def sanitize(s):
@@ -16,9 +27,11 @@ def sanitize(s):
     if not s: return ""
     out, pos = [], 0
     for m in TAG.finditer(s):
+        closing, tag, attrs = m.group(1), m.group(2).lower(), m.group(3) or ""
+        if tag not in KNOWN:
+            continue                      # leave it in the text, escaped below
         out.append(html.escape(s[pos:m.start()], quote=False))
         pos = m.end()
-        closing, tag, attrs = m.group(1), m.group(2).lower(), m.group(3) or ""
         if tag not in ALLOWED: continue
         if tag == "br" or (tag == "p" and "/" in m.group(0)[-2:] and not closing):
             out.append("<br>"); continue

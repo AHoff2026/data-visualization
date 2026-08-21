@@ -1,0 +1,34 @@
+ok   OECD.ELS.SPD__DF_NET_GDP                     checks=  3
+ok   OECD.ELS.SPD__DF_PUB_PRV                     checks= 30
+ok   OECD.ELS.SPD__DF_PUB_DIS_SIC                 checks= 27
+ok   OECD.ELS.SPD__DF_SOCX_AGG                    checks= 35
+ok   OECD.ELS.SPD__DF_PUB_FAM                     checks= 25
+ok   OECD.ELS.SPD__DF_DPS                         checks= 10
+ok   OECD.ELS.SPD__DF_IPOP                        checks= 29
+ok   OECD.ELS.SAE__DF_TUD                         checks=  3
+ok   OECD.ELS.SAE__DF_CBC                         checks=  3
+ok   OECD.SDD.TPS__DF_SUMTAB                      checks= 33
+ok   OECD.SDD.NAD__DF_TABLE2                      checks= 27
+ok   OECD.SDD.NAD__DF_TABLE9A                     checks= 35
+ok   OECD.SDD.NAD__DF_TABLE5_T501                 checks= 24
+ok   OECD.SDD.TPS__DF_ALFS_EMP_ICSE93             checks= 16
+ok   OECD.SDD.TPS__DF_ALFS_EMP                    checks= 30
+ok   OECD.ELS.SAE__DF_AVD_DUR                     checks= 15
+ok   OECD.ELS.IMD__DF_MIG_EMP_EDU                 checks= 12
+ok   OECD.ELS.SAE__DF_INVPT_I                     checks= 24
+ok   OECD.ELS.SAE__DF_TEMP_D                      checks= 22
+ok   OECD.ELS.SAE__DF_TEMP_I_GEN                  checks= 10
+ok   OECD.ELS.SAE__DF_AVG_USL_WK_WKD              checks= 23
+ok   OECD.ELS.SAE__DF_FTPT_COMMON                 checks= 27
+FAIL OECD.ELS.SAE__DF_FTPT_COMMON_INC             checks=  0
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart, .figure .center-note') to be visible
+
+      ↳ PAGEERROR SyntaxError: Importing binding name 'autosize' is not found.
+FAIL OECD.ELS.SAE__DF_DUR_I                       checks=  0
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart, .figure .center-note') to be visible
+
+      ↳ PAGEERROR SyntaxError: Importing binding name 'autosize' is not found.
