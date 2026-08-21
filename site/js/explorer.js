@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=82f6a282";
-import { getFlowMeta, getSeries } from "./store.js?v=82f6a282";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=82f6a282";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=82f6a282";
-import { dataTable } from "./table.js?v=82f6a282";
-import { editable, textOf } from "./edits.js?v=82f6a282";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=6927b051";
+import { getFlowMeta, getSeries } from "./store.js?v=6927b051";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=6927b051";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=6927b051";
+import { dataTable } from "./table.js?v=6927b051";
+import { editable, textOf } from "./edits.js?v=6927b051";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -39,6 +39,7 @@ export async function renderExplorer(host, slug, catalog) {
   catch (e) { return fatal(host, `Could not load this dataset. ${e.message}`); }
 
   const SCOPE = `/d/${slug}`;          // key for manual text overrides
+  let everSeen = [];                   // codes that appear anywhere in the data
   const dims = meta.dims;
   const areaDim = meta.area_dim && dims.some(d => d.id === meta.area_dim) ? meta.area_dim : null;
   const D = dims.length;
@@ -72,6 +73,7 @@ export async function renderExplorer(host, slug, catalog) {
   async function load(areas, opts) {
     const r = await getSeries(slug, areas, opts);
     records = r.records; partial = r.partial;
+    refreshSeen();
   }
 
   /** Fetch the complete per-area data behind the first paint, then refresh the
@@ -117,6 +119,15 @@ export async function renderExplorer(host, slug, catalog) {
   }
 
   // ============================================================ availability
+  /** Codes that appear anywhere in the data, per dimension. A value that needs
+   *  another dial to move is not missing — saying "no data here" about it sends
+   *  the reader away from a series that does exist. */
+  function refreshSeen() {
+    const sets = dims.map(() => new Set());
+    for (const r of records) for (let i = 0; i < D; i++) sets[i].add(r.k[i]);
+    everSeen = sets;
+  }
+
   /** One pass: live records (match every fixed dim) + per-dim conditional availability. */
   function scan() {
     const bi = dimIndex[ui.breakdown];
@@ -494,16 +505,67 @@ export async function renderExplorer(host, slug, catalog) {
       row1.appendChild(el("div", { class: "field" }, el("label", {}, "Compare by"), sel));
     }
 
+    // The indicator and its unit are one axis, not two: an indicator mostly
+    // determines its unit, so two menus produce a grid that is empty by
+    // construction. Offer the combinations the data actually contains.
+    const mI = dimIndex["MEASURE"], uI = dimIndex["UNIT_MEASURE"];
+    const merged = new Set();
+    if (mI !== undefined && uI !== undefined
+        && dims[mI].id !== ui.breakdown && dims[uI].id !== ui.breakdown
+        && !(dims[mI].id in tech) && !(dims[uI].id in tech)
+        && (dims[mI].ids.length > 1 || dims[uI].ids.length > 1)) {
+      const combos = new Map();
+      for (const r of records) {
+        const key = r.k[mI] + ":" + r.k[uI];
+        if (!combos.has(key)) combos.set(key, [r.k[mI], r.k[uI]]);
+      }
+      if (combos.size > 1) {
+        merged.add(mI); merged.add(uI);
+        const unitsPerMeasure = new Map();
+        for (const [m, u] of combos.values()) {
+          if (!unitsPerMeasure.has(m)) unitsPerMeasure.set(m, new Set());
+          unitsPerMeasure.get(m).add(u);
+        }
+        const label = (m, u) => {
+          const mn = dims[mI].names[m] || dims[mI].ids[m];
+          const un = dims[uI].names[u] || dims[uI].ids[u];
+          if (dims[mI].ids.length <= 1) return un;
+          return unitsPerMeasure.get(m).size > 1 ? `${mn} · ${un}` : mn;
+        };
+        const list = [...combos.values()]
+          .sort((a, b) => label(a[0], a[1]).localeCompare(label(b[0], b[1])));
+        const sel = el("select", { onchange: (e) => {
+          const [m, u] = list[+e.target.value];
+          ui.xRange = null;
+          ui.picks[mI] = m; ui.picks[uI] = u;
+          const r = repair(uI);
+          state = r;
+          ui.notice = r.repaired && r.repaired !== "none"
+            ? `Adjusted to keep data in view: ${r.repaired.join("; ")}.` : null;
+          const hasB = state.avail[dimIndex[ui.breakdown]];
+          const kept = ui.entities.filter(x => hasB.has(x));
+          if (kept.length) ui.entities = kept; else seedEntities(state.avail);
+          reslot(); rebuild();
+        } });
+        list.forEach(([m, u], j) => sel.appendChild(el("option", { value: j,
+          selected: m === ui.picks[mI] && u === ui.picks[uI] }, label(m, u))));
+        row1.appendChild(el("div", { class: "field" },
+          el("label", {}, "Indicator"), sel));
+      }
+    }
+
     for (let i = 0; i < D; i++) {
       const d = dims[i];
       if (d.id === ui.breakdown || d.ids.length <= 1) continue;
       if (d.id in tech) continue;          // lives under Advanced
+      if (merged.has(i)) continue;         // shown in the combined Indicator dial
       const has = state.avail[i];
       const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
       d.ids.forEach((code, j) => {
         const ok = has.has(j);
         sel.appendChild(el("option", { value: j, selected: j === ui.picks[i] },
-          (d.names[j] || code) + (ok || partial ? "" : "  — no data here")));
+          (d.names[j] || code) +
+          (everSeen[i].has(j) || partial ? "" : "  — not published")));
       });
       row1.appendChild(el("div", { class: "field" },
         el("label", { title: d.def || "" }, d.name), sel));
@@ -522,7 +584,8 @@ export async function renderExplorer(host, slug, catalog) {
         const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
         d.ids.forEach((code, j) => sel.appendChild(el("option", { value: j,
           selected: j === ui.picks[i] },
-          (d.names[j] || code) + (has.has(j) || partial ? "" : "  — no data here"))));
+          (d.names[j] || code) +
+          (everSeen[i].has(j) || partial ? "" : "  — not published"))));
         wrap.appendChild(el("div", { class: "field" }, el("label", {}, d.name), sel));
       }
       det.appendChild(wrap);
@@ -577,7 +640,7 @@ export async function renderExplorer(host, slug, catalog) {
     const idxs = d.ids.map((_, i) => i).filter(i =>
       (!q || (d.names[i] || "").toLowerCase().includes(q) || d.ids[i].toLowerCase().includes(q))
       && (!core || core.has(d.ids[i]) || ui.entities.includes(i)));
-    const withData = partial ? idxs : idxs.filter(i => has.has(i));
+    const withData = partial ? idxs : idxs.filter(i => everSeen[dimIndex[ui.breakdown]].has(i));
     const shown = withData.slice(0, 400);
     for (const i of shown) chipBox.appendChild(chip(d, i));
     const rest = idxs.length - withData.length;
