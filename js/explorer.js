@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=6927b051";
-import { getFlowMeta, getSeries } from "./store.js?v=6927b051";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=6927b051";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=6927b051";
-import { dataTable } from "./table.js?v=6927b051";
-import { editable, textOf } from "./edits.js?v=6927b051";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=38945d4c";
+import { getFlowMeta, getSeries } from "./store.js?v=38945d4c";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=38945d4c";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=38945d4c";
+import { dataTable } from "./table.js?v=38945d4c";
+import { editable, textOf } from "./edits.js?v=38945d4c";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -561,7 +561,12 @@ export async function renderExplorer(host, slug, catalog) {
       if (merged.has(i)) continue;         // shown in the combined Indicator dial
       const has = state.avail[i];
       const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
-      d.ids.forEach((code, j) => {
+      const resid = new Set(d.residual || []);
+      const order = d.ids.map((_, j) => j)
+        .sort((x, y) => (resid.has(x) - resid.has(y))
+          || (d.names[x] || "").localeCompare(d.names[y] || ""));
+      order.forEach((j) => {
+        const code = d.ids[j];
         const ok = has.has(j);
         sel.appendChild(el("option", { value: j, selected: j === ui.picks[i] },
           (d.names[j] || code) +
