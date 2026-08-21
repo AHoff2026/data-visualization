@@ -1,5 +1,5 @@
 // ---------- hand-rolled editorial SVG charts ----------
-import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=2f531cbd";
+import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js?v=ceb6040b";
 
 export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
@@ -206,17 +206,12 @@ export function lineChart(host, series, opts = {}) {
   return svg;
 }
 
-/** A unit as a symbol, not a sentence: "Percentage of employment" -> "%". */
+/** A unit as a symbol, not a sentence. Percentages get "%"; everything else
+ *  shows the bare number — the unit is already named above the chart. */
 export function shortUnit(name) {
   const n = String(name || "").toLowerCase();
-  if (!n) return "";
   if (n.includes("percent") || n.startsWith("%")) return "%";
   if (n.includes("per thousand")) return "\u2030";
-  if (n.includes("dollar")) return " $";
-  if (n.includes("euro")) return " \u20ac";
-  if (n.includes("hour")) return " h";
-  if (n.includes("index")) return "";
-  if (n.includes("year")) return " yr";
   return "";
 }
 

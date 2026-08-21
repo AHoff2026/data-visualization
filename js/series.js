@@ -1,6 +1,6 @@
 // ---------- pure series logic, shared by the explorer and the home page ----------
-import { periodToNum } from "./util.js?v=2f531cbd";
-import { slotVar, SERIES_SLOTS } from "./chart.js?v=2f531cbd";
+import { periodToNum } from "./util.js?v=ceb6040b";
+import { slotVar, SERIES_SLOTS } from "./chart.js?v=ceb6040b";
 
 export const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
