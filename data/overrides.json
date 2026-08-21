@@ -1,0 +1,28 @@
+{
+  "/": {
+    "kicker": "Alex Hoffman",
+    "title": "Labor, inequality, and social provisioning"
+  },
+  "/d/OECD.ELS.SAE__DF_FTPT_COMMON": {
+    "desc": "This dataset is based on an OECD harmonized definition contains data on full-time and part-time employment according to a common definition of 30-usual weekly hours of work in the main job. Data are broken down by professional status - employees, total employment - sex and standardised age groups (15-24, 25-54, 55+, total)\n<br>\nIn order to facilitate analysis and comparisons over time, historical data for OECD members have been provided over as long a period as possible, often even before a country became a member of the Organisation. Information on the membership dates of all OECD countries can be found at <a href=\"http://www.oecd.org/about/membersandpartners/list-oecd-member-countries.htm\" target=\"_blank\" rel=\"noopener noreferrer\">OECD Ratification Dates</a>.\n<br>\nFor detailed information on labour force surveys for all countries please see <a href=\"https://www.oecd.org/content/dam/oecd/en/data/datasets/employability-data/LFSNOTES_SOURCES.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">LFS_NOTES_SOURCES</a>."
+  },
+  "/d/OECD.ELS.SAE__DF_TUD": {
+    "desc": "The OECD/AIAS ICTWSS database is publicly available at: <a href=\"http://www.oecd.org/employment/ictwss-database.htm\" target=\"_blank\" rel=\"noopener noreferrer\">oecd.org</a>"
+  },
+  "/d/OECD.ELS.SAE__GENDER_WAGE_GAP": {
+    "desc": "This dataset contains gender wage gaps defined as:&nbsp;<div><br></div><div>1) the unadjusted difference between median wages of men and women relative to the median wages of men,&nbsp;</div><div>2) the unadjusted difference between mean wages of men and women relative to the mean wages of men,&nbsp;</div><div>3) at the 1st decile and&nbsp;</div><div>4) at the 9th decile.</div>",
+    "figsub": "Percent lower than men ·  United Kingdom"
+  },
+  "/featured/OECD.ELS.SAE__DF_TUD": {
+    "title": "Union membership has fallen"
+  },
+  "/featured/OECD.ELS.SAE__DF_CBC": {
+    "title": "As has collective bargaining coverage, but not universally"
+  },
+  "/featured/OECD.ELS.SPD__DF_NET_GDP": {
+    "title": "Fiscal cost of the welfare state"
+  },
+  "/featured/OECD.ELS.SAE__GENDER_WAGE_GAP": {
+    "title": "The gender wage gap has narrowed"
+  }
+}
