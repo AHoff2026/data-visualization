@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=49de8e44";
-import { getFlowMeta, getSeries } from "./store.js?v=49de8e44";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=49de8e44";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=49de8e44";
-import { dataTable } from "./table.js?v=49de8e44";
-import { editable, textOf } from "./edits.js?v=49de8e44";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=82f6a282";
+import { getFlowMeta, getSeries } from "./store.js?v=82f6a282";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=82f6a282";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=82f6a282";
+import { dataTable } from "./table.js?v=82f6a282";
+import { editable, textOf } from "./edits.js?v=82f6a282";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -53,6 +53,7 @@ export async function renderExplorer(host, slug, catalog) {
     view: "lines",
     smScale: "auto",
     showAll: false,          // tier two of the area list
+    xRange: null,            // [from, to] when the time axis is zoomed
     notice: null,
   };
 
@@ -321,7 +322,17 @@ export async function renderExplorer(host, slug, catalog) {
   let stopSize = null;
   function draw() {
     const y = window.scrollY;
-    const list = activeSeries(state.live);
+    let list = activeSeries(state.live);
+    if (ui.xRange && ui.view === "lines") {
+      const [a, b] = ui.xRange;
+      const zoomed = [];
+      for (const ser of list) {
+        const pts = ser.points.filter(p => p.x >= a && p.x <= b);
+        if (pts.length) zoomed.push({ ...ser, points: pts });
+      }
+      if (zoomed.length) { zoomed.zeroed = list.zeroed; list = zoomed; }
+      else ui.xRange = null;
+    }
     const unit = unitLabel();
     const d = dims[dimIndex[ui.breakdown]];
 
@@ -334,6 +345,13 @@ export async function renderExplorer(host, slug, catalog) {
     editable(figSub, SCOPE, "figsub", subOriginal);
     figure.appendChild(el("div", { class: "figure__head" }, figTitle, figSub));
 
+    if (ui.xRange && ui.view === "lines") {
+      const fmtY = (v) => String(Math.round(v));
+      figure.appendChild(el("div", { class: "zoombar" },
+        el("span", {}, `Zoomed to ${fmtY(ui.xRange[0])}–${fmtY(ui.xRange[1])}`),
+        el("button", { class: "chip", onclick: () => { ui.xRange = null; draw(); } },
+          "Show the full period")));
+    }
     const box = el("div", { style: { minHeight: "400px" } });
     figure.appendChild(box);
 
@@ -360,7 +378,12 @@ export async function renderExplorer(host, slug, catalog) {
     } else {
       if (stopSize) stopSize();
       stopSize = autosize(box, (h) => lineChart(h, list, { height: 400, unit,
-        ariaLabel: `${meta.name}. ${unit}. ${list.length} series.` }));
+        ariaLabel: `${meta.name}. ${unit}. ${list.length} series.`,
+        onZoom: (from, to) => {
+          if (to - from < 1e-6) return;
+          ui.xRange = [from, to];
+          draw();
+        } }));
       const coloured = list.filter(s => !s.context);
       if (coloured.length > 1) {
         const lg = el("div", { class: "legend" });
@@ -383,8 +406,7 @@ export async function renderExplorer(host, slug, catalog) {
 
     // a standing credit line, so a screenshot carries its attribution with it
     figure.appendChild(el("div", { class: "figure__credit" },
-      el("span", {}, `Forest & the Trees · ahoff2026.github.io/data-visualization`),
-      el("span", {}, `Data © OECD. Chart ${new Date().getFullYear()} Alex Hoffman, CC BY 4.0.`)));
+      el("span", {}, `Chart © ${new Date().getFullYear()} Alex Hoffman · CC BY 4.0`)));
 
     window.scrollTo({ top: y });
     writeUrlState();
@@ -428,6 +450,7 @@ export async function renderExplorer(host, slug, catalog) {
   function rebuild() { buildControls(); showNotice(); draw(); buildExplain(); }
 
   function applyChange(dimIdx, codeIdx) {
+    ui.xRange = null;
     ui.picks[dimIdx] = codeIdx;
     const r = repair(dimIdx);
     state = r;
