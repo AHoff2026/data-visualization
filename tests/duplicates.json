@@ -1,0 +1,35 @@
+[
+ {
+  "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
+  "flow": "Average usual weekly hours worked on the main job",
+  "a": "CAN",
+  "a_name": "Canada",
+  "b": "IDN",
+  "b_name": "Indonesia",
+  "identical": 972,
+  "overlap": 972,
+  "share": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
+  "flow": "Average usual weekly hours worked on the main job",
+  "a": "CAN",
+  "a_name": "Canada",
+  "b": "RUS",
+  "b_name": "Russia",
+  "identical": 864,
+  "overlap": 864,
+  "share": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
+  "flow": "Average usual weekly hours worked on the main job",
+  "a": "IDN",
+  "a_name": "Indonesia",
+  "b": "RUS",
+  "b_name": "Russia",
+  "identical": 540,
+  "overlap": 540,
+  "share": 1.0
+ }
+]
