@@ -21,10 +21,22 @@
     <nav class="masthead__nav">
       <a class="navlink" href="#/">Datasets</a>
       <a class="navlink" href="https://data-explorer.oecd.org/" target="_blank" rel="noopener">OECD source</a>
+      <button class="navlink" id="editbtn" aria-pressed="false">Edit text</button>
       <button class="iconbtn" id="themebtn" aria-label="Switch theme"></button>
     </nav>
   </div>
 </header>
+
+<div id="editbar" hidden>
+  <div class="wrap editbar__in">
+    <span><b>Edit mode.</b> Click any title or description to change it. Changes are
+      saved in this browser.</span>
+    <span class="editbar__n" id="editcount"></span>
+    <button class="chip" id="exportedits">Export changes</button>
+    <button class="chip" id="resetedits">Undo all on this page</button>
+    <button class="chip" id="doneedits">Done</button>
+  </div>
+</div>
 
 <div class="wrap">
   <div class="shell">

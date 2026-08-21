@@ -3,6 +3,7 @@ import { el, clear, fmtNum, periodToNum, debounce } from "./util.js";
 import { getFlowMeta, getSeries } from "./store.js";
 import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js";
 import { dataTable } from "./table.js";
+import { editable, textOf } from "./edits.js";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -36,6 +37,7 @@ export async function renderExplorer(host, slug, catalog) {
   try { meta = await getFlowMeta(slug); }
   catch (e) { return fatal(host, `Could not load this dataset. ${e.message}`); }
 
+  const SCOPE = `/d/${slug}`;          // key for manual text overrides
   const dims = meta.dims;
   const areaDim = meta.area_dim && dims.some(d => d.id === meta.area_dim) ? meta.area_dim : null;
   const D = dims.length;
@@ -200,12 +202,14 @@ export async function renderExplorer(host, slug, catalog) {
     for (const [e, s] of [...ui.slots]) {
       if (!ui.entities.includes(e)) ui.slots.delete(e); else used.add(s);
     }
-    for (const e of ui.entities) {
-      if (ui.slots.has(e)) continue;
+    ui.entities.forEach((e, pos) => {
+      if (ui.slots.has(e)) return;
       let s = 0; while (used.has(s) && s < SERIES_SLOTS) s++;
       if (s < SERIES_SLOTS) { ui.slots.set(e, s); used.add(s); }
-      else ui.slots.set(e, -1);   // beyond the palette: grey context line
-    }
+      // Past the palette every further series still gets a colour, cycling the
+      // slots; the direct label on each line carries identity.
+      else ui.slots.set(e, pos % SERIES_SLOTS);
+    });
   }
 
   // ---- apply any state carried in the URL, then validate it against the data
@@ -242,12 +246,19 @@ export async function renderExplorer(host, slug, catalog) {
 
   function buildHeader() {
     const h = el("header", { style: { marginBottom: "1.25rem" } });
-    h.appendChild(el("p", { class: "kicker" }, topicLabel(catalog, meta.topic)));
-    h.appendChild(el("h1", {}, meta.name));
+    const topic = topicLabel(catalog, meta.topic);
+    const kick = el("p", { class: "kicker" }, textOf(SCOPE, "kicker", topic));
+    const title = el("h1", {}, textOf(SCOPE, "title", meta.name));
+    editable(kick, SCOPE, "kicker", topic);
+    editable(title, SCOPE, "title", meta.name);
+    h.appendChild(kick);
+    h.appendChild(title);
     if (meta.desc_html) {
       const short = (meta.desc_text || "").length > 300;
-      const body = el("div", { class: "standfirst", html: meta.desc_html,
+      const body = el("div", { class: "standfirst",
+        html: textOf(SCOPE, "desc", meta.desc_html),
         style: { maxWidth: "44rem" } });
+      editable(body, SCOPE, "desc", meta.desc_html, { plain: false });
       if (short) {
         body.classList.add("clamped");
         const more = el("button", { class: "chip", style: { marginTop: ".5rem" },
@@ -308,10 +319,13 @@ export async function renderExplorer(host, slug, catalog) {
     const d = dims[dimIndex[ui.breakdown]];
 
     clear(figure);
-    figure.appendChild(el("div", { class: "figure__head" },
-      el("div", { class: "figure__title" }, meta.name),
-      el("div", { class: "figure__sub" },
-        [unit, describePicks()].filter(Boolean).join("  ·  ") || " ")));
+    const figTitle = el("div", { class: "figure__title" },
+      textOf(SCOPE, "figtitle", meta.name));
+    editable(figTitle, SCOPE, "figtitle", meta.name);
+    const subOriginal = [unit, describePicks()].filter(Boolean).join("  \u00b7  ") || "\u00a0";
+    const figSub = el("div", { class: "figure__sub" }, textOf(SCOPE, "figsub", subOriginal));
+    editable(figSub, SCOPE, "figsub", subOriginal);
+    figure.appendChild(el("div", { class: "figure__head" }, figTitle, figSub));
 
     const box = el("div", { style: { minHeight: "400px" } });
     figure.appendChild(box);
@@ -352,8 +366,8 @@ export async function renderExplorer(host, slug, catalog) {
 
     figure.appendChild(el("div", { class: "figure__foot" },
       el("span", {}, `Showing ${list.length} of ${d.ids.length} · ${plural(d.name)}` +
-        (list.some(s => s.context)
-          ? ` · ${list.filter(s => s.context).length} drawn in grey and labelled on the chart, because the palette holds ${SERIES_SLOTS} distinct colours`
+        (list.length > SERIES_SLOTS
+          ? ` · past ${SERIES_SLOTS} series the colours repeat, so read the label at the end of each line`
           : "")),
       el("span", {}, "Source: OECD · ",
         el("a", { href: meta.source_url, target: "_blank", rel: "noopener" },
@@ -468,7 +482,7 @@ export async function renderExplorer(host, slug, catalog) {
       row2.appendChild(el("button", { class: "chip", onclick: async () => {
         ui.entities = catalog.default_countries.map(c => d.ids.indexOf(c))
           .filter(i => i >= 0 && state.avail[dimIndex[ui.breakdown]].has(i));
-        ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, "My countries"));
+        ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, "Sample countries"));
     row2.appendChild(el("button", { class: "chip", onclick: async () => {
       ui.entities = [...state.avail[dimIndex[ui.breakdown]]].sort((a, b) => a - b).slice(0, SERIES_SLOTS);
       ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, `First ${SERIES_SLOTS}`));

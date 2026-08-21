@@ -1,7 +1,7 @@
 // ---------- hand-rolled editorial SVG charts ----------
 import { el, clear, niceTicks, fmtCompact, fmtNum, periodToNum, axisFormatter } from "./util.js";
 
-export const SERIES_SLOTS = 8;
+export const SERIES_SLOTS = 13;
 export const slotVar = (i) => `var(--s${(i % SERIES_SLOTS) + 1})`;
 
 const NS = "http://www.w3.org/2000/svg";

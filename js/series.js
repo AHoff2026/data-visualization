@@ -74,7 +74,7 @@ export function toSeries(meta, live, breakdownIdx, entities, slotOf) {
     })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
     if (!points.length) continue;
     const slot = slotOf ? slotOf(e) : out.length;
-    const ctx = slot === undefined || slot < 0 || slot >= SERIES_SLOTS;
+    const ctx = slot === undefined || slot < 0;
     out.push({ id: d.ids[e], label: d.names[e] || d.ids[e],
       color: ctx ? "var(--context)" : slotVar(slot), context: ctx, points });
   }
