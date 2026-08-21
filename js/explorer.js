@@ -1,9 +1,9 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=ceb6040b";
-import { getFlowMeta, getSeries } from "./store.js?v=ceb6040b";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=ceb6040b";
-import { dataTable } from "./table.js?v=ceb6040b";
-import { editable, textOf } from "./edits.js?v=ceb6040b";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=1dd8c366";
+import { getFlowMeta, getSeries } from "./store.js?v=1dd8c366";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=1dd8c366";
+import { dataTable } from "./table.js?v=1dd8c366";
+import { editable, textOf } from "./edits.js?v=1dd8c366";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -51,6 +51,7 @@ export async function renderExplorer(host, slug, catalog) {
     slots: new Map(),              // entity code index -> colour slot (stable)
     view: "lines",
     smScale: "auto",
+    showAll: false,          // tier two of the area list
     notice: null,
   };
 
@@ -489,11 +490,16 @@ export async function renderExplorer(host, slug, catalog) {
     chipSearch = el("input", { type: "search",
       placeholder: `Filter ${d.name.toLowerCase()}…`, style: { minWidth: "12rem" } });
     row2.appendChild(chipSearch);
-    if (d.id === areaDim)
+    if (d.id === areaDim) {
       row2.appendChild(el("button", { class: "chip", onclick: async () => {
-        ui.entities = catalog.default_countries.map(c => d.ids.indexOf(c))
+        const want = catalog.sample_countries || catalog.default_countries;
+        ui.entities = want.map(c => d.ids.indexOf(c))
           .filter(i => i >= 0 && state.avail[dimIndex[ui.breakdown]].has(i));
         ui.slots.clear(); reslot(); await maybeReload(); rebuild(); } }, "Sample countries"));
+      row2.appendChild(el("button", { class: "chip", "aria-pressed": String(ui.showAll),
+        onclick: () => { ui.showAll = !ui.showAll; buildControls(); } },
+        ui.showAll ? "Hide additional countries" : "Additional countries"));
+    }
     row2.appendChild(el("button", { class: "chip", onclick: () => {
       ui.entities = []; ui.slots.clear(); paintChips(); draw(); } }, "Clear"));
     controls.appendChild(row2);
@@ -519,8 +525,13 @@ export async function renderExplorer(host, slug, catalog) {
     const d = dims[dimIndex[ui.breakdown]];
     const has = state.avail[dimIndex[ui.breakdown]];
     const q = (chipSearch?.value || "").trim().toLowerCase();
+    // Tier one is the short list of areas worth comparing; everything else sits
+    // behind "Additional countries" (a search always looks across both).
+    const core = (d.id === areaDim && !ui.showAll && !q && catalog.core_areas)
+      ? new Set(catalog.core_areas) : null;
     const idxs = d.ids.map((_, i) => i).filter(i =>
-      (!q || (d.names[i] || "").toLowerCase().includes(q) || d.ids[i].toLowerCase().includes(q)));
+      (!q || (d.names[i] || "").toLowerCase().includes(q) || d.ids[i].toLowerCase().includes(q))
+      && (!core || core.has(d.ids[i]) || ui.entities.includes(i)));
     const withData = partial ? idxs : idxs.filter(i => has.has(i));
     const shown = withData.slice(0, 400);
     for (const i of shown) chipBox.appendChild(chip(d, i));
@@ -528,6 +539,9 @@ export async function renderExplorer(host, slug, catalog) {
     if (rest > 0)
       chipBox.appendChild(el("span", { class: "figure__sub", style: { alignSelf: "center" } },
         `${rest} more have no data for this combination`));
+    if (core)
+      chipBox.appendChild(el("span", { class: "figure__sub", style: { alignSelf: "center" } },
+        `${d.ids.length - shown.length} further areas under “Additional countries”`));
   }
 
   function chip(d, i) {
@@ -553,7 +567,7 @@ export async function renderExplorer(host, slug, catalog) {
   function buildExplain() {
     clear(explain);
     const sec = el("section", { style: { marginTop: "2rem", maxWidth: "48rem" } });
-    const HEAD = "How to read this";
+    const HEAD = "Details";
     const head = el("h2", { style: { fontSize: "1.15rem", marginBottom: ".6rem" } },
       textOf(SCOPE, "explainhead", HEAD));
     editable(head, SCOPE, "explainhead", HEAD);
@@ -569,6 +583,7 @@ export async function renderExplorer(host, slug, catalog) {
     for (let i = 0; i < D; i++) {
       const d = dims[i];
       if (d.ids.length <= 1 || d.id === "MEASURE" || d.id === "UNIT_MEASURE") continue;
+      if (d.id === areaDim) continue;        // the area chips already show this
       const cur = d.id === ui.breakdown
         ? `${ui.entities.length} selected of ${d.ids.length}`
         : d.names[ui.picks[i]];
