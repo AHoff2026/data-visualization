@@ -1,6 +1,6 @@
 // ---------- pure series logic, shared by the explorer and the home page ----------
-import { periodToNum } from "./util.js?v=9dcc99fd";
-import { slotVar, SERIES_SLOTS } from "./chart.js?v=9dcc99fd";
+import { periodToNum } from "./util.js?v=49de8e44";
+import { slotVar, SERIES_SLOTS } from "./chart.js?v=49de8e44";
 
 export const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -49,16 +49,53 @@ export function desiredPicks(meta) {
 }
 
 /** Adopt the real record closest to the desired defaults, so picks are never empty. */
-export function seedPicks(meta, records, breakdownIdx) {
+/**
+ * @param constrain  dimension index -> code index that must hold. Technical
+ *   dials are pinned before seeding; pinning them afterwards can invalidate the
+ *   chosen unit, and the repair pass then gives up the unit rather than the
+ *   transformation — which is exactly backwards.
+ */
+export function seedPicks(meta, records, breakdownIdx, constrain = null) {
   const want = desiredPicks(meta);
   const D = meta.dims.length;
-  // The unit decides whether the chart is comparable at all, so it outweighs
-  // the other dimensions; otherwise a record matching six incidental defaults
-  // beats one that is actually expressed as a percentage.
   const weight = meta.dims.map(d =>
     d.id === "UNIT_MEASURE" ? 12 : d.id === "MEASURE" ? 4 : 1);
+
+  // 1. Choose the unit first, ranking only units that actually carry records.
+  //    A dataflow can declare a percentage it never publishes.
+  const uIdx = meta.dims.findIndex(d => d.id === "UNIT_MEASURE");
+  let pool = records;
+  if (uIdx >= 0 && uIdx !== breakdownIdx) {
+    const present = new Map();          // unit -> how many records carry it
+    for (const r of records) present.set(r.k[uIdx], (present.get(r.k[uIdx]) || 0) + 1);
+    const dim = meta.dims[uIdx];
+    let bestU = -1, bestR = -1, bestN = -1;
+    for (const [j, n] of present) {
+      const rank = unitRank(dim.names[j]);
+      // Rank first, then coverage: several units can tie at "a percentage", and
+      // the best-covered one is the headline series rather than a niche cut.
+      if (rank > bestR || (rank === bestR && n > bestN)) { bestR = rank; bestN = n; bestU = j; }
+    }
+    if (bestU >= 0) {
+      want[uIdx] = bestU;
+      const withUnit = records.filter(r => r.k[uIdx] === bestU);
+      if (withUnit.length) pool = withUnit;
+    }
+  }
+
+  // 2. Apply the technical pins inside that unit, but drop any pin that would
+  //    empty it. OECD mislabels some level series as "Growth rate, period on
+  //    period"; honouring that pin would bury every rate the dataset publishes.
+  if (constrain) {
+    for (const [i, j] of Object.entries(constrain)) {
+      if (+i === breakdownIdx || +i === uIdx) continue;
+      const sub = pool.filter(r => r.k[+i] === j);
+      if (sub.length) { pool = sub; want[+i] = j; }
+    }
+  }
+
   let best = null, bestScore = -1;
-  for (const r of records) {
+  for (const r of pool) {
     let s = 0;
     for (let i = 0; i < D; i++) {
       if (i === breakdownIdx) continue;
@@ -67,7 +104,34 @@ export function seedPicks(meta, records, breakdownIdx) {
     }
     if (s > bestScore) { bestScore = s; best = r; }
   }
-  return best ? [...best.k] : new Array(D).fill(0);
+  if (!best) return new Array(D).fill(0);
+
+  // Refine dimension by dimension: a record that matched on the unit may still
+  // carry "Male" or "Growth rate" on the dimensions it did not match. Move each
+  // one to its preferred value wherever data survives, so the opening view is
+  // the plain, total, untransformed series.
+  const picks = [...best.k];
+  const order = meta.dims
+    .map((d, i) => i)
+    .filter(i => i !== breakdownIdx && want[i] >= 0)
+    .sort((a, b) => weight[b] - weight[a]);
+  for (let pass = 0; pass < 3; pass++) {
+    let moved = false;
+    for (const i of order) {
+      if (picks[i] === want[i]) continue;
+      const trial = [...picks]; trial[i] = want[i];
+      const ok = records.some(r => {
+        for (let j = 0; j < D; j++) {
+          if (j === breakdownIdx) continue;
+          if (r.k[j] !== trial[j]) return false;
+        }
+        return true;
+      });
+      if (ok) { picks[i] = want[i]; moved = true; }
+    }
+    if (!moved) break;
+  }
+  return picks;
 }
 
 /** One pass: records matching every fixed dim, plus per-dim conditional availability. */
@@ -111,6 +175,11 @@ export function toSeries(meta, live, breakdownIdx, entities, slotOf) {
       x: periodToNum(meta.periods[ti]), y: r.v[j], period: meta.periods[ti],
     })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
     if (!points.length) continue;
+      // A series that is zero at every observation is the source's way of saying
+      // "not reported": hours worked cannot be zero, nor a wage gap for 50 years.
+      // Charting it draws a flat line on the axis floor and crushes the scale for
+      // every country that did report.
+    if (points.every(pt => pt.y === 0)) continue;
     const slot = slotOf ? slotOf(e) : out.length;
     const ctx = slot === undefined || slot < 0;
     out.push({ id: d.ids[e], label: d.names[e] || d.ids[e],

@@ -464,3 +464,11 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
   color: var(--accent); border-top: 1px solid var(--rule);
 }
 .railmore:hover { color: var(--ink); }
+
+/* ---- standing credit, so a screenshot carries its attribution ---- */
+.figure__credit {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: .45rem; padding-top: .45rem; border-top: 1px solid var(--rule);
+  font-size: .625rem; color: var(--ink-muted); letter-spacing: .01em;
+}
+.figure__credit span:first-child { font-weight: 600; }

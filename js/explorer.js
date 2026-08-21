@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=9dcc99fd";
-import { getFlowMeta, getSeries } from "./store.js?v=9dcc99fd";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=9dcc99fd";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=9dcc99fd";
-import { dataTable } from "./table.js?v=9dcc99fd";
-import { editable, textOf } from "./edits.js?v=9dcc99fd";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=49de8e44";
+import { getFlowMeta, getSeries } from "./store.js?v=49de8e44";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=49de8e44";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=49de8e44";
+import { dataTable } from "./table.js?v=49de8e44";
+import { editable, textOf } from "./edits.js?v=49de8e44";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -98,8 +98,20 @@ export async function renderExplorer(host, slug, catalog) {
 
   // ---- seed picks from a REAL record closest to the desired defaults
   seedPicks();
+  /** Technical dials are fixed first, then everything else is seeded inside them. */
+  function hiddenConstraints() {
+    const out = {};
+    for (const [id, code] of Object.entries(meta.hidden_dims || {})) {
+      const i = dimIndex[id];
+      if (i === undefined || dims[i].id === ui.breakdown) continue;
+      const j = dims[i].ids.indexOf(code);
+      if (j >= 0) out[i] = j;
+    }
+    return out;
+  }
+
   function seedPicks() {
-    const best = sharedSeed(meta, records, dimIndex[ui.breakdown]);
+    const best = sharedSeed(meta, records, dimIndex[ui.breakdown], hiddenConstraints());
     if (best) ui.picks = best;
   }
 
@@ -203,14 +215,6 @@ export async function renderExplorer(host, slug, catalog) {
       if (j >= 0) ui.picks[i] = j;
     }
 
-  // technical dials sit at their chosen value unless the reader opens Advanced
-  for (const [id, code] of Object.entries(meta.hidden_dims || {})) {
-    const i = dimIndex[id];
-    if (i === undefined) continue;
-    const j = dims[i].ids.indexOf(code);
-    if (j >= 0) ui.picks[i] = j;
-  }
-
   let state = repair();
   if (urlState.entities) {
     const d = dims[dimIndex[ui.breakdown]];
@@ -281,6 +285,7 @@ export async function renderExplorer(host, slug, catalog) {
       if (!prev || r.t.length > prev.t.length) byEnt.set(e, r);
     }
     const list = [];
+    let zeroed = 0;
     for (const e of ui.entities) {
       const r = byEnt.get(e);
       if (!r) continue;
@@ -292,11 +297,17 @@ export async function renderExplorer(host, slug, catalog) {
         x: periodToNum(meta.periods[ti]), y: r.v[j], period: meta.periods[ti],
       })).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y));
       if (!points.length) continue;
+      // A series that is zero at every observation is the source's way of saying
+      // "not reported": hours worked cannot be zero, nor a wage gap for 50 years.
+      // Charting it draws a flat line on the axis floor and crushes the scale for
+      // every country that did report.
+      if (points.every(pt => pt.y === 0)) { zeroed++; continue; }
       const slot = ui.slots.get(e);
       const ctx = slot === undefined || slot < 0;
       list.push({ id: d.ids[e], label: d.names[e] || d.ids[e],
         color: ctx ? "var(--context)" : slotVar(slot), context: ctx, points });
     }
+    list.zeroed = zeroed;
     return list;
   }
 
@@ -362,12 +373,18 @@ export async function renderExplorer(host, slug, catalog) {
 
     figure.appendChild(el("div", { class: "figure__foot" },
       el("span", {}, `Showing ${list.length} of ${d.ids.length} · ${plural(d.name)}` +
+        (list.zeroed ? ` · ${list.zeroed} hidden: the source reports zero for every year, which means not reported` : "") +
         (list.length > SERIES_SLOTS
           ? ` · past ${SERIES_SLOTS} series the colours repeat, so read the label at the end of each line`
           : "")),
       el("span", {}, "Source: OECD · ",
         el("a", { href: meta.source_url, target: "_blank", rel: "noopener" },
           `${meta.agency} ${meta.id}`))));
+
+    // a standing credit line, so a screenshot carries its attribution with it
+    figure.appendChild(el("div", { class: "figure__credit" },
+      el("span", {}, `Forest & the Trees · ahoff2026.github.io/data-visualization`),
+      el("span", {}, `Data © OECD. Chart ${new Date().getFullYear()} Alex Hoffman, CC BY 4.0.`)));
 
     window.scrollTo({ top: y });
     writeUrlState();
@@ -615,6 +632,19 @@ export async function renderExplorer(host, slug, catalog) {
         "its own Data Explorer hides that field. Values are reproduced exactly as OECD " +
         "supplies them — for labour-force series they are conventionally counts in " +
         "thousands, so read 128.28 as roughly 128,000. Check the source notes before quoting."));
+
+    const noTotal = dims.filter((d, i) => d.ids.length > 1 && d.id !== ui.breakdown
+      && !(d.id in (meta.hidden_dims || {}))
+      && !d.ids.some(c => ["_T", "_Z", "TOT", "T"].includes(c)));
+    if (noTotal.length)
+      sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem" } },
+        `The source publishes no combined total for ` +
+        noTotal.map(d => d.name.toLowerCase()).join(", ") +
+        `, so a single category is always selected.`));
+
+    for (const n of (meta.source_notes || []))
+      sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem",
+        borderLeft: "2px solid var(--accent)", paddingLeft: ".6rem" } }, n));
 
     const cov = meta.coverage;
     if (cov && cov.sample_missing && cov.sample_missing.length) {
