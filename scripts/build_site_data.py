@@ -49,6 +49,8 @@ def prune(node):
 slim = {
     "generated": cat["generated"],
     "default_countries": cat["default_countries"],
+    "sample_countries": cat.get("sample_countries", cat["default_countries"]),
+    "core_areas": cat.get("core_areas", cat["default_countries"]),
     "topic_tree": prune(cat["topic_tree"]),
     "flows": flows,
 }
