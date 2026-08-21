@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=4ef585ff";
-import { getFlowMeta, getSeries } from "./store.js?v=4ef585ff";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=4ef585ff";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=4ef585ff";
-import { dataTable } from "./table.js?v=4ef585ff";
-import { editable, textOf } from "./edits.js?v=4ef585ff";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=a435d506";
+import { getFlowMeta, getSeries } from "./store.js?v=a435d506";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=a435d506";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=a435d506";
+import { dataTable } from "./table.js?v=a435d506";
+import { editable, textOf } from "./edits.js?v=a435d506";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -202,6 +202,14 @@ export async function renderExplorer(host, slug, catalog) {
       const j = dims[i].ids.indexOf(code);
       if (j >= 0) ui.picks[i] = j;
     }
+
+  // technical dials sit at their chosen value unless the reader opens Advanced
+  for (const [id, code] of Object.entries(meta.hidden_dims || {})) {
+    const i = dimIndex[id];
+    if (i === undefined) continue;
+    const j = dims[i].ids.indexOf(code);
+    if (j >= 0) ui.picks[i] = j;
+  }
 
   let state = repair();
   if (urlState.entities) {
@@ -429,7 +437,8 @@ export async function renderExplorer(host, slug, catalog) {
         onclick: () => { ui.view = k; buildControls(); draw(); } }, lbl));
     row1.appendChild(seg);
 
-    const multi = dims.filter(d => d.ids.length > 1);
+    const tech = meta.hidden_dims || {};
+    const multi = dims.filter(d => d.ids.length > 1 && !(d.id in tech));
     if (multi.length > 1) {
       const sel = el("select", { onchange: async (e) => {
         ui.breakdown = e.target.value; ui.slots.clear();
@@ -448,6 +457,7 @@ export async function renderExplorer(host, slug, catalog) {
     for (let i = 0; i < D; i++) {
       const d = dims[i];
       if (d.id === ui.breakdown || d.ids.length <= 1) continue;
+      if (d.id in tech) continue;          // lives under Advanced
       const has = state.avail[i];
       const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
       d.ids.forEach((code, j) => {
@@ -459,6 +469,25 @@ export async function renderExplorer(host, slug, catalog) {
         el("label", { title: d.def || "" }, d.name), sel));
     }
     controls.appendChild(row1);
+
+    const techIds = Object.keys(tech).filter(id => dimIndex[id] !== undefined
+      && dims[dimIndex[id]].ids.length > 1 && dims[dimIndex[id]].id !== ui.breakdown);
+    if (techIds.length) {
+      const det = el("details", { class: "advanced" });
+      det.appendChild(el("summary", {},
+        `Advanced (${techIds.length} technical ${techIds.length === 1 ? "setting" : "settings"})`));
+      const wrap = el("div", { class: "ctlrow", style: { marginTop: ".5rem" } });
+      for (const id of techIds) {
+        const i = dimIndex[id], d = dims[i], has = state.avail[i];
+        const sel = el("select", { onchange: (e) => applyChange(i, +e.target.value) });
+        d.ids.forEach((code, j) => sel.appendChild(el("option", { value: j,
+          selected: j === ui.picks[i] },
+          (d.names[j] || code) + (has.has(j) || partial ? "" : "  — no data here"))));
+        wrap.appendChild(el("div", { class: "field" }, el("label", {}, d.name), sel));
+      }
+      det.appendChild(wrap);
+      controls.appendChild(det);
+    }
 
     // ---- entity chips (rebuilt only on structural change; toggles patch in place)
     const d = dims[dimIndex[ui.breakdown]];

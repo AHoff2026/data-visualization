@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=4ef585ff";
-import { getCatalog } from "./store.js?v=4ef585ff";
-import { renderExplorer, topicLabel } from "./explorer.js?v=4ef585ff";
-import { renderFeatured } from "./featured.js?v=4ef585ff";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=a435d506";
+import { getCatalog } from "./store.js?v=a435d506";
+import { renderExplorer, topicLabel } from "./explorer.js?v=a435d506";
+import { renderFeatured } from "./featured.js?v=a435d506";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=4ef585ff";
+  from "./edits.js?v=a435d506";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -71,14 +71,20 @@ function buildRail(activeSlug) {
     "aria-label": "Search datasets" });
   const list = el("nav", { "aria-label": "Datasets" });
 
+  let showAll = false;
   const paint = () => {
     clear(list);
     const q = search.value.trim().toLowerCase();
     const groups = topTopics();
+    // Featured datasets carry the research; the rest sit behind a toggle so the
+    // menu reads as a publication rather than a database dump. Search always
+    // looks across both.
+    const anyFeatured = CAT.flows.some(f => f.featured);
     for (const g of groups) {
-      const flows = g.flows.filter(f => !q ||
+      const flows = g.flows.filter(f => (!q ||
         f.name.toLowerCase().includes(q) || (f.description || "").toLowerCase().includes(q) ||
-        f.id.toLowerCase().includes(q));
+        f.id.toLowerCase().includes(q))
+        && (q || showAll || !anyFeatured || f.featured || f.slug === activeSlug));
       if (!flows.length) continue;
       list.appendChild(el("p", { class: "kicker kicker--muted",
         style: { marginTop: "1.15rem", marginBottom: ".4rem" } }, g.name));
@@ -95,6 +101,13 @@ function buildRail(activeSlug) {
     }
     if (!list.childNodes.length)
       list.appendChild(el("p", { class: "figure__sub" }, "No datasets match that search."));
+
+    if (!q && CAT.flows.some(f => !f.featured)) {
+      const hidden = CAT.flows.filter(f => !f.featured).length;
+      list.appendChild(el("button", { class: "railmore", "aria-pressed": String(showAll),
+        onclick: () => { showAll = !showAll; paint(); } },
+        showAll ? "Show fewer topics" : `Additional topics (${hidden})`));
+    }
   };
   search.addEventListener("input", debounce(paint, 120));
   r.appendChild(search); r.appendChild(list); paint();
