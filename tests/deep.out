@@ -34,3 +34,27 @@ ok   OECD.EDU.IMEP__DF_LSO_TRANS_MIGR             checks= 32
 ok   OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR         checks= 31
 ok   OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR        checks= 32
 ok   OECD.ELS.IMD__DF_MIG_NUP_SEX                 checks= 19
+ok   OECD.CTP.TPS__DF_TW_COMP                     checks= 31
+ok   OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB           checks=  3
+ok   OECD.SDD.NAD__DF_TABLE2_B6_VPVOP             checks=  3
+ok   OECD.SDD.TPS__DF_HOU_EAR                     checks= 17
+ok   OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS            checks= 13
+ok   OECD.EDU.IMEP__DF_UOE_NF_DIST_VET            checks= 13
+ok   OECD.ELS.JAI__DF_HOURSPOV                    checks= 19
+ok   OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE          checks= 26
+ok   OECD.EDU.IMEP__DF_LSO_EARN_ALL               checks= 74
+ok   OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q           checks= 19
+ok   OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q             checks= 21
+ok   OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q             checks= 21
+ok   OECD.SDD.TPS__DF_PDB                         checks= 60
+FAIL OECD.GOV.GIP__DF_GOV_SPS_2023                checks= 29
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart') to be visible
+
+      ↳ PAGEERROR SyntaxError: Importing binding name 'autosize' is not found.
+ok   OECD.ELS.SPD__DF_PW                          checks= 17
+
+==========================================================================
+DATASETS: 51   INTERACTIONS: 1215   PASS: 50   FAIL: 1
+FAILED: OECD.GOV.GIP__DF_GOV_SPS_2023

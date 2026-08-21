@@ -38,7 +38,8 @@ export function lineChart(host, series, opts = {}) {
   const ticks = niceTicks(y0, y1, height < 200 ? 3 : 5);
   const ty0 = Math.min(ticks[0], y0), ty1 = Math.max(ticks[ticks.length - 1], y1);
 
-  const labelRoom = directLabels ? Math.min(150, Math.max(64, W * .18)) : 12;
+  // enough gutter for a real country name ("United Kingdom") even on teaser charts
+  const labelRoom = directLabels ? Math.min(160, Math.max(96, W * .2)) : 12;
   const m = { t: 12, r: labelRoom, b: 26, l: 46 };
   const iw = Math.max(40, W - m.l - m.r), ih = Math.max(60, height - m.t - m.b);
   const sx = v => m.l + (x1 === x0 ? iw / 2 : (v - x0) / (x1 - x0) * iw);
@@ -114,7 +115,7 @@ export function lineChart(host, series, opts = {}) {
     if (over > 0) for (const e of ends) e.y -= over;
     const gL = svgEl("g");
     for (const e of ends) {
-      const short = truncate(e.s.label, Math.floor(labelRoom / 6.1));
+      const short = truncate(e.s.label, Math.floor(labelRoom / 5.9));
       const t = svgEl("text", { class: "serieslabel", x: m.l + iw + 8,
         y: Math.max(m.t + 8, e.y) + 3.5,
         fill: e.s.context ? "var(--ink-muted)" : e.s.color });
@@ -234,4 +235,29 @@ export function smallMultiples(host, series, opts = {}) {
     grid.appendChild(cell);
   }
   host.appendChild(grid);
+}
+
+/**
+ * Render a chart and keep it matched to its container.
+ * Charts measure their host to build a viewBox; if the host is measured before
+ * layout settles (grid/flex children, late fonts) the aspect ratio is wrong.
+ * A ResizeObserver re-renders on any real width change and fixes that class of
+ * bug permanently.
+ */
+export function autosize(host, render) {
+  let last = 0, raf = 0;
+  const run = () => {
+    const w = host.clientWidth;
+    if (!w || Math.abs(w - last) < 2) return;
+    last = w;
+    render(host, w);
+  };
+  render(host, host.clientWidth || 720);
+  last = host.clientWidth;
+  const ro = new ResizeObserver(() => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(run);
+  });
+  ro.observe(host);
+  return () => { ro.disconnect(); cancelAnimationFrame(raf); };
 }

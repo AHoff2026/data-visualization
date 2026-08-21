@@ -1,7 +1,7 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
 import { el, clear, fmtNum, periodToNum, debounce } from "./util.js";
 import { getFlowMeta, getSeries } from "./store.js";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS } from "./chart.js";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js";
 import { dataTable } from "./table.js";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
@@ -239,6 +239,7 @@ export async function renderExplorer(host, slug, catalog) {
   }
 
   // ============================================================ draw
+  let stopSize = null;
   function draw() {
     const y = window.scrollY;
     const list = activeSeries(state.live);
@@ -265,8 +266,9 @@ export async function renderExplorer(host, slug, catalog) {
       smallMultiples(box, list.map((s, i) => ({ ...s,
         color: slotVar(i % SERIES_SLOTS), context: false })), { unit, height: 78 });
     } else {
-      lineChart(box, list, { height: 400, unit,
-        ariaLabel: `${meta.name}. ${unit}. ${list.length} series.` });
+      if (stopSize) stopSize();
+      stopSize = autosize(box, (h) => lineChart(h, list, { height: 400, unit,
+        ariaLabel: `${meta.name}. ${unit}. ${list.length} series.` }));
       const coloured = list.filter(s => !s.context);
       if (coloured.length > 1) {
         const lg = el("div", { class: "legend" });
