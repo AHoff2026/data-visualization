@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=a435d506";
-import { getFlowMeta, getSeries } from "./store.js?v=a435d506";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=a435d506";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=a435d506";
-import { dataTable } from "./table.js?v=a435d506";
-import { editable, textOf } from "./edits.js?v=a435d506";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=9dcc99fd";
+import { getFlowMeta, getSeries } from "./store.js?v=9dcc99fd";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=9dcc99fd";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize } from "./chart.js?v=9dcc99fd";
+import { dataTable } from "./table.js?v=9dcc99fd";
+import { editable, textOf } from "./edits.js?v=9dcc99fd";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -615,6 +615,22 @@ export async function renderExplorer(host, slug, catalog) {
         "its own Data Explorer hides that field. Values are reproduced exactly as OECD " +
         "supplies them — for labour-force series they are conventionally counts in " +
         "thousands, so read 128.28 as roughly 128,000. Check the source notes before quoting."));
+
+    const cov = meta.coverage;
+    if (cov && cov.sample_missing && cov.sample_missing.length) {
+      const areaD = areaDim ? dims[dimIndex[areaDim]] : null;
+      const nameOf = (c) => {
+        const j = areaD ? areaD.ids.indexOf(c) : -1;
+        if (j >= 0) return areaD.names[j];
+        return (catalog.area_names && catalog.area_names[c]) || c;
+      };
+      sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem",
+        borderLeft: "2px solid var(--rule-strong)", paddingLeft: ".6rem" } },
+        `Coverage gap: the source does not publish this for ` +
+        cov.sample_missing.map(nameOf).join(", ") +
+        `. Of your sample countries it covers ${cov.sample_covered.length} of ` +
+        `${cov.sample_covered.length + cov.sample_missing.length}.`));
+    }
 
     sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem" } },
       "Every figure is taken unmodified from the OECD SDMX API; nothing is imputed, " +
