@@ -1,0 +1,55 @@
+ok   OECD.ELS.SPD__DF_NET_GDP                     lines=12
+FAIL OECD.ELS.SPD__DF_PUB_PRV                     lines=0  S1 no chart svg (Loading dataset…) | S3 too few axis ticks (0)
+ok   OECD.ELS.SPD__DF_PUB_DIS_SIC                 lines=12
+ok   OECD.ELS.SPD__DF_SOCX_AGG                    lines=12
+ok   OECD.ELS.SPD__DF_PUB_FAM                     lines=12
+ok   OECD.ELS.SPD__DF_DPS                         lines=12
+ok   OECD.ELS.SPD__DF_IPOP                        lines=12
+ok   OECD.ELS.SAE__DF_TUD                         lines=12
+ok   OECD.ELS.SAE__DF_CBC                         lines=12
+ok   OECD.SDD.TPS__DF_SUMTAB                      lines=12
+ok   OECD.SDD.NAD__DF_TABLE2                      lines=11
+ok   OECD.SDD.NAD__DF_TABLE9A                     lines=9
+ok   OECD.SDD.NAD__DF_TABLE5_T501                 lines=11
+ok   OECD.SDD.TPS__DF_ALFS_EMP_ICSE93             lines=12
+ok   OECD.SDD.TPS__DF_ALFS_EMP                    lines=12
+ok   OECD.ELS.SAE__DF_AVD_DUR                     lines=4
+ok   OECD.ELS.IMD__DF_MIG_EMP_EDU                 lines=12
+ok   OECD.ELS.SAE__DF_INVPT_I                     lines=12
+ok   OECD.ELS.SAE__DF_TEMP_D                      lines=12
+ok   OECD.ELS.SAE__DF_TEMP_I_GEN                  lines=12
+ok   OECD.ELS.SAE__DF_AVG_USL_WK_WKD              lines=12
+ok   OECD.ELS.SAE__DF_FTPT_COMMON                 lines=12
+ok   OECD.ELS.SAE__DF_FTPT_COMMON_INC             lines=11
+ok   OECD.ELS.SAE__DF_DUR_I                       lines=12
+ok   OECD.ELS.SAE__DF_DUR_D                       lines=12
+ok   OECD.ELS.SAE__DF_FTPT                        lines=12
+ok   OECD.ELS.SAE__DF_FTPT_INC_GEN                lines=11
+ok   OECD.CTP.TPS__DF_RSGLOBAL                    lines=12
+ok   OECD.STI.DEP__DF_HH                          lines=12
+ok   OECD.STI.DEP__DF_IND                         lines=12
+ok   OECD.ELS.SAE__GENDER_WAGE_GAP                lines=12
+ok   OECD.ELS.SAE__PAY_INCIDENCE                  lines=11
+ok   OECD.EDU.IMEP__DF_LSO_TRANS_MIGR             lines=10
+ok   OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR         lines=3
+ok   OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR        lines=9
+ok   OECD.ELS.IMD__DF_MIG_NUP_SEX                 lines=12
+ok   OECD.CTP.TPS__DF_TW_COMP                     lines=12
+ok   OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB           lines=11
+ok   OECD.SDD.NAD__DF_TABLE2_B6_VPVOP             lines=11
+ok   OECD.SDD.TPS__DF_HOU_EAR                     lines=3
+ok   OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS            lines=6
+ok   OECD.EDU.IMEP__DF_UOE_NF_DIST_VET            lines=5
+ok   OECD.ELS.JAI__DF_HOURSPOV                    lines=12
+ok   OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE          lines=11
+ok   OECD.EDU.IMEP__DF_LSO_EARN_ALL               lines=11
+ok   OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q           lines=12
+ok   OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q             lines=12
+ok   OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q             lines=12
+ok   OECD.SDD.TPS__DF_PDB                         lines=12
+ok   OECD.GOV.GIP__DF_GOV_SPS_2023                lines=12
+ok   OECD.ELS.SPD__DF_PW                          lines=12
+
+========================================================================
+DATASETS: 51   PASS: 50   FAIL: 1
+FAILED: OECD.ELS.SPD__DF_PUB_PRV

@@ -3,6 +3,8 @@ import { el, clear, $, $$, debounce, slugify } from "./util.js";
 import { getCatalog } from "./store.js";
 import { renderExplorer, topicLabel } from "./explorer.js";
 import { renderFeatured } from "./featured.js";
+import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf }
+  from "./edits.js";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -89,7 +91,7 @@ function buildRail(activeSlug) {
             background: f.slug === activeSlug ? "var(--accent-soft)" : "transparent",
             fontWeight: f.slug === activeSlug ? "600" : "400",
             borderLeft: f.slug === activeSlug ? "2px solid var(--accent)" : "2px solid transparent" },
-        }, f.name));
+        }, textOf(`/d/${f.slug}`, "title", f.name)));
     }
     if (!list.childNodes.length)
       list.appendChild(el("p", { class: "figure__sub" }, "No datasets match that search."));
@@ -103,9 +105,14 @@ function pageHome() {
   const m = main(); clear(m);
   const nObs = CAT.flows.reduce((a, f) => a + (f.n_obs || 0), 0);
 
+  const H1 = "Numbers on the things that matter";
+  const KICK = "An independent data publication";
+  const hKick = el("p", { class: "kicker" }, textOf("/", "kicker", KICK));
+  const hTitle = el("h1", {}, textOf("/", "title", H1));
+  editable(hKick, "/", "kicker", KICK);
+  editable(hTitle, "/", "title", H1);
   m.appendChild(el("header", { style: { padding: "1.5rem 0 2.25rem", maxWidth: "44rem" } },
-    el("p", { class: "kicker" }, "An independent data publication"),
-    el("h1", {}, "Numbers on the things that matter"),
+    hKick, hTitle,
     el("p", { class: "standfirst" },
       "Work, wages, unions, social spending, pensions, migration and taxation — drawn " +
       "directly from the OECD's statistical services and rebuilt as charts you can " +
@@ -128,7 +135,7 @@ function pageHome() {
     const grid = el("div", { class: "cardgrid" });
     for (const f of g.flows.sort((a, b) => a.name.localeCompare(b.name)))
       grid.appendChild(el("a", { class: "cardgrid__i", href: `#/d/${f.slug}` },
-        el("div", { class: "cardgrid__t" }, f.name),
+        el("div", { class: "cardgrid__t" }, textOf(`/d/${f.slug}`, "title", f.name)),
         el("div", { class: "figure__sub" },
           topicLabel(CAT, f.topic).split(" › ").slice(1).join(" › ") || "—"),
         el("div", { class: "cardgrid__m" },
@@ -153,10 +160,10 @@ async function pageDataset(slug) {
 
 // ---------- router ----------
 let lastPath = null;
-async function route() {
+async function route(force = false) {
   const raw = location.hash.replace(/^#/, "") || "/";
   const h = raw.split("?")[0] || "/";
-  if (h === lastPath) return;      // query-only change: the explorer wrote it
+  if (h === lastPath && force !== true) return;  // query-only change: the explorer wrote it
   lastPath = h;
   const parts = h.split("/").filter(Boolean);
   if (parts[0] === "d" && parts[1]) {
@@ -173,8 +180,36 @@ async function route() {
   cur?.setAttribute("aria-current", "page");
 }
 
+function initEditing() {
+  const btn = document.getElementById("editbtn");
+  const bar = document.getElementById("editbar");
+  const count = document.getElementById("editcount");
+  const paintCount = () => {
+    const n = editCount();
+    count.textContent = n ? `${n} change${n === 1 ? "" : "s"} saved in this browser` : "No changes yet";
+  };
+  const set = (on) => {
+    setEditing(on);
+    btn.setAttribute("aria-pressed", String(on));
+    bar.hidden = !on;
+    paintCount();
+  };
+  btn.addEventListener("click", () => set(!isEditing()));
+  document.getElementById("doneedits").addEventListener("click", () => set(false));
+  document.getElementById("exportedits").addEventListener("click", exportEdits);
+  document.getElementById("resetedits").addEventListener("click", () => {
+    const scope = location.hash.replace(/^#/, "").split("?")[0];
+    resetScope(scope || "/");
+    paintCount();
+    route(true);
+  });
+  window.addEventListener("dv:edits", paintCount);
+  paintCount();
+}
+
 async function boot() {
   initTheme();
+  initEditing();
   try { CAT = await getCatalog(); }
   catch (e) {
     main().innerHTML =

@@ -7,7 +7,7 @@ from collections import defaultdict
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 STRUCT = ROOT/"meta/struct"
 manifest = json.loads((ROOT/"meta/manifest.json").read_text())
-DEFAULT_COUNTRIES = ["DEU","FRA","GBR","USA","SWE","DNK","NOR","FIN","AUT","ESP","ITA","CAN"]
+DEFAULT_COUNTRIES = ["DEU","FRA","GBR","USA","SWE","DNK","NOR","FIN","AUT","ESP","ITA","CAN","NLD"]
 
 def slug(r): return f'{r["agency"]}__{r["flow"]}'
 
