@@ -59,6 +59,24 @@ export function niceTicks(min, max, count = 5) {
   for (let v = lo; v <= hi + step * 1e-9; v += step) out.push(Math.round(v / step) * step);
   return out;
 }
+/** One formatter for an entire tick set — mixed units on one axis read as sloppy. */
+export function axisFormatter(ticks) {
+  const max = Math.max(...ticks.map(t => Math.abs(t)), 0);
+  const step = ticks.length > 1 ? Math.abs(ticks[1] - ticks[0]) : max;
+  let div = 1, suffix = "";
+  if (max >= 1e12) { div = 1e12; suffix = "tn"; }
+  else if (max >= 1e9) { div = 1e9; suffix = "bn"; }
+  else if (max >= 1e6) { div = 1e6; suffix = "m"; }
+  else if (max >= 1e4) { div = 1e3; suffix = "k"; }
+  const sd = step / div;
+  const dp = sd >= 10 ? 0 : sd >= 1 ? 0 : sd >= 0.1 ? 1 : sd >= 0.01 ? 2 : 3;
+  return (v) => {
+    const n = v / div;
+    const txt = n.toLocaleString("en-GB", { minimumFractionDigits: dp, maximumFractionDigits: dp });
+    return (v === 0 ? "0" : txt) + (v === 0 ? "" : suffix);
+  };
+}
+
 // ---------- period handling (annual / quarterly / monthly) ----------
 export function periodParts(p) {
   let m = /^(\d{4})-?(Q)(\d)$/i.exec(p);      if (m) return { y:+m[1], sub:+m[3], freq:"Q" };
