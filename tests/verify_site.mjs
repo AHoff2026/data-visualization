@@ -10,6 +10,9 @@ const ROOT = path.join(process.env.HOME, "Documents/data-visualization");
 const SHOTS = path.join(ROOT, "tests/shots");
 fs.mkdirSync(SHOTS, { recursive: true });
 const ONLY = process.argv.slice(2).filter(a => !a.startsWith("-"));
+// Pace requests when testing a CDN: 51 pages back-to-back gets rate-limited,
+// which measures GitHub's throttle rather than the site.
+const PACE = +(process.env.PACE || (/^https?:\/\/(?!localhost)/.test(BASE) ? 1500 : 0));
 const SHOOT = process.argv.includes("--shots");
 
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "site/data/catalog.json"), "utf8"));
@@ -40,6 +43,22 @@ async function probe(page) {
 }
 
 for (const slug of slugs) {
+  if (PACE) await new Promise(r => setTimeout(r, PACE));
+  let rec = await runOne(slug);
+  // one retry: a throttled CDN response is not a site defect
+  if (rec.fail.some(f => f.startsWith("S1")) && PACE) {
+    await new Promise(r => setTimeout(r, 6000));
+    const again = await runOne(slug);
+    if (!again.fail.length || again.fail.length < rec.fail.length) rec = again;
+  }
+  results.push(rec);
+  const ok = rec.fail.length === 0;
+  console.log(`${ok ? "ok  " : "FAIL"} ${slug.padEnd(44)} lines=${rec.probe?.nLines ?? "-"}` +
+    (ok ? "" : "  " + rec.fail.join(" | ")));
+  if (!ok && rec.errors.length) rec.errors.slice(0, 3).forEach(e => console.log("        \u21b3 " + e));
+}
+
+async function runOne(slug) {
   const rec = { slug, errors: [], fail: [] };
   const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
   page.on("console", m => { if (m.type() === "error") rec.errors.push(m.text().slice(0, 300)); });
@@ -98,11 +117,7 @@ for (const slug of slugs) {
     rec.fail.push("EXCEPTION " + String(e.message || e).slice(0, 200));
   }
   await page.close();
-  results.push(rec);
-  const ok = rec.fail.length === 0;
-  console.log(`${ok ? "ok  " : "FAIL"} ${slug.padEnd(44)} lines=${rec.probe?.nLines ?? "-"}` +
-    (ok ? "" : "  " + rec.fail.join(" | ")));
-  if (!ok && rec.errors.length) rec.errors.slice(0, 3).forEach(e => console.log("        ↳ " + e));
+  return rec;
 }
 await browser.close();
 

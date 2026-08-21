@@ -77,8 +77,27 @@ export async function renderExplorer(host, slug, catalog) {
 
   // ============================================================ load
   let records = [];
-  async function load(areas) {
-    records = await getSeries(slug, areas);
+  let partial = false;                 // true while only the first-paint bundle is loaded
+  async function load(areas, opts) {
+    const r = await getSeries(slug, areas, opts);
+    records = r.records; partial = r.partial;
+  }
+
+  /** Fetch the complete per-area data behind the first paint, then refresh the
+   *  controls so availability is exact. The view itself is left alone. */
+  async function upgrade() {
+    if (!partial) return;
+    const ad = areaDim ? dims[dimIndex[areaDim]] : null;
+    const areas = ad
+      ? (ui.breakdown === areaDim ? ui.entities.map(i => ad.ids[i])
+                                  : [ad.ids[ui.picks[dimIndex[areaDim]]]])
+      : null;
+    try { await load(areas, { allowBundle: false }); }
+    catch { return; }
+    partial = false;
+    state = repair();
+    buildControls();
+    if (!activeSeries(state.live).length) draw();
   }
   try {
     await load(meta.layout === "parts" && areaDim
@@ -414,7 +433,8 @@ export async function renderExplorer(host, slug, catalog) {
         ui.breakdown = e.target.value; ui.slots.clear();
         if (meta.layout === "parts" && areaDim)
           await load(ui.breakdown === areaDim
-            ? preferredAreas(dims[dimIndex[areaDim]], catalog, meta) : null);
+            ? preferredAreas(dims[dimIndex[areaDim]], catalog, meta) : null,
+            { allowBundle: false });
         state = repair(); seedEntities(state.avail); ui.notice = null; rebuild();
       } });
       for (const d of multi)
@@ -431,7 +451,7 @@ export async function renderExplorer(host, slug, catalog) {
       d.ids.forEach((code, j) => {
         const ok = has.has(j);
         sel.appendChild(el("option", { value: j, selected: j === ui.picks[i] },
-          (d.names[j] || code) + (ok ? "" : "  — no data here")));
+          (d.names[j] || code) + (ok || partial ? "" : "  — no data here")));
       });
       row1.appendChild(el("div", { class: "field" },
         el("label", { title: d.def || "" }, d.name), sel));
@@ -466,7 +486,7 @@ export async function renderExplorer(host, slug, catalog) {
   async function maybeReload() {
     if (meta.layout === "parts" && areaDim && ui.breakdown === areaDim) {
       const d = dims[dimIndex[areaDim]];
-      await load(ui.entities.map(i => d.ids[i]));
+      await load(ui.entities.map(i => d.ids[i]), { allowBundle: false });
       state = repair();
     }
   }
@@ -479,7 +499,7 @@ export async function renderExplorer(host, slug, catalog) {
     const q = (chipSearch?.value || "").trim().toLowerCase();
     const idxs = d.ids.map((_, i) => i).filter(i =>
       (!q || (d.names[i] || "").toLowerCase().includes(q) || d.ids[i].toLowerCase().includes(q)));
-    const withData = idxs.filter(i => has.has(i));
+    const withData = partial ? idxs : idxs.filter(i => has.has(i));
     const shown = withData.slice(0, 400);
     for (const i of shown) chipBox.appendChild(chip(d, i));
     const rest = idxs.length - withData.length;
@@ -558,6 +578,7 @@ export async function renderExplorer(host, slug, catalog) {
   }
 
   rebuild();
+  if (partial) setTimeout(upgrade, 60);
   const onResize = debounce(draw, 180);
   window.addEventListener("resize", onResize);
   host.addEventListener("explorer:teardown",

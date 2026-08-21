@@ -57,31 +57,40 @@ export const getFlowMeta = (slug) => getJSON(`flows/${slug}/meta.json`);
 
 /**
  * Load series for a flow.
- * Partitioned flows ship a pre-built bundle of the default countries, so the
- * common case is a single request; anything else falls back to per-area parts.
+ *
+ * Partitioned flows ship a small first-paint bundle holding just the opening
+ * view, so a dataset draws in one request instead of a dozen. That bundle is
+ * `partial`: it cannot answer "which other options have data", so the caller
+ * should follow up with `{ allowBundle: false }` in the background.
+ *
+ * Returns { records, partial }.
  */
-export async function getSeries(slug, areas = null) {
+export async function getSeries(slug, areas = null, { allowBundle = true } = {}) {
   const meta = await getFlowMeta(slug);
-  if (meta.layout === "single") return getJSON(`flows/${slug}/all.json.gz`, true);
+  if (meta.layout === "single")
+    return { records: await getJSON(`flows/${slug}/all.json.gz`, true), partial: false };
 
   const parts = meta.parts || {};
   const want = (areas && areas.length ? areas : Object.keys(parts)).filter(a => parts[a]);
-
   const bundle = meta.default_bundle;
-  if (bundle && want.length && want.every(a => bundle.areas.includes(a))) {
+
+  if (allowBundle && bundle && want.length && want.every(a => bundle.areas.includes(a))) {
     const all = await getJSON(`flows/${slug}/default.json.gz`, true);
-    if (want.length === bundle.areas.length) return all;
-    const meta2 = meta;                       // filter the bundle down to the ask
-    const ai = meta2.dims.findIndex(d => d.id === meta2.area_dim);
-    if (ai < 0) return all;
-    const codes = meta2.dims[ai].ids;
-    const keep = new Set(want.map(a => codes.indexOf(a)));
-    return all.filter(r => keep.has(r.k[ai]));
+    let records = all;
+    if (want.length !== bundle.areas.length) {
+      const ai = meta.dims.findIndex(d => d.id === meta.area_dim);
+      if (ai >= 0) {
+        const codes = meta.dims[ai].ids;
+        const keep = new Set(want.map(a => codes.indexOf(a)));
+        records = all.filter(r => keep.has(r.k[ai]));
+      }
+    }
+    return { records, partial: !!bundle.partial };
   }
 
   const chunks = await pool(want, 6, a =>
     getJSON(`flows/${slug}/parts/${parts[a].file}`, true).catch(() => []));
-  return chunks.flat();
+  return { records: chunks.flat(), partial: false };
 }
 
 export const isCached = (slug) => cache.has(`flows/${slug}/meta.json`);
