@@ -1,0 +1,74 @@
+[
+ {
+  "a": "OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE",
+  "a_name": "Earnings differences by gender, by age group and educational attainment level",
+  "b": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
+  "b_name": "Education and earnings (EARNINGS) (full dataset)",
+  "a_series": 4415,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_NET_GDP",
+  "a_name": "Net total social expenditure",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b_name": "Social expenditure aggregates",
+  "a_series": 39,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2_B6_VPVOP",
+  "a_name": "Annual national disposable income, US $, volume, constant PPPs",
+  "b": "OECD.SDD.NAD__DF_TABLE2",
+  "b_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "a_series": 40,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB",
+  "a_name": "Annual net national income per capita, US $, volume, constant PPPs, reference year 2020",
+  "b": "OECD.SDD.NAD__DF_TABLE2",
+  "b_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "a_series": 38,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93",
+  "a_name": "Employment by professional status (ICSE-93)",
+  "b": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "b_name": "Employment by activites and status (ALFS)",
+  "a_series": 637,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_FAM",
+  "a_name": "Public expenditure on families",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b_name": "Social expenditure aggregates",
+  "a_series": 2190,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "a_name": "Public expenditure on disability and sickness benefits",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b_name": "Social expenditure aggregates",
+  "a_series": 2388,
+  "unique_to_a": 0,
+  "contained": true
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "a_name": "Public and private social expenditure",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b_name": "Social expenditure aggregates",
+  "a_series": 19336,
+  "unique_to_a": 0,
+  "contained": true
+ }
+]

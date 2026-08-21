@@ -1,0 +1,452 @@
+[
+ {
+  "a": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
+  "b": "OECD.EDU.IMEP__DF_LSO_EARN_REL_MALE",
+  "shared": 2955,
+  "a_name": "Education and earnings (EARNINGS) (full dataset)",
+  "b_name": "Earnings differences by gender, by age group and educational attainment level",
+  "a_share": 0.079,
+  "b_share": 1.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_NET_GDP",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "shared": 27,
+  "a_name": "Net total social expenditure",
+  "b_name": "Social expenditure aggregates",
+  "a_share": 1.0,
+  "b_share": 0.001
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2",
+  "b": "OECD.SDD.NAD__DF_TABLE2_B6_VPVOP",
+  "shared": 40,
+  "a_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "b_name": "Annual national disposable income, US $, volume, constant PPPs",
+  "a_share": 0.005,
+  "b_share": 1.0
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2",
+  "b": "OECD.SDD.NAD__DF_TABLE2_B5N_HVPVOB",
+  "shared": 38,
+  "a_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "b_name": "Annual net national income per capita, US $, volume, constant PPPs, reference year 2020",
+  "a_share": 0.005,
+  "b_share": 1.0
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "b": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93",
+  "shared": 630,
+  "a_name": "Employment by activites and status (ALFS)",
+  "b_name": "Employment by professional status (ICSE-93)",
+  "a_share": 0.16,
+  "b_share": 0.998
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_FAM",
+  "b": "OECD.ELS.SPD__DF_PUB_PRV",
+  "shared": 2176,
+  "a_name": "Public expenditure on families",
+  "b_name": "Public and private social expenditure",
+  "a_share": 0.997,
+  "b_share": 0.116
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_FAM",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "shared": 2176,
+  "a_name": "Public expenditure on families",
+  "b_name": "Social expenditure aggregates",
+  "a_share": 0.997,
+  "b_share": 0.057
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "b": "OECD.ELS.SPD__DF_PUB_PRV",
+  "shared": 2305,
+  "a_name": "Public expenditure on disability and sickness benefits",
+  "b_name": "Public and private social expenditure",
+  "a_share": 0.972,
+  "b_share": 0.123
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "shared": 2305,
+  "a_name": "Public expenditure on disability and sickness benefits",
+  "b_name": "Social expenditure aggregates",
+  "a_share": 0.972,
+  "b_share": 0.06
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "shared": 15925,
+  "a_name": "Public and private social expenditure",
+  "b_name": "Social expenditure aggregates",
+  "a_share": 0.847,
+  "b_share": 0.416
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "b": "OECD.SDD.TPS__DF_SUMTAB",
+  "shared": 309,
+  "a_name": "Employment by activites and status (ALFS)",
+  "b_name": "Annual labor force survey",
+  "a_share": 0.079,
+  "b_share": 0.227
+ },
+ {
+  "a": "OECD.ELS.SAE__DF_FTPT_COMMON",
+  "b": "OECD.ELS.SAE__DF_FTPT_COMMON_INC",
+  "shared": 1928,
+  "a_name": "Full-time and part-time employment",
+  "b_name": "Incidence of full-time and part-time employment",
+  "a_share": 0.083,
+  "b_share": 0.168
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93",
+  "b": "OECD.SDD.TPS__DF_SUMTAB",
+  "shared": 105,
+  "a_name": "Employment by professional status (ICSE-93)",
+  "b_name": "Annual labor force survey",
+  "a_share": 0.166,
+  "b_share": 0.077
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q",
+  "b": "OECD.SDD.TPS__DF_SUMTAB",
+  "shared": 118,
+  "a_name": "Employed population by economic activity",
+  "b_name": "Annual labor force survey",
+  "a_share": 0.049,
+  "b_share": 0.087
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "b": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q",
+  "shared": 73,
+  "a_name": "Employment by activites and status (ALFS)",
+  "b_name": "Employed population by economic activity",
+  "a_share": 0.019,
+  "b_share": 0.03
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 69,
+  "a_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "b_name": "Productivity database",
+  "a_share": 0.009,
+  "b_share": 0.001
+ },
+ {
+  "a": "OECD.ELS.SAE__DF_DUR_D",
+  "b": "OECD.ELS.SAE__DF_DUR_I",
+  "shared": 20,
+  "a_name": "Unemployment by duration",
+  "b_name": "Incidence of unemployment by duration",
+  "a_share": 0.001,
+  "b_share": 0.004
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.SDD.NAD__DF_TABLE2",
+  "shared": 12,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "a_share": 0.0,
+  "b_share": 0.002
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "shared": 4,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Public expenditure on disability and sickness benefits",
+  "a_share": 0.0,
+  "b_share": 0.002
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 5,
+  "a_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.001,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.ELS.SPD__DF_PUB_PRV",
+  "shared": 13,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Public and private social expenditure",
+  "a_share": 0.0,
+  "b_share": 0.001
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 2,
+  "a_name": "Public expenditure on disability and sickness benefits",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.001,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.ELS.JAI__DF_HOURSPOV",
+  "shared": 1,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Hours of work needed to escape poverty",
+  "a_share": 0.0,
+  "b_share": 0.001
+ },
+ {
+  "a": "OECD.ELS.JAI__DF_HOURSPOV",
+  "b": "OECD.SDD.NAD__DF_TABLE2",
+  "shared": 1,
+  "a_name": "Hours of work needed to escape poverty",
+  "b_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "a_share": 0.001,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 12,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "shared": 2,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 18,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE2",
+  "b": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "shared": 2,
+  "a_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "b_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 3,
+  "a_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 1,
+  "a_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.SDD.NAD__DF_TABLE9A",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 8,
+  "a_name": "Annual fixed assets by economic activity and by asset",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.ELS.SAE__DF_DUR_D",
+  "shared": 1,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Unemployment by duration",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
+  "shared": 8,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Education and earnings (EARNINGS) (full dataset)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_RSGLOBAL",
+  "b": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "shared": 13,
+  "a_name": "Global Revenue Statistics",
+  "b_name": "Social expenditure aggregates",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 3,
+  "a_name": "Public and private social expenditure",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 3,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 2,
+  "a_name": "Public and private social expenditure",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 2,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 1,
+  "a_name": "Public expenditure on disability and sickness benefits",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.CTP.TPS__DF_TW_COMP",
+  "b": "OECD.SDD.NAD__DF_TABLE9A",
+  "shared": 1,
+  "a_name": "Labor taxation",
+  "b_name": "Annual fixed assets by economic activity and by asset",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
+  "b": "OECD.ELS.SAE__DF_DUR_D",
+  "shared": 1,
+  "a_name": "Education and earnings (EARNINGS) (full dataset)",
+  "b_name": "Unemployment by duration",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
+  "b": "OECD.ELS.SAE__DF_INVPT_I",
+  "shared": 1,
+  "a_name": "Average usual weekly hours worked on the main job",
+  "b_name": "Incidence of involuntary part time employment",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.STI.DEP__DF_IND",
+  "shared": 1,
+  "a_name": "Public and private social expenditure",
+  "b_name": "ICT Access and Usage by Individuals",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.STI.DEP__DF_IND",
+  "shared": 1,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "ICT Access and Usage by Individuals",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "shared": 1,
+  "a_name": "Public and private social expenditure",
+  "b_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.SDD.NAD__DF_TABLE5_T501",
+  "shared": 1,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "Annual household final consumption expenditure by purpose (COICOP)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_PUB_PRV",
+  "b": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "shared": 1,
+  "a_name": "Public and private social expenditure",
+  "b_name": "Employment by activites and status (ALFS)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.SDD.TPS__DF_ALFS_EMP",
+  "shared": 1,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "Employment by activites and status (ALFS)",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "b": "OECD.SDD.NAD__DF_TABLE2",
+  "shared": 1,
+  "a_name": "Social expenditure aggregates",
+  "b_name": "Annual national disposable income, saving and net lending/net borrowing",
+  "a_share": 0.0,
+  "b_share": 0.0
+ },
+ {
+  "a": "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q",
+  "b": "OECD.SDD.TPS__DF_PDB",
+  "shared": 1,
+  "a_name": "Employed population by economic activity",
+  "b_name": "Productivity database",
+  "a_share": 0.0,
+  "b_share": 0.0
+ }
+]
