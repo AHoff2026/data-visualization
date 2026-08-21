@@ -93,7 +93,8 @@ for (const slug of slugs) {
     await page.evaluate(() => window.scrollTo(0, 260));
     const before = await figureState(page);
     const yBefore = await page.evaluate(() => window.scrollY);
-    const off = page.locator('.chip[aria-pressed="false"]').first();
+    // only real entity chips carry a colour swatch; the tier toggle does not
+    const off = page.locator('.chip[aria-pressed="false"]:has(.chip__swatch)').first();
     if (await off.count()) {
       const name = (await off.textContent()).trim();
       await off.click();
