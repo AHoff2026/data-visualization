@@ -6,6 +6,27 @@ import { dataTable } from "./table.js";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
+/** Read the view state encoded after "?" in the hash route. */
+function readUrlState() {
+  const h = location.hash.replace(/^#/, "");
+  const q = h.indexOf("?");
+  if (q < 0) return {};
+  const sp = new URLSearchParams(h.slice(q + 1));
+  const out = {};
+  if (sp.get("v")) out.view = sp.get("v");
+  if (sp.get("sm")) out.smScale = sp.get("sm");
+  if (sp.get("bd")) out.breakdown = sp.get("bd");
+  if (sp.get("e")) out.entities = sp.get("e").split(" ").filter(Boolean);
+  if (sp.get("p")) {
+    out.picks = {};
+    for (const kv of sp.get("p").split(",")) {
+      const i = kv.indexOf(":");
+      if (i > 0) out.picks[kv.slice(0, i)] = kv.slice(i + 1);
+    }
+  }
+  return out;
+}
+
 export async function renderExplorer(host, slug, catalog) {
   clear(host);
   host.appendChild(el("div", { class: "center-note" },
@@ -168,8 +189,28 @@ export async function renderExplorer(host, slug, catalog) {
     }
   }
 
+  // ---- apply any state carried in the URL, then validate it against the data
+  const urlState = readUrlState();
+  if (urlState.view) ui.view = urlState.view;
+  if (urlState.smScale) ui.smScale = urlState.smScale;
+  if (urlState.breakdown && dimIndex[urlState.breakdown] !== undefined)
+    ui.breakdown = urlState.breakdown;
+  if (urlState.picks)
+    for (const [id, code] of Object.entries(urlState.picks)) {
+      const i = dimIndex[id];
+      if (i === undefined) continue;
+      const j = dims[i].ids.indexOf(code);
+      if (j >= 0) ui.picks[i] = j;
+    }
+
   let state = repair();
-  seedEntities(state.avail);
+  if (urlState.entities) {
+    const d = dims[dimIndex[ui.breakdown]];
+    const has = state.avail[dimIndex[ui.breakdown]];
+    const want = urlState.entities.map(c => d.ids.indexOf(c)).filter(i => i >= 0 && has.has(i));
+    if (want.length) { ui.entities = want; reslot(); }
+    else seedEntities(state.avail);
+  } else seedEntities(state.avail);
 
   // ============================================================ shell
   clear(host);
@@ -300,6 +341,22 @@ export async function renderExplorer(host, slug, catalog) {
           `${meta.agency} ${meta.id}`))));
 
     window.scrollTo({ top: y });
+    writeUrlState();
+  }
+
+  /** Keep the address bar in step so a configured view can be shared or reloaded. */
+  function writeUrlState() {
+    const d = dims[dimIndex[ui.breakdown]];
+    const sp = new URLSearchParams();
+    sp.set("v", ui.view);
+    if (ui.smScale !== "auto") sp.set("sm", ui.smScale);
+    sp.set("bd", ui.breakdown);
+    if (ui.entities.length) sp.set("e", ui.entities.map(i => d.ids[i]).join(" "));
+    const picks = dims.map((dd, i) => dd.id === ui.breakdown || dd.ids.length <= 1
+      ? null : `${dd.id}:${dd.ids[ui.picks[i]]}`).filter(Boolean);
+    if (picks.length) sp.set("p", picks.join(","));
+    const next = `#/d/${slug}?${sp.toString()}`;
+    if (location.hash !== next) history.replaceState(null, "", next);
   }
 
   function describePicks() {

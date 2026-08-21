@@ -107,6 +107,22 @@ for (const slug of slugs) {
         rec.fail.push(`D3 toggling "${name}" on added no series`);
     }
 
+    // ---------- D7 the URL captures the view, and reloading it restores the view
+    {
+      const hash = await page.evaluate(() => location.hash);
+      rec.checked++;
+      if (!/[?&]bd=/.test(hash)) rec.fail.push("D7 view state is not written to the URL");
+      else {
+        const before = await figureState(page);
+        await page.goto(`${BASE}/${hash}`, { waitUntil: "load", timeout: 90000 });
+        await page.waitForSelector("svg.chart, .figure .center-note", { timeout: 90000 });
+        await page.waitForTimeout(500);
+        const after = await figureState(page);
+        if (before.lines && after.lines !== before.lines)
+          rec.fail.push(`D7 reloading the shared URL changed the chart (${before.lines} → ${after.lines} lines)`);
+      }
+    }
+
     // ---------- D4 dark theme
     await page.evaluate(() => { document.documentElement.dataset.theme = "dark"; });
     await page.waitForTimeout(120);

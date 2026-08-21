@@ -32,3 +32,23 @@ Call log:
   - waiting for locator('svg.chart, .figure .center-note') to be visible
 
       ↳ PAGEERROR SyntaxError: Importing binding name 'autosize' is not found.
+FAIL OECD.ELS.SAE__DF_DUR_D                       checks=  0
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart, .figure .center-note') to be visible
+
+      ↳ PAGEERROR SyntaxError: Importing binding name 'autosize' is not found.
+ok   OECD.ELS.SAE__DF_FTPT                        checks= 37
+ok   OECD.ELS.SAE__DF_FTPT_INC_GEN                checks= 28
+FAIL OECD.CTP.TPS__DF_RSGLOBAL                    checks=  4
+      EXCEPTION page.waitForTimeout: Target page, context or browser has been closed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browser.newPage: Target page, context or browser has been closed
+    at /Users/alexhoffman/Documents/data-visualization/tests/verify_deep.mjs:41:30 {
+  log: []
+}
+
+Node.js v24.14.1
