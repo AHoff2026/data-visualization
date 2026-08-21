@@ -51,10 +51,25 @@ def sanitize(s):
     # OECD often uses the raw URL as the link text; show the site instead
     def relabel(m):
         inner = m.group(2).strip()
-        if re.match(r'^https?://', inner):
-            host = re.sub(r'^https?://(www\.)?', '', inner).split('/')[0]
-            return f'{m.group(1)}{host}</a>'
-        return m.group(0)
+        if not re.match(r'^https?://', inner):
+            return m.group(0)
+        # OECD often uses the raw URL as the link text. Name the destination
+        # from its path instead of showing a bare domain.
+        path = re.sub(r'^https?://[^/]+/?', '', inner).rstrip('/')
+        seg = path.split('/')[-1] if path else ''
+        seg = re.sub(r'\.(htm|html|pdf|aspx?)$', '', seg, flags=re.I)
+        seg = re.sub(r'[-_+]+', ' ', seg).strip()
+        if len(seg) < 3:
+            seg = re.sub(r'^https?://(www\.)?', '', inner).split('/')[0]
+        else:
+            ACR = {"ictwss","oecd","lfs","pisa","gdp","oda","sdmx","ict","vet",
+                   "neet","eag","alfs","socx","ppp","eu","us","uk","stan","tiva"}
+            words = []
+            for w in seg.split():
+                words.append(w.upper() if w.lower() in ACR else w)
+            seg = " ".join(words)
+            seg = seg[:1].upper() + seg[1:]
+        return f'{m.group(1)}{html.escape(seg, quote=False)}</a>'
     txt = re.sub(r'(<a [^>]*>)(.*?)</a>', relabel, txt, flags=re.S)
     return txt.strip()
 
