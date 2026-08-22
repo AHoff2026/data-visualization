@@ -18,7 +18,7 @@ TECHNICAL = {
     "ADJUSTMENT":           ["Y", "N"],             # seasonally adjusted where offered
     "STATISTICAL_OPERATION":["OBS", "_Z"],          # the estimate, not its standard error
     "METHODOLOGY":          ["OECD_DEF", "_T"],     # the harmonized definition
-    "QUESTIONNAIRE":        [],                     # collection round: no analytical content
+    "QUESTIONNAIRE":        ["NEAC", "EARN", "TRANS"],  # the regular collection covers every member
     "CONVERSION_TYPE":      ["PPP", "_Z"],          # PPP where offered
     "TIME_HORIZ":           ["H", "_T"],
     "JOB_COVERAGE":         ["MAIN", "_T"],
@@ -62,8 +62,28 @@ RENAME = {
 }
 
 hidden_total = renamed = 0
+def observation_counts(mp, meta):
+    import gzip
+    d = mp.parent
+    recs = []
+    if meta["layout"] == "single":
+        f = d/"all.json.gz"
+        if f.exists(): recs = json.loads(gzip.decompress(f.read_bytes()))
+    else:
+        for info in (meta.get("parts") or {}).values():
+            f = d/"parts"/info["file"]
+            if f.exists(): recs += json.loads(gzip.decompress(f.read_bytes()))
+    out = {}
+    for i, dim in enumerate(meta["dims"]):
+        if dim["id"] not in TECHNICAL or len(dim["ids"]) <= 1: continue
+        c = {}
+        for r in recs: c[dim["ids"][r["k"][i]]] = c.get(dim["ids"][r["k"][i]], 0) + len(r["v"])
+        out[dim["id"]] = c
+    return out
+
 for mp in sorted(FLOWS.glob("*/meta.json")):
     meta = json.loads(mp.read_text())
+    obs_by_code = observation_counts(mp, meta)
     hidden = {}
     for d in meta["dims"]:
         if d["id"] in RENAME and d["name"] != RENAME[d["id"]]:
@@ -73,7 +93,11 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         pick = None
         for c in TECHNICAL[d["id"]]:
             if c in d["ids"]: pick = c; break
-        if pick is None: pick = d["ids"][0]
+        if pick is None:
+            # no stated preference: take whichever value carries the most data,
+            # rather than whichever happens to sort first
+            counts = obs_by_code.get(d["id"], {})
+            pick = max(d["ids"], key=lambda c: counts.get(c, 0)) if counts else d["ids"][0]
         hidden[d["id"]] = pick
         hidden_total += 1
     meta["hidden_dims"] = hidden

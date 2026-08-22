@@ -10,9 +10,7 @@ from collections import defaultdict
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 FLOWS = ROOT/"site/data/flows"
 # units where a value above 100 is impossible rather than merely unusual
-BOUNDED = re.compile(r"percentage of (the )?(population|employment|labor force|"
-                     r"labour force|employees|students|respondents|households|unemployed|"
-                     r"working-age population)", re.I)
+BOUNDED = re.compile(r"percentage of (?:the )?(?:same )?(?:[a-z-]+ )?(?:population|employment|employees|labor force|labour force|students|respondents|households|unemployed|working-age|part-time|temporary)", re.I)
 NONNEG = re.compile(r"^(persons?|number|thousands?|households?|hours per|percentage)", re.I)
 
 def load(mp, meta):

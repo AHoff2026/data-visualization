@@ -11,9 +11,7 @@ from collections import defaultdict
 
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 FLOWS = ROOT/"site/data/flows"
-BOUNDED = re.compile(r"percentage of (the )?(population|employment|labor force|"
-                     r"labour force|employees|students|respondents|households|unemployed|"
-                     r"working-age population)", re.I)
+BOUNDED = re.compile(r"percentage of (?:the )?(?:same )?(?:[a-z-]+ )?(?:population|employment|employees|labor force|labour force|students|respondents|households|unemployed|working-age|part-time|temporary)", re.I)
 COUNT = re.compile(r"^(persons?|number|thousands?|households?)", re.I)
 # units where a series of zeros throughout cannot be a measurement: nobody works
 # zero hours for forty years, and an index or a currency amount is never zero

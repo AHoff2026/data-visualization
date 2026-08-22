@@ -8,6 +8,15 @@ ROOT = pathlib.Path.home()/"Documents/data-visualization"
 FLOWS = ROOT/"site/data/flows"
 cat = json.loads((ROOT/"site/data/catalog.json").read_text())
 SAMPLE = cat["sample_countries"]
+# All 38 OECD members. Coverage is judged against the whole membership, not just
+# the sample: a table that omits a third of the OECD is a different object from
+# one that omits nobody, and the seven-country view hides that.
+OECD_MEMBERS = [
+    "AUS","AUT","BEL","CAN","CHL","COL","CRI","CZE","DNK","EST","FIN","FRA",
+    "DEU","GRC","HUN","ISL","IRL","ISR","ITA","JPN","KOR","LVA","LTU","LUX",
+    "MEX","NLD","NZL","NOR","POL","PRT","SVK","SVN","ESP","SWE","CHE","TUR",
+    "GBR","USA",
+]
 
 def load(mp, meta):
     d = mp.parent
@@ -36,14 +45,24 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
             span[code] = (min(cur[0], lo), max(cur[1], hi)) if cur else (lo, hi)
     covered = [c for c in SAMPLE if obs.get(c, 0) > 0]
     missing = [c for c in SAMPLE if obs.get(c, 0) == 0]
+    oecd_missing = [c for c in OECD_MEMBERS if obs.get(c, 0) == 0]
     meta["coverage"] = {
         "sample_covered": covered,
         "sample_missing": missing,
         "sample_span": {c: span[c] for c in covered if c in span},
+        "oecd_missing": oecd_missing,
+        "oecd_covered": len(OECD_MEMBERS) - len(oecd_missing),
+        "oecd_total": len(OECD_MEMBERS),
     }
     mp.write_text(json.dumps(meta, separators=(",", ":")))
     f = by_slug.get(meta["slug"])
-    if f: f["sample_missing"] = missing
+    if f:
+        f["sample_missing"] = missing
+        f["oecd_missing"] = oecd_missing
 (ROOT/"site/data/catalog.json").write_text(json.dumps(cat, separators=(",", ":")))
 n = sum(1 for f in cat["flows"] if f.get("sample_missing"))
-print(f"datasets with a sample-country gap: {n} of {len(cat['flows'])}")
+m = sum(1 for f in cat["flows"] if f.get("oecd_missing"))
+tot = sum(len(f.get("oecd_missing") or []) for f in cat["flows"])
+print(f"datasets missing a sample country: {n} of {len(cat['flows'])}")
+print(f"datasets missing an OECD member : {m} of {len(cat['flows'])}")
+print(f"country-dataset gaps across the OECD: {tot}")
