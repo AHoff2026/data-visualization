@@ -2,58 +2,23 @@
  {
   "slug": "OECD.CTP.TPS__DF_RSGLOBAL",
   "flow": "Global Revenue Statistics",
-  "zero_series": 31842,
-  "total_series": 77912,
-  "share": 0.409,
+  "zero_series": 16293,
+  "total_series": 62363,
+  "share": 0.261,
   "areas": [
    "LIE",
    "FRA",
    "BEL",
+   "BRA",
    "BGR",
    "LTU",
    "DEU",
-   "AUS",
    "EST"
   ],
   "units": [
-   "National currency",
    "Percentage of GDP",
-   "Percentage of revenues"
-  ]
- },
- {
-  "slug": "OECD.SDD.NAD__DF_TABLE9A",
-  "flow": "Fixed assets by activity and asset",
-  "zero_series": 11404,
-  "total_series": 146568,
-  "share": 0.078,
-  "areas": [
-   "CZE",
-   "LVA",
-   "GBR",
-   "FRA",
-   "GRC",
-   "AUT",
-   "FIN",
-   "PRT"
-  ],
-  "units": [
-   "National currency"
-  ]
- },
- {
-  "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
-  "flow": "Usual weekly hours worked",
-  "zero_series": 324,
-  "total_series": 5832,
-  "share": 0.056,
-  "areas": [
-   "CAN",
-   "IDN",
-   "RUS"
-  ],
-  "units": [
-   "Hours per week per person"
+   "Percentage of revenues in the same tax category",
+   "Percentage of revenues of the same level of government"
   ]
  },
  {
@@ -79,68 +44,6 @@
   ]
  },
  {
-  "slug": "OECD.ELS.JAI__DF_HOURSPOV",
-  "flow": "Hours of work needed to escape poverty",
-  "zero_series": 72,
-  "total_series": 1936,
-  "share": 0.037,
-  "areas": [
-   "JPN",
-   "GBR",
-   "DNK",
-   "NLD",
-   "IRL",
-   "FIN"
-  ],
-  "units": [
-   "Hours per week"
-  ]
- },
- {
-  "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
-  "flow": "Social expenditure aggregates",
-  "zero_series": 1429,
-  "total_series": 39406,
-  "share": 0.036,
-  "areas": [
-   "CHL",
-   "OECD",
-   "ROU",
-   "JPN",
-   "ESP",
-   "BEL",
-   "USA",
-   "SVN"
-  ],
-  "units": [
-   "National currency",
-   "Percentage of GDP",
-   "Percentage of general government expenditure"
-  ]
- },
- {
-  "slug": "OECD.SDD.NAD__DF_TABLE2",
-  "flow": "National disposable income and saving",
-  "zero_series": 176,
-  "total_series": 7915,
-  "share": 0.022,
-  "areas": [
-   "FRA",
-   "CRI",
-   "MEX",
-   "GEO",
-   "DEU_F",
-   "FIN",
-   "CMR",
-   "AUT"
-  ],
-  "units": [
-   "National currency",
-   "US dollars, PPP converted",
-   "US dollars, exchange rate converted"
-  ]
- },
- {
   "slug": "OECD.CTP.TPS__DF_TW_COMP",
   "flow": "Labor taxation",
   "zero_series": 92,
@@ -156,6 +59,27 @@
   "units": [
    "Percentage of gross wage earnings",
    "Percentage of labor costs"
+  ]
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
+  "flow": "Social expenditure aggregates",
+  "zero_series": 647,
+  "total_series": 38624,
+  "share": 0.017,
+  "areas": [
+   "CHL",
+   "OECD",
+   "JPN",
+   "BEL",
+   "ROU",
+   "ESP",
+   "COL",
+   "KOR"
+  ],
+  "units": [
+   "Percentage of GDP",
+   "Percentage of general government expenditure"
   ]
  },
  {
@@ -175,7 +99,7 @@
    "ITA"
   ],
   "units": [
-   "Percentage of population"
+   "Percentage of the same population group"
   ]
  },
  {
@@ -189,7 +113,7 @@
    "CHE"
   ],
   "units": [
-   "Percentage of students"
+   "Percentage of the same student group"
   ]
  },
  {
@@ -209,20 +133,7 @@
    "ITA"
   ],
   "units": [
-   "Percentage of the labor force"
-  ]
- },
- {
-  "slug": "OECD.ELS.SAE__GENDER_WAGE_GAP",
-  "flow": "Gender wage gap",
-  "zero_series": 1,
-  "total_series": 200,
-  "share": 0.005,
-  "areas": [
-   "TUR"
-  ],
-  "units": [
-   "Percentage of wages of men"
+   "Percentage of the same labor force group"
   ]
  },
  {
@@ -258,24 +169,6 @@
   "units": [
    "Percentage of respondents",
    "Percentage of students"
-  ]
- },
- {
-  "slug": "OECD.SDD.NAD__DF_TABLE5_T501",
-  "flow": "Household consumption by purpose",
-  "zero_series": 26,
-  "total_series": 8978,
-  "share": 0.003,
-  "areas": [
-   "SWE",
-   "AUT",
-   "SVN",
-   "LUX",
-   "NLD",
-   "CRI"
-  ],
-  "units": [
-   "National currency"
   ]
  },
  {
@@ -330,7 +223,7 @@
    "SVN"
   ],
   "units": [
-   "Percentage of population"
+   "Percentage of the same population group"
   ]
  },
  {
@@ -351,23 +244,22 @@
  {
   "slug": "OECD.SDD.TPS__DF_PDB",
   "flow": "Productivity database",
-  "zero_series": 83,
-  "total_series": 57661,
+  "zero_series": 47,
+  "total_series": 57625,
   "share": 0.001,
   "areas": [
-   "EST",
-   "LVA",
-   "LUX",
+   "SWE",
+   "NOR",
+   "NLD",
    "DNK",
    "BEL",
    "DEU",
    "ESP",
-   "SWE"
+   "PRT"
   ],
   "units": [
-   "National currency",
-   "National currency per hour",
-   "National currency per person"
+   "Percent per annum",
+   "Persons"
   ]
  }
 ]

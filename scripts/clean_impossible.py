@@ -15,6 +15,10 @@ BOUNDED = re.compile(r"percentage of (the )?(population|employment|labor force|"
                      r"labour force|employees|students|respondents|households|unemployed|"
                      r"working-age population)", re.I)
 COUNT = re.compile(r"^(persons?|number|thousands?|households?)", re.I)
+# units where a series of zeros throughout cannot be a measurement: nobody works
+# zero hours for forty years, and an index or a currency amount is never zero
+IMPOSSIBLE_ZERO = re.compile(r"hours|index|national currency|dollar|euro|"
+                             r"per person|per hour|per head|wages of men", re.I)
 GROWTH = re.compile(r"growth|change", re.I)
 
 def load(mp, meta):
@@ -55,8 +59,12 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
     if ui is None: continue
     recs = load(mp, meta)
     if not recs: continue
-    dropped = 0; out = []
+    dropped = 0; zero_series = 0; out = []
     for r in recs:
+        un0 = meta["dims"][ui]["names"][r["k"][ui]]
+        if IMPOSSIBLE_ZERO.search(un0) and r["v"] and all(v == 0 for v in r["v"]):
+            zero_series += 1
+            continue
         if ti is not None and GROWTH.search(meta["dims"][ti]["names"][r["k"][ti]]):
             out.append(r); continue
         un = meta["dims"][ui]["names"][r["k"][ui]]
@@ -72,13 +80,19 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         n = dict(r); n["t"] = t2; n["v"] = v2
         if r.get("s"): n["s"] = s2
         out.append(n)
-    if dropped:
+    if dropped or zero_series:
         meta["n_series"] = len(out); meta["n_obs"] = sum(len(x["v"]) for x in out)
+        bits = []
+        if dropped:
+            bits.append(f"{dropped} observation{'s' if dropped != 1 else ''} outside what "
+                        f"the unit allows — a share beyond 0 to 100, or a negative count")
+        if zero_series:
+            bits.append(f"{zero_series} series that were zero at every observation in a "
+                        f"unit where zero cannot be a measurement")
         meta.setdefault("source_notes", []).append(
-            f"{dropped} observation{'s' if dropped != 1 else ''} removed as impossible "
-            f"for the stated unit — a share outside 0 to 100, or a negative count. "
-            f"These are errors in the published table, not gaps.")
+            "Removed from this table: " + "; ".join(bits) +
+            ". These are gaps the source published as figures, not observations.")
         save(mp, meta, out)
-        total += dropped
-        print(f'  {meta["name"][:46]:46} {dropped:6} removed')
+        total += dropped + zero_series
+        print(f'  {meta["name"][:44]:44} {dropped:5} values, {zero_series:5} all-zero series removed')
 print(f"\nimpossible observations removed: {total}")
