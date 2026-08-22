@@ -46,6 +46,17 @@ for f in cat["flows"]:
     if m.get("n_obs") != f.get("n_obs"):
         fails.append(f'{f["slug"]}: observation counts disagree')
 
+# a dial with two identically named options cannot be used
+for f in cat["flows"]:
+    m = json.loads((SITE/"data/flows"/f["slug"]/"meta.json").read_text())
+    for d in m["dims"]:
+        seen = {}
+        for cid, cnm in zip(d["ids"], d["names"]):
+            if cnm in seen:
+                fails.append(f'{f["slug"]}: {d["name"]} offers "{cnm}" twice '
+                             f'({seen[cnm]} and {cid})')
+            seen[cnm] = cid
+
 print(f"datasets: {len(slugs)}")
 if fails:
     print(f"INTEGRITY FAILURES: {len(fails)}")

@@ -103,8 +103,13 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         ann.setdefault(a.get("type"), []).append(a.get("title"))
 
     meta["desc_html"] = sanitize(df.get("description") or "")
-    meta["desc_text"] = re.sub(r'<[^>]+>', ' ', df.get("description") or "")
-    meta["desc_text"] = re.sub(r'\s+', ' ', meta["desc_text"]).strip()
+    # Derive the plain text from the sanitized HTML, not the raw source: a
+    # regex that strips "<...>" from the original swallows "< 3 months" and
+    # everything up to the next ">".
+    txt = re.sub(r'<[^>]+>', ' ', meta["desc_html"])
+    txt = (txt.replace("&lt;", "<").replace("&gt;", ">")
+              .replace("&amp;", "&").replace("&quot;", '"').replace("&#39;", "'"))
+    meta["desc_text"] = re.sub(r'\s+', ' ', txt).strip()
     if meta["desc_html"]: report["with_desc"] += 1
 
     defaults = parse_kv((ann.get("DEFAULT") or [""])[0])
