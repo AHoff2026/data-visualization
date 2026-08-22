@@ -24,7 +24,7 @@ PLAN = {
       "Percentage of employment (derived)"),
   # activity codes overlap (BTF = BTE + F, C is inside BTE); A + BTF + GTU + _X
   # is the non-overlapping partition of total employment
-  "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q": ("ACTIVITY", ["SUM:A,BTF,GTU,_X"], "PT_EMP_D",
+  "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q": ("ACTIVITY", ["SUM:A,BTF,GTU|_X"], "PT_EMP_D",
       "Percentage of employment (derived)"),
 }
 
@@ -71,11 +71,17 @@ def run(slug):
     di = idx[dim_id]
     dim = meta["dims"][di]
     sum_codes = None
+    req_set = None
     tot = next((dim["ids"].index(t) for t in totals if t in dim["ids"]), None)
     if tot is None:
         spec = next((t for t in totals if t.startswith("SUM:")), None)
         if spec:
-            sum_codes = [dim["ids"].index(c) for c in spec[4:].split(",") if c in dim["ids"]]
+            body = spec[4:]
+            req_part, _, opt_part = body.partition("|")
+            required = [dim["ids"].index(c) for c in req_part.split(",") if c in dim["ids"]]
+            optional = [dim["ids"].index(c) for c in opt_part.split(",") if c in dim["ids"]]
+            sum_codes = required + optional
+            req_set = set(required)
             if not sum_codes: return f"{slug}: none of {spec} present"
         else:
             return f"{slug}: no total code among {totals}"
@@ -96,12 +102,19 @@ def run(slug):
         return tuple(v for i, v in enumerate(r["k"]) if i != exclude)
     totmap = {}
     if sum_codes is not None:
+        # Only sum a denominator when every component is present at that period.
+        # A partial sum understates the total and produces shares above 100.
         acc = defaultdict(lambda: defaultdict(float))
+        seen = defaultdict(lambda: defaultdict(set))
         for r in recs:
             if r["k"][di] not in sum_codes: continue
-            a = acc[key_ex(r, di)]
-            for ti, v in zip(r["t"], r["v"]): a[ti] += v
-        totmap = {k: dict(v) for k, v in acc.items()}
+            k = key_ex(r, di)
+            for ti, v in zip(r["t"], r["v"]):
+                acc[k][ti] += v
+                seen[k][ti].add(r["k"][di])
+        need = req_set or set(sum_codes)
+        totmap = {k: {ti: v for ti, v in d2.items() if seen[k][ti] >= need}
+                  for k, d2 in acc.items()}
         is_total = lambda rec: rec["k"][di] in sum_codes and len(sum_codes) == 1
     else:
         for r in recs:
@@ -110,6 +123,7 @@ def run(slug):
         is_total = lambda rec: rec["k"][di] == tot
 
     made = 0
+    dropped = [0]
     out = list(recs)
     for r in recs:
         if is_total(r): continue
@@ -119,7 +133,13 @@ def run(slug):
         for ti, v in zip(r["t"], r["v"]):
             b = base.get(ti)
             if b in (None, 0): continue
-            t2.append(ti); v2.append(round(v / b * 100, 4))
+            share = v / b * 100
+            # the source is internally inconsistent where a part exceeds its
+            # whole; publishing that as a percentage would be worse than a gap
+            if share > 100.5 or share < -0.5:
+                dropped[0] += 1
+                continue
+            t2.append(ti); v2.append(round(share, 4))
         if not t2: continue
         k = list(r["k"]); k[ui] = new_ui
         out.append({"k": k, "t": t2, "v": v2})
@@ -137,7 +157,7 @@ def run(slug):
         "method": f"value divided by the {dim['name']} total, times 100",
     }
     save(mp, meta, out)
-    return f"{slug}: +{made} derived series ({new_label})"
+    return f"{slug}: +{made} derived series ({new_label}); {dropped[0]} impossible values dropped"
 
 for slug in (sys.argv[1:] or PLAN):
     print(run(slug))

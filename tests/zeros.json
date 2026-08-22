@@ -1,7 +1,7 @@
 [
  {
   "slug": "OECD.CTP.TPS__DF_RSGLOBAL",
-  "flow": "Global Revenue Statistics - Comparative tax revenues",
+  "flow": "Global Revenue Statistics",
   "zero_series": 31842,
   "total_series": 77912,
   "share": 0.409,
@@ -18,12 +18,12 @@
   "units": [
    "National currency",
    "Percentage of GDP",
-   "Percentage of revenues in the same institutional sector"
+   "Percentage of revenues"
   ]
  },
  {
   "slug": "OECD.SDD.NAD__DF_TABLE9A",
-  "flow": "Annual fixed assets by economic activity and by asset",
+  "flow": "Fixed assets by activity and asset",
   "zero_series": 11404,
   "total_series": 146568,
   "share": 0.078,
@@ -43,7 +43,7 @@
  },
  {
   "slug": "OECD.ELS.SAE__DF_AVG_USL_WK_WKD",
-  "flow": "Average usual weekly hours worked on the main job",
+  "flow": "Usual weekly hours worked",
   "zero_series": 324,
   "total_series": 5832,
   "share": 0.056,
@@ -75,7 +75,7 @@
   "units": [
    "Percentage of average disposable income",
    "Percentage of gross disposable income of the population aged over 65 years",
-   "Percentage of population in the same sex and age"
+   "Percentage of population"
   ]
  },
  {
@@ -94,28 +94,6 @@
   ],
   "units": [
    "Hours per week"
-  ]
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_PRV",
-  "flow": "Public and private social expenditure",
-  "zero_series": 722,
-  "total_series": 19336,
-  "share": 0.037,
-  "areas": [
-   "CHL",
-   "OECD",
-   "ROU",
-   "JPN",
-   "ESP",
-   "BEL",
-   "PER",
-   "USA"
-  ],
-  "units": [
-   "National currency",
-   "Percentage of GDP",
-   "Percentage of general government expenditure"
   ]
  },
  {
@@ -142,7 +120,7 @@
  },
  {
   "slug": "OECD.SDD.NAD__DF_TABLE2",
-  "flow": "Annual national disposable income, saving and net lending/net borrowing",
+  "flow": "National disposable income and saving",
   "zero_series": 176,
   "total_series": 7915,
   "share": 0.022,
@@ -164,7 +142,7 @@
  },
  {
   "slug": "OECD.CTP.TPS__DF_TW_COMP",
-  "flow": "Labor taxation \u2013 OECD comparative country indicators",
+  "flow": "Labor taxation",
   "zero_series": 92,
   "total_series": 4768,
   "share": 0.019,
@@ -182,7 +160,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
-  "flow": "Share of young adults who are not employment nor in formal education or training (NEET), by country of birth and age at migration",
+  "flow": "Young adults not in employment, education or training (NEET)",
   "zero_series": 118,
   "total_series": 7493,
   "share": 0.016,
@@ -197,12 +175,12 @@
    "ITA"
   ],
   "units": [
-   "Percentage of population in the same subgroup"
+   "Percentage of population"
   ]
  },
  {
   "slug": "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET",
-  "flow": "Distribution of students in vocational education and training programs by level of education",
+  "flow": "Students in vocational education and training",
   "zero_series": 6,
   "total_series": 411,
   "share": 0.015,
@@ -211,32 +189,12 @@
    "CHE"
   ],
   "units": [
-   "Percentage of students in the same subgroup"
-  ]
- },
- {
-  "slug": "OECD.ELS.SPD__DF_PUB_DIS_SIC",
-  "flow": "Public expenditure on disability and sickness cash benefits in % GDP",
-  "zero_series": 35,
-  "total_series": 2388,
-  "share": 0.015,
-  "areas": [
-   "SVN",
-   "PER",
-   "CHL",
-   "MEX",
-   "FRA",
-   "NOR"
-  ],
-  "units": [
-   "National currency",
-   "Percentage of GDP",
-   "Percentage of general government expenditure"
+   "Percentage of students"
   ]
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
-  "flow": "Unemployment rates of adults, by educational attainment, age group, gender, country of birth and age at migration",
+  "flow": "Unemployment rate by education and migration",
   "zero_series": 92,
   "total_series": 15605,
   "share": 0.006,
@@ -251,7 +209,7 @@
    "ITA"
   ],
   "units": [
-   "Percentage of labor force in the same subgroup"
+   "Percentage of the labor force"
   ]
  },
  {
@@ -264,7 +222,7 @@
    "TUR"
   ],
   "units": [
-   "Percentage of wages of men in the same decile"
+   "Percentage of wages of men"
   ]
  },
  {
@@ -289,9 +247,9 @@
  },
  {
   "slug": "OECD.GOV.GIP__DF_GOV_SPS_2023",
-  "flow": "Satisfaction with public services - Government at a glance indicators, 2023 edition",
+  "flow": "Satisfaction with public services",
   "zero_series": 5,
-  "total_series": 1159,
+  "total_series": 1158,
   "share": 0.004,
   "areas": [
    "FIN",
@@ -304,7 +262,7 @@
  },
  {
   "slug": "OECD.SDD.NAD__DF_TABLE5_T501",
-  "flow": "Annual household final consumption expenditure by purpose (COICOP)",
+  "flow": "Household consumption by purpose",
   "zero_series": 26,
   "total_series": 8978,
   "share": 0.003,
@@ -322,7 +280,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_ALFS_EMP",
-  "flow": "Employment by activites and status (ALFS)",
+  "flow": "Employment by activity and status",
   "zero_series": 11,
   "total_series": 4011,
   "share": 0.003,
@@ -338,7 +296,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "zero_series": 222,
   "total_series": 118291,
   "share": 0.002,
@@ -360,7 +318,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
-  "flow": "Inactivity rates of adults, by educational attainment, age group, gender, country of birth and age at migration",
+  "flow": "Inactivity rate by education and migration",
   "zero_series": 27,
   "total_series": 17357,
   "share": 0.002,
@@ -372,12 +330,12 @@
    "SVN"
   ],
   "units": [
-   "Percentage of population in the same subgroup"
+   "Percentage of population"
   ]
  },
  {
   "slug": "OECD.ELS.SAE__DF_INVPT_I",
-  "flow": "Incidence of involuntary part time employment",
+  "flow": "Involuntary part-time employment",
   "zero_series": 4,
   "total_series": 7461,
   "share": 0.001,
@@ -386,8 +344,8 @@
   ],
   "units": [
    "Percentage of employment",
-   "Percentage of labor force",
-   "Percentage of part-time employment"
+   "Percentage of part-time employment",
+   "Percentage of population"
   ]
  },
  {
