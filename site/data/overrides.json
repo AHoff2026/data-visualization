@@ -11,7 +11,7 @@
   },
   "/d/OECD.ELS.SAE__GENDER_WAGE_GAP": {
     "desc": "This dataset contains gender wage gaps defined as:&nbsp;<div><br></div><div>1) the unadjusted difference between median wages of men and women relative to the median wages of men,&nbsp;</div><div>2) the unadjusted difference between mean wages of men and women relative to the mean wages of men,&nbsp;</div><div>3) at the 1st decile and&nbsp;</div><div>4) at the 9th decile.</div>",
-    "figsub": "Percent lower than men ·  United Kingdom"
+    "figsub": "Percent lower than men \u00b7  United Kingdom"
   },
   "/featured/OECD.ELS.SAE__DF_TUD": {
     "title": "Union membership has fallen"
@@ -19,10 +19,10 @@
   "/featured/OECD.ELS.SAE__DF_CBC": {
     "title": "As has collective bargaining coverage, but not universally"
   },
-  "/featured/OECD.ELS.SPD__DF_NET_GDP": {
-    "title": "Fiscal cost of the welfare state"
-  },
   "/featured/OECD.ELS.SAE__GENDER_WAGE_GAP": {
     "title": "The gender wage gap has narrowed"
+  },
+  "/featured/OECD.ELS.SPD__DF_SOCX_AGG": {
+    "title": "Fiscal cost of the welfare state"
   }
 }

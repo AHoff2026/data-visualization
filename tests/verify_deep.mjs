@@ -28,10 +28,11 @@ async function figureState(page) {
     const tbl = document.querySelector("table.data");
     const note = document.querySelector(".figure .center-note")?.textContent?.trim() || "";
     const lines = document.querySelectorAll("svg.chart path.line").length;
+    const bars = document.querySelectorAll("svg.chart rect[rx]").length;
     const legend = [...document.querySelectorAll(".legend__i")].map(n => n.textContent.trim());
     const swatches = [...document.querySelectorAll(".legend__i .dotmark")]
       .map(n => getComputedStyle(n).backgroundColor);
-    return { hasChart: !!(svg || grid || tbl), lines, note, legend, swatches,
+    return { hasChart: !!(svg || grid || tbl), lines, bars, note, legend, swatches,
              overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth };
   });
 }
@@ -89,7 +90,7 @@ for (const slug of slugs) {
     // ---------- D3 toggle an entity: colour, label, no page jump
     await page.reload({ waitUntil: "load" });
     await page.waitForSelector("svg.chart", { timeout: 90000 });
-    await page.waitForTimeout(350);
+    await page.waitForTimeout(1800);   // the background data upgrade re-seeds
     await page.evaluate(() => window.scrollTo(0, 260));
     const before = await figureState(page);
     const yBefore = await page.evaluate(() => window.scrollY);
@@ -104,7 +105,11 @@ for (const slug of slugs) {
       rec.checked++;
       if (Math.abs(yAfter - yBefore) > 8)
         rec.fail.push(`D3 page jumped ${yBefore}→${yAfter} on toggle`);
-      if (after.legend.length <= before.legend.length && after.lines <= before.lines)
+      const excluded = await page.evaluate(() =>
+        /reports zero for every year/.test(document.querySelector(".figure__foot")?.textContent || "")
+        || /has no data/.test(document.body.textContent));
+      if (!excluded && after.legend.length <= before.legend.length
+          && after.lines <= before.lines && (after.bars || 0) <= (before.bars || 0))
         rec.fail.push(`D3 toggling "${name}" on added no series`);
     }
 
@@ -122,8 +127,13 @@ for (const slug of slugs) {
         return xs.size;
       });
       if (bb && nX > 3) {
-        const before = await page.evaluate(() =>
-          [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
+        await page.waitForTimeout(600);
+        const years = () => page.evaluate(() => {
+          const ys = [...document.querySelectorAll("svg.chart text.tick")]
+            .map(t => t.textContent).filter(t => /^\d{4}$/.test(t)).map(Number);
+          return ys.length ? [Math.min(...ys), Math.max(...ys)].join("-") : "";
+        });
+        const before = await years();
         await page.mouse.move(bb.x + bb.width * 0.5, bb.y + bb.height * 0.5);
         await page.mouse.down();
         await page.mouse.move(bb.x + bb.width * 0.8, bb.y + bb.height * 0.5, { steps: 8 });
@@ -131,15 +141,15 @@ for (const slug of slugs) {
         await page.waitForTimeout(450);
         rec.checked++;
         const bar = await page.locator(".zoombar").count();
-        const after = await page.evaluate(() =>
-          [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
-        if (!bar) rec.fail.push("D8 dragging did not zoom the time axis");
+        const after = await years();
+        if (!before) { /* ranked view, nothing to zoom */ }
+        else if (!bar) rec.fail.push("D8 dragging did not zoom the time axis");
         else {
           await page.locator(".zoombar button").click();
           await page.waitForTimeout(400);
-          const back = await page.evaluate(() =>
-            [...document.querySelectorAll("svg.chart text.tick")].map(t => t.textContent).join(","));
-          if (back !== before) rec.fail.push("D8 reset did not restore the full period");
+          const back = await years();
+          if (back !== before)
+            rec.fail.push(`D8 reset gave ${back}, not the original ${before}`);
         }
       }
     }

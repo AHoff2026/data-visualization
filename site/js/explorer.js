@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=d259dcad";
-import { getFlowMeta, getSeries } from "./store.js?v=d259dcad";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=d259dcad";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=d259dcad";
-import { dataTable } from "./table.js?v=d259dcad";
-import { editable, textOf } from "./edits.js?v=d259dcad";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=dc2279c8";
+import { getFlowMeta, getSeries } from "./store.js?v=dc2279c8";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=dc2279c8";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=dc2279c8";
+import { dataTable } from "./table.js?v=dc2279c8";
+import { editable, textOf } from "./edits.js?v=dc2279c8";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -41,6 +41,8 @@ export async function renderExplorer(host, slug, catalog) {
   const SCOPE = `/d/${slug}`;          // key for manual text overrides
   let everSeen = [];                   // codes that appear anywhere in the data
   let userTouched = false;             // has the reader changed anything yet
+  let viewTouched = false;             // has the reader chosen a view explicitly
+  let firstDraw = true;                // the landing view is decided once
   const dims = meta.dims;
   const areaDim = meta.area_dim && dims.some(d => d.id === meta.area_dim) ? meta.area_dim : null;
   const D = dims.length;
@@ -106,6 +108,7 @@ export async function renderExplorer(host, slug, catalog) {
       const kept = ui.entities.filter(e => has.has(e));
       if (!kept.length) seedEntities(state.avail); else ui.entities = kept;
       reslot();
+      firstDraw = true;
       buildControls();
       draw();
       return;
@@ -395,7 +398,12 @@ export async function renderExplorer(host, slug, catalog) {
     const noTrend = list.length > 0 && maxPts <= 2;
     lastNoTrend = noTrend;
     let switched = false;
-    if (ui.view === "lines" && noTrend) { ui.view = "rank"; switched = true; }
+    // Decide the landing view once. Re-deciding on every redraw yanks the view
+    // out from under the reader when a later selection happens to be short.
+    if (firstDraw && ui.view === "lines" && noTrend && !viewTouched) {
+      ui.view = "rank"; switched = true;
+    }
+    firstDraw = false;
 
     if (ui.view === "rank" && list.length) {
       if (stopSize) stopSize();
@@ -531,7 +539,7 @@ export async function renderExplorer(host, slug, catalog) {
       : [["lines", "Trends"], ["rank", "Ranking"], ["small", "Country snapshots"], ["table", "Table"]];
     for (const [k, lbl] of views)
       seg.appendChild(el("button", { "aria-pressed": String(ui.view === k),
-        onclick: () => { ui.view = k; buildControls(); draw(); } }, lbl));
+        onclick: () => { ui.view = k; viewTouched = true; buildControls(); draw(); } }, lbl));
     row1.appendChild(seg);
 
     const tech = meta.hidden_dims || {};
@@ -723,10 +731,24 @@ export async function renderExplorer(host, slug, catalog) {
       title: d.code_defs?.[d.ids[i]] || d.names[i] || d.ids[i],
       onclick: async () => {
         userTouched = true;
-        if (ui.entities.includes(i)) ui.entities = ui.entities.filter(x => x !== i);
+        const adding = !ui.entities.includes(i);
+        if (!adding) ui.entities = ui.entities.filter(x => x !== i);
         else ui.entities = [...ui.entities, i];
         reslot();
         await maybeReload();
+        // A country can be in the list yet have nothing for this combination.
+        // Silence would look like a broken click, so say what happened.
+        ui.notice = null;
+        if (adding) {
+          const shown = activeSeries(state.live).some(x => x.id === d.ids[i]);
+          if (!shown) {
+            const where = everSeen[dimIndex[ui.breakdown]].has(i)
+              ? "for this combination of settings — try changing the indicator or a breakdown"
+              : "in this dataset";
+            ui.notice = `${d.names[i] || d.ids[i]} has no data ${where}.`;
+          }
+        }
+        showNotice();
         paintChips();      // in place — no layout reflow above the chart
         draw();
       } },

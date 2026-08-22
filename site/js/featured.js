@@ -1,9 +1,9 @@
 // ---------- home-page featured charts ----------
-import { el, clear } from "./util.js?v=d259dcad";
-import { editable, textOf } from "./edits.js?v=d259dcad";
-import { getFlowMeta, getSeries } from "./store.js?v=d259dcad";
-import { lineChart, autosize } from "./chart.js?v=d259dcad";
-import { seedPicks, scanRecords, toSeries } from "./series.js?v=d259dcad";
+import { el, clear } from "./util.js?v=dc2279c8";
+import { editable, textOf } from "./edits.js?v=dc2279c8";
+import { getFlowMeta, getSeries } from "./store.js?v=dc2279c8";
+import { lineChart, autosize } from "./chart.js?v=dc2279c8";
+import { seedPicks, scanRecords, toSeries } from "./series.js?v=dc2279c8";
 
 /** Small, meaningful, quick-loading series that open the publication. */
 export const FEATURED = [
@@ -13,9 +13,9 @@ export const FEATURED = [
   { slug: "OECD.ELS.SAE__DF_CBC",
     title: "Collective bargaining coverage tells a different story",
     note: "Share of employees covered by a collective agreement — coverage can stay high as membership falls." },
-  { slug: "OECD.ELS.SPD__DF_NET_GDP",
+  { slug: "OECD.ELS.SPD__DF_SOCX_AGG",
     title: "What the welfare state actually costs",
-    note: "Net total social expenditure as a share of GDP." },
+    note: "Social expenditure as a share of GDP." },
   { slug: "OECD.ELS.SAE__GENDER_WAGE_GAP",
     title: "The gender wage gap, narrowing slowly",
     note: "Difference between male and female median earnings, as a share of male median earnings." },
@@ -27,7 +27,11 @@ export async function renderFeatured(host, catalog) {
   const grid = el("div", { class: "featgrid" });
   host.appendChild(grid);
 
-  await Promise.all(FEATURED.map(async (f) => {
+  // a card must not outlive its dataset
+  const have = new Set((catalog.flows || []).map(x => x.slug));
+  const cards = FEATURED.filter(f => have.has(f.slug));
+
+  await Promise.all(cards.map(async (f) => {
     // Each card's headline and note are editable from the landing page.
     const SC = "/featured/" + f.slug;
     const t = el("div", { class: "feat__t" }, textOf(SC, "title", f.title));
