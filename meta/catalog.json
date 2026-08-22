@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-22T23:53:25",
+ "generated": "2026-08-23T00:06:17",
  "default_countries": [
   "DEU",
   "DNK",
@@ -15028,6 +15028,165 @@
     "TIME_PERIOD": []
    },
    "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_PAG@DF_PRR&df[ag]=OECD.ELS.SPD&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
+   "id": "DSD_GOV@DF_GOV_EMPPS_REP_2025",
+   "agency": "OECD.GOV.GIP",
+   "version": "1.0",
+   "name": "Public employment and representation - government at a glance indicators, 2025 edition",
+   "description": "This dataset represents a selection of indicators as presented in the 2025 edition of the Government at a Glance publication related to the employment of public employees and its representation. Government at a Glance provides a dashboard of indicators assembled to help decision makers and the public analyse and benchmark governments across OECD members and partner countries. With a growing emphasis on governance outcomes, this ninth edition presents the latest evidence on public governance tools and resources that can help public administrations address complex, long-term challenges, while allowing progress to be monitored over time. The Structure and indicators section of the Government at a Glance publication, describes its framework and the structure by chapters. The 2025 edition of Government at a Glance presents a structure around three broad categories: 1) Trust, security and dignity; prosperity and satisfaction with public services; 2) Achieving results with good governance practices 3) What resources public institutions use and how are they managed. Further information on Government at a Glance 2025 edition via a dedicated web platform, which includes a Government at a Glance Data dashboard (for a selection of indicators in an interactive format) as well as Country fact sheets (key data by country), can be found at: <a href=\"https://www.oecd.org/en/publications/government-at-a-glance-2025_0efd0bcd-en.html\">Government at a Glance website</a>",
+   "topic": "GOV.GOV_PEM",
+   "dsd": "DSD_GOV",
+   "dimensions": [
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 0,
+     "codelist": "SDMX:CL_FREQ"
+    },
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 1,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 2,
+     "codelist": "OECD.GOV.GIP:CL_MEASURE"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 3,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "SECTOR",
+     "name": "SECTOR",
+     "position": 4,
+     "codelist": "OECD:CL_SECTOR"
+    },
+    {
+     "id": "EDITION",
+     "name": "EDITION",
+     "position": 5,
+     "codelist": "OECD.GOV.GIP:CL_EDITION"
+    },
+    {
+     "id": "CATEGORY",
+     "name": "CATEGORY",
+     "position": 6,
+     "codelist": "OECD.GOV.GIP:CL_CATEGORY"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "PRICE_BASE",
+     "name": "PRICE_BASE"
+    },
+    {
+     "id": "BASE_PER",
+     "name": "BASE_PER"
+    }
+   ],
+   "used_codes": {
+    "FREQ": [
+     "A"
+    ],
+    "REF_AREA": [
+     "ARG",
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "BRA",
+     "CAN",
+     "CHE",
+     "CHL",
+     "COL",
+     "CRI",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IDN",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MEX",
+     "NLD",
+     "NOR",
+     "NZL",
+     "OECD_REP",
+     "PER",
+     "POL",
+     "PRT",
+     "ROU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA"
+    ],
+    "MEASURE": [
+     "AGE_CM",
+     "EMPG",
+     "EMPW_CMIN",
+     "EMPW_PARL",
+     "Y_PARL",
+     "Y_VAPOP"
+    ],
+    "UNIT_MEASURE": [
+     "PS",
+     "PT_EMP",
+     "PT_PARL_MEM",
+     "PT_POP_VA",
+     "PT_W",
+     "Y"
+    ],
+    "SECTOR": [
+     "S1",
+     "S13",
+     "S1311",
+     "S1ZS",
+     "_Z"
+    ],
+    "EDITION": [
+     "2025"
+    ],
+    "CATEGORY": [
+     "EMPPS_REP"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_GOV@DF_GOV_EMPPS_REP_2025&df[ag]=OECD.GOV.GIP&df[vs]=1.0",
    "tab_default_key": "",
    "tab_period": ""
   }
@@ -70948,6 +71107,416 @@
     {
      "id": "VERSION4",
      "name": "Version 4 (2013-2019)"
+    }
+   ]
+  },
+  "OECD:CL_COFOG": {
+   "id": "CL_COFOG",
+   "agency": "OECD",
+   "name": "Codelist for expenditure according to functions of government",
+   "codes": [
+    {
+     "id": "_T",
+     "name": "Total"
+    },
+    {
+     "id": "_Z",
+     "name": "Not applicable"
+    },
+    {
+     "id": "GF01",
+     "name": "General public services",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0101",
+     "name": "Executive and legislative organs, financial and fiscal affairs, external affairs",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0102",
+     "name": "Foreign economic aid",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0103",
+     "name": "General services",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0104",
+     "name": "Basic research",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0105",
+     "name": "R&D General public services",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0106",
+     "name": "General public services n.e.c.",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0107",
+     "name": "Public debt transactions",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF0108",
+     "name": "Transfers of a general character between different levels of government",
+     "parent": "GF01"
+    },
+    {
+     "id": "GF02",
+     "name": "Defence",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0201",
+     "name": "Military defence",
+     "parent": "GF02"
+    },
+    {
+     "id": "GF0202",
+     "name": "Civil defence",
+     "parent": "GF02"
+    },
+    {
+     "id": "GF0203",
+     "name": "Foreign military aid",
+     "parent": "GF02"
+    },
+    {
+     "id": "GF0204",
+     "name": "R&D Defence",
+     "parent": "GF02"
+    },
+    {
+     "id": "GF0205",
+     "name": "Defence n.e.c.",
+     "parent": "GF02"
+    },
+    {
+     "id": "GF03",
+     "name": "Public order and safety",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0301",
+     "name": "Police services",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF0302",
+     "name": "Fire-protection services",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF0303",
+     "name": "Law courts",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF0304",
+     "name": "Prisons",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF0305",
+     "name": "R&D Public order and safety",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF0306",
+     "name": "Public order and safety n.e.c.",
+     "parent": "GF03"
+    },
+    {
+     "id": "GF04",
+     "name": "Economic affairs",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0401",
+     "name": "General economic, commercial and labour affairs",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0402",
+     "name": "Agriculture, forestry, fishing and hunting",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0403",
+     "name": "Fuel and energy",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0404",
+     "name": "Mining, manufacturing and construction",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0405",
+     "name": "Transport",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0406",
+     "name": "Communication",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0407",
+     "name": "Other industries",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0408",
+     "name": "R&D Economic affairs",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF0409",
+     "name": "Economic affairs n.e.c.",
+     "parent": "GF04"
+    },
+    {
+     "id": "GF05",
+     "name": "Environmental protection",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0501",
+     "name": "Waste management",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF0502",
+     "name": "Waste water management",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF0503",
+     "name": "Pollution abatement",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF0504",
+     "name": "Protection of biodiversity and landscape",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF0505",
+     "name": "R&D Environmental protection",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF0506",
+     "name": "Environmental protection n.e.c.",
+     "parent": "GF05"
+    },
+    {
+     "id": "GF06",
+     "name": "Housing and community amenities",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0601",
+     "name": "Housing development",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF0602",
+     "name": "Community development",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF0603",
+     "name": "Water supply",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF0604",
+     "name": "Street lighting",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF0605",
+     "name": "R&D Housing and community amenities",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF0606",
+     "name": "Housing and community amenities n.e.c.",
+     "parent": "GF06"
+    },
+    {
+     "id": "GF07",
+     "name": "Health",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0701",
+     "name": "Medical products, appliances and equipment",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF0702",
+     "name": "Outpatient services",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF0703",
+     "name": "Hospital services",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF0704",
+     "name": "Public health services",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF0705",
+     "name": "R&D Health",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF0706",
+     "name": "Health n.e.c.",
+     "parent": "GF07"
+    },
+    {
+     "id": "GF08",
+     "name": "Recreation, culture and religion",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0801",
+     "name": "Recreational and sporting services",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF0802",
+     "name": "Cultural services",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF0803",
+     "name": "Broadcasting and publishing services",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF0804",
+     "name": "Religious and other community services",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF0805",
+     "name": "R&D Recreation, culture and religion",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF0806",
+     "name": "Recreation, culture and religion n.e.c.",
+     "parent": "GF08"
+    },
+    {
+     "id": "GF09",
+     "name": "Education",
+     "parent": "_T"
+    },
+    {
+     "id": "GF0901",
+     "name": "Pre-primary and primary education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0902",
+     "name": "Secondary education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0903",
+     "name": "Post-secondary non-tertiary education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0904",
+     "name": "Tertiary education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0905",
+     "name": "Education not definable by level",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0906",
+     "name": "Subsidiary services to education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0907",
+     "name": "R&D Education",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF0908",
+     "name": "Education n.e.c.",
+     "parent": "GF09"
+    },
+    {
+     "id": "GF10",
+     "name": "Social protection",
+     "parent": "_T"
+    },
+    {
+     "id": "GF1001",
+     "name": "Sickness and disability",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1002",
+     "name": "Old age",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1003",
+     "name": "Survivors",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1004",
+     "name": "Family and children",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1005",
+     "name": "Unemployment",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1006",
+     "name": "Housing",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1007",
+     "name": "Social exclusion n.e.c.",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1008",
+     "name": "R&D Social protection",
+     "parent": "GF10"
+    },
+    {
+     "id": "GF1009",
+     "name": "Social protection n.e.c.",
+     "parent": "GF10"
     }
    ]
   }

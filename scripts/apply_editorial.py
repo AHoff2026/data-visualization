@@ -17,7 +17,7 @@ FEATURED = [
     # unions and bargaining
     "OECD.ELS.SAE__DF_TUD", "OECD.ELS.SAE__DF_CBC",
     "OECD.ELS.JAI__DF_EPL", "OECD.ELS.SAE__RMW", "OECD.ELS.JAI__DF_NRR",
-    "OECD.ELS.JAI__DF_SBE", "OWID__WORKING_HOURS_LONGRUN",
+    "OECD.ELS.JAI__DF_SBE", "OWID__WORKING_HOURS_LONGRUN", "OWID__LABOR_SHARE",
     "OWID__SOCIAL_SPENDING_LONGRUN",
     # social provision and inequality
     "OECD.ELS.SPD__DF_SOCX_AGG", "OECD.WISE.INE__DF_IDD",
@@ -99,6 +99,8 @@ TOPIC_OF = {
     "OECD.ELS.JAI__DF_IA": "SOCIAL", "OECD.ELS.SPD__DF_PRR": "SOCIAL",
     "OECD.ELS.JAI__DF_SBE": "UNION",
     "OWID__LABOR_RIGHTS": "UNION",
+    "OWID__LABOR_SHARE": "WAGE",
+    "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025": "TAX",
     "OWID__WORKING_HOURS_LONGRUN": "JOBS",
     "OWID__SOCIAL_SPENDING_LONGRUN": "SOCIAL",
     "OECD.ELS.SPD__DF_PW": "SOCIAL",
@@ -125,6 +127,7 @@ RENAME = {
     "OECD.ELS.JAI__DF_SBE": "Strictness of activation requirements",
     "OECD.ELS.JAI__DF_IA": "Adequacy of minimum income benefits",
     "OECD.ELS.SPD__DF_PRR": "Pension replacement rates",
+    "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025": "Public employment and representation",
 }
 
 p = SITE/"catalog.json"

@@ -938,5 +938,15 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_PAG@DF_PRR&df[ag]=OECD.ELS.SPD&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.GOV.GIP",
+    "dsd": "DSD_GOV",
+    "flow": "DF_GOV_EMPPS_REP_2025",
+    "dataflow_id": "DSD_GOV@DF_GOV_EMPPS_REP_2025",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_GOV@DF_GOV_EMPPS_REP_2025&df[ag]=OECD.GOV.GIP&df[vs]=1.0"
   }
 ]

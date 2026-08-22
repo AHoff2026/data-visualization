@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.ELS.SPD__DF_PRR",
+  "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
   "status": "ok",
-  "series": 936,
-  "obs": 936,
-  "rows": 936,
+  "series": 306,
+  "obs": 1950,
+  "rows": 1950,
   "layout": "single",
-  "bytes": 4585,
-  "src_mb": 0.3
+  "bytes": 6245,
+  "src_mb": 0.7
  }
 ]

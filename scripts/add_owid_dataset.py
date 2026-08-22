@@ -40,6 +40,19 @@ SPECS = {
                "SOCX", "Public social spending", "PT_B1GQ", "Percentage of GDP",
                "Lindert; OECD SOCX")],
  },
+ "labor_share": {
+   "slug": "OWID__LABOR_SHARE",
+   "name": "Labor share of GDP",
+   "topic": "WAGE",
+   "desc": ("Labor income as a share of GDP — the part of what a country produces "
+     "that goes to wages rather than to profit and rent. This is SDG indicator "
+     "10.4.1, compiled by the ILO.<br>The labor share is the summary statistic for "
+     "the bargain between labor and capital, and it is not published anywhere in "
+     "OECD's own statistics."),
+   "series": [("labor-share-of-gdp", "_10_4_1__sl_emp_gtotl",
+               "LABSH", "Labor share of GDP", "PT_B1GQ", "Percentage of GDP",
+               "ILO, via SDG indicator 10.4.1")],
+ },
  "labor_rights": {
    "slug": "OWID__LABOR_RIGHTS",
    "name": "Labor rights compliance",
