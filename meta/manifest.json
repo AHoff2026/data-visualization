@@ -848,5 +848,15 @@
     "topic_raw": "",
     "theme": "unions",
     "page": "440"
+  },
+  {
+    "agency": "OECD.WISE.INE",
+    "dsd": "DSD_WISE_IDD",
+    "flow": "DF_IDD",
+    "dataflow_id": "DSD_WISE_IDD@DF_IDD",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_WISE_IDD@DF_IDD&df[ag]=OECD.WISE.INE&df[vs]=1.0"
   }
 ]

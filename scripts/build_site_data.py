@@ -8,12 +8,27 @@ SITE.mkdir(parents=True, exist_ok=True)
 
 src = ROOT/"data/flows"
 dst = SITE/"flows"
+dst.mkdir(parents=True, exist_ok=True)
+# Merge, never replace. This once deleted every published payload because a
+# single new dataset had been transformed into data/flows.
+moved = 0
 if src.exists():
-    if dst.exists(): shutil.rmtree(dst)
-    shutil.move(str(src), str(dst))
-    print("moved flow payloads ->", dst)
+    for d in sorted(src.iterdir()):
+        if not d.is_dir(): continue
+        target = dst/d.name
+        if target.exists(): shutil.rmtree(target)
+        shutil.move(str(d), str(target))
+        moved += 1
+    if not any(src.iterdir()): src.rmdir()
+print(f"flow payloads moved into place: {moved}")
 
 cat = json.loads((ROOT/"meta/catalog.json").read_text())
+known = {f["slug"] for f in cat["flows"]}
+on_disk = {d.name for d in (SITE/"flows").iterdir() if d.is_dir()}
+missing = on_disk - known
+if missing:
+    print(f"warning: {len(missing)} payloads are on disk but not in the catalog: "
+          f"{sorted(missing)[:4]}")
 flows = []
 for f in cat["flows"]:
     mp = dst/f["slug"]/"meta.json"

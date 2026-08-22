@@ -1,6 +1,24 @@
 {
- "generated": "2026-08-21T00:33:49",
+ "generated": "2026-08-22T12:10:36",
  "default_countries": [
+  "DEU",
+  "DNK",
+  "SWE",
+  "NLD",
+  "FRA",
+  "GBR",
+  "USA"
+ ],
+ "sample_countries": [
+  "DEU",
+  "DNK",
+  "SWE",
+  "NLD",
+  "FRA",
+  "GBR",
+  "USA"
+ ],
+ "core_areas": [
   "DEU",
   "FRA",
   "GBR",
@@ -12,7 +30,16 @@
   "AUT",
   "ESP",
   "ITA",
-  "CAN"
+  "CAN",
+  "NLD",
+  "BEL",
+  "ISL",
+  "NZL",
+  "EU27",
+  "EU27_2020",
+  "EU",
+  "OECD",
+  "OECD_REP"
  ],
  "topic_tree": {
   "id": "OECDCS1",
@@ -8222,224 +8249,6 @@
    "tab_period": "2015,"
   },
   {
-   "slug": "OECD.ELS.SAE__DF_FTPT",
-   "id": "DSD_FTPT@DF_FTPT",
-   "agency": "OECD.ELS.SAE",
-   "version": "1.0",
-   "name": "Full-time and part-time employment",
-   "description": "This dataset contains data on full-time and part-time employment according to:\n<ul>\n<li>a common definition of 30-usual weekly hours of work in the main job</li>\n<li>national definitions</li>\n</ul>\nData are broken down by professional status - employees, total employment - sex and standardised age groups (15-24, 25-54, 55+, total)\n<p />\nIn order to facilitate analysis and comparisons over time, historical data for OECD members have been provided over as long a period as possible, often even before a country became a member of the Organisation. Information on the membership dates of all OECD countries can be found at <a href=\"http://www.oecd.org/about/membersandpartners/list-oecd-member-countries.htm\">OECD Ratification Dates</a>.\n<p />\nFor detailed information on labour force surveys for all countries please see <a href=\"https://www.oecd.org/content/dam/oecd/en/data/datasets/employability-data/LFSNOTES_SOURCES.pdf\">LFS_NOTES_SOURCES</a>.",
-   "topic": "JOB.JOB_EMP",
-   "dsd": "DSD_FTPT",
-   "dimensions": [
-    {
-     "id": "REF_AREA",
-     "name": "REF_AREA",
-     "position": 0,
-     "codelist": "OECD:CL_AREA"
-    },
-    {
-     "id": "MEASURE",
-     "name": "MEASURE",
-     "position": 1,
-     "codelist": "OECD.ELS.SAE:CL_MEASURE_FTPT"
-    },
-    {
-     "id": "UNIT_MEASURE",
-     "name": "UNIT_MEASURE",
-     "position": 2,
-     "codelist": "OECD:CL_UNIT_MEASURE"
-    },
-    {
-     "id": "SEX",
-     "name": "SEX",
-     "position": 3,
-     "codelist": "OECD:CL_SEX"
-    },
-    {
-     "id": "AGE",
-     "name": "AGE",
-     "position": 4,
-     "codelist": "OECD:CL_AGE"
-    },
-    {
-     "id": "LABOUR_FORCE_STATUS",
-     "name": "LABOUR_FORCE_STATUS",
-     "position": 5,
-     "codelist": "OECD:CL_LABOUR_FORCE_STATUS"
-    },
-    {
-     "id": "JOB_COVERAGE",
-     "name": "JOB_COVERAGE",
-     "position": 6,
-     "codelist": "OECD:CL_JOB_COVERAGE"
-    },
-    {
-     "id": "WORKER_STATUS",
-     "name": "WORKER_STATUS",
-     "position": 7,
-     "codelist": "OECD:CL_WORKER_STATUS_ICSE93"
-    },
-    {
-     "id": "WORK_TIME_ARNGMNT",
-     "name": "WORK_TIME_ARNGMNT",
-     "position": 8,
-     "codelist": "OECD:CL_WORK_TIME_ARNGMNT"
-    },
-    {
-     "id": "METHODOLOGY",
-     "name": "METHODOLOGY",
-     "position": 9,
-     "codelist": "OECD.ELS.SAE:CL_METHODOLOGY"
-    },
-    {
-     "id": "FREQ",
-     "name": "FREQ",
-     "position": 10,
-     "codelist": "SDMX:CL_FREQ"
-    }
-   ],
-   "time_dimension": "TIME_PERIOD",
-   "attributes": [
-    {
-     "id": "OBS_STATUS",
-     "name": "OBS_STATUS"
-    },
-    {
-     "id": "UNIT_MULT",
-     "name": "UNIT_MULT"
-    },
-    {
-     "id": "DECIMALS",
-     "name": "DECIMALS"
-    }
-   ],
-   "used_codes": {
-    "REF_AREA": [
-     "ARG",
-     "AUS",
-     "AUT",
-     "BEL",
-     "BGR",
-     "BRA",
-     "CAN",
-     "CHE",
-     "CHL",
-     "COL",
-     "CRI",
-     "CYP",
-     "CZE",
-     "DEU",
-     "DEU_F",
-     "DNK",
-     "ESP",
-     "EST",
-     "EU19OECD",
-     "EU22OECD",
-     "EU27",
-     "FIN",
-     "FRA",
-     "G7",
-     "GBR",
-     "GRC",
-     "HRV",
-     "HUN",
-     "IDN",
-     "IRL",
-     "ISL",
-     "ISR",
-     "ITA",
-     "JPN",
-     "KOR",
-     "LTU",
-     "LUX",
-     "LVA",
-     "MEX",
-     "MKD",
-     "MLT",
-     "NLD",
-     "NOR",
-     "NZL",
-     "OECD",
-     "PER",
-     "POL",
-     "PRT",
-     "ROU",
-     "RUS",
-     "SVK",
-     "SVN",
-     "SWE",
-     "TUR",
-     "USA",
-     "ZAF"
-    ],
-    "MEASURE": [
-     "EMP",
-     "EMP_PT"
-    ],
-    "UNIT_MEASURE": [
-     "PS",
-     "PT_POP_SUB"
-    ],
-    "SEX": [
-     "F",
-     "M",
-     "_T"
-    ],
-    "AGE": [
-     "Y15T19",
-     "Y15T24",
-     "Y15T64",
-     "Y20T24",
-     "Y25T29",
-     "Y25T54",
-     "Y30T34",
-     "Y35T39",
-     "Y40T44",
-     "Y45T49",
-     "Y50T54",
-     "Y55T59",
-     "Y55T64",
-     "Y60T64",
-     "Y65T69",
-     "Y65T74",
-     "Y70T74",
-     "Y_GE55",
-     "Y_GE65",
-     "Y_GE70",
-     "Y_GE75",
-     "_T",
-     "_U"
-    ],
-    "LABOUR_FORCE_STATUS": [
-     "EMP"
-    ],
-    "JOB_COVERAGE": [
-     "MAIN"
-    ],
-    "WORKER_STATUS": [
-     "ICSE93_1",
-     "ICSE93_2T5",
-     "_T",
-     "_U"
-    ],
-    "WORK_TIME_ARNGMNT": [
-     "FT",
-     "PT"
-    ],
-    "METHODOLOGY": [
-     "NAT_DEF",
-     "OECD_DEF"
-    ],
-    "FREQ": [
-     "A"
-    ],
-    "TIME_PERIOD": []
-   },
-   "source_url": "https://data-explorer.oecd.org/vis?tm=unions&pg=200&snb=508&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_FTPT%2540DF_FTPT&df[ag]=OECD.ELS.SAE&df[vs]=1.0&dq=.EMP.PS._T._T.EMP.MAIN._T.FT%2BPT..A&pd=2010,&to[TIME_PERIOD]=false",
-   "tab_default_key": ".EMP.PS._T._T.EMP.MAIN._T.FT+PT..A",
-   "tab_period": "2010,"
-  },
-  {
    "slug": "OECD.ELS.SAE__DF_FTPT_INC_GEN",
    "id": "DSD_FTPT@DF_FTPT_INC_GEN",
    "agency": "OECD.ELS.SAE",
@@ -13756,6 +13565,236 @@
    "source_url": "https://data-explorer.oecd.org/vis?tm=unions&pg=440&snb=508&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_PAG%2540DF_PW&df[ag]=OECD.ELS.SPD&df[vs]=1.0&dq=.A.....&pd=2024,2024&to[TIME_PERIOD]=true",
    "tab_default_key": ".A.....",
    "tab_period": "2024,2024"
+  },
+  {
+   "slug": "OECD.WISE.INE__DF_IDD",
+   "id": "DSD_WISE_IDD@DF_IDD",
+   "agency": "OECD.WISE.INE",
+   "version": "1.0",
+   "name": "Income distribution database",
+   "description": "The OECD Income Distribution Database (IDD) offers data on levels and trends in income inequality and poverty and is updated on a rolling basis, two to three times a year.",
+   "topic": "SOC.SOC_INE",
+   "dsd": "DSD_WISE_IDD",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 1,
+     "codelist": "SDMX:CL_FREQ"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 2,
+     "codelist": "OECD.WISE.INE:CL_MEASURE_IDD"
+    },
+    {
+     "id": "STATISTICAL_OPERATION",
+     "name": "STATISTICAL_OPERATION",
+     "position": 3,
+     "codelist": "OECD:CL_STATISTICAL_OPERATION"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 4,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "AGE",
+     "name": "AGE",
+     "position": 5,
+     "codelist": "OECD:CL_AGE"
+    },
+    {
+     "id": "METHODOLOGY",
+     "name": "METHODOLOGY",
+     "position": 6,
+     "codelist": "OECD.WISE.INE:CL_METHODOLOGY"
+    },
+    {
+     "id": "DEFINITION",
+     "name": "DEFINITION",
+     "position": 7,
+     "codelist": "OECD.WISE.INE:CL_DEFINITION"
+    },
+    {
+     "id": "POVERTY_LINE",
+     "name": "POVERTY_LINE",
+     "position": 8,
+     "codelist": "OECD.WISE.INE:CL_POVERTY_LINE"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "CURRENCY",
+     "name": "CURRENCY"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    },
+    {
+     "id": "PRICE_BASE",
+     "name": "PRICE_BASE"
+    },
+    {
+     "id": "BASE_PER",
+     "name": "BASE_PER"
+    },
+    {
+     "id": "CONF_STATUS",
+     "name": "CONF_STATUS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "BRA",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CHN",
+     "CRI",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IND",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MEX",
+     "NLD",
+     "NOR",
+     "NZL",
+     "POL",
+     "PRT",
+     "ROU",
+     "RUS",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA",
+     "ZAF"
+    ],
+    "FREQ": [
+     "A"
+    ],
+    "MEASURE": [
+     "AG_S",
+     "CAP_INC",
+     "CPI",
+     "D5_1_INC_DISP",
+     "D9_1_INC_DISP",
+     "D9_5_INC_DISP",
+     "EAR",
+     "HSH",
+     "INC_DISP",
+     "INC_DISP_GINI",
+     "INC_DISP_SE",
+     "INC_GROSS_GINI",
+     "INC_MRKT_GINI",
+     "KC",
+     "OCC",
+     "PAL_INC_DISP",
+     "PG_INC_DISP",
+     "POP",
+     "PPP_PRC",
+     "PR_INC_DISP",
+     "PR_INC_MRKT",
+     "QR_INC_DISP",
+     "SEC",
+     "SEIC",
+     "TAC",
+     "TRC",
+     "TRPC",
+     "TRPERC",
+     "TRPOTC",
+     "TRRC",
+     "TRRERC",
+     "TRROTC",
+     "TRRSSC"
+    ],
+    "STATISTICAL_OPERATION": [
+     "MEAN",
+     "MEDIAN",
+     "_Z"
+    ],
+    "UNIT_MEASURE": [
+     "0_TO_1",
+     "FCTR",
+     "HH",
+     "IX",
+     "PD",
+     "PS",
+     "PT_POP",
+     "XDC_HH_EQ",
+     "XDC_USD"
+    ],
+    "AGE": [
+     "Y18T25",
+     "Y18T65",
+     "Y26T40",
+     "Y41T50",
+     "Y51T65",
+     "Y66T75",
+     "Y_GE76",
+     "Y_GT65",
+     "Y_LT18",
+     "_T"
+    ],
+    "METHODOLOGY": [
+     "METH2011",
+     "METH2012"
+    ],
+    "DEFINITION": [
+     "D_CUR",
+     "D_INC",
+     "D_PREV"
+    ],
+    "POVERTY_LINE": [
+     "PL_50",
+     "PL_60",
+     "_Z"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_WISE_IDD@DF_IDD&df[ag]=OECD.WISE.INE&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
   }
  ],
  "codelists": {
@@ -69424,6 +69463,210 @@
     {
      "id": "KE",
      "name": "Capital expenditures"
+    }
+   ]
+  },
+  "OECD.WISE.INE:CL_DEFINITION": {
+   "id": "CL_DEFINITION",
+   "agency": "OECD.WISE.INE",
+   "name": "Definition codelist",
+   "codes": [
+    {
+     "id": "D_CUR",
+     "name": "Current definition"
+    },
+    {
+     "id": "D_PREV",
+     "name": "Previous definition - with overlap year"
+    },
+    {
+     "id": "D_INC",
+     "name": "Previous definition - without overlap year"
+    },
+    {
+     "id": "_Z",
+     "name": "Not applicable"
+    }
+   ]
+  },
+  "OECD.WISE.INE:CL_MEASURE_IDD": {
+   "id": "CL_MEASURE_IDD",
+   "agency": "OECD.WISE.INE",
+   "name": "Income distribution measure code list",
+   "codes": [
+    {
+     "id": "INC_DISP",
+     "name": "Disposable income"
+    },
+    {
+     "id": "PR_INC_DISP",
+     "name": "Poverty rate based on disposable income"
+    },
+    {
+     "id": "PG_INC_DISP",
+     "name": "Poverty gap based on disposable income"
+    },
+    {
+     "id": "INC_DISP_GINI",
+     "name": "Gini (disposable income)"
+    },
+    {
+     "id": "INC_DISP_SE",
+     "name": "Standard error Gini (disposable income)"
+    },
+    {
+     "id": "QR_INC_DISP",
+     "name": "Quintile share ratio (disposable income)"
+    },
+    {
+     "id": "PAL_INC_DISP",
+     "name": "Palma ratio (disposable income)"
+    },
+    {
+     "id": "D9_1_INC_DISP",
+     "name": "P90/P10 disposable income decile ratio"
+    },
+    {
+     "id": "D9_5_INC_DISP",
+     "name": "P90/P50 disposable income decile ratio"
+    },
+    {
+     "id": "D5_1_INC_DISP",
+     "name": "P50/P10 disposable income decile ratio"
+    },
+    {
+     "id": "INC_MRKT",
+     "name": "Market income"
+    },
+    {
+     "id": "PR_INC_MRKT",
+     "name": "Poverty rate based on market income"
+    },
+    {
+     "id": "INC_MRKT_GINI",
+     "name": "Gini (market income)"
+    },
+    {
+     "id": "INC_GROSS",
+     "name": "Gross income"
+    },
+    {
+     "id": "INC_GROSS_GINI",
+     "name": "Gini (gross income)"
+    },
+    {
+     "id": "EAR",
+     "name": "Total earnings (employee income)"
+    },
+    {
+     "id": "CAP_INC",
+     "name": "Capital income"
+    },
+    {
+     "id": "SEIC",
+     "name": "Income from self-employment and from goods produced for own consumption"
+    },
+    {
+     "id": "SEC",
+     "name": "Income from self-employment"
+    },
+    {
+     "id": "OCC",
+     "name": "Income from own consumption"
+    },
+    {
+     "id": "TRRC",
+     "name": "Current transfers received"
+    },
+    {
+     "id": "TRRSSC",
+     "name": "Current transfers received from public social security"
+    },
+    {
+     "id": "TRRERC",
+     "name": "Current transfers received from employment-related social insurance schemes"
+    },
+    {
+     "id": "TRROTC",
+     "name": "Current transfers received from non-profit institutions and other private households"
+    },
+    {
+     "id": "TRPC",
+     "name": "Current transfers paid"
+    },
+    {
+     "id": "TAC",
+     "name": "Taxes and social security contributions paid directly by households"
+    },
+    {
+     "id": "TRPERC",
+     "name": "Contributions paid by households to employment-related social insurance schemes"
+    },
+    {
+     "id": "TRPOTC",
+     "name": "Current transfers paid by households to non-profit institutions and other households"
+    },
+    {
+     "id": "KC",
+     "name": "Capital income and private transfers (income definition until 2011)"
+    },
+    {
+     "id": "TRC",
+     "name": "Public transfers received (income definition until 2011)"
+    },
+    {
+     "id": "HSH",
+     "name": "Number of households"
+    },
+    {
+     "id": "POP",
+     "name": "Number of individuals"
+    },
+    {
+     "id": "AG_S",
+     "name": "Age group share"
+    },
+    {
+     "id": "CPI",
+     "name": "Consumer Price Index"
+    },
+    {
+     "id": "PPP_PRC",
+     "name": "Purchasing Power Parities for private consumption"
+    }
+   ]
+  },
+  "OECD.WISE.INE:CL_METHODOLOGY": {
+   "id": "CL_METHODOLOGY",
+   "agency": "OECD.WISE.INE",
+   "name": "Methodology codelist",
+   "codes": [
+    {
+     "id": "METH2012",
+     "name": "Income definition since 2012"
+    },
+    {
+     "id": "METH2011",
+     "name": "Income definition until 2011"
+    }
+   ]
+  },
+  "OECD.WISE.INE:CL_POVERTY_LINE": {
+   "id": "CL_POVERTY_LINE",
+   "agency": "OECD.WISE.INE",
+   "name": "Poverty line code list",
+   "codes": [
+    {
+     "id": "PL_50",
+     "name": "50% of the national\u00a0median disposable income"
+    },
+    {
+     "id": "PL_60",
+     "name": "60% of the national\u00a0median disposable income"
+    },
+    {
+     "id": "_Z",
+     "name": "Not applicable"
     }
    ]
   }

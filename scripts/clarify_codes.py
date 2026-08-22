@@ -26,12 +26,18 @@ TEXT = [
 ]
 RESIDUAL = re.compile(r"not reported|not classified|unclassified|unknown|unspecified", re.I)
 
+INVISIBLE = re.compile(r"[\u200b\u200c\u200d\ufeff]")
+
 n_ren = n_mark = 0
 for mp in sorted((ROOT/"site/data/flows").glob("*/meta.json")):
     m = json.loads(mp.read_text()); ch = False
     for d in m["dims"]:
         residual = []
         for j, (cid, cnm) in enumerate(zip(d["ids"], d["names"])):
+            # sources ship zero-width and non-breaking characters inside labels
+            cleaned = INVISIBLE.sub("", cnm).replace("\xa0", " ").strip()
+            if cleaned != cnm:
+                d["names"][j] = cnm = cleaned; ch = True; n_ren += 1
             new = RENAME.get(cid)
             if not new:
                 new = cnm
