@@ -1,62 +1,78 @@
-# Data Visualization
+# Forest and the Trees
 
-Independent, fast, interactive charts built directly from the OECD's SDMX
-statistical services — **51 datasets, 17,013,594 observations**, every country
-and every year, reproduced without modification.
+Independent, fast, interactive charts built from the OECD's statistical
+services — **42 datasets, 16,002,012 observations**, every country and every
+year, reproduced without alteration and audited before publication.
 
 **Live:** https://ahoff2026.github.io/data-visualization/
 
 No framework, no build step, no runtime dependencies: vanilla ES modules and
-hand-rolled SVG. The whole payload is 57 MB of pre-indexed data; a dataset's
-first paint is a single request.
+hand-rolled SVG. A dataset's first paint is a single request.
+
+## What the interface is for
+
+Cross-country comparison of raw counts mostly measures country size, so a
+dataset opens on a share or a per-capita figure wherever one exists, and on a
+total rather than a sub-category. Dials that change the number without changing
+the question — seasonal adjustment, index versus level, which questionnaire
+collected it — sit under **Advanced**. A dial with one reachable value is
+hidden, because the rest of the selection has already decided it. Indicator and
+unit are one axis, not two, so they are one menu listing only combinations the
+data contains.
+
+A single-year cross-section opens as a ranking, not a time series. Dragging
+across a Trends chart zooms the period. The address bar carries the whole view.
 
 ## Pipeline
 
-| Stage | Script | What it does |
-|---|---|---|
-| Harvest | `scripts/harvest.py` | Every dataflow's full data + structure from `sdmx.oecd.org` |
-| Catalog | `scripts/build_catalog.py` | OECD's own topic tree, dimensions, codelists |
-| Transform | `scripts/transform.py` | CSV → sparse integer-indexed series (8.1 GB → 57 MB, lossless) |
-| Labels | `scripts/patch_labels.py` | Human names for every dimension and code |
-| Enrich | `scripts/enrich_meta.py` | Full descriptions, OECD's DEFAULT selections, concept definitions |
-| Bundles | `scripts/build_default_bundles.py` | One-request first paint for partitioned datasets |
-| Site data | `scripts/build_site_data.py` | Slim catalog + payload placement |
-| Deploy | `scripts/deploy.sh` | Tests, then publishes to Pages; refuses a failing build |
-
-## Design decisions worth knowing
-
-- **Nothing is altered.** Values are exactly as OECD publishes them. Where OECD's
-  own metadata is misleading — labour-force counts carry a unit multiplier of
-  "Units" although they are conventionally thousands — the dataset page says so
-  rather than silently rescaling.
-- **Controls are data-aware.** Selections seed from OECD's own `DEFAULT`
-  annotation, options that hold no data are marked, and a choice that would empty
-  the chart repairs the other dimensions and tells you what it changed.
-- **Colour never carries identity alone.** The palette holds eight
-  colour-vision-safe slots, validated in both themes against the actual page
-  surfaces. Beyond eight, series are drawn in grey and labelled directly on the
-  chart.
-- **Small multiples scale honestly.** Panels share a scale when that is
-  comparable, and take their own when a shared one would flatten the small
-  panels into straight lines; the range is printed under each.
-- **Views are shareable.** The address bar carries the full view state.
+| Stage | Script |
+|---|---|
+| Harvest | `scripts/harvest.py` — full data and structure per dataflow |
+| Catalog | `scripts/build_catalog.py` — OECD's topic tree, dimensions, codelists |
+| Transform | `scripts/transform.py` — CSV to sparse integer-indexed series (8.1 GB → 53 MB, lossless) |
+| Labels | `scripts/patch_labels.py`, `scripts/clarify_codes.py`, `scripts/qualify_codes.py` |
+| Enrich | `scripts/enrich_meta.py` — descriptions, OECD defaults, concept definitions |
+| Derive | `scripts/derive_shares.py`, `scripts/derive_percapita.py` |
+| Clean | `scripts/clean_impossible.py` — values that contradict their unit |
+| Classify | `scripts/classify_dims.py` — which dials earn a place |
+| Publish | `scripts/build_default_bundles.py`, `scripts/coverage.py`, `scripts/stamp.py`, `scripts/deploy.sh` |
 
 ## Verification
 
 ```bash
-node tests/verify_units.mjs    # pure chart functions
-node tests/verify_site.mjs     # every dataset renders, in WebKit
-node tests/verify_deep.mjs     # every control, theme and width
-python3 tests/verify_data.py   # parity against source (needs raw/, re-harvest first)
+python3 tests/verify_integrity.py     # every internal reference resolves
+python3 tests/verify_derived.py       # derived values against their sources
+python3 tests/verify_ranges.py        # values that contradict their unit
+python3 tests/verify_duplicates.py    # series identical to one another
+python3 tests/verify_zeros.py         # "not reported" published as zero
+python3 tests/verify_provenance.py    # datasets still exist at OECD
+node tests/verify_units.mjs           # pure chart functions
+node tests/verify_site.mjs            # every dataset renders, in WebKit
+node tests/verify_deep.mjs            # every control, theme, width, zoom, URL
+node tests/verify_a11y.mjs            # labelling, headings, keyboard
 ```
 
-| Suite | Scope | Result |
-|---|---|---|
-| Data | Observation-count parity + exact-value sample per dataset | **51/51, 17,013,594 observations** |
-| Site | Chart geometry, labels, axes, three views, tooltip, zero console errors | **51/51** |
-| Deep | Every dimension option, compare-by, entity toggle, URL round-trip, dark theme, mobile | **51/51, ~1,200 interactions** |
-| Units | Axis formatting, tick generation, period parsing, number safety | **36/36** |
+Audits that inform editorial decisions rather than gate a build:
+`scripts/audit_dims.py` (dial pairs that are not independent),
+`scripts/audit_crossdup.py` (content duplicated across datasets),
+`tests/audit_default_view.mjs`, `tests/audit_defaults.mjs`,
+`tests/audit_clutter.mjs`, `tests/verify_breaks.py`.
 
-Tests run in WebKit — the engine Safari uses.
+Tests run in WebKit, the engine Safari uses.
+
+## Where the data is not taken at face value
+
+- OECD's `UNIT_MULT` is unreliable — 3 ("Thousands") on percentage series, 0
+  ("Units") on labour-force counts that really are thousands. Values are shown
+  exactly as published and the scale is explained on the page.
+- The labour force survey's rate series are tagged "Growth rate, period on
+  period" but are levels; Germany reads 8.1% in 1995 and 3.4% in 2024, matching
+  OECD's published rates. Relabelled, with the correction stated.
+- 22 datasets contain series that are zero at every observation. That is "not
+  reported" published as data; those series stay off the charts and are counted.
+- 11 observations contradict their own unit, including a satisfaction figure of
+  68,632,899 per cent. Removed and stated.
+- Eight datasets were wholly contained in others and were folded in; each
+  survivor names what it absorbed.
 
 Data © OECD. This site restates it; it does not alter it.
