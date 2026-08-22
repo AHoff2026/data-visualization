@@ -14,30 +14,29 @@ SAMPLE = ["DEU", "DNK", "SWE", "NLD", "FRA", "GBR", "USA"]
 CORE = SAMPLE + ["NOR", "FIN", "AUT", "ESP", "ITA", "CAN",
                  "BEL", "ISL", "NZL", "EU27", "EU27_2020", "OECD", "OECD_REP"]
 FEATURED = [
-    # unions and bargaining
+    # The lead tier answers the questions the research is actually about, and
+    # stays small enough to read in one pass. Everything else is one click away
+    # under "Additional topics".
+
+    # institutions: who sets the terms of work
     "OECD.ELS.SAE__DF_TUD", "OECD.ELS.SAE__DF_CBC",
-    "OECD.ELS.JAI__DF_EPL", "OECD.ELS.SAE__RMW", "OECD.ELS.JAI__DF_NRR",
-    "OECD.ELS.JAI__DF_SBE", "OWID__WORKING_HOURS_LONGRUN", "OWID__LABOR_SHARE",
-    "OWID__SOCIAL_SPENDING_LONGRUN",
-    # social provision and inequality
-    "OECD.ELS.SPD__DF_SOCX_AGG", "OECD.WISE.INE__DF_IDD",
-    "WID_LIS__DF_CONCENTRATION",
-    # wages
+    "OECD.ELS.JAI__DF_EPL", "OECD.ELS.SAE__RMW", "OECD_AIAS__ICTWSS",
+    # what work pays, and how unequally
     "OECD.ELS.SAE__GENDER_WAGE_GAP", "OECD.ELS.SAE__PAY_INCIDENCE",
-    "OECD.SDD.TPS__DF_HOU_EAR",
-    # job quality and precarity
-    "OECD.ELS.SAE__DF_TEMP_D", "OECD.ELS.SAE__DF_TEMP_I_GEN",
-    "OECD.ELS.SAE__DF_INVPT_I", "OECD.ELS.SAE__DF_FTPT_COMMON_INC",
-    "OECD.ELS.SAE__DF_AVG_USL_WK_WKD", "OECD.ELS.JAI__DF_HOURSPOV",
-    # unemployment and participation
-    "OECD.ELS.SAE__DF_DUR_D", "OECD.ELS.SAE__DF_DUR_I",
+    "OECD.ELS.SAE__DEC_I", "OWID__LABOR_SHARE",
+    # concentration
+    "OECD.WISE.INE__DF_IDD", "WID_LIS__DF_CONCENTRATION",
+    # what work is like
+    "OECD.ELS.SAE__DF_TEMP_D", "OECD.ELS.SAE__DF_INVPT_I",
+    "OECD.ELS.SAE__DF_AVG_USL_WK_WKD", "OWID__WORKING_HOURS_LONGRUN",
+    # who works and who does not
     "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q", "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q",
-    "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
-    # the state
+    "OECD.ELS.SAE__DF_DUR_D",
+    # what the state provides
+    "OECD.ELS.SPD__DF_SOCX_AGG", "OWID__SOCIAL_SPENDING_LONGRUN",
+    "OECD.ELS.JAI__DF_NRR",
+    # what the state takes
     "OECD.CTP.TPS__DF_TW_COMP", "OECD.CTP.TPS__DF_RSGLOBAL",
-    "OECD.GOV.GIP__DF_GOV_SPS_2023",
-    # migration
-    "OECD.ELS.IMD__DF_MIG_EMP_EDU", "OECD.ELS.IMD__DF_MIG_NUP_SEX",
 ]
 # datasets folded into others, or judged not worth carrying
 RETIRED = {
@@ -99,6 +98,7 @@ TOPIC_OF = {
     "OECD.ELS.JAI__DF_IA": "SOCIAL", "OECD.ELS.SPD__DF_PRR": "SOCIAL",
     "OECD.ELS.JAI__DF_SBE": "UNION",
     "OWID__LABOR_RIGHTS": "UNION",
+    "OECD_AIAS__ICTWSS": "UNION",
     "OWID__LABOR_SHARE": "WAGE",
     "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025": "TAX",
     "OWID__WORKING_HOURS_LONGRUN": "JOBS",
