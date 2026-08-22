@@ -492,3 +492,9 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
   .chipfold > summary { font-weight: 600; color: var(--ink-2); }
   .ctlrow { gap: .4rem; }
 }
+
+/* ---- methods page ---- */
+.methods { max-width: 40rem; padding: 1.5rem 0 5rem; }
+.methods p { font-size: 1.0625rem; line-height: 1.62; color: var(--ink-2); }
+.methods h2 { font-size: 1.2rem; color: var(--ink); }
+.methods > p:first-of-type { font-family: var(--serif); font-size: 1.1875rem; color: var(--ink); }

@@ -7,14 +7,14 @@
   "maxPts": 45,
   "span": "1980-2020",
   "dials": 5,
-  "unit": "39,406 series · 1,187,063 observat",
+  "unit": "38,624 series · 1,163,017 observat",
   "indicator": "Percentage of GDP",
   "err": null
  },
  {
   "name": "Design of pension systems",
   "featured": false,
-  "series": 0,
+  "series": 7,
   "minPts": 0,
   "maxPts": 0,
   "span": "-",
@@ -79,7 +79,7 @@
   "maxPts": 60,
   "span": "1970-2020",
   "dials": 3,
-  "unit": "7,915 series · 306,992 observation",
+  "unit": "7,739 series · 301,447 observation",
   "indicator": "",
   "err": null
  },
@@ -91,7 +91,7 @@
   "maxPts": 60,
   "span": "1970-2020",
   "dials": 3,
-  "unit": "146,568 series · 4,554,814 observa",
+  "unit": "135,164 series · 4,205,143 observa",
   "indicator": "",
   "err": null
  },
@@ -103,7 +103,7 @@
   "maxPts": 65,
   "span": "1960-2020",
   "dials": 2,
-  "unit": "8,978 series · 288,925 observation",
+  "unit": "8,952 series · 288,188 observation",
   "indicator": "",
   "err": null
  },
@@ -187,7 +187,7 @@
   "maxPts": 43,
   "span": "1990-2020",
   "dials": 5,
-  "unit": "5,832 series · 169,273 observation",
+  "unit": "5,508 series · 165,601 observation",
   "indicator": "",
   "err": null
  },
@@ -259,8 +259,8 @@
   "maxPts": 35,
   "span": "1990-2020",
   "dials": 4,
-  "unit": "77,912 series · 2,111,047 observat",
-  "indicator": "Percentage of revenues",
+  "unit": "62,363 series · 1,709,354 observat",
+  "indicator": "Percentage of revenues of the ",
   "err": null
  },
  {
@@ -295,7 +295,7 @@
   "maxPts": 56,
   "span": "1970-2020",
   "dials": 2,
-  "unit": "200 series · 3,974 observations · ",
+  "unit": "199 series · 3,970 observations · ",
   "indicator": "",
   "err": null
  },
@@ -313,7 +313,7 @@
  },
  {
   "name": "Young adults not in employment, education or training (NEET)",
-  "featured": false,
+  "featured": true,
   "series": 6,
   "minPts": 2,
   "maxPts": 3,
@@ -373,7 +373,7 @@
  },
  {
   "name": "Hourly earnings",
-  "featured": false,
+  "featured": true,
   "series": 6,
   "minPts": 30,
   "maxPts": 62,
@@ -415,7 +415,7 @@
   "maxPts": 25,
   "span": "2005-2025",
   "dials": 5,
-  "unit": "1,936 series · 42,176 observations",
+  "unit": "1,864 series · 40,422 observations",
   "indicator": "",
   "err": null
  },
@@ -475,14 +475,14 @@
   "maxPts": 56,
   "span": "1970-2020",
   "dials": 3,
-  "unit": "57,661 series · 1,741,451 observat",
+  "unit": "57,625 series · 1,740,495 observat",
   "indicator": "Share of labor input costs in ",
   "err": null
  },
  {
   "name": "Satisfaction with public services",
   "featured": true,
-  "series": 0,
+  "series": 5,
   "minPts": 0,
   "maxPts": 0,
   "span": "-",
@@ -494,7 +494,7 @@
  {
   "name": "Pension wealth",
   "featured": false,
-  "series": 0,
+  "series": 7,
   "minPts": 0,
   "maxPts": 0,
   "span": "-",
