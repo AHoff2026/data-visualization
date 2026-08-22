@@ -24,7 +24,7 @@ for (const f of cat.flows) {
       const ind = [...document.querySelectorAll(".ctlrow > .field")]
         .find(x => /Indicator/.test(x.querySelector("label")?.textContent || ""));
       return {
-        series: paths.length,
+        series: paths.length + document.querySelectorAll("svg.chart rect[rx]").length,
         minPts: pts.length ? Math.min(...pts) : 0,
         maxPts: pts.length ? Math.max(...pts) : 0,
         span: yrs.length ? `${Math.min(...yrs)}-${Math.max(...yrs)}` : "-",

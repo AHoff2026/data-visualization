@@ -14,3 +14,48 @@ ok   OECD.ELS.SAE__DF_INVPT_I                     checks= 26
 ok   OECD.ELS.SAE__DF_TEMP_D                      checks= 24
 ok   OECD.ELS.SAE__DF_TEMP_I_GEN                  checks= 12
 ok   OECD.ELS.SAE__DF_AVG_USL_WK_WKD              checks= 25
+ok   OECD.ELS.SAE__DF_FTPT_COMMON                 checks= 17
+ok   OECD.ELS.SAE__DF_FTPT_COMMON_INC             checks= 14
+ok   OECD.ELS.SAE__DF_DUR_I                       checks= 24
+ok   OECD.ELS.SAE__DF_DUR_D                       checks= 30
+ok   OECD.ELS.SAE__DF_FTPT_INC_GEN                checks= 22
+ok   OECD.CTP.TPS__DF_RSGLOBAL                    checks= 27
+ok   OECD.STI.DEP__DF_HH                          checks= 21
+ok   OECD.STI.DEP__DF_IND                         checks= 33
+ok   OECD.ELS.SAE__GENDER_WAGE_GAP                checks= 11
+ok   OECD.ELS.SAE__PAY_INCIDENCE                  checks= 13
+FAIL OECD.EDU.IMEP__DF_LSO_TRANS_MIGR             checks= 20
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart') to be visible
+
+ok   OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR         checks= 26
+ok   OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR        checks= 26
+ok   OECD.ELS.IMD__DF_MIG_NUP_SEX                 checks= 18
+ok   OECD.CTP.TPS__DF_TW_COMP                     checks= 22
+ok   OECD.SDD.TPS__DF_HOU_EAR                     checks=  8
+ok   OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS            checks= 15
+FAIL OECD.EDU.IMEP__DF_UOE_NF_DIST_VET            checks= 10
+      EXCEPTION locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('.chip[aria-pressed="false"]:has(.chip__swatch)').first()
+    - locator resolved to <
+FAIL OECD.ELS.JAI__DF_HOURSPOV                    checks= 19
+      EXCEPTION page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:8231/#/d/OECD.ELS.JAI__DF_HOURSPOV?v=lines&bd=REF_AREA&e=DEU+NLD+FRA+GBR+USA+
+ok   OECD.EDU.IMEP__DF_LSO_EARN_ALL               checks= 43
+ok   OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q           checks= 17
+ok   OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q             checks= 16
+ok   OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q             checks= 19
+FAIL OECD.SDD.TPS__DF_PDB                         checks= 30
+      EXCEPTION page.waitForSelector: Timeout 90000ms exceeded.
+Call log:
+  - waiting for locator('svg.chart, .figure .center-note') to be visible
+
+ok   OECD.GOV.GIP__DF_GOV_SPS_2023                checks= 18
+ok   OECD.ELS.SPD__DF_PW                          checks= 16
+
+==========================================================================
+DATASETS: 42   INTERACTIONS: 827   PASS: 38   FAIL: 4
+FAILED: OECD.EDU.IMEP__DF_LSO_TRANS_MIGR, OECD.EDU.IMEP__DF_UOE_NF_DIST_VET, OECD.ELS.JAI__DF_HOURSPOV, OECD.SDD.TPS__DF_PDB

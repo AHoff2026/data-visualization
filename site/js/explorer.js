@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=dc2279c8";
-import { getFlowMeta, getSeries } from "./store.js?v=dc2279c8";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=dc2279c8";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=dc2279c8";
-import { dataTable } from "./table.js?v=dc2279c8";
-import { editable, textOf } from "./edits.js?v=dc2279c8";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=8e9141c7";
+import { getFlowMeta, getSeries } from "./store.js?v=8e9141c7";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=8e9141c7";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=8e9141c7";
+import { dataTable } from "./table.js?v=8e9141c7";
+import { editable, textOf } from "./edits.js?v=8e9141c7";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -686,7 +686,17 @@ export async function renderExplorer(host, slug, catalog) {
 
     chipBox = el("div", { class: "ctlrow",
       style: { gap: ".3rem", maxHeight: "9rem", overflowY: "auto", margin: "0 0 1rem" } });
-    controls.appendChild(chipBox);
+    // On a phone the chip list pushes the chart a screen and a half down, so it
+    // folds away; on a wide screen it stays open where there is room for it.
+    const narrow = window.matchMedia("(max-width: 60rem)").matches;
+    if (narrow) {
+      const det = el("details", { class: "advanced chipfold" });
+      const sum = el("summary", {}, `Choose ${plural(d.name)} — ${ui.entities.length} selected`);
+      det.append(sum, chipBox);
+      controls.appendChild(det);
+    } else {
+      controls.appendChild(chipBox);
+    }
     chipSearch.addEventListener("input", debounce(paintChips, 120));
     paintChips();
   }
