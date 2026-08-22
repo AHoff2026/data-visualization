@@ -908,5 +908,35 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_HGRR@DF_HGRR&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_TAXBEN_SBE",
+    "flow": "DF_SBE",
+    "dataflow_id": "DSD_TAXBEN_SBE@DF_SBE",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_SBE@DF_SBE&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_TAXBEN_IA",
+    "flow": "DF_IA",
+    "dataflow_id": "DSD_TAXBEN_IA@DF_IA",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_IA@DF_IA&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.SPD",
+    "dsd": "DSD_PAG",
+    "flow": "DF_PRR",
+    "dataflow_id": "DSD_PAG@DF_PRR",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_PAG@DF_PRR&df[ag]=OECD.ELS.SPD&df[vs]=1.0"
   }
 ]

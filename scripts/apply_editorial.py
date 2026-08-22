@@ -17,6 +17,7 @@ FEATURED = [
     # unions and bargaining
     "OECD.ELS.SAE__DF_TUD", "OECD.ELS.SAE__DF_CBC",
     "OECD.ELS.JAI__DF_EPL", "OECD.ELS.SAE__RMW", "OECD.ELS.JAI__DF_NRR",
+    "OECD.ELS.JAI__DF_SBE",
     # social provision and inequality
     "OECD.ELS.SPD__DF_SOCX_AGG", "OECD.WISE.INE__DF_IDD",
     "WID_LIS__DF_CONCENTRATION",
@@ -94,6 +95,8 @@ TOPIC_OF = {
 
     "OECD.ELS.SPD__DF_SOCX_AGG": "SOCIAL", "OECD.ELS.SPD__DF_DPS": "SOCIAL",
     "OECD.ELS.JAI__DF_NRR": "SOCIAL", "OECD.ELS.JAI__DF_HGRR": "SOCIAL",
+    "OECD.ELS.JAI__DF_IA": "SOCIAL", "OECD.ELS.SPD__DF_PRR": "SOCIAL",
+    "OECD.ELS.JAI__DF_SBE": "UNION",
     "OECD.ELS.SPD__DF_PW": "SOCIAL",
 
     "OECD.CTP.TPS__DF_TW_COMP": "TAX", "OECD.CTP.TPS__DF_RSGLOBAL": "TAX",
@@ -115,6 +118,9 @@ RENAME = {
     "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
     "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
     "OECD.ELS.SAE__DEC_I": "Earnings dispersion (decile ratios)",
+    "OECD.ELS.JAI__DF_SBE": "Strictness of activation requirements",
+    "OECD.ELS.JAI__DF_IA": "Adequacy of minimum income benefits",
+    "OECD.ELS.SPD__DF_PRR": "Pension replacement rates",
 }
 
 p = SITE/"catalog.json"

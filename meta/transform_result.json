@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.ELS.JAI__DF_HGRR",
+  "slug": "OECD.ELS.SPD__DF_PRR",
   "status": "ok",
-  "series": 29,
-  "obs": 505,
-  "rows": 505,
+  "series": 936,
+  "obs": 936,
+  "rows": 936,
   "layout": "single",
-  "bytes": 750,
-  "src_mb": 0.1
+  "bytes": 4585,
+  "src_mb": 0.3
  }
 ]

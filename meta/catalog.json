@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-22T19:07:09",
+ "generated": "2026-08-22T23:53:25",
  "default_countries": [
   "DEU",
   "DNK",
@@ -14589,6 +14589,445 @@
     "TIME_PERIOD": []
    },
    "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_HGRR@DF_HGRR&df[ag]=OECD.ELS.JAI&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.ELS.JAI__DF_SBE",
+   "id": "DSD_TAXBEN_SBE@DF_SBE",
+   "agency": "OECD.ELS.JAI",
+   "version": "1.0",
+   "name": "Strictness of activation requirements for benefit recipients",
+   "description": "This indicator measures the strictness of activity-related eligibility criteria for recipients of unemployment and related benefits. It considers (1) the strictness of job-search and monitoring procedures, (2) the strictness of work-availability requirements and suitable job criteria, and (3) the strictness of sanctions for those not complaying with the requirements. The data include information for first and lower tier benefits. The list of programmes and their classification into first and lower tier benefits is available in the project webpage (https://oe.cd/taxben).\n<p />Calculations for families with children assume 2 children aged 4 and 6 who do not use formal childcare.",
+   "topic": "JOB.JOB_BW",
+   "dsd": "DSD_TAXBEN_SBE",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 1,
+     "codelist": "OECD.ELS.JAI:CL_MEASURE_TAXBEN"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 2,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "BENEFIT_TIER",
+     "name": "BENEFIT_TIER",
+     "position": 3,
+     "codelist": "OECD.ELS.JAI:CL_BENEFIT_TIER"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 4,
+     "codelist": "SDMX:CL_FREQ"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MLT",
+     "NLD",
+     "NOR",
+     "NZL",
+     "POL",
+     "PRT",
+     "ROU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA"
+    ],
+    "MEASURE": [
+     "ALMPSAN",
+     "AVAIL",
+     "AVALMP",
+     "DOCJSA",
+     "FIRSAN",
+     "GEOMOB",
+     "JSM",
+     "JSR",
+     "OCCMOB",
+     "OTHREA",
+     "OVER",
+     "REPALMP",
+     "REPSAN",
+     "SAN",
+     "VOLSAN"
+    ],
+    "UNIT_MEASURE": [
+     "1_TO_5"
+    ],
+    "BENEFIT_TIER": [
+     "FLT",
+     "FT",
+     "SLT"
+    ],
+    "FREQ": [
+     "A"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_SBE@DF_SBE&df[ag]=OECD.ELS.JAI&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.ELS.JAI__DF_IA",
+   "id": "DSD_TAXBEN_IA@DF_IA",
+   "agency": "OECD.ELS.JAI",
+   "version": "1.0",
+   "name": "Adequacy of minimum income benefits",
+   "description": "This indicator measures the income of selected jobless families receiving Minimum Income benefits. Values are expressed both in national currency and as a percentage of the median disposable income in the country. When the country's poverty line is defined as a fixed percentage of the median disposable income, the normalization of benefit amounts in terms of the median disposable income allows measuring the gap between benefit entitlements and the poverty line. For instance, if the poverty threshold is 50% of the median disposable income, a value of the indicator of 30% means that benefit entitlements are 20 percentage points below the poverty line.\n<p />Calculations for families with children assume 2 children aged 4 and 6 who do not use formal childcare.",
+   "topic": "JOB.JOB_BW",
+   "dsd": "DSD_TAXBEN_IA",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 1,
+     "codelist": "OECD.ELS.JAI:CL_MEASURE_TAXBEN"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 2,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "HOUSEHOLD_TYPE",
+     "name": "HOUSEHOLD_TYPE",
+     "position": 3,
+     "codelist": "OECD:CL_HOUSEHOLD_TYPE"
+    },
+    {
+     "id": "AGE_CHILDREN",
+     "name": "AGE_CHILDREN",
+     "position": 4,
+     "codelist": "OECD.ELS.JAI:CL_AGE_CHILDREN"
+    },
+    {
+     "id": "INCOME_PART",
+     "name": "INCOME_PART",
+     "position": 5,
+     "codelist": "OECD:CL_INCOME"
+    },
+    {
+     "id": "HOUSE_BENEFIT",
+     "name": "HOUSE_BENEFIT",
+     "position": 6,
+     "codelist": "OECD:CL_YESNO"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 7,
+     "codelist": "SDMX:CL_FREQ"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MLT",
+     "NLD",
+     "NOR",
+     "NZL",
+     "OECD",
+     "POL",
+     "PRT",
+     "ROU",
+     "RUS",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA"
+    ],
+    "MEASURE": [
+     "GMINISJF"
+    ],
+    "UNIT_MEASURE": [
+     "PT_INC_DISP_HH_MEDIAN",
+     "XDC"
+    ],
+    "HOUSEHOLD_TYPE": [
+     "C_C0",
+     "C_C2",
+     "S_C0",
+     "S_C2"
+    ],
+    "AGE_CHILDREN": [
+     "Y4_6"
+    ],
+    "INCOME_PART": [
+     "_Z"
+    ],
+    "HOUSE_BENEFIT": [
+     "NO",
+     "YES"
+    ],
+    "FREQ": [
+     "A"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_IA@DF_IA&df[ag]=OECD.ELS.JAI&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.ELS.SPD__DF_PRR",
+   "id": "DSD_PAG@DF_PRR",
+   "agency": "OECD.ELS.SPD",
+   "version": "1.0",
+   "name": "Pension replacement rates",
+   "description": "The OECD Pensions at a Glance Database has been developed in order to serve a growing need for pensions indicators. It includes reliable and internationally comparable statistics on public and mandatory and voluntary pensions. It covers OECD countries and aims to cover all G20 countries. Pensions at a Glance reviews and analyses the pension measures enacted or legislated in OECD countries for workers entering the labour market at age 22 in the specified year. It provides an in-depth review of the first layer of protection of the elderly, first-tier pensions across countries and provideds a comprehensive selection of pension policy indicators for all OECD and G20 countries.</p>\n<a href=\"http://oe.cd/pag\">OECD Pensions at a Glance - OECD and G20 indicators</a>",
+   "topic": "FIN.FIN_PIN.FIN_PIN_PEN",
+   "dsd": "DSD_PAG",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 1,
+     "codelist": "SDMX:CL_FREQ"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 2,
+     "codelist": "OECD.ELS.SPD:CL_MEASURE_PAG"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 3,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "SEX",
+     "name": "SEX",
+     "position": 4,
+     "codelist": "OECD:CL_SEX"
+    },
+    {
+     "id": "AGE",
+     "name": "AGE",
+     "position": 5,
+     "codelist": "OECD:CL_AGE"
+    },
+    {
+     "id": "OPTIONALITY",
+     "name": "OPTIONALITY",
+     "position": 6,
+     "codelist": "OECD.ELS.SPD:CL_OPTIONALITY"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "ARG",
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "BRA",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CHN",
+     "COL",
+     "CRI",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "EU27",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IDN",
+     "IND",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MEX",
+     "MLT",
+     "NLD",
+     "NOR",
+     "NZL",
+     "OECD_REP",
+     "POL",
+     "PRT",
+     "ROU",
+     "SAU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA",
+     "ZAF"
+    ],
+    "FREQ": [
+     "A"
+    ],
+    "MEASURE": [
+     "GPRR100",
+     "GPRR200",
+     "GPRR50",
+     "NPRR100",
+     "NPRR200",
+     "NPRR50"
+    ],
+    "UNIT_MEASURE": [
+     "PT_EARN_G_PRE_RET_INC",
+     "PT_EARN_N_PRE_RET_INC"
+    ],
+    "SEX": [
+     "F",
+     "M"
+    ],
+    "AGE": [
+     "_Z"
+    ],
+    "OPTIONALITY": [
+     "M",
+     "MV"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_PAG@DF_PRR&df[ag]=OECD.ELS.SPD&df[vs]=1.0",
    "tab_default_key": "",
    "tab_period": ""
   }
