@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=7f88dadb";
-import { getFlowMeta, getSeries } from "./store.js?v=7f88dadb";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=7f88dadb";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=7f88dadb";
-import { dataTable } from "./table.js?v=7f88dadb";
-import { editable, textOf } from "./edits.js?v=7f88dadb";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=8dbbc407";
+import { getFlowMeta, getSeries } from "./store.js?v=8dbbc407";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=8dbbc407";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=8dbbc407";
+import { dataTable } from "./table.js?v=8dbbc407";
+import { editable, textOf } from "./edits.js?v=8dbbc407";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -494,7 +494,9 @@ export async function renderExplorer(host, slug, catalog) {
     return dims.map((d, i) => ({ d, i }))
       .filter(({ d, i }) => d.id !== ui.breakdown && d.id !== "UNIT_MEASURE" && d.ids.length > 1)
       .map(({ d, i }) => d.names[ui.picks[i]])
-      .filter(v => v && !/^(total|not applicable|all|annual)$/i.test(v))
+      // "Not broken down" and the various totals are the absence of a choice,
+      // so they say nothing worth putting under the chart title
+      .filter(v => v && !/^(total|not applicable|not broken down|all|all activities|annual|level|unadjusted)$/i.test(v))
       .slice(0, 5).join("  ·  ");
   }
 
