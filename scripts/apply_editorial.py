@@ -16,6 +16,7 @@ CORE = SAMPLE + ["NOR", "FIN", "AUT", "ESP", "ITA", "CAN",
 FEATURED = [
     # unions and bargaining
     "OECD.ELS.SAE__DF_TUD", "OECD.ELS.SAE__DF_CBC",
+    "OECD.ELS.JAI__DF_EPL", "OECD.ELS.SAE__RMW", "OECD.ELS.JAI__DF_NRR",
     # social provision and inequality
     "OECD.ELS.SPD__DF_SOCX_AGG", "OECD.WISE.INE__DF_IDD",
     "WID_LIS__DF_CONCENTRATION",
@@ -50,13 +51,13 @@ RETIRED = {
 # immigrants' labor market outcomes under Society and has no place at all for
 # inequality. This is organised around the questions instead.
 TOPICS = [
-    ("UNION", "Unions and bargaining"),
+    ("UNION", "Labor market institutions"),
     ("WAGE",  "Wages and earnings"),
     ("INEQ",  "Inequality and poverty"),
     ("JOBS",  "Jobs and job quality"),
     ("UNEMP", "Unemployment and participation"),
     ("MIGR",  "Migration and labor markets"),
-    ("SOCIAL","Social policy and pensions"),
+    ("SOCIAL","Social protection and pensions"),
     ("TAX",   "Taxation and the state"),
     ("EDU",   "Education and skills"),
     ("ECON",  "Economy and productivity"),
@@ -64,6 +65,7 @@ TOPICS = [
 ]
 TOPIC_OF = {
     "OECD.ELS.SAE__DF_TUD": "UNION", "OECD.ELS.SAE__DF_CBC": "UNION",
+    "OECD.ELS.JAI__DF_EPL": "UNION", "OECD.ELS.SAE__RMW": "UNION",
 
     "OECD.ELS.SAE__GENDER_WAGE_GAP": "WAGE", "OECD.ELS.SAE__PAY_INCIDENCE": "WAGE",
     "OECD.ELS.SAE__DEC_I": "WAGE", "OECD.SDD.TPS__DF_HOU_EAR": "WAGE",
@@ -91,6 +93,7 @@ TOPIC_OF = {
     "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR": "MIGR",
 
     "OECD.ELS.SPD__DF_SOCX_AGG": "SOCIAL", "OECD.ELS.SPD__DF_DPS": "SOCIAL",
+    "OECD.ELS.JAI__DF_NRR": "SOCIAL", "OECD.ELS.JAI__DF_HGRR": "SOCIAL",
     "OECD.ELS.SPD__DF_PW": "SOCIAL",
 
     "OECD.CTP.TPS__DF_TW_COMP": "TAX", "OECD.CTP.TPS__DF_RSGLOBAL": "TAX",
@@ -107,6 +110,11 @@ TOPIC_OF = {
 
 RENAME = {
     "OECD.WISE.INE__DF_IDD": "Income inequality and poverty",
+    "OECD.ELS.JAI__DF_EPL": "Employment protection strictness",
+    "OECD.ELS.SAE__RMW": "Real minimum wages",
+    "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
+    "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
+    "OECD.ELS.SAE__DEC_I": "Earnings dispersion (decile ratios)",
 }
 
 p = SITE/"catalog.json"
@@ -133,9 +141,9 @@ for slug in on_disk:
     if m.get("derived_units"): f["derived"] = list(m["derived_units"])
     if m.get("coverage"): f["sample_missing"] = m["coverage"].get("sample_missing", [])
     f["topic"] = TOPIC_OF.get(slug, "ECON")
-    # the dataset page reads its own metadata, so the topic has to live there too
-    if m.get("topic") != f["topic"]:
-        m["topic"] = f["topic"]
+    # the dataset page reads its own metadata, so topic and title live there too
+    if m.get("topic") != f["topic"] or m.get("name") != f["name"]:
+        m["topic"] = f["topic"]; m["name"] = f["name"]
         (SITE/"flows"/slug/"meta.json").write_text(json.dumps(m, separators=(",", ":")))
     flows.append(f)
 cat["flows"] = flows

@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.ELS.SAE__DEC_I",
+  "slug": "OECD.ELS.JAI__DF_HGRR",
   "status": "ok",
-  "series": 450,
-  "obs": 9582,
-  "rows": 9954,
+  "series": 29,
+  "obs": 505,
+  "rows": 505,
   "layout": "single",
-  "bytes": 39744,
-  "src_mb": 2.7
+  "bytes": 750,
+  "src_mb": 0.1
  }
 ]

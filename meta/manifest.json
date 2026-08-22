@@ -868,5 +868,45 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_EARNINGS@DEC_I&df[ag]=OECD.ELS.SAE&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_EPL",
+    "flow": "DF_EPL",
+    "dataflow_id": "DSD_EPL@DF_EPL",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_EPL@DF_EPL&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.SAE",
+    "dsd": "DSD_EARNINGS",
+    "flow": "RMW",
+    "dataflow_id": "DSD_EARNINGS@RMW",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_EARNINGS@RMW&df[ag]=OECD.ELS.SAE&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_TAXBEN_NRR",
+    "flow": "DF_NRR",
+    "dataflow_id": "DSD_TAXBEN_NRR@DF_NRR",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_NRR@DF_NRR&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_TAXBEN_HGRR",
+    "flow": "DF_HGRR",
+    "dataflow_id": "DSD_TAXBEN_HGRR@DF_HGRR",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_HGRR@DF_HGRR&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
   }
 ]
