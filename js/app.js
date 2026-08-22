@@ -1,10 +1,11 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=8dbbc407";
-import { getCatalog } from "./store.js?v=8dbbc407";
-import { renderExplorer, topicLabel } from "./explorer.js?v=8dbbc407";
-import { renderFeatured } from "./featured.js?v=8dbbc407";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=49b03c63";
+import { getCatalog } from "./store.js?v=49b03c63";
+import { renderExplorer, topicLabel } from "./explorer.js?v=49b03c63";
+import { renderFeatured } from "./featured.js?v=49b03c63";
+import { renderMethods } from "./methods.js?v=49b03c63";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=8dbbc407";
+  from "./edits.js?v=49b03c63";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -183,7 +184,12 @@ async function route(force = false) {
   if (h === lastPath && force !== true) return;  // query-only change: the explorer wrote it
   lastPath = h;
   const parts = h.split("/").filter(Boolean);
-  if (parts[0] === "d" && parts[1]) {
+  if (parts[0] === "methods") {
+    document.title = "Methods · Forest and the Trees";
+    buildRail(null);
+    main().dispatchEvent(new Event("explorer:teardown"));
+    renderMethods(main(), CAT);
+  } else if (parts[0] === "d" && parts[1]) {
     buildRail(parts[1]);
     await pageDataset(decodeURIComponent(parts[1]));
   } else {
