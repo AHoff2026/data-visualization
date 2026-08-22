@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.WISE.INE__DF_IDD",
+  "slug": "OECD.ELS.SAE__DEC_I",
   "status": "ok",
-  "series": 10516,
-  "obs": 117905,
-  "rows": 117905,
+  "series": 450,
+  "obs": 9582,
+  "rows": 9954,
   "layout": "single",
-  "bytes": 501202,
-  "src_mb": 44.1
+  "bytes": 39744,
+  "src_mb": 2.7
  }
 ]

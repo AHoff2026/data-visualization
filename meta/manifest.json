@@ -858,5 +858,15 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_WISE_IDD@DF_IDD&df[ag]=OECD.WISE.INE&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.SAE",
+    "dsd": "DSD_EARNINGS",
+    "flow": "DEC_I",
+    "dataflow_id": "DSD_EARNINGS@DEC_I",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_EARNINGS@DEC_I&df[ag]=OECD.ELS.SAE&df[vs]=1.0"
   }
 ]

@@ -44,6 +44,67 @@ RETIRED = {
     "OECD.ELS.SPD__DF_PUB_DIS_SIC", "OECD.ELS.SPD__DF_PUB_PRV",
     "OECD.ELS.SAE__DF_FTPT",
 }
+
+# ---------------------------------------------------------------------------
+# Topics. OECD's own taxonomy files these by collecting department, which puts
+# immigrants' labor market outcomes under Society and has no place at all for
+# inequality. This is organised around the questions instead.
+TOPICS = [
+    ("UNION", "Unions and bargaining"),
+    ("WAGE",  "Wages and earnings"),
+    ("INEQ",  "Inequality and poverty"),
+    ("JOBS",  "Jobs and job quality"),
+    ("UNEMP", "Unemployment and participation"),
+    ("MIGR",  "Migration and labor markets"),
+    ("SOCIAL","Social policy and pensions"),
+    ("TAX",   "Taxation and the state"),
+    ("EDU",   "Education and skills"),
+    ("ECON",  "Economy and productivity"),
+    ("DIGI",  "Digital"),
+]
+TOPIC_OF = {
+    "OECD.ELS.SAE__DF_TUD": "UNION", "OECD.ELS.SAE__DF_CBC": "UNION",
+
+    "OECD.ELS.SAE__GENDER_WAGE_GAP": "WAGE", "OECD.ELS.SAE__PAY_INCIDENCE": "WAGE",
+    "OECD.ELS.SAE__DEC_I": "WAGE", "OECD.SDD.TPS__DF_HOU_EAR": "WAGE",
+    "OECD.EDU.IMEP__DF_LSO_EARN_ALL": "WAGE",
+    "OECD.ELS.JAI__DF_HOURSPOV": "WAGE",
+
+    "OECD.WISE.INE__DF_IDD": "INEQ", "WID_LIS__DF_CONCENTRATION": "INEQ",
+    "OECD.ELS.SPD__DF_IPOP": "INEQ",
+
+    "OECD.ELS.SAE__DF_TEMP_D": "JOBS", "OECD.ELS.SAE__DF_TEMP_I_GEN": "JOBS",
+    "OECD.ELS.SAE__DF_INVPT_I": "JOBS", "OECD.ELS.SAE__DF_FTPT_COMMON": "JOBS",
+    "OECD.ELS.SAE__DF_FTPT_COMMON_INC": "JOBS", "OECD.ELS.SAE__DF_FTPT_INC_GEN": "JOBS",
+    "OECD.ELS.SAE__DF_AVG_USL_WK_WKD": "JOBS",
+    "OECD.SDD.TPS__DF_ALFS_EMP": "JOBS", "OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q": "JOBS",
+    "OECD.SDD.TPS__DF_SUMTAB": "JOBS",
+
+    "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q": "UNEMP",
+    "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q": "UNEMP",
+    "OECD.ELS.SAE__DF_DUR_D": "UNEMP", "OECD.ELS.SAE__DF_DUR_I": "UNEMP",
+    "OECD.ELS.SAE__DF_AVD_DUR": "UNEMP",
+
+    "OECD.ELS.IMD__DF_MIG_EMP_EDU": "MIGR", "OECD.ELS.IMD__DF_MIG_NUP_SEX": "MIGR",
+    "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR": "MIGR",
+    "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR": "MIGR",
+    "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR": "MIGR",
+
+    "OECD.ELS.SPD__DF_SOCX_AGG": "SOCIAL", "OECD.ELS.SPD__DF_DPS": "SOCIAL",
+    "OECD.ELS.SPD__DF_PW": "SOCIAL",
+
+    "OECD.CTP.TPS__DF_TW_COMP": "TAX", "OECD.CTP.TPS__DF_RSGLOBAL": "TAX",
+    "OECD.GOV.GIP__DF_GOV_SPS_2023": "TAX",
+
+    "OECD.EDU.IMEP__DF_UOE_NF_PERS_CLS": "EDU",
+    "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET": "EDU",
+
+    "OECD.SDD.TPS__DF_PDB": "ECON", "OECD.SDD.NAD__DF_TABLE2": "ECON",
+    "OECD.SDD.NAD__DF_TABLE9A": "ECON", "OECD.SDD.NAD__DF_TABLE5_T501": "ECON",
+
+    "OECD.STI.DEP__DF_HH": "DIGI", "OECD.STI.DEP__DF_IND": "DIGI",
+}
+
 RENAME = {
     "OECD.WISE.INE__DF_IDD": "Income inequality and poverty",
 }
@@ -71,8 +132,18 @@ for slug in on_disk:
     })
     if m.get("derived_units"): f["derived"] = list(m["derived_units"])
     if m.get("coverage"): f["sample_missing"] = m["coverage"].get("sample_missing", [])
+    f["topic"] = TOPIC_OF.get(slug, "ECON")
+    # the dataset page reads its own metadata, so the topic has to live there too
+    if m.get("topic") != f["topic"]:
+        m["topic"] = f["topic"]
+        (SITE/"flows"/slug/"meta.json").write_text(json.dumps(m, separators=(",", ":")))
     flows.append(f)
 cat["flows"] = flows
+
+cat["topic_tree"] = {"id": "TOPICS", "name": "Topics",
+                     "categories": [{"id": i, "name": n} for i, n in TOPICS]}
+unplaced = [f["slug"] for f in flows if f["slug"] not in TOPIC_OF]
+if unplaced: print(f"warning: {len(unplaced)} datasets have no topic: {unplaced}")
 
 cat["default_countries"] = SAMPLE
 cat["sample_countries"] = SAMPLE

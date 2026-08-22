@@ -1,11 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=49b03c63";
-import { getCatalog } from "./store.js?v=49b03c63";
-import { renderExplorer, topicLabel } from "./explorer.js?v=49b03c63";
-import { renderFeatured } from "./featured.js?v=49b03c63";
-import { renderMethods } from "./methods.js?v=49b03c63";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=b86a58b5";
+import { getCatalog } from "./store.js?v=b86a58b5";
+import { renderExplorer, topicLabel } from "./explorer.js?v=b86a58b5";
+import { renderFeatured } from "./featured.js?v=b86a58b5";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=49b03c63";
+  from "./edits.js?v=b86a58b5";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -45,9 +44,15 @@ function topTopics() {
     if (!groups.has(top)) groups.set(top, []);
     groups.get(top).push(f);
   }
+  // Keep the order the taxonomy declares: it runs from the centre of the
+  // research outwards, which sorting by size would scramble.
+  const order = (CAT.topic_tree?.categories || []).map(c => c.id);
   return [...groups.entries()]
     .map(([code, flows]) => ({ code, flows, name: topicName(code) }))
-    .sort((a, b) => b.flows.length - a.flows.length);
+    .sort((a, b) => {
+      const ia = order.indexOf(a.code), ib = order.indexOf(b.code);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
 }
 function topicName(code) {
   const hit = (CAT.topic_tree?.categories || []).find(c => c.id === code);
@@ -184,12 +189,7 @@ async function route(force = false) {
   if (h === lastPath && force !== true) return;  // query-only change: the explorer wrote it
   lastPath = h;
   const parts = h.split("/").filter(Boolean);
-  if (parts[0] === "methods") {
-    document.title = "Methods · Forest and the Trees";
-    buildRail(null);
-    main().dispatchEvent(new Event("explorer:teardown"));
-    renderMethods(main(), CAT);
-  } else if (parts[0] === "d" && parts[1]) {
+  if (parts[0] === "d" && parts[1]) {
     buildRail(parts[1]);
     await pageDataset(decodeURIComponent(parts[1]));
   } else {
