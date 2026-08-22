@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=8e9141c7";
-import { getCatalog } from "./store.js?v=8e9141c7";
-import { renderExplorer, topicLabel } from "./explorer.js?v=8e9141c7";
-import { renderFeatured } from "./featured.js?v=8e9141c7";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=43b83737";
+import { getCatalog } from "./store.js?v=43b83737";
+import { renderExplorer, topicLabel } from "./explorer.js?v=43b83737";
+import { renderFeatured } from "./featured.js?v=43b83737";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=8e9141c7";
+  from "./edits.js?v=43b83737";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -151,7 +151,10 @@ function pageHome() {
       grid.appendChild(el("a", { class: "cardgrid__i", href: `#/d/${f.slug}` },
         el("div", { class: "cardgrid__t" }, textOf(`/d/${f.slug}`, "title", f.name)),
         el("div", { class: "figure__sub" },
-          topicLabel(CAT, f.topic).split(" › ").slice(1).join(" › ") || "—"),
+          // a dataset sitting directly under a top-level topic has no
+          // sub-topic; name the topic rather than showing a dash
+          (() => { const parts = topicLabel(CAT, f.topic).split(" › ");
+                   return parts.slice(1).join(" › ") || parts[0] || "OECD"; })()),
         el("div", { class: "cardgrid__m" },
           `${(f.n_obs || 0).toLocaleString("en-GB")} observations` +
           (f.periods ? ` · ${f.periods[0]}–${f.periods[1]}` : ""))));
