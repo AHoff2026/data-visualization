@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=43b83737";
-import { getFlowMeta, getSeries } from "./store.js?v=43b83737";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=43b83737";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=43b83737";
-import { dataTable } from "./table.js?v=43b83737";
-import { editable, textOf } from "./edits.js?v=43b83737";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=7f88dadb";
+import { getFlowMeta, getSeries } from "./store.js?v=7f88dadb";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=7f88dadb";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=7f88dadb";
+import { dataTable } from "./table.js?v=7f88dadb";
+import { editable, textOf } from "./edits.js?v=7f88dadb";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -420,7 +420,10 @@ export async function renderExplorer(host, slug, catalog) {
         el("button", { class: "chip", onclick: () => { seedPicks(); state = repair();
           seedEntities(state.avail); rebuild(); } }, "Reset to a valid selection")));
     } else if (ui.view === "table") {
-      dataTable(box, list, { unit, filename: slug });
+      dataTable(box, list, { unit,
+        // a readable filename, not the dataflow id
+        filename: (textOf(SCOPE, "title", meta.name) || meta.name)
+          .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) });
     } else if (ui.view === "small") {
       const res = smallMultiples(box, list.map((s, i) => ({ ...s,
         color: slotVar(i % SERIES_SLOTS), context: false })),
