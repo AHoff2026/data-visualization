@@ -479,3 +479,16 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
   margin: 0 0 .5rem; font-size: .75rem; color: var(--ink-2);
   font-variant-numeric: tabular-nums;
 }
+
+/* narrow screens: get the chart on screen sooner */
+@media (max-width: 60rem) {
+  .standfirst { -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical;
+                overflow: hidden; }
+  /* :not([hidden]) matters — display:block would otherwise un-hide the
+     collapsed remainder of the description */
+  .standfirst.desc__rest:not([hidden]),
+  :root[data-editing="1"] .standfirst:not([hidden]) { display: block; overflow: visible; }
+  .chipfold { margin-bottom: .9rem; }
+  .chipfold > summary { font-weight: 600; color: var(--ink-2); }
+  .ctlrow { gap: .4rem; }
+}
