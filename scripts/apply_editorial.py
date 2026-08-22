@@ -18,6 +18,7 @@ FEATURED = [
     "OECD.ELS.SAE__DF_TUD", "OECD.ELS.SAE__DF_CBC",
     # social provision and inequality
     "OECD.ELS.SPD__DF_SOCX_AGG", "OECD.WISE.INE__DF_IDD",
+    "WID_LIS__DF_CONCENTRATION",
     # wages
     "OECD.ELS.SAE__GENDER_WAGE_GAP", "OECD.ELS.SAE__PAY_INCIDENCE",
     "OECD.SDD.TPS__DF_HOU_EAR",
