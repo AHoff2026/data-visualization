@@ -65,7 +65,31 @@ def main():
             used[c] = unit
             records.setdefault((iso, c, unit), {})[year] = val
 
-    measures = [(c, defs[c][:110]) for c in codes if c in used]
+    # The codebook gives one line for a family of variables — "Union density
+    # rate" covers male, female, public and private alike. The distinction lives
+    # in the code suffix, which the codebook documents, so read it from there
+    # rather than shipping eight indicators with the same name.
+    SUFFIX = [
+        ("_male", "men"), ("_female", "women"),
+        ("_public", "public sector"), ("_private", "private sector"),
+        ("_parttime", "part-time workers"), ("_fulltime", "full-time workers"),
+        ("_temp", "temporary contracts"), ("_perm", "permanent contracts"),
+        ("_age1524", "aged 15 to 24"), ("_age2554", "aged 25 to 54"),
+        ("_age5564", "aged 55 to 64"), ("_ageGE65", "aged 65 and over"),
+        ("_age1529", "aged 15 to 29"), ("_age3049", "aged 30 to 49"),
+        ("_age5064", "aged 50 to 64"),
+    ]
+    def label(c):
+        base = defs[c][:110]
+        bits = [word for suf, word in SUFFIX if suf in c]
+        if c.endswith("_s") or "_s_" in c: bits.append("survey-based")
+        return f"{base} — {', '.join(bits)}" if bits else base
+
+    measures = [(c, label(c)) for c in codes if c in used]
+    seen = {}
+    for i, (c, l) in enumerate(measures):
+        if l in seen: measures[i] = (c, f"{l} [{c}]")
+        seen[l] = c
     unit_lbl = {"PT": "Percentage", "PS": "Number of people",
                 "SCALE": "Ordinal code defined by the source"}
     units = sorted({used[c] for c in used})
