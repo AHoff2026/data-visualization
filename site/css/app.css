@@ -498,3 +498,23 @@ table.data tbody tr:hover td { background: var(--accent-soft); }
 .methods p { font-size: 1.0625rem; line-height: 1.62; color: var(--ink-2); }
 .methods h2 { font-size: 1.2rem; color: var(--ink); }
 .methods > p:first-of-type { font-family: var(--serif); font-size: 1.1875rem; color: var(--ink); }
+
+/* ---- key for ordinal indicators ---- */
+.scalekey {
+  margin-top: 1rem; border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: .7rem .8rem; background: var(--paper);
+}
+.scalekey__h {
+  font-size: .625rem; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); font-weight: 600; margin-bottom: .45rem;
+}
+.scalekey__r {
+  display: flex; gap: .7rem; align-items: baseline; font-size: .8125rem;
+  padding: .18rem 0; border-top: 1px solid var(--rule);
+}
+.scalekey__r:first-of-type { border-top: 0; }
+.scalekey__r b {
+  min-width: 1.9rem; text-align: right; font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.scalekey__r span { color: var(--ink-2); }

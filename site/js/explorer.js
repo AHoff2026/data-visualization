@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=b86a58b5";
-import { getFlowMeta, getSeries } from "./store.js?v=b86a58b5";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=b86a58b5";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=b86a58b5";
-import { dataTable } from "./table.js?v=b86a58b5";
-import { editable, textOf } from "./edits.js?v=b86a58b5";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=3416cff1";
+import { getFlowMeta, getSeries } from "./store.js?v=3416cff1";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=3416cff1";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=3416cff1";
+import { dataTable } from "./table.js?v=3416cff1";
+import { editable, textOf } from "./edits.js?v=3416cff1";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -829,6 +829,22 @@ export async function renderExplorer(host, slug, catalog) {
         `The source publishes no combined total for ` +
         noTotal.map(d => d.name.toLowerCase()).join(", ") +
         `, so a single category is always selected.`));
+
+    // An ordinal indicator is unreadable without its key: a bargaining level of
+    // 3 is not more than 2, it is the sector rather than a mix of levels.
+    const mIdx = dimIndex["MEASURE"];
+    if (mIdx !== undefined && dims[mIdx].value_defs) {
+      const code = dims[mIdx].ids[ui.picks[mIdx]];
+      const scale = dims[mIdx].value_defs[code];
+      if (scale) {
+        const box = el("div", { class: "scalekey" });
+        box.appendChild(el("div", { class: "scalekey__h" }, "What the values mean"));
+        for (const k of Object.keys(scale).sort((a, b) => Number(b) - Number(a)))
+          box.appendChild(el("div", { class: "scalekey__r" },
+            el("b", {}, k), el("span", {}, scale[k])));
+        sec.appendChild(box);
+      }
+    }
 
     for (const n of (meta.source_notes || []))
       sec.appendChild(el("p", { class: "figure__sub", style: { marginTop: ".9rem",

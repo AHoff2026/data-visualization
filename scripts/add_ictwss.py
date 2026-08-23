@@ -28,22 +28,65 @@ def get(url, timeout=600):
     req = urllib.request.Request(url, headers={"User-Agent": "ForestAndTheTrees/1.0"})
     with urllib.request.urlopen(req, timeout=timeout) as r: return r.read()
 
+FURNITURE = re.compile(
+    r'\s*\b\d{1,3}\b\s*(Unclassified\s*-\s*Non classifi\u00e9|Section [A-Z]\.).*$|'
+    r'\s*Unclassified\s*-\s*Non classifi\u00e9.*$|\s*Section [A-Z]\..*$', re.I)
+
+def clean(text):
+    """The PDF text layer interleaves page numbers and running heads with the
+    content; they must not end up inside a label."""
+    t = " ".join(str(text).split())
+    t = FURNITURE.sub("", t)
+    return re.sub(r'\s*\b\d{1,3}\b\s*$', "", t).strip(" ;.,")
+
 def definitions(codes):
+    """Variable descriptions and, for the ordinal variables, what each code means.
+
+    Most of this database is ordinal: a bargaining level of 3 is not more than 2,
+    it is the sector rather than a mix of sector and enterprise. Without the key
+    those charts cannot be read, so the key comes out of the codebook with the
+    description."""
     import fitz
     raw = get(CODEBOOK)
     doc = fitz.open(stream=raw, filetype="pdf")
     txt = "\n".join(p.get_text() for p in doc)
-    out = {}
-    for c in codes:
-        m = re.search(rf'^\s*{re.escape(c)}\s*[:\-–—]?\s*(.{{10,200}})', txt, re.M)
-        if m: out[c] = " ".join(m.group(1).split())
-    return out
+    lines = txt.splitlines()
+    starts = {}
+    for i, ln in enumerate(lines):
+        for c in codes:
+            # three layouts in one document: "CODE: text", "CODE  Text", and a
+            # table where the code sits alone on its line above its description
+            if re.match(rf'^\s*{re.escape(c)}\s*([:\-–—]|\s+[A-Z(])', ln) \
+               or re.fullmatch(rf'\s*{re.escape(c)}\s*', ln):
+                starts.setdefault(c, i)
+    out, scales = {}, {}
+    order = sorted(starts.items(), key=lambda kv: kv[1])
+    for n, (c, i) in enumerate(order):
+        end = order[n + 1][1] if n + 1 < len(order) else min(i + 40, len(lines))
+        head = re.sub(rf'^\s*{re.escape(c)}\s*[:\-–—]?\s*', "", lines[i]).strip()
+        # a description can wrap before the numbered key begins
+        j = i + 1
+        while j < end and not re.match(r'^\s*-?\d+\s*=', lines[j]) and lines[j].strip():
+            head += " " + lines[j].strip(); j += 1
+        out[c] = clean(head)[:200]
+        key, cur = {}, None
+        for ln in lines[j:end]:
+            m = re.match(r'^\s*(-?\d+)\s*=\s*(.*)$', ln)
+            if m and re.search(r'[A-Za-z_]+\s*/\s*[A-Za-z_]', m.group(2)): m = None
+            if m:
+                cur = m.group(1); key[cur] = m.group(2).strip()
+            elif cur and ln.strip() and not re.match(r'^\s*\d+\s*$', ln):
+                key[cur] += " " + ln.strip()
+        if key:
+            scales[c] = {k: clean(v)[:180] for k, v in key.items()}
+    return out, scales
 
 def main():
     rows = list(csv.DictReader(io.StringIO(get(CSV_URL).decode("utf-8", "replace"))))
     codes = [c for c in rows[0] if c not in ("country", "iso3", "year")]
-    defs = definitions(codes)
-    print(f"variables in source: {len(codes)}   defined in codebook: {len(defs)}")
+    defs, scales = definitions(codes)
+    print(f"variables in source: {len(codes)}   defined in codebook: {len(defs)}"
+          f"   with a value key: {len(scales)}")
 
     names, records, used = {}, {}, {}
     for r in rows:
@@ -129,7 +172,8 @@ def main():
          "names": [names[a] for a in area_ids]},
         {"id": "MEASURE", "name": "Indicator", "ids": [m[0] for m in measures],
          "names": [m[1] for m in measures],
-         "code_defs": {c: defs[c] for c in used}},
+         "code_defs": {c: defs[c] for c in used},
+         "value_defs": {c: scales[c] for c in used if c in scales}},
         {"id": "UNIT_MEASURE", "name": "Measured as", "ids": units,
          "names": [unit_lbl[u] for u in units]},
       ],
