@@ -12,6 +12,12 @@ the global index of online work demand by occupation over time.
 
 Both come from samples of a handful of platforms. They describe those platforms,
 not the whole of platform work, and certainly not all self-employment.
+
+The two files under data/raw/oli are annual aggregates of the Online Labour
+Observatory's figshare release (article 3761562): oli_workers.csv averages the
+daily worker-profile counts per country and occupation, and oli_demand.csv
+averages the daily new-project index per occupation. They are kept in the repo
+because the raw files run to 200MB.
 """
 import csv, gzip, json, pathlib, collections
 
