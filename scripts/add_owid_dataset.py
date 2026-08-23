@@ -40,6 +40,29 @@ SPECS = {
                "SOCX", "Public social spending", "PT_B1GQ", "Percentage of GDP",
                "Lindert; OECD SOCX")],
  },
+ "civil_society": {
+   "slug": "VDEM__CIVIL_SOCIETY",
+   "name": "Civil society and freedom of association",
+   "topic": "UNION",
+   "desc": ("V-Dem's measures of associational life: how free people are to form and "
+     "join organisations, how far civil society organisations actually participate in "
+     "public life, and how strong and autonomous that civil society is overall. The "
+     "egalitarian democracy index is included as context.<br>These run from 1789, "
+     "which is longer than any labor statistic, and they measure the associational "
+     "side of the question that ICTWSS measures the institutional side of: whether "
+     "people may organise, as against what the state does with the organisations they "
+     "build.<br>Each index runs from 0 to 1, higher meaning more."),
+   "series": [
+     ("freedom-of-association-index", "freeassoc_vdem__estimate_best",
+      "FREEASSOC", "Freedom of association", "IX01", "0 to 1", "V-Dem"),
+     ("civil-society-participation-index", "civsoc_particip_vdem__estimate_best",
+      "CIVPART", "Civil society participation", "IX01", "0 to 1", "V-Dem"),
+     ("strong-civil-society-index", "civ_soc_str_vdem__estimate_best",
+      "CIVSTR", "Strength of civil society", "IX01", "0 to 1", "V-Dem"),
+     ("egalitarian-democracy-index-vdem", "egaldem_vdem__estimate_best",
+      "EGALDEM", "Egalitarian democracy index", "IX01", "0 to 1", "V-Dem"),
+   ],
+ },
  "labor_share": {
    "slug": "OWID__LABOR_SHARE",
    "name": "Labor share of GDP",
