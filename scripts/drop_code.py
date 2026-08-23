@@ -36,7 +36,8 @@ def run(slug, dim_id, code):
         (d/"all.json.gz").write_bytes(gzip.compress(
             json.dumps(recs, separators=(",", ":")).encode(), 6))
     else:
-        ai = next(i for i, x in enumerate(m["dims"]) if x["id"] == m["area_dim"])
+        ai = next((i for i, x in enumerate(m["dims"]) if x["id"] == m.get("area_dim")), None)
+        if ai is None: continue
         codes = m["dims"][ai]["ids"]
         by = defaultdict(list)
         for r in recs: by[codes[r["k"][ai]]].append(r)
