@@ -18,7 +18,7 @@ than a headcount basis matters because the self-employed work different hours.
 
 Every combination is exposed separately so the two adjustments can be seen apart.
 """
-import csv, gzip, json, pathlib, collections
+import csv, gzip, json, pathlib, collections, urllib.request
 
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 SITE = ROOT/"site/data"
@@ -53,6 +53,30 @@ GROUPS = [
     ("P90P100",  "Top 10 per cent"),
     ("P99P100",  "Top 1 per cent"),
 ]
+
+# The two OECD extracts are large and gitignored; pull them if they are not on disk.
+NA_PULLS = [
+    ("na_income.csv", "DSD_NAMAIN10@DF_TABLE1_INCOME",
+     ".".join(["A", "", "S1", "",
+               "B1GQ+D1+D11+D12+B2A3G+B2G+B3G+D2X3+D21X31+P51C",
+               "", "", "", "XDC", "V", "", ""])),
+    ("na_emp_act.csv", "DSD_NAMAIN10@DF_TABLE3_EMPDC", ".".join(["A"] + [""]*11)),
+]
+for fname, flow, key in NA_PULLS:
+    dest = ROOT/"data/raw"/fname
+    if dest.exists(): continue
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    url = (f"https://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,{flow},/{key}"
+           "?format=csvfilewithlabels")
+    print(f"  fetching {fname} ...")
+    req = urllib.request.Request(url, headers={
+        "Accept": "application/vnd.sdmx.data+csv; charset=utf-8; labels=both",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "Mozilla/5.0 (Macintosh) DataViz/1.0"})
+    with urllib.request.urlopen(req, timeout=1800) as r:
+        raw = r.read()
+        if r.headers.get("Content-Encoding") == "gzip": raw = gzip.decompress(raw)
+    dest.write_bytes(raw)
 
 rec = {}                      # (area, measure, group) -> {year: value}
 names = {}
