@@ -41,7 +41,7 @@ SERIES = [
      "PT", "Percentage of national income", "World Inequality Database"),
     ("wealth-share-richest", "share_top_1__welfare_type_wealth__extrapolated_no",
      "TOP1_WEALTH", "Wealth share of the top 1 per cent",
-     "PT", "Percentage of national wealth", "World Inequality Database"),
+     "PT_WLTH", "Percentage of national wealth", "World Inequality Database"),
     # spread across the distribution
     ("palma-ratio-wid", "palma_ratio__welfare_type_before_tax__extrapolated_no",
      "PALMA", "Palma ratio: top 10 per cent over bottom 40 per cent",
@@ -106,6 +106,25 @@ if WIDF.exists():
         names.setdefault(r["area"], r["area"])
         kept += 1
     print(f'  {"WID female share of labor income":52} {kept:7} observations')
+
+# ---- WID: where national income actually goes, by percentile group ----
+# The top 1 per cent share above answers only half the question. These give the
+# whole distribution: what the bottom half, the middle 40 and the top tenth take.
+if WIDF.exists():
+    GRP = [("INC_P0P50",   "p0p50",   "Income share of the bottom 50 per cent"),
+           ("INC_P50P90",  "p50p90",  "Income share of the middle 40 per cent"),
+           ("INC_P90P100", "p90p100", "Income share of the top 10 per cent")]
+    for code, _, nm in GRP:
+        measures.append((code, nm)); sources[nm] = "World Inequality Database"
+    # reuse the existing income-share unit rather than minting a duplicate label
+    want = {p: c for c, p, _ in GRP}
+    kept = 0
+    for r in csv.DictReader(open(WIDF)):
+        if r["variable"] != "sptincj992" or r["percentile"] not in want: continue
+        records.setdefault((r["area"], want[r["percentile"]], "PT"), {})[r["year"]] = \
+            float(r["value"])*100
+        names.setdefault(r["area"], r["area"]); kept += 1
+    print(f'  {"WID income shares by percentile group":52} {kept:7} observations')
 
 # WID's files are keyed by ISO code only, so borrow display names from any dataset
 # already on disk that carries them.

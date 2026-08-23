@@ -124,7 +124,9 @@ if f.exists():
     for r in csv.DictReader(open(f)):
         if r["variable"] in ("sptlinj992", "sptkinj992", "sptincj992"):
             W[(r["area"], r["year"], r["percentile"])][r["variable"]] = float(r["value"])
-    wid_areas = sorted({a for a, _, _ in W})
+    # Only countries with the labor/capital decomposition belong here; the plain
+    # income shares for the other 44 live in the inequality dataset instead.
+    wid_areas = sorted({a for (a, _, _), d in W.items() if "sptlinj992" in d})
     for a in wid_areas:
         yrs = sorted({y for aa, y, _ in W if aa == a}, key=int)
         for y in yrs:
