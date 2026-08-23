@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=3416cff1";
-import { getCatalog } from "./store.js?v=3416cff1";
-import { renderExplorer, topicLabel } from "./explorer.js?v=3416cff1";
-import { renderFeatured } from "./featured.js?v=3416cff1";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=e6c01108";
+import { getCatalog } from "./store.js?v=e6c01108";
+import { renderExplorer, topicLabel } from "./explorer.js?v=e6c01108";
+import { renderFeatured } from "./featured.js?v=e6c01108";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=3416cff1";
+  from "./edits.js?v=e6c01108";
 
 let CAT = null;
 const main = () => document.getElementById("main");
@@ -120,6 +120,27 @@ function buildRail(activeSlug) {
 }
 
 // ---------- pages ----------
+/** Name the sources actually in the database, in a fixed order, once each. */
+function sourceLine() {
+  const ORDER = ["OECD", "OECD/AIAS", "ILOSTAT", "WID", "LIS", "V-Dem"];
+  const of = (f) => {
+    const a = String(f.agency || ""), slug = String(f.slug || "");
+    if (slug.startsWith("VDEM__")) return ["V-Dem"];
+    if (slug.startsWith("WID_LIS__")) return ["WID", "LIS"];
+    if (slug.startsWith("OWID__")) return slug.includes("LABOR_RIGHTS") ? ["ILOSTAT"] : [];
+    if (a.includes("AIAS")) return ["OECD/AIAS"];
+    if (a === "ILOSTAT") return ["ILOSTAT"];
+    if (a.startsWith("OECD")) return ["OECD"];
+    return [];
+  };
+  const seen = new Set();
+  for (const f of CAT.flows) for (const n of of(f)) seen.add(n);
+  const names = ORDER.filter(n => seen.has(n));
+  if (!names.length) return "";
+  const last = names.pop();
+  return names.length ? `from ${names.join(", ")} and ${last}` : `from ${last}`;
+}
+
 function pageHome() {
   const m = main(); clear(m);
   const nObs = CAT.flows.reduce((a, f) => a + (f.n_obs || 0), 0);
@@ -139,7 +160,7 @@ function pageHome() {
     hStand,
     el("p", { class: "figure__sub", style: { marginTop: "1.1rem" } },
       `${CAT.flows.length} datasets · ${nObs ? nObs.toLocaleString("en-GB") + " observations · " : ""}` +
-      `sourced live from OECD SDMX`)));
+      sourceLine())));
 
   const feat = el("section", {});
   m.appendChild(feat);
