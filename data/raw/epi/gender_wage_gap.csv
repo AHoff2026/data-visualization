@@ -1,0 +1,613 @@
+data_version,indicator,measure,date_interval,year,quarter,month,geo_type,geo_name,geo_code,group,group_value,value
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1982,NA,NA,national,United States,0,,Overall,0.3499914223754155
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2095126389289219
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1982,NA,NA,national,United States,0,Race/Ethnicity,White,0.3724777859305497
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.21677079482551764
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1982,NA,NA,national,United States,0,,Overall,0.32914057398012464
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1987093638995704
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,White,0.3469159618256614
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.22647320906370838
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1979,NA,NA,national,United States,0,,Overall,0.369544885182592
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Black,0.24599583076453113
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1979,NA,NA,national,United States,0,Race/Ethnicity,White,0.3908833982646902
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2827341227019823
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1979,NA,NA,national,United States,0,,Overall,0.3451623706354634
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2294790768665823
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,White,0.36107413385707754
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2662576601458053
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1980,NA,NA,national,United States,0,,Overall,0.36539139682101573
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Black,0.24547719589593298
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1980,NA,NA,national,United States,0,Race/Ethnicity,White,0.3832719027934586
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24313946927710273
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1980,NA,NA,national,United States,0,,Overall,0.3390425882828355
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21253746373402627
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,White,0.3565148840832808
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24777024640313117
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1981,NA,NA,national,United States,0,,Overall,0.34776980061790985
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Black,0.23947342455242815
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1981,NA,NA,national,United States,0,Race/Ethnicity,White,0.3699009286324636
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24153766246154618
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1981,NA,NA,national,United States,0,,Overall,0.3346857485518496
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21293401575091997
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,White,0.35219196525406316
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24573017639703976
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1987,NA,NA,national,United States,0,,Overall,0.3068691839151231
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1778211247158934
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1987,NA,NA,national,United States,0,Race/Ethnicity,White,0.3235948099195486
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.18421338559047484
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1987,NA,NA,national,United States,0,,Overall,0.3080476037617448
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17621590927636344
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,White,0.3306618936364081
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.19168260147226202
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1983,NA,NA,national,United States,0,,Overall,0.333266483962929
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21353967982739186
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1983,NA,NA,national,United States,0,Race/Ethnicity,White,0.3547692402779842
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.20366896595782102
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1983,NA,NA,national,United States,0,,Overall,0.3253595838484188
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Black,0.202568052903493
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,White,0.342506809073866
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.22846075828684453
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1985,NA,NA,national,United States,0,,Overall,0.3209745587050641
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17407899400379778
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1985,NA,NA,national,United States,0,Race/Ethnicity,White,0.35385536191233646
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.20697549378252622
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1985,NA,NA,national,United States,0,,Overall,0.3144711181074278
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17041337480550645
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,White,0.33630955365002335
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.213215107048224
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1989,NA,NA,national,United States,0,,Overall,0.27554359436484765
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Black,0.14064849957578296
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1989,NA,NA,national,United States,0,Race/Ethnicity,White,0.2950789850767285
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16435909019002126
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1989,NA,NA,national,United States,0,,Overall,0.2720615573733256
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13146525429630862
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,White,0.29666511053794953
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17439206349965108
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1990,NA,NA,national,United States,0,,Overall,0.25344088417963884
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13815559823039392
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1990,NA,NA,national,United States,0,Race/Ethnicity,White,0.2882408175317197
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12900647395141795
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1990,NA,NA,national,United States,0,,Overall,0.26014057199296703
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13532762132991505
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,White,0.28500863451340197
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15979675030627183
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1986,NA,NA,national,United States,0,,Overall,0.32157252172853423
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Black,0.18749652524298388
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1986,NA,NA,national,United States,0,Race/Ethnicity,White,0.34824338444130976
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.21195111047157367
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1986,NA,NA,national,United States,0,,Overall,0.31443049278880997
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17931367814193555
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,White,0.3359878130704813
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2089024936370676
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1988,NA,NA,national,United States,0,,Overall,0.2905626321324044
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1821761653934707
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1988,NA,NA,national,United States,0,Race/Ethnicity,White,0.3043359172058122
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17239963716287188
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1988,NA,NA,national,United States,0,,Overall,0.3032339767253589
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17939509898022432
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,White,0.32612294681084253
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.19434412116087318
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1984,NA,NA,national,United States,0,,Overall,0.32261653103637733
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21399795741495453
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1984,NA,NA,national,United States,0,Race/Ethnicity,White,0.3424098024857716
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.22070816145056993
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1984,NA,NA,national,United States,0,,Overall,0.31913913101460467
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1999482740950237
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,White,0.3360467930675609
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.23139240090896807
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1991,NA,NA,national,United States,0,,Overall,0.23707133102532363
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12074062419304332
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1991,NA,NA,national,United States,0,Race/Ethnicity,White,0.2810905804005658
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11738847847653955
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1991,NA,NA,national,United States,0,,Overall,0.24629317691872543
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11546736212556585
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,White,0.27388981518006095
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12940305847200828
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1993,NA,NA,national,United States,0,,Overall,0.21898270650430784
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10015322154878703
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1993,NA,NA,national,United States,0,Race/Ethnicity,White,0.25581302590932053
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10403288237679476
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1993,NA,NA,national,United States,0,,Overall,0.22386849990629265
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09779704388405541
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,White,0.24992171006127673
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1126882669599496
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1994,NA,NA,national,United States,0,,Overall,0.21804436439156605
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1163801076273876
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1994,NA,NA,national,United States,0,Race/Ethnicity,White,0.2513857228553903
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10332043587236905
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1994,NA,NA,national,United States,0,,Overall,0.2194821404175621
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11513751530906746
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,White,0.24417779748226687
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11119152085678086
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1995,NA,NA,national,United States,0,,Overall,0.2280094539600115
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11920257059236261
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1995,NA,NA,national,United States,0,Race/Ethnicity,White,0.2542546529502636
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10814434228496683
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1995,NA,NA,national,United States,0,,Overall,0.22822692111212728
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10098659682653444
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,White,0.2539590846357004
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.130417454026589
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1992,NA,NA,national,United States,0,,Overall,0.22657144318361222
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10743161082952124
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1992,NA,NA,national,United States,0,Race/Ethnicity,White,0.2662672983585106
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10506000338487143
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1992,NA,NA,national,United States,0,,Overall,0.23250623567730355
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09873256754732196
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,White,0.25967821145140013
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11915167950277517
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1999,NA,NA,national,United States,0,,Overall,0.22513061499721743
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13920749161769896
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1999,NA,NA,national,United States,0,Race/Ethnicity,White,0.2592300814489096
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13863665655429314
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1999,NA,NA,national,United States,0,,Overall,0.22999938503017103
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12677058303445932
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,White,0.25232155990715555
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1517856206281193
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1996,NA,NA,national,United States,0,,Overall,0.2189993724987579
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1144389423465676
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1996,NA,NA,national,United States,0,Race/Ethnicity,White,0.24607860416026184
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10294010176284618
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1996,NA,NA,national,United States,0,,Overall,0.2216513263671852
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10175349352338858
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,White,0.24611574781960388
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11645339031836188
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2000,NA,NA,national,United States,0,,Overall,0.2231943610726551
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10477105834459632
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2000,NA,NA,national,United States,0,Race/Ethnicity,White,0.258327837450505
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.135893783997994
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2000,NA,NA,national,United States,0,,Overall,0.22794354169359632
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11900833942951272
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,White,0.25664898902349775
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13494778297341792
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1998,NA,NA,national,United States,0,,Overall,0.21200968079223903
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11354266303118021
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1998,NA,NA,national,United States,0,Race/Ethnicity,White,0.25817802244772425
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1295932543010866
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1998,NA,NA,national,United States,0,,Overall,0.22148050396538288
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11256379839303277
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,White,0.24754709152080479
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13889411662328777
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1997,NA,NA,national,United States,0,,Overall,0.21622660004302918
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1189591787566181
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1997,NA,NA,national,United States,0,Race/Ethnicity,White,0.24932346972578756
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13116881867144536
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1997,NA,NA,national,United States,0,,Overall,0.2218093884223985
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1160957931734089
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,White,0.2464862274312516
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13133842311014465
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2001,NA,NA,national,United States,0,,Overall,0.21332809684691567
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12594200882488804
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2001,NA,NA,national,United States,0,Race/Ethnicity,White,0.24313346407578063
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10529681886500553
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2001,NA,NA,national,United States,0,,Overall,0.22002422389760912
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10644683658122633
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,White,0.24664726086315847
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12206439045078843
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2002,NA,NA,national,United States,0,,Overall,0.20020005481080938
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12131429988865416
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2002,NA,NA,national,United States,0,Race/Ethnicity,White,0.23012388071588963
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10871441021568107
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2002,NA,NA,national,United States,0,,Overall,0.21570278098607265
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09485633411224448
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,White,0.24207135930304247
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13682709476695032
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2003,NA,NA,national,United States,0,,Overall,0.19073626836105528
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09392826241792263
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2003,NA,NA,national,United States,0,Race/Ethnicity,White,0.23127187039855435
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.08934079390243488
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2003,NA,NA,national,United States,0,,Overall,0.2077463170848579
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08686479204339759
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,White,0.23826964124415306
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12726575583202027
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2004,NA,NA,national,United States,0,,Overall,0.19161720982654906
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09051459630265468
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2004,NA,NA,national,United States,0,Race/Ethnicity,White,0.22956054237026347
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.08062917397724301
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2004,NA,NA,national,United States,0,,Overall,0.21332061247147804
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11009642071332537
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,White,0.24381001270389524
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11320901885437284
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2006,NA,NA,national,United States,0,,Overall,0.18005161860693308
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09093420532988883
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2006,NA,NA,national,United States,0,Race/Ethnicity,White,0.212673918693567
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1475393254448859
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2006,NA,NA,national,United States,0,,Overall,0.2008103739192333
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09620863780724132
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,White,0.23186272111352313
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12199186637714188
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2005,NA,NA,national,United States,0,,Overall,0.186504610674736
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10054782175610166
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2005,NA,NA,national,United States,0,Race/Ethnicity,White,0.21764734190586887
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10346759134221561
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2005,NA,NA,national,United States,0,,Overall,0.2028750259494888
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09099019832158839
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,White,0.23232404772481752
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1268198915498222
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2007,NA,NA,national,United States,0,,Overall,0.18572154295452903
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Black,0.0897009661151762
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2007,NA,NA,national,United States,0,Race/Ethnicity,White,0.22026783184653553
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13413709697446552
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2007,NA,NA,national,United States,0,,Overall,0.20482682876615121
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08117413281939834
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,White,0.23641030773267913
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12133450405960944
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2009,NA,NA,national,United States,0,,Overall,0.18546204831444768
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10677443830600108
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2009,NA,NA,national,United States,0,Race/Ethnicity,White,0.22534657489782206
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1211582652177744
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2009,NA,NA,national,United States,0,,Overall,0.21291204540081632
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09594156594950276
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,White,0.2440047319262315
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.134647078528913
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2010,NA,NA,national,United States,0,,Overall,0.1715488638048117
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08724744402785145
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2010,NA,NA,national,United States,0,Race/Ethnicity,White,0.2183720739900844
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11103460293947587
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2010,NA,NA,national,United States,0,,Overall,0.20007955691778578
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07637204277375997
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,White,0.23067947016969548
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13430833674164555
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2008,NA,NA,national,United States,0,,Overall,0.17706824900268536
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11048055154674907
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2008,NA,NA,national,United States,0,Race/Ethnicity,White,0.22180948100066178
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11818468123375547
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2008,NA,NA,national,United States,0,,Overall,0.20639149526926093
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08641772193763575
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,White,0.23532926929965747
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13270334292133412
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2011,NA,NA,national,United States,0,,Overall,0.16068522353843362
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07439624434598469
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2011,NA,NA,national,United States,0,Race/Ethnicity,White,0.1951397729266785
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.08707992364952222
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2011,NA,NA,national,United States,0,,Overall,0.18855439016057307
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07363622261519853
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,White,0.21650973013599062
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10430075082015633
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2012,NA,NA,national,United States,0,,Overall,0.17457083184150268
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09232478837225488
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2012,NA,NA,national,United States,0,Race/Ethnicity,White,0.2027878159803148
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1176507942129349
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2012,NA,NA,national,United States,0,,Overall,0.20673247381552984
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09678275798939362
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,White,0.2329392228246404
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12189083579538784
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2013,NA,NA,national,United States,0,,Overall,0.16750484518128772
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09136109646440738
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2013,NA,NA,national,United States,0,Race/Ethnicity,White,0.19559518064228032
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1035223439098999
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2013,NA,NA,national,United States,0,,Overall,0.20042088114370726
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08630636950152093
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,White,0.228361942291876
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12676722253386785
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2014,NA,NA,national,United States,0,,Overall,0.17052910049440306
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08795300856551069
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2014,NA,NA,national,United States,0,Race/Ethnicity,White,0.19778381187043792
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13855065022641588
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2014,NA,NA,national,United States,0,,Overall,0.18735645635464715
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Black,0.06778156464935159
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,White,0.21331600819621588
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12709225613110953
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2015,NA,NA,national,United States,0,,Overall,0.1736025161161211
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08606507853473233
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2015,NA,NA,national,United States,0,Race/Ethnicity,White,0.1922860694460944
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1506159684564068
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2015,NA,NA,national,United States,0,,Overall,0.2034743531434261
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Black,0.097709629308383
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,White,0.22888052385088886
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14050014446069958
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2016,NA,NA,national,United States,0,,Overall,0.17143494272820736
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07837299825846189
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2016,NA,NA,national,United States,0,Race/Ethnicity,White,0.1917833149913818
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14605061513901252
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2016,NA,NA,national,United States,0,,Overall,0.2050266243115082
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10917139477122817
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,White,0.22497455319504533
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15576445350861035
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2017,NA,NA,national,United States,0,,Overall,0.16651814962781641
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Black,0.0643203118592347
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2017,NA,NA,national,United States,0,Race/Ethnicity,White,0.18777876580288544
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1404370909038707
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2017,NA,NA,national,United States,0,,Overall,0.19707745521684283
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10126273084856752
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,White,0.2150981001006126
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14612870612092455
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2019,NA,NA,national,United States,0,,Overall,0.15471583042786197
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Black,0.06468206062825843
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2019,NA,NA,national,United States,0,Race/Ethnicity,White,0.19172975753209798
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12195179326872985
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2019,NA,NA,national,United States,0,,Overall,0.20251183326401379
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07959622941944411
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,White,0.22899680471243333
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14264100014405068
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2018,NA,NA,national,United States,0,,Overall,0.16916995039156457
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08074952350985809
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2018,NA,NA,national,United States,0,Race/Ethnicity,White,0.18962669165305968
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14577424145445617
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2018,NA,NA,national,United States,0,,Overall,0.21028866620312636
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08602149562039696
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,White,0.2336558789587173
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1605743761570836
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2022,NA,NA,national,United States,0,,Overall,0.15922767044291486
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Black,0.056231241198392734
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2022,NA,NA,national,United States,0,Race/Ethnicity,White,0.17154133527676307
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12260638539072921
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2022,NA,NA,national,United States,0,,Overall,0.22232467983033388
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1252204225808362
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,White,0.2455083221211346
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15130937751203044
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2020,NA,NA,national,United States,0,,Overall,0.16123892784798832
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Black,0.06747172045229932
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2020,NA,NA,national,United States,0,Race/Ethnicity,White,0.18810650134324158
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14479941757873627
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2020,NA,NA,national,United States,0,,Overall,0.20195548726265944
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09214047576717432
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,White,0.224748311501073
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14859615717208263
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2024,NA,NA,national,United States,0,,Overall,0.1486331800952745
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Black,0.05998473752606048
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2024,NA,NA,national,United States,0,Race/Ethnicity,White,0.17105086356595278
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10259929399772383
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2024,NA,NA,national,United States,0,,Overall,0.17372911929551216
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Black,0.08489553181500109
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,White,0.19496226494575453
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13667699868441774
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2025,NA,NA,national,United States,0,,Overall,0.147474472972404
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Black,0.07194558601670553
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2025,NA,NA,national,United States,0,Race/Ethnicity,White,0.18101842550220937
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13075458851534583
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2025,NA,NA,national,United States,0,,Overall,0.1795762281181914
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09450679515858229
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,White,0.1999205703503999
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.12796104683475917
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2021,NA,NA,national,United States,0,,Overall,0.15597072989546756
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Black,0.057357501023973856
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2021,NA,NA,national,United States,0,Race/Ethnicity,White,0.1795022093002545
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.11653121376397835
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2021,NA,NA,national,United States,0,,Overall,0.20594403684600082
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10237026727479359
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,White,0.22906702846734806
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.13421216306464456
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2023,NA,NA,national,United States,0,,Overall,0.14582847717339065
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Black,0.06493175155394437
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2023,NA,NA,national,United States,0,Race/Ethnicity,White,0.16646259624824788
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.10920392438931026
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2023,NA,NA,national,United States,0,,Overall,0.18960535567557324
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11619501910737629
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,White,0.2088670730359835
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1343427058467621
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1973,NA,NA,national,United States,0,,Overall,0.3754834961904854
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1973,NA,NA,national,United States,0,Race/Ethnicity,Black,0.30899537056372917
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1973,NA,NA,national,United States,0,Race/Ethnicity,White,0.38699615682748423
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1973,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.25984651420226723
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1973,NA,NA,national,United States,0,,Overall,0.3578308959681964
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1973,NA,NA,national,United States,0,Race/Ethnicity,Black,0.24918131700011847
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1973,NA,NA,national,United States,0,Race/Ethnicity,White,0.370976724122247
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1973,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2529262116450721
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1977,NA,NA,national,United States,0,,Overall,0.3709388456082454
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1977,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2600231657770644
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1977,NA,NA,national,United States,0,Race/Ethnicity,White,0.3866087799815905
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1977,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2967068945063521
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1977,NA,NA,national,United States,0,,Overall,0.34902950258889764
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1977,NA,NA,national,United States,0,Race/Ethnicity,Black,0.19470660501951065
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1977,NA,NA,national,United States,0,Race/Ethnicity,White,0.36538310884301906
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1977,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.28354843020689813
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1978,NA,NA,national,United States,0,,Overall,0.371886627688649
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1978,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2913519040285154
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1978,NA,NA,national,United States,0,Race/Ethnicity,White,0.3855506797971371
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1978,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.25206843381207966
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1978,NA,NA,national,United States,0,,Overall,0.34844986634549746
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1978,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21568622638118828
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1978,NA,NA,national,United States,0,Race/Ethnicity,White,0.3643711618427108
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1978,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2723458076074725
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1975,NA,NA,national,United States,0,,Overall,0.3754991902393001
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1975,NA,NA,national,United States,0,Race/Ethnicity,Black,0.298893419380739
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1975,NA,NA,national,United States,0,Race/Ethnicity,White,0.38282572830272454
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1975,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.26324880650460947
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1975,NA,NA,national,United States,0,,Overall,0.34814857769821417
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1975,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21500797272153327
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1975,NA,NA,national,United States,0,Race/Ethnicity,White,0.36199849016802965
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1975,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.259272653532874
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1976,NA,NA,national,United States,0,,Overall,0.3599540126204859
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1976,NA,NA,national,United States,0,Race/Ethnicity,Black,0.27156206137180894
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1976,NA,NA,national,United States,0,Race/Ethnicity,White,0.3702789655369423
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1976,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.25838892176294614
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1976,NA,NA,national,United States,0,,Overall,0.33987684433674037
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1976,NA,NA,national,United States,0,Race/Ethnicity,Black,0.22428301752713176
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1976,NA,NA,national,United States,0,Race/Ethnicity,White,0.35382879662911626
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1976,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2480739288729935
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1974,NA,NA,national,United States,0,,Overall,0.37190265333581773
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1974,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2931599817956567
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1974,NA,NA,national,United States,0,Race/Ethnicity,White,0.3814535394431535
+2026.8.14,Gender wage gap,"Gender wage gap, raw median",year,1974,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.29136972201867783
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1974,NA,NA,national,United States,0,,Overall,0.3579981663813804
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1974,NA,NA,national,United States,0,Race/Ethnicity,Black,0.24569743147399525
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1974,NA,NA,national,United States,0,Race/Ethnicity,White,0.3700380318780997
+2026.8.14,Gender wage gap,"Gender wage gap, raw average",year,1974,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.269442413934737
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1982,NA,NA,national,United States,0,,Overall,0.28562249920342564
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1981,NA,NA,national,United States,0,,Overall,0.2950773004633185
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1984,NA,NA,national,United States,0,,Overall,0.27717511067665157
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1985,NA,NA,national,United States,0,,Overall,0.27477530009701656
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1986,NA,NA,national,United States,0,,Overall,0.2738396561259828
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1983,NA,NA,national,United States,0,,Overall,0.27878288938438855
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1980,NA,NA,national,United States,0,,Overall,0.302379138795846
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1979,NA,NA,national,United States,0,,Overall,0.30858387810922494
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1987,NA,NA,national,United States,0,,Overall,0.26836336696442875
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1989,NA,NA,national,United States,0,,Overall,0.24451095887422658
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1988,NA,NA,national,United States,0,,Overall,0.263511964933126
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1990,NA,NA,national,United States,0,,Overall,0.23405570904465223
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1991,NA,NA,national,United States,0,,Overall,0.22059683790662654
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1992,NA,NA,national,United States,0,,Overall,0.20968771683611476
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1995,NA,NA,national,United States,0,,Overall,0.2099171096612038
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1993,NA,NA,national,United States,0,,Overall,0.20300096337476292
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1994,NA,NA,national,United States,0,,Overall,0.2029941329949868
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1996,NA,NA,national,United States,0,,Overall,0.20403069099121895
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1998,NA,NA,national,United States,0,,Overall,0.20433036001977511
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1999,NA,NA,national,United States,0,,Overall,0.2091293680719306
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2001,NA,NA,national,United States,0,,Overall,0.20261278929450166
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2000,NA,NA,national,United States,0,,Overall,0.2086219342537522
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1997,NA,NA,national,United States,0,,Overall,0.2073006266940609
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2003,NA,NA,national,United States,0,,Overall,0.19569511456655797
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2004,NA,NA,national,United States,0,,Overall,0.19768563188899158
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2002,NA,NA,national,United States,0,,Overall,0.19737164405354457
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2005,NA,NA,national,United States,0,,Overall,0.1932680493608574
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2006,NA,NA,national,United States,0,,Overall,0.19570325038931735
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2007,NA,NA,national,United States,0,,Overall,0.1996266490497698
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2008,NA,NA,national,United States,0,,Overall,0.19823994888075802
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2009,NA,NA,national,United States,0,,Overall,0.19706359709858567
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2010,NA,NA,national,United States,0,,Overall,0.18649249769778953
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2011,NA,NA,national,United States,0,,Overall,0.18191691480703198
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2012,NA,NA,national,United States,0,,Overall,0.1928824737169007
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2013,NA,NA,national,United States,0,,Overall,0.1876575835613037
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2014,NA,NA,national,United States,0,,Overall,0.18583845104316454
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2016,NA,NA,national,United States,0,,Overall,0.1910403929416018
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2015,NA,NA,national,United States,0,,Overall,0.1902392569271023
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2017,NA,NA,national,United States,0,,Overall,0.18906881586729107
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2018,NA,NA,national,United States,0,,Overall,0.19724834348722475
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2019,NA,NA,national,United States,0,,Overall,0.19764983204724884
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2022,NA,NA,national,United States,0,,Overall,0.19958748471336452
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2021,NA,NA,national,United States,0,,Overall,0.1940728132096715
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2023,NA,NA,national,United States,0,,Overall,0.1886723129187201
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2020,NA,NA,national,United States,0,,Overall,0.20035793022735482
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2025,NA,NA,national,United States,0,,Overall,0.18631569166976047
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2024,NA,NA,national,United States,0,,Overall,0.17961167159497848
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,White,0.3004189299797473
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.22237145996509078
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1982,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2037892482399266
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,White,0.30918003813442585
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Black,0.22025433285527596
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1981,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.23159710589162175
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,White,0.2921338459381009
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2177611442544659
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1984,NA,NA,national,United States,0,Race/Ethnicity,Black,0.19885319404478397
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.21409438943977865
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,White,0.2932053659529713
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1985,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17944378059960986
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,White,0.29095569291781487
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Black,0.18593674037491037
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1986,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.219244249539564
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,White,0.2932979308764013
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1961416865638682
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1983,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.21795106454596835
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,White,0.31650146916037003
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24810820978874482
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1980,NA,NA,national,United States,0,Race/Ethnicity,Black,0.22374281789028394
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,White,0.32238773578629343
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2535464657180253
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1979,NA,NA,national,United States,0,Race/Ethnicity,Black,0.23505309471682523
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,White,0.2860308548463715
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Black,0.18028940044386144
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1987,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.20304792295042096
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,White,0.2632124308721422
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1587903110001514
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1989,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.18843408761279679
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,White,0.28053703560002596
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1917149292325483
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1988,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.20135782687706727
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,White,0.2534745710904486
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Black,0.15425887807804473
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1990,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17578008450330007
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,White,0.24207219185445983
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16116251739708087
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1991,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1244671666695234
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,White,0.23063322033402411
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11020439044257735
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1992,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15721816892764529
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16668626518022356
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,White,0.228658226381401
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1995,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12182953893394877
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,White,0.22244312809493838
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10398449326363057
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1993,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15871533294219775
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12736990312424945
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,White,0.220607577998024
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1994,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1602298031223115
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,White,0.22436710052412756
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11806789400361561
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1996,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.14726568832438702
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,White,0.22401825597787384
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16868350943210553
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1998,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12178726864350065
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,White,0.22878525770137614
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1776984399930196
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1999,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12138960949506417
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16155239024561763
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11731289316769578
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2001,NA,NA,national,United States,0,Race/Ethnicity,White,0.22297138773688507
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,White,0.23129093754478003
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11181655170804417
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2000,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16774997716903273
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16509704651231294
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11626616735480821
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,1997,NA,NA,national,United States,0,Race/Ethnicity,White,0.22878596129319118
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,White,0.21613916675282707
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16035897904761687
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10435523250257384
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,White,0.21971802289789832
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10789177589177401
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16205987030703595
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,White,0.21421228429666406
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11531197953600136
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2002,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17398431474290899
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,White,0.21269266008377308
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16829353521471702
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10135894414381796
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,White,0.21592723634250577
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10275403466510791
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.176362788922376
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Black,0.0988189837900757
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,White,0.22057039792491595
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17679397225418936
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09533181766288823
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,White,0.21827957497043193
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1759486140718789
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,White,0.2189297988890433
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09372040611632981
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17015006247368591
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,White,0.20861419199886277
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09112405098824872
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16435216854002377
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,White,0.20037621412770856
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15421161432784358
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09153477139526756
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10777079806041512
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,White,0.21308893094430903
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1628967789596315
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,White,0.20869543644559962
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16016242324666008
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09447635792323783
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,White,0.20716842018516546
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09129583011975806
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16365925444199225
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,White,0.21055923451208214
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1752465323345358
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10087878318299204
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,White,0.2130853461654557
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16838520838799975
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10286811956189934
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1753026618415191
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,White,0.20729242666149306
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09546692749349905
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,White,0.2194439391118027
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1816546337428242
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09685987176562338
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Black,0.09958966306783013
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,White,0.22300207287403784
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17382869856821215
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,White,0.22289507915301132
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1724232882697626
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Black,0.11819951296320785
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,White,0.21660291418784083
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16235469650406464
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10511362351279463
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12628743384515706
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,White,0.20771089900272566
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16620718601956297
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,White,0.22350547585313452
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.17223499485597782
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12185463961961163
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,White,0.2090558358495842
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Black,0.10634799736988332
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16221097075938073
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,White,0.1992429065003808
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1086636027351745
+2026.8.14,Gender wage gap,"Gender wage gap, average",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16088360290742887

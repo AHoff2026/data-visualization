@@ -1,0 +1,460 @@
+data_version,indicator,measure,date_interval,year,quarter,month,geo_type,geo_name,geo_code,group,group_value,value
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1982,NA,NA,national,United States,0,,Overall,0.20359656064997045
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1982,NA,NA,national,United States,0,Gender,Female,0.09854666385646471
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1982,NA,NA,national,United States,0,Gender,Male,0.2777567669338057
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1982,NA,NA,national,United States,0,,Overall,0.19296507100339222
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1982,NA,NA,national,United States,0,Gender,Female,0.11272613727518144
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1982,NA,NA,national,United States,0,Gender,Male,0.2508799901636588
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1979,NA,NA,national,United States,0,,Overall,0.18003512810542277
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1979,NA,NA,national,United States,0,Gender,Female,0.126853732662065
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1979,NA,NA,national,United States,0,Gender,Male,0.25850663747973723
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1979,NA,NA,national,United States,0,,Overall,0.1831651930174648
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1979,NA,NA,national,United States,0,Gender,Female,0.11691709485507196
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1979,NA,NA,national,United States,0,Gender,Male,0.2310318222090727
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1980,NA,NA,national,United States,0,,Overall,0.179814506478701
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1980,NA,NA,national,United States,0,Gender,Female,0.11383628512558008
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1980,NA,NA,national,United States,0,Gender,Male,0.2779091530034159
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1980,NA,NA,national,United States,0,,Overall,0.18036214570851872
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1980,NA,NA,national,United States,0,Gender,Female,0.10574713261555546
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1980,NA,NA,national,United States,0,Gender,Male,0.23502306672101692
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1981,NA,NA,national,United States,0,,Overall,0.19977089177879837
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1981,NA,NA,national,United States,0,Gender,Female,0.12486954754981827
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1981,NA,NA,national,United States,0,Gender,Male,0.2729778947180027
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1981,NA,NA,national,United States,0,,Overall,0.18684499951543765
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1981,NA,NA,national,United States,0,Gender,Female,0.11587834316206136
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1981,NA,NA,national,United States,0,Gender,Male,0.24066813351134198
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1987,NA,NA,national,United States,0,,Overall,0.2289546797609624
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1987,NA,NA,national,United States,0,Gender,Female,0.1556537299496471
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1987,NA,NA,national,United States,0,Gender,Male,0.2999147213263461
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1987,NA,NA,national,United States,0,,Overall,0.22661479208436586
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1987,NA,NA,national,United States,0,Gender,Female,0.14518354620824458
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1987,NA,NA,national,United States,0,Gender,Male,0.2921577247854076
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1983,NA,NA,national,United States,0,,Overall,0.20197129176393447
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1983,NA,NA,national,United States,0,Gender,Female,0.11938482671473194
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1983,NA,NA,national,United States,0,Gender,Male,0.2864776418452474
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1983,NA,NA,national,United States,0,,Overall,0.19683261529358942
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1983,NA,NA,national,United States,0,Gender,Female,0.12256574828676114
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1983,NA,NA,national,United States,0,Gender,Male,0.2522648041778982
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1985,NA,NA,national,United States,0,,Overall,0.21144986735457671
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1985,NA,NA,national,United States,0,Gender,Female,0.14741010985665326
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1985,NA,NA,national,United States,0,Gender,Male,0.3053223681175883
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1985,NA,NA,national,United States,0,,Overall,0.20715256169670015
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1985,NA,NA,national,United States,0,Gender,Female,0.13195609995010293
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1985,NA,NA,national,United States,0,Gender,Male,0.26776371961834045
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1989,NA,NA,national,United States,0,,Overall,0.2500123328409739
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1989,NA,NA,national,United States,0,Gender,Female,0.18578511702350686
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1989,NA,NA,national,United States,0,Gender,Male,0.3131533234724737
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1989,NA,NA,national,United States,0,,Overall,0.2312083883593965
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1989,NA,NA,national,United States,0,Gender,Female,0.16489416712567317
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1989,NA,NA,national,United States,0,Gender,Male,0.2885738585029578
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1990,NA,NA,national,United States,0,,Overall,0.26861782493836983
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1990,NA,NA,national,United States,0,Gender,Female,0.1977403215635024
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1990,NA,NA,national,United States,0,Gender,Male,0.3444087977992881
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1990,NA,NA,national,United States,0,,Overall,0.24737923383796623
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1990,NA,NA,national,United States,0,Gender,Female,0.18309218907790514
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1990,NA,NA,national,United States,0,Gender,Male,0.3048324540273244
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1986,NA,NA,national,United States,0,,Overall,0.22465258642348673
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1986,NA,NA,national,United States,0,Gender,Female,0.15998461003851605
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1986,NA,NA,national,United States,0,Gender,Male,0.30526443872520503
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1986,NA,NA,national,United States,0,,Overall,0.21387871544107762
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1986,NA,NA,national,United States,0,Gender,Female,0.1382487792093915
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1986,NA,NA,national,United States,0,Gender,Male,0.2766842164158716
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1988,NA,NA,national,United States,0,,Overall,0.23914861800647524
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1988,NA,NA,national,United States,0,Gender,Female,0.17357901593969516
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1988,NA,NA,national,United States,0,Gender,Male,0.3053272790899867
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1988,NA,NA,national,United States,0,,Overall,0.2405468312685336
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1988,NA,NA,national,United States,0,Gender,Female,0.16514741981404413
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1988,NA,NA,national,United States,0,Gender,Male,0.30170186631826945
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1984,NA,NA,national,United States,0,,Overall,0.20458372379917766
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1984,NA,NA,national,United States,0,Gender,Female,0.14934454117559903
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1984,NA,NA,national,United States,0,Gender,Male,0.2821910053284703
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1984,NA,NA,national,United States,0,,Overall,0.20426757423597708
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1984,NA,NA,national,United States,0,Gender,Female,0.1354373041362974
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1984,NA,NA,national,United States,0,Gender,Male,0.25315703983187676
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1991,NA,NA,national,United States,0,,Overall,0.27175547183366766
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1991,NA,NA,national,United States,0,Gender,Female,0.1978325474175101
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1991,NA,NA,national,United States,0,Gender,Male,0.3466143102661664
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1991,NA,NA,national,United States,0,,Overall,0.25541278451060245
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1991,NA,NA,national,United States,0,Gender,Female,0.18162953479743127
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1991,NA,NA,national,United States,0,Gender,Male,0.31744863622368824
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1993,NA,NA,national,United States,0,,Overall,0.27009982373210206
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1993,NA,NA,national,United States,0,Gender,Female,0.20923973984710764
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1993,NA,NA,national,United States,0,Gender,Male,0.3431974526080551
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1993,NA,NA,national,United States,0,,Overall,0.25327880757058197
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1993,NA,NA,national,United States,0,Gender,Female,0.1859585003932277
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1993,NA,NA,national,United States,0,Gender,Male,0.31185981969130416
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1994,NA,NA,national,United States,0,,Overall,0.2838478470560387
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1994,NA,NA,national,United States,0,Gender,Female,0.22126137040303673
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1994,NA,NA,national,United States,0,Gender,Male,0.3498515193133859
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1994,NA,NA,national,United States,0,,Overall,0.2605527837151853
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1994,NA,NA,national,United States,0,Gender,Female,0.19608975432380926
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1994,NA,NA,national,United States,0,Gender,Male,0.3163732943915334
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1995,NA,NA,national,United States,0,,Overall,0.2927786508463792
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1995,NA,NA,national,United States,0,Gender,Female,0.23162660007433689
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1995,NA,NA,national,United States,0,Gender,Male,0.3575071449796883
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1995,NA,NA,national,United States,0,,Overall,0.2786310891292709
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1995,NA,NA,national,United States,0,Gender,Female,0.22023905660687215
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1995,NA,NA,national,United States,0,Gender,Male,0.33101972818101333
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1992,NA,NA,national,United States,0,,Overall,0.2671720861074144
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1992,NA,NA,national,United States,0,Gender,Female,0.19351172264469563
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1992,NA,NA,national,United States,0,Gender,Male,0.3387860361317825
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1992,NA,NA,national,United States,0,,Overall,0.24915624531215275
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1992,NA,NA,national,United States,0,Gender,Female,0.17874618405843856
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1992,NA,NA,national,United States,0,Gender,Male,0.3097652799893885
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1999,NA,NA,national,United States,0,,Overall,0.295148414203523
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1999,NA,NA,national,United States,0,Gender,Female,0.24717000332621253
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1999,NA,NA,national,United States,0,Gender,Male,0.35256843750977396
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1999,NA,NA,national,United States,0,,Overall,0.2872763332691547
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1999,NA,NA,national,United States,0,Gender,Female,0.24078618915792704
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1999,NA,NA,national,United States,0,Gender,Male,0.33077319650287074
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1996,NA,NA,national,United States,0,,Overall,0.28421168362279026
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1996,NA,NA,national,United States,0,Gender,Female,0.23499300919885246
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1996,NA,NA,national,United States,0,Gender,Male,0.3570606160576768
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1996,NA,NA,national,United States,0,,Overall,0.280497865511227
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1996,NA,NA,national,United States,0,Gender,Female,0.21951189869496068
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1996,NA,NA,national,United States,0,Gender,Male,0.3340501993436885
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2000,NA,NA,national,United States,0,,Overall,0.30106085008959727
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2000,NA,NA,national,United States,0,Gender,Female,0.25210823531509197
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2000,NA,NA,national,United States,0,Gender,Male,0.35807601867138283
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2000,NA,NA,national,United States,0,,Overall,0.2962374889441355
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2000,NA,NA,national,United States,0,Gender,Female,0.24052988312565016
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2000,NA,NA,national,United States,0,Gender,Male,0.34737710848772707
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1998,NA,NA,national,United States,0,,Overall,0.2917049356272817
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1998,NA,NA,national,United States,0,Gender,Female,0.23512486648128728
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1998,NA,NA,national,United States,0,Gender,Male,0.3481195005309795
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1998,NA,NA,national,United States,0,,Overall,0.2821667639620834
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1998,NA,NA,national,United States,0,Gender,Female,0.2327295017540183
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1998,NA,NA,national,United States,0,Gender,Male,0.3295424765517474
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1997,NA,NA,national,United States,0,,Overall,0.2990213106674625
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1997,NA,NA,national,United States,0,Gender,Female,0.25829559176775474
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1997,NA,NA,national,United States,0,Gender,Male,0.3591619366037466
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1997,NA,NA,national,United States,0,,Overall,0.2865458372787215
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1997,NA,NA,national,United States,0,Gender,Female,0.2347979495769127
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1997,NA,NA,national,United States,0,Gender,Male,0.3362313942144667
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2001,NA,NA,national,United States,0,,Overall,0.2903566179504302
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2001,NA,NA,national,United States,0,Gender,Female,0.2422496026861688
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2001,NA,NA,national,United States,0,Gender,Male,0.3589875051270359
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2001,NA,NA,national,United States,0,,Overall,0.3009568230025885
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2001,NA,NA,national,United States,0,Gender,Female,0.2445839572946793
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2001,NA,NA,national,United States,0,Gender,Male,0.35178076983097173
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2002,NA,NA,national,United States,0,,Overall,0.2950764866546006
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2002,NA,NA,national,United States,0,Gender,Female,0.2596308926986256
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2002,NA,NA,national,United States,0,Gender,Male,0.36048276590564543
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2002,NA,NA,national,United States,0,,Overall,0.30193386104887776
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2002,NA,NA,national,United States,0,Gender,Female,0.2560528511884389
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2002,NA,NA,national,United States,0,Gender,Male,0.3467602518212891
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2003,NA,NA,national,United States,0,,Overall,0.30369219433944217
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2003,NA,NA,national,United States,0,Gender,Female,0.24052836533008592
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2003,NA,NA,national,United States,0,Gender,Male,0.3588960554113081
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2003,NA,NA,national,United States,0,,Overall,0.2944219120560806
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2003,NA,NA,national,United States,0,Gender,Female,0.2467102986926486
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2003,NA,NA,national,United States,0,Gender,Male,0.34252192089589806
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2004,NA,NA,national,United States,0,,Overall,0.3126610523551143
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2004,NA,NA,national,United States,0,Gender,Female,0.24111525990831872
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2004,NA,NA,national,United States,0,Gender,Male,0.3640490528842969
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2004,NA,NA,national,United States,0,,Overall,0.29388327202321207
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2004,NA,NA,national,United States,0,Gender,Female,0.23496552415243255
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2004,NA,NA,national,United States,0,Gender,Male,0.3476349862908088
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2006,NA,NA,national,United States,0,,Overall,0.28907994593556774
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2006,NA,NA,national,United States,0,Gender,Female,0.27241436446077205
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2006,NA,NA,national,United States,0,Gender,Male,0.3280075382446107
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2006,NA,NA,national,United States,0,,Overall,0.29458028196006414
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2006,NA,NA,national,United States,0,Gender,Female,0.24729344100917605
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2006,NA,NA,national,United States,0,Gender,Male,0.34148449668967573
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2005,NA,NA,national,United States,0,,Overall,0.3107168581171429
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2005,NA,NA,national,United States,0,Gender,Female,0.25354721213644293
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2005,NA,NA,national,United States,0,Gender,Male,0.348613260282325
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2005,NA,NA,national,United States,0,,Overall,0.2983048209706449
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2005,NA,NA,national,United States,0,Gender,Female,0.25397726840186496
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2005,NA,NA,national,United States,0,Gender,Male,0.3441173185735613
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2007,NA,NA,national,United States,0,,Overall,0.2833368989598486
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2007,NA,NA,national,United States,0,Gender,Female,0.2651704415113365
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2007,NA,NA,national,United States,0,Gender,Male,0.3382667823491202
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2007,NA,NA,national,United States,0,,Overall,0.28668792642506713
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2007,NA,NA,national,United States,0,Gender,Female,0.23579437669382275
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2007,NA,NA,national,United States,0,Gender,Male,0.3358797637720057
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2009,NA,NA,national,United States,0,,Overall,0.28816694069582405
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2009,NA,NA,national,United States,0,Gender,Female,0.2540001554299428
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2009,NA,NA,national,United States,0,Gender,Male,0.3424398138476127
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2009,NA,NA,national,United States,0,,Overall,0.28573560525805075
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2009,NA,NA,national,United States,0,Gender,Female,0.23845971263395138
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2009,NA,NA,national,United States,0,Gender,Male,0.3346982029972768
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2010,NA,NA,national,United States,0,,Overall,0.3030469323107927
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2010,NA,NA,national,United States,0,Gender,Female,0.26296540841319127
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2010,NA,NA,national,United States,0,Gender,Male,0.3519581064409639
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2010,NA,NA,national,United States,0,,Overall,0.2921795754185479
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2010,NA,NA,national,United States,0,Gender,Female,0.2522600005252231
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2010,NA,NA,national,United States,0,Gender,Male,0.3355004362568633
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2008,NA,NA,national,United States,0,,Overall,0.27961026574451464
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2008,NA,NA,national,United States,0,Gender,Female,0.24866389639261277
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2008,NA,NA,national,United States,0,Gender,Male,0.33695568679028187
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2008,NA,NA,national,United States,0,,Overall,0.2844261895174839
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2008,NA,NA,national,United States,0,Gender,Female,0.24065570350360987
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2008,NA,NA,national,United States,0,Gender,Male,0.33050778725373786
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2011,NA,NA,national,United States,0,,Overall,0.30396619908627354
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2011,NA,NA,national,United States,0,Gender,Female,0.2595908486867814
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2011,NA,NA,national,United States,0,Gender,Male,0.34723105221278827
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2011,NA,NA,national,United States,0,,Overall,0.2999281605176827
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2011,NA,NA,national,United States,0,Gender,Female,0.2519575608400082
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2011,NA,NA,national,United States,0,Gender,Male,0.3456687910994145
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2012,NA,NA,national,United States,0,,Overall,0.31006469833866157
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2012,NA,NA,national,United States,0,Gender,Female,0.27023717166249284
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2012,NA,NA,national,United States,0,Gender,Male,0.3406512813978493
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2012,NA,NA,national,United States,0,,Overall,0.3091483847525137
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2012,NA,NA,national,United States,0,Gender,Female,0.2590886701825277
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2012,NA,NA,national,United States,0,Gender,Male,0.3527865968890038
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2013,NA,NA,national,United States,0,,Overall,0.3108794597437122
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2013,NA,NA,national,United States,0,Gender,Female,0.2678601062481023
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2013,NA,NA,national,United States,0,Gender,Male,0.3430546149396896
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2013,NA,NA,national,United States,0,,Overall,0.3055840406538167
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2013,NA,NA,national,United States,0,Gender,Female,0.2613361725566412
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2013,NA,NA,national,United States,0,Gender,Male,0.34727470633711
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2014,NA,NA,national,United States,0,,Overall,0.2969395889300751
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2014,NA,NA,national,United States,0,Gender,Female,0.2672437314594782
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2014,NA,NA,national,United States,0,Gender,Male,0.3176279711266611
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2014,NA,NA,national,United States,0,,Overall,0.29563477345382605
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2014,NA,NA,national,United States,0,Gender,Female,0.2589859944375815
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2014,NA,NA,national,United States,0,Gender,Male,0.33218159654004364
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2015,NA,NA,national,United States,0,,Overall,0.28997134754700715
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2015,NA,NA,national,United States,0,Gender,Female,0.27340369853767144
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2015,NA,NA,national,United States,0,Gender,Male,0.3090499317328558
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2015,NA,NA,national,United States,0,,Overall,0.2984954409074436
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2015,NA,NA,national,United States,0,Gender,Female,0.25941457705822335
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2015,NA,NA,national,United States,0,Gender,Male,0.33556726077143795
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2016,NA,NA,national,United States,0,,Overall,0.26966677415272233
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2016,NA,NA,national,United States,0,Gender,Female,0.2621468797036556
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2016,NA,NA,national,United States,0,Gender,Male,0.30166212016622695
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2016,NA,NA,national,United States,0,,Overall,0.28768414226978434
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2016,NA,NA,national,United States,0,Gender,Female,0.25865800559051233
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2016,NA,NA,national,United States,0,Gender,Male,0.31943293214751023
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2017,NA,NA,national,United States,0,,Overall,0.2641455155071193
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2017,NA,NA,national,United States,0,Gender,Female,0.262294016538139
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2017,NA,NA,national,United States,0,Gender,Male,0.302924244378977
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2017,NA,NA,national,United States,0,,Overall,0.2883093051610134
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2017,NA,NA,national,United States,0,Gender,Female,0.2588382822430587
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2017,NA,NA,national,United States,0,Gender,Male,0.31870383209942843
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2019,NA,NA,national,United States,0,,Overall,0.2619882596269827
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2019,NA,NA,national,United States,0,Gender,Female,0.22817976044783939
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2019,NA,NA,national,United States,0,Gender,Male,0.2895158518837595
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2019,NA,NA,national,United States,0,,Overall,0.2837228774530236
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2019,NA,NA,national,United States,0,Gender,Female,0.24314450244302344
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2019,NA,NA,national,United States,0,Gender,Male,0.3193772887606777
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2018,NA,NA,national,United States,0,,Overall,0.26872974834518604
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2018,NA,NA,national,United States,0,Gender,Female,0.25713253445094886
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2018,NA,NA,national,United States,0,Gender,Male,0.2952683061848983
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2018,NA,NA,national,United States,0,,Overall,0.29687923108809133
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2018,NA,NA,national,United States,0,Gender,Female,0.26439567911890194
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2018,NA,NA,national,United States,0,Gender,Male,0.32843836224698564
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2022,NA,NA,national,United States,0,,Overall,0.24173229744837155
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2022,NA,NA,national,United States,0,Gender,Female,0.2215882936722563
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2022,NA,NA,national,United States,0,Gender,Male,0.2650027170343565
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2022,NA,NA,national,United States,0,,Overall,0.2796696403281115
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2022,NA,NA,national,United States,0,Gender,Female,0.23381644996026485
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2022,NA,NA,national,United States,0,Gender,Male,0.31885766507233926
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2020,NA,NA,national,United States,0,,Overall,0.25952642395230485
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2020,NA,NA,national,United States,0,Gender,Female,0.2446179458588955
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2020,NA,NA,national,United States,0,Gender,Male,0.28287025130082344
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2020,NA,NA,national,United States,0,,Overall,0.27444770991392053
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2020,NA,NA,national,United States,0,Gender,Female,0.2398353260452809
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2020,NA,NA,national,United States,0,Gender,Male,0.30782677106175194
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2024,NA,NA,national,United States,0,,Overall,0.2545283217916102
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2024,NA,NA,national,United States,0,Gender,Female,0.21184850768618846
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2024,NA,NA,national,United States,0,Gender,Male,0.2719668097396364
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2024,NA,NA,national,United States,0,,Overall,0.2829180615430281
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2024,NA,NA,national,United States,0,Gender,Female,0.25801907149208236
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2024,NA,NA,national,United States,0,Gender,Male,0.3081122068690111
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2025,NA,NA,national,United States,0,,Overall,0.24000763296494532
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2025,NA,NA,national,United States,0,Gender,Female,0.21240395799036638
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2025,NA,NA,national,United States,0,Gender,Male,0.2579464463878103
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2025,NA,NA,national,United States,0,,Overall,0.26802364471238826
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2025,NA,NA,national,United States,0,Gender,Female,0.23423525291057457
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2025,NA,NA,national,United States,0,Gender,Male,0.2974251667620361
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2021,NA,NA,national,United States,0,,Overall,0.2489626554131662
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2021,NA,NA,national,United States,0,Gender,Female,0.21779633597090942
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2021,NA,NA,national,United States,0,Gender,Male,0.27354945843931966
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2021,NA,NA,national,United States,0,,Overall,0.2781576462329485
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2021,NA,NA,national,United States,0,Gender,Female,0.23399924034728015
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2021,NA,NA,national,United States,0,Gender,Male,0.3179215315317109
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2023,NA,NA,national,United States,0,,Overall,0.2402588073199835
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2023,NA,NA,national,United States,0,Gender,Female,0.22746256524970854
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,2023,NA,NA,national,United States,0,Gender,Male,0.2771197973438072
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2023,NA,NA,national,United States,0,,Overall,0.2896754885050027
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2023,NA,NA,national,United States,0,Gender,Female,0.25540342475074995
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,2023,NA,NA,national,United States,0,Gender,Male,0.31950568433604143
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1973,NA,NA,national,United States,0,,Overall,0.19891918406767017
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1973,NA,NA,national,United States,0,Gender,Female,0.10010601966785582
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1973,NA,NA,national,United States,0,Gender,Male,0.25469719595137186
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1973,NA,NA,national,United States,0,,Overall,0.21011492093470774
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1973,NA,NA,national,United States,0,Gender,Female,0.12073471401655567
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1973,NA,NA,national,United States,0,Gender,Male,0.25967375756444966
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1977,NA,NA,national,United States,0,,Overall,0.19106584520699477
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1977,NA,NA,national,United States,0,Gender,Female,0.13890480038746
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1977,NA,NA,national,United States,0,Gender,Male,0.24897851135396587
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1977,NA,NA,national,United States,0,,Overall,0.17637744208677064
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1977,NA,NA,national,United States,0,Gender,Female,0.1187812406687232
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1977,NA,NA,national,United States,0,Gender,Male,0.219435991134022
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1978,NA,NA,national,United States,0,,Overall,0.20012596630317325
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1978,NA,NA,national,United States,0,Gender,Female,0.11043085302971045
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1978,NA,NA,national,United States,0,Gender,Male,0.26919094962760115
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1978,NA,NA,national,United States,0,,Overall,0.19929975096379526
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1978,NA,NA,national,United States,0,Gender,Female,0.13503825092848498
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1978,NA,NA,national,United States,0,Gender,Male,0.2444286896704343
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1975,NA,NA,national,United States,0,,Overall,0.19716550863653282
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1975,NA,NA,national,United States,0,Gender,Female,0.11016849842023557
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1975,NA,NA,national,United States,0,Gender,Male,0.25459081197373035
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1975,NA,NA,national,United States,0,,Overall,0.2114713749446976
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1975,NA,NA,national,United States,0,Gender,Female,0.13518320302073417
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1975,NA,NA,national,United States,0,Gender,Male,0.25511806087301325
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1976,NA,NA,national,United States,0,,Overall,0.18855104563579428
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1976,NA,NA,national,United States,0,Gender,Female,0.10272087568002508
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1976,NA,NA,national,United States,0,Gender,Male,0.23809722514923226
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1976,NA,NA,national,United States,0,,Overall,0.19134653364428011
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1976,NA,NA,national,United States,0,Gender,Female,0.10975504928428725
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1976,NA,NA,national,United States,0,Gender,Male,0.23496381733828642
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1974,NA,NA,national,United States,0,,Overall,0.1956557136323257
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1974,NA,NA,national,United States,0,Gender,Female,0.130046540016017
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw median",year,1974,NA,NA,national,United States,0,Gender,Male,0.24063838331156084
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1974,NA,NA,national,United States,0,,Overall,0.18014651805029935
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1974,NA,NA,national,United States,0,Gender,Female,0.10352811582031973
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, raw average",year,1974,NA,NA,national,United States,0,Gender,Male,0.22696964168772682
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1982,NA,NA,national,United States,0,,Overall,0.12215444142563603
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1981,NA,NA,national,United States,0,,Overall,0.11821194094480558
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1984,NA,NA,national,United States,0,,Overall,0.13190826558976332
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1985,NA,NA,national,United States,0,,Overall,0.1410714519112264
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1986,NA,NA,national,United States,0,,Overall,0.1472796847181559
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1983,NA,NA,national,United States,0,,Overall,0.12266500487493182
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1980,NA,NA,national,United States,0,,Overall,0.11244607873527579
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1979,NA,NA,national,United States,0,,Overall,0.1086053057188493
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1987,NA,NA,national,United States,0,,Overall,0.14588200262084527
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1989,NA,NA,national,United States,0,,Overall,0.13758138152916766
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1988,NA,NA,national,United States,0,,Overall,0.14581607179344658
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1990,NA,NA,national,United States,0,,Overall,0.1354424069857415
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1991,NA,NA,national,United States,0,,Overall,0.1467758313055586
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1992,NA,NA,national,United States,0,,Overall,0.13965749954532103
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1995,NA,NA,national,United States,0,,Overall,0.1472050081939319
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1993,NA,NA,national,United States,0,,Overall,0.1411767708029068
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1994,NA,NA,national,United States,0,,Overall,0.14100529743075407
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1996,NA,NA,national,United States,0,,Overall,0.14678180902529203
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1998,NA,NA,national,United States,0,,Overall,0.13792449611096547
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1999,NA,NA,national,United States,0,,Overall,0.13839741908726533
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2001,NA,NA,national,United States,0,,Overall,0.1290133241886885
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2000,NA,NA,national,United States,0,,Overall,0.13401482735512682
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1997,NA,NA,national,United States,0,,Overall,0.14299366485466858
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2003,NA,NA,national,United States,0,,Overall,0.12708231780494939
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2004,NA,NA,national,United States,0,,Overall,0.12608340898311143
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2002,NA,NA,national,United States,0,,Overall,0.13293106284784206
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2005,NA,NA,national,United States,0,,Overall,0.13311554540481163
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2006,NA,NA,national,United States,0,,Overall,0.1331001317270265
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2007,NA,NA,national,United States,0,,Overall,0.13097028582717485
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2008,NA,NA,national,United States,0,,Overall,0.13129624175744947
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2009,NA,NA,national,United States,0,,Overall,0.12895861621620097
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2010,NA,NA,national,United States,0,,Overall,0.13468306544768016
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2011,NA,NA,national,United States,0,,Overall,0.12854235620081844
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2012,NA,NA,national,United States,0,,Overall,0.13656313020910327
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2013,NA,NA,national,United States,0,,Overall,0.1262621074400453
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2014,NA,NA,national,United States,0,,Overall,0.12277541184082708
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2016,NA,NA,national,United States,0,,Overall,0.1126462086678961
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2015,NA,NA,national,United States,0,,Overall,0.11735064731288414
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2017,NA,NA,national,United States,0,,Overall,0.12256309842201818
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2018,NA,NA,national,United States,0,,Overall,0.12233278433746697
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2019,NA,NA,national,United States,0,,Overall,0.11373806752422422
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2022,NA,NA,national,United States,0,,Overall,0.12143885714502389
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2021,NA,NA,national,United States,0,,Overall,0.11525775413707673
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2023,NA,NA,national,United States,0,,Overall,0.11934223495774932
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2020,NA,NA,national,United States,0,,Overall,0.11589992027501095
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2025,NA,NA,national,United States,0,,Overall,0.11712883187461909
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2024,NA,NA,national,United States,0,,Overall,0.11900049817536351
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1982,NA,NA,national,United States,0,Gender,Male,0.16857843954222107
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1982,NA,NA,national,United States,0,Gender,Female,0.05827130978377848
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1981,NA,NA,national,United States,0,Gender,Female,0.055601041373131155
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1981,NA,NA,national,United States,0,Gender,Male,0.16065743020883627
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1984,NA,NA,national,United States,0,Gender,Male,0.17757782054328797
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1984,NA,NA,national,United States,0,Gender,Female,0.07438859546320709
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1985,NA,NA,national,United States,0,Gender,Male,0.18904295518731795
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1985,NA,NA,national,United States,0,Gender,Female,0.07485758329278458
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1986,NA,NA,national,United States,0,Gender,Male,0.1870611270297704
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1986,NA,NA,national,United States,0,Gender,Female,0.09089384936520772
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1983,NA,NA,national,United States,0,Gender,Male,0.16695739574364088
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1983,NA,NA,national,United States,0,Gender,Female,0.06365502385413069
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1980,NA,NA,national,United States,0,Gender,Female,0.05499234531352948
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1980,NA,NA,national,United States,0,Gender,Male,0.15172435172693832
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1979,NA,NA,national,United States,0,Gender,Male,0.1522832947428332
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1979,NA,NA,national,United States,0,Gender,Female,0.045817954679933104
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1987,NA,NA,national,United States,0,Gender,Female,0.08563288976596961
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1987,NA,NA,national,United States,0,Gender,Male,0.18859472379287356
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1989,NA,NA,national,United States,0,Gender,Female,0.08067828718872594
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1989,NA,NA,national,United States,0,Gender,Male,0.18141039673821502
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1988,NA,NA,national,United States,0,Gender,Male,0.1911859974359318
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1988,NA,NA,national,United States,0,Gender,Female,0.08602582909097678
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1990,NA,NA,national,United States,0,Gender,Female,0.08591939785398506
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1990,NA,NA,national,United States,0,Gender,Male,0.1698570643178806
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1991,NA,NA,national,United States,0,Gender,Male,0.18167069675051617
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1991,NA,NA,national,United States,0,Gender,Female,0.09878565524912075
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1992,NA,NA,national,United States,0,Gender,Female,0.09596185388248835
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1992,NA,NA,national,United States,0,Gender,Male,0.17450761244340784
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1995,NA,NA,national,United States,0,Gender,Male,0.18074873429297922
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1995,NA,NA,national,United States,0,Gender,Female,0.10575846450270132
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1993,NA,NA,national,United States,0,Gender,Female,0.10090527674817595
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1993,NA,NA,national,United States,0,Gender,Male,0.17195781715009895
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1994,NA,NA,national,United States,0,Gender,Female,0.10239537817496658
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1994,NA,NA,national,United States,0,Gender,Male,0.1710474674346817
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1996,NA,NA,national,United States,0,Gender,Male,0.17994864993741655
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1996,NA,NA,national,United States,0,Gender,Female,0.1031334045148854
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1998,NA,NA,national,United States,0,Gender,Female,0.1033119434069445
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1998,NA,NA,national,United States,0,Gender,Male,0.16612874944273737
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1999,NA,NA,national,United States,0,Gender,Male,0.1634139789332305
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1999,NA,NA,national,United States,0,Gender,Female,0.10886992081176405
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2001,NA,NA,national,United States,0,Gender,Male,0.15620795398951826
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2001,NA,NA,national,United States,0,Gender,Female,0.09489150036509242
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2000,NA,NA,national,United States,0,Gender,Female,0.09640382234754685
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2000,NA,NA,national,United States,0,Gender,Male,0.16343358460990332
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1997,NA,NA,national,United States,0,Gender,Male,0.17098397493472084
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,1997,NA,NA,national,United States,0,Gender,Female,0.10753624759244362
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2003,NA,NA,national,United States,0,Gender,Female,0.09647180102130426
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2003,NA,NA,national,United States,0,Gender,Male,0.15230168165090807
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2004,NA,NA,national,United States,0,Gender,Male,0.1559984020378562
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2004,NA,NA,national,United States,0,Gender,Female,0.09005488965269448
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2002,NA,NA,national,United States,0,Gender,Female,0.110086639693171
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2002,NA,NA,national,United States,0,Gender,Male,0.15278852859414982
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2005,NA,NA,national,United States,0,Gender,Male,0.15717282592657056
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2005,NA,NA,national,United States,0,Gender,Female,0.1055125958991967
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2006,NA,NA,national,United States,0,Gender,Male,0.15447717838765884
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2006,NA,NA,national,United States,0,Gender,Female,0.10927998596668198
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2007,NA,NA,national,United States,0,Gender,Male,0.1569796386304645
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2007,NA,NA,national,United States,0,Gender,Female,0.10299775802678568
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2008,NA,NA,national,United States,0,Gender,Male,0.15623832767723622
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2008,NA,NA,national,United States,0,Gender,Female,0.10388523270772188
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2009,NA,NA,national,United States,0,Gender,Female,0.09377595801200533
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2009,NA,NA,national,United States,0,Gender,Male,0.16140294720950976
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2010,NA,NA,national,United States,0,Gender,Female,0.10828132390090228
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2010,NA,NA,national,United States,0,Gender,Male,0.1586963790401038
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2011,NA,NA,national,United States,0,Gender,Male,0.14899604383259768
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2011,NA,NA,national,United States,0,Gender,Female,0.10358467742603283
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2012,NA,NA,national,United States,0,Gender,Female,0.10874566629868665
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2012,NA,NA,national,United States,0,Gender,Male,0.16019456355399875
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2013,NA,NA,national,United States,0,Gender,Male,0.14959838639317358
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2013,NA,NA,national,United States,0,Gender,Female,0.09855424065385854
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2014,NA,NA,national,United States,0,Gender,Female,0.0977769413024393
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2014,NA,NA,national,United States,0,Gender,Male,0.1450399792554804
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2016,NA,NA,national,United States,0,Gender,Male,0.12700697598830668
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2016,NA,NA,national,United States,0,Gender,Female,0.09814051844709326
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2015,NA,NA,national,United States,0,Gender,Male,0.1370922419565891
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2015,NA,NA,national,United States,0,Gender,Female,0.09479298206586706
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2017,NA,NA,national,United States,0,Gender,Male,0.14096273263378523
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2017,NA,NA,national,United States,0,Gender,Female,0.10347916354571052
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2018,NA,NA,national,United States,0,Gender,Female,0.10353683171134942
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2018,NA,NA,national,United States,0,Gender,Male,0.14045183015876905
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2019,NA,NA,national,United States,0,Gender,Female,0.08879040087311685
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2019,NA,NA,national,United States,0,Gender,Male,0.1362386510429644
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2022,NA,NA,national,United States,0,Gender,Male,0.13789460793870423
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2022,NA,NA,national,United States,0,Gender,Female,0.10287344677576071
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2021,NA,NA,national,United States,0,Gender,Male,0.13701204086052088
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2021,NA,NA,national,United States,0,Gender,Female,0.09068476544197357
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2023,NA,NA,national,United States,0,Gender,Male,0.13425473950173505
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2023,NA,NA,national,United States,0,Gender,Female,0.10279668899466854
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2020,NA,NA,national,United States,0,Gender,Female,0.09171668189613258
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2020,NA,NA,national,United States,0,Gender,Male,0.1381479452522305
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2025,NA,NA,national,United States,0,Gender,Female,0.09549455702771703
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2025,NA,NA,national,United States,0,Gender,Male,0.13788968874826213
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2024,NA,NA,national,United States,0,Gender,Female,0.10518852901358033
+2026.8.14,Hispanic-white wage gap,"Hispanic-white wage gap, average",year,2024,NA,NA,national,United States,0,Gender,Male,0.1320436314394352

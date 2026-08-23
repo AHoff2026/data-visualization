@@ -1,0 +1,277 @@
+data_version,indicator,measure,date_interval,year,quarter,month,geo_type,geo_name,geo_code,group,group_value,value
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,,Overall,0.20853339104748936
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,,Overall,0.20599998340566605
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,,Overall,0.20992455897633544
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,,Overall,0.20504056668554727
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,,Overall,0.19481996471286256
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,,Overall,0.1887895750119435
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,,Overall,0.1879749224360654
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,,Overall,0.19633439783996898
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,,Overall,0.1951115325773678
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,,Overall,0.19226483951364348
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,,Overall,0.20339888497695346
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,,Overall,0.19602569403963233
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,,Overall,0.181804793579454
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,,Overall,0.1793502872057131
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,,Overall,0.18358140509840992
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,,Overall,0.16851591821914447
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,,Overall,0.1576917850063171
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,,Overall,0.14085228551499274
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,,Overall,0.11923876330747474
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,,Overall,0.11244882373676046
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,,Overall,0.11249370310218954
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,,Overall,0.1276519017492559
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,,Overall,0.14192639817135566
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Black,0.24610917958327927
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Race/Ethnicity,White,0.18874439925886732
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.26904597720420353
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.1891353261118509
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Race/Ethnicity,White,0.18909479847643573
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Black,0.23380521576167013
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.20442912681635161
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.27183062486316634
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2301105183440193
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Race/Ethnicity,White,0.19353041714000585
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.22642746171226014
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.257565971420495
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2382343879524036
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Race/Ethnicity,White,0.1913390552824914
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.22823091328271516
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.23070804203859407
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Black,0.20717352319298432
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Race/Ethnicity,White,0.17954198849616
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.24316654044572106
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.24049502493943864
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Black,0.16915832658553298
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Race/Ethnicity,White,0.17739323585388767
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.23211405921063966
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2474381394498264
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Race/Ethnicity,White,0.1721034149927423
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2713593531929601
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17977309531057872
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.18703700108905474
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Race/Ethnicity,White,0.1772238356903959
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Black,0.2136511757627757
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2631548749456103
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.22006491260391936
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Race/Ethnicity,White,0.17740242236487846
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Black,0.20489554861773085
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.25118876163119697
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.2114877152447603
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Race/Ethnicity,White,0.17618969749470548
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1881926643029863
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.1617084249920171
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.28552015501210715
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Race/Ethnicity,White,0.18423438837281503
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Black,0.21221533852898689
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.26109883651379673
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.22574459057262874
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Black,0.19615971817894184
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Race/Ethnicity,White,0.17915699116021555
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2562562480374422
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.22951326082676649
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17285149467079708
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Race/Ethnicity,White,0.16579824315677194
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.18214014270747003
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2703990161672789
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1323985959656575
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Race/Ethnicity,White,0.17043868574640153
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.17405846131533176
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2577548638749647
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1704670170925724
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.29207660067862107
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Race/Ethnicity,White,0.15886521574602464
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.1950628114250872
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1732446493750952
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Race/Ethnicity,White,0.1511220294040394
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.2454812172713401
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.16001608628210695
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Black,0.163249515170387
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Race/Ethnicity,White,0.14099430709816163
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.21576641371353245
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.13494637252576802
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Black,0.17643579522786035
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Race/Ethnicity,White,0.1251879283579722
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1814360622170723
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.11515015761905634
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Black,0.1405947242803356
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Race/Ethnicity,White,0.10583717916682578
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1540491140692548
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.08718149018587407
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Race/Ethnicity,White,0.11038990552045114
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.05992223547781261
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12214293761107653
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.1284530019244079
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13720119222522476
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Race/Ethnicity,White,0.10365614315012106
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.15274332194598284
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.04838330528410828
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Race/Ethnicity,White,0.11946308564482644
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.14339545197279802
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Black,0.12586769281789079
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.16413376711294436
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Race/Ethnicity,White,0.12085612191228079
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Black,0.13722791849135696
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Hispanic,0.20765114062184242
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Race/Ethnicity,Asian American/Pacific Islander,0.1184011615696905
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Gender,Female,0.1807578430127268
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Gender,Male,0.23072525580748793
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Gender,Male,0.2242696812339613
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Gender,Female,0.1791380636807638
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Gender,Female,0.1736490827549797
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Gender,Male,0.23768955720807994
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Gender,Female,0.17037175526475234
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Gender,Male,0.2315660365688612
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Gender,Male,0.2247541460856426
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Gender,Female,0.15800807185696275
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Gender,Male,0.21355893235437629
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Gender,Female,0.1559495939430231
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Gender,Male,0.21399957137513725
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Gender,Female,0.15715132186923597
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Gender,Female,0.15129579882456534
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Gender,Male,0.2362297724225999
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Gender,Female,0.15863160640391372
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Gender,Male,0.22727703290486279
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Gender,Male,0.21741682434457688
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Gender,Female,0.16307536590076221
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Gender,Male,0.23461432590272202
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Gender,Female,0.1694949377931343
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Gender,Female,0.14535877046629797
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Gender,Male,0.24036970826283932
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Gender,Male,0.21670618252836338
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Gender,Female,0.1444070889469684
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Gender,Male,0.2117417654713929
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Gender,Female,0.14373477239367483
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Gender,Female,0.13911962884073992
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Gender,Male,0.22153182163455165
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Gender,Female,0.12481328237904288
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Gender,Male,0.20421192563663237
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Gender,Female,0.10868841978434562
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Gender,Male,0.19517841098971456
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Gender,Female,0.09173553739282814
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Gender,Male,0.1847763782570766
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Gender,Female,0.08257499550076441
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Gender,Male,0.14940218958918483
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Gender,Female,0.08147336607425637
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Gender,Male,0.1412109791409646
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Gender,Female,0.07496960843390732
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Gender,Male,0.14447749434381074
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Gender,Male,0.15331850226953847
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Gender,Female,0.0984223221520395
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Gender,Male,0.17460117965674304
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Gender,Female,0.10319165995958235
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Education,High school,0.26229621604604714
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Education,Less than high school,0.34257509397473873
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Education,Some college,0.21994569427770783
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Education,Bachelor's degree,0.17429345420558384
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2003,NA,NA,national,United States,0,Education,Advanced degree,0.041539649980304905
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Education,High school,0.28101864266664234
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Education,Bachelor's degree,0.15593947940673147
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Education,Some college,0.21290729925872265
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Education,Advanced degree,0.07954895236207382
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2004,NA,NA,national,United States,0,Education,Less than high school,0.30010955527275995
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Education,Bachelor's degree,0.1647774076528028
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Education,High school,0.2763756645359956
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Education,Some college,0.23999478831665444
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Education,Advanced degree,0.05081946889908817
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2005,NA,NA,national,United States,0,Education,Less than high school,0.2782402136971971
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Education,Bachelor's degree,0.16047111994921304
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Education,Some college,0.2273012477319536
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Education,High school,0.2682483183654927
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Education,Less than high school,0.29816742288770404
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2006,NA,NA,national,United States,0,Education,Advanced degree,0.06588511076461434
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Education,Less than high school,0.26631289174706096
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Education,Advanced degree,0.055814238967817786
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Education,Bachelor's degree,0.13763522597671285
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Education,Some college,0.22446585304844957
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2007,NA,NA,national,United States,0,Education,High school,0.2741866881234982
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Education,High school,0.2578994389265814
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Education,Advanced degree,0.045291097836515304
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Education,Bachelor's degree,0.13352801456241914
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Education,Less than high school,0.30127173238233196
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2008,NA,NA,national,United States,0,Education,Some college,0.21802111772416732
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Education,Advanced degree,0.0172971819096277
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Education,Some college,0.23391391434334152
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Education,Bachelor's degree,0.14527545209363502
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Education,Less than high school,0.30365473504937346
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2009,NA,NA,national,United States,0,Education,High school,0.25329249678151866
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Education,Some college,0.23304620345739968
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Education,Advanced degree,0.0343834161312806
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Education,Less than high school,0.29852217510629875
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Education,High school,0.27087951281347755
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2010,NA,NA,national,United States,0,Education,Bachelor's degree,0.16609212725416778
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Education,Some college,0.24319456546965346
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Education,Advanced degree,0.05301892802735253
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Education,High school,0.26019360985658113
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Education,Bachelor's degree,0.1497626094389617
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2011,NA,NA,national,United States,0,Education,Less than high school,0.3085114636804651
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Education,Advanced degree,0.04733522591542316
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Education,Some college,0.22522604785286204
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Education,Bachelor's degree,0.15249939359443254
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Education,High school,0.269897079267426
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2012,NA,NA,national,United States,0,Education,Less than high school,0.35346456062758147
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Education,Some college,0.2453495094484297
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Education,Bachelor's degree,0.15611895161655198
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Education,High school,0.2939775776331135
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Education,Advanced degree,0.05629681708944356
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2013,NA,NA,national,United States,0,Education,Less than high school,0.309139073183462
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Education,Some college,0.25165441039067704
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Education,High school,0.2923432550638676
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Education,Bachelor's degree,0.14518763622661535
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Education,Advanced degree,0.022012773244713513
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2014,NA,NA,national,United States,0,Education,Less than high school,0.2858159321850591
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Education,Bachelor's degree,0.1658921095476733
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Education,Less than high school,0.2795554277959502
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Education,Some college,0.24177036506202865
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Education,High school,0.2756186246461487
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2015,NA,NA,national,United States,0,Education,Advanced degree,0.013912372895358294
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Education,Bachelor's degree,0.16088807915397552
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Education,Some college,0.2320456568090088
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Education,High school,0.2858653977358534
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Education,Advanced degree,0.009940236072861541
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2016,NA,NA,national,United States,0,Education,Less than high school,0.29007625582855234
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Education,High school,0.2839805831899114
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Education,Some college,0.23192599913495382
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Education,Advanced degree,0.039385136309595836
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Education,Less than high school,0.24039210762811236
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2017,NA,NA,national,United States,0,Education,Bachelor's degree,0.15195228975413144
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Education,High school,0.2544705755482093
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Education,Bachelor's degree,0.12970166891139456
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Education,Some college,0.2405022102019374
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Education,Advanced degree,0.026652017471668454
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2018,NA,NA,national,United States,0,Education,Less than high school,0.24668809040097917
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Education,Some college,0.20325601957032946
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Education,Less than high school,0.283532238792634
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Education,Bachelor's degree,0.13844266623078938
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Education,High school,0.2689515986844402
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2019,NA,NA,national,United States,0,Education,Advanced degree,-0.0016676168573901418
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Education,Some college,0.21058387226743136
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Education,High school,0.22151845849514173
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Education,Bachelor's degree,0.11981801598649011
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Education,Less than high school,0.23040381158313972
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2020,NA,NA,national,United States,0,Education,Advanced degree,9.525079608327935e-4
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Education,Advanced degree,-0.01248673640635345
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Education,High school,0.21543218574564116
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Education,Bachelor's degree,0.08928972159625115
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Education,Some college,0.18885931285058177
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2021,NA,NA,national,United States,0,Education,Less than high school,0.22160920480450463
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Education,Bachelor's degree,0.08624629119435889
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Education,High school,0.19606365350493626
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Education,Some college,0.184750165973665
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Education,Less than high school,0.2150721558129891
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2022,NA,NA,national,United States,0,Education,Advanced degree,-0.008464824685206818
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Education,Bachelor's degree,0.1066669941627556
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Education,Some college,0.18402877795479
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Education,High school,0.19579949454191103
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Education,Advanced degree,-0.030908267137279677
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2023,NA,NA,national,United States,0,Education,Less than high school,0.2215725295201496
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Education,High school,0.1841077649477929
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Education,Some college,0.20358859368071291
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Education,Advanced degree,0.012153677130198881
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Education,Bachelor's degree,0.11435122149889754
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2024,NA,NA,national,United States,0,Education,Less than high school,0.21492984310338148
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Education,Some college,0.22635814535448517
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Education,Advanced degree,0.01651843268905595
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Education,High school,0.22650155450906673
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Education,Less than high school,0.2531574457172159
+2026.8.14,Union wage premium,"Union wage premium, average (regression-based)",year,2025,NA,NA,national,United States,0,Education,Bachelor's degree,0.0961368278290744

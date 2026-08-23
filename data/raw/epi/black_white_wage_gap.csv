@@ -1,0 +1,460 @@
+data_version,indicator,measure,date_interval,year,quarter,month,geo_type,geo_name,geo_code,group,group_value,value
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1982,NA,NA,national,United States,0,,Overall,0.18977723598296192
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1982,NA,NA,national,United States,0,Gender,Female,0.06418108099346986
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1982,NA,NA,national,United States,0,Gender,Male,0.2571074644035277
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1982,NA,NA,national,United States,0,,Overall,0.19072456271303861
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1982,NA,NA,national,United States,0,Gender,Female,0.06960302887574987
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1982,NA,NA,national,United States,0,Gender,Male,0.24168911549486538
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1979,NA,NA,national,United States,0,,Overall,0.16586627996444514
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1979,NA,NA,national,United States,0,Gender,Female,0.0654964492921748
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1979,NA,NA,national,United States,0,Gender,Male,0.2450683294047299
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1979,NA,NA,national,United States,0,,Overall,0.17323327983705783
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1979,NA,NA,national,United States,0,Gender,Female,0.05364471581307184
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1979,NA,NA,national,United States,0,Gender,Male,0.2152700186658425
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1980,NA,NA,national,United States,0,,Overall,0.17355146854665182
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1980,NA,NA,national,United States,0,Gender,Female,0.08335137136123838
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1980,NA,NA,national,United States,0,Gender,Male,0.2507543026235728
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1980,NA,NA,national,United States,0,,Overall,0.17392997580127478
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1980,NA,NA,national,United States,0,Gender,Female,0.04822404736106256
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1980,NA,NA,national,United States,0,Gender,Male,0.22224406748951686
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1981,NA,NA,national,United States,0,,Overall,0.17434609118787614
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1981,NA,NA,national,United States,0,Gender,Female,0.06824046072062562
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1981,NA,NA,national,United States,0,Gender,Male,0.22803378686370424
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1981,NA,NA,national,United States,0,,Overall,0.17407416063653758
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1981,NA,NA,national,United States,0,Gender,Female,0.05394394172062178
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1981,NA,NA,national,United States,0,Gender,Male,0.2213324827420048
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1987,NA,NA,national,United States,0,,Overall,0.19501244567302733
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1987,NA,NA,national,United States,0,Gender,Female,0.10313689961605188
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1987,NA,NA,national,United States,0,Gender,Male,0.2621522224324726
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1987,NA,NA,national,United States,0,,Overall,0.20248664576107156
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1987,NA,NA,national,United States,0,Gender,Female,0.08813645839627415
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1987,NA,NA,national,United States,0,Gender,Male,0.2590958928778402
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1983,NA,NA,national,United States,0,,Overall,0.1825903559333788
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1983,NA,NA,national,United States,0,Gender,Female,0.09263233135986082
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1983,NA,NA,national,United States,0,Gender,Male,0.2555739747233817
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1983,NA,NA,national,United States,0,,Overall,0.18229265716695087
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1983,NA,NA,national,United States,0,Gender,Female,0.06822138559238766
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1983,NA,NA,national,United States,0,Gender,Male,0.23173620438177633
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1985,NA,NA,national,United States,0,,Overall,0.19663175602406158
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1985,NA,NA,national,United States,0,Gender,Female,0.08529666855903373
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1985,NA,NA,national,United States,0,Gender,Male,0.2843980855788756
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1985,NA,NA,national,United States,0,,Overall,0.20027050905386268
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1985,NA,NA,national,United States,0,Gender,Female,0.07438855084367335
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1985,NA,NA,national,United States,0,Gender,Male,0.25948724680417046
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1989,NA,NA,national,United States,0,,Overall,0.1996271531654391
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1989,NA,NA,national,United States,0,Gender,Female,0.10651857220256145
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1989,NA,NA,national,United States,0,Gender,Male,0.26708240506108616
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1989,NA,NA,national,United States,0,,Overall,0.20467471422369332
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1989,NA,NA,national,United States,0,Gender,Female,0.09412877865911606
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1989,NA,NA,national,United States,0,Gender,Male,0.26643022805905536
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1990,NA,NA,national,United States,0,,Overall,0.20166631939692958
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1990,NA,NA,national,United States,0,Gender,Female,0.11256718543384159
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1990,NA,NA,national,United States,0,Gender,Male,0.2671084788690341
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1990,NA,NA,national,United States,0,,Overall,0.2123583001460675
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1990,NA,NA,national,United States,0,Gender,Female,0.11369650097074646
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1990,NA,NA,national,United States,0,Gender,Male,0.2671220168023164
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1986,NA,NA,national,United States,0,,Overall,0.1940290706789901
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1986,NA,NA,national,United States,0,Gender,Female,0.08874722755899989
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1986,NA,NA,national,United States,0,Gender,Male,0.2690307902224869
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1986,NA,NA,national,United States,0,,Overall,0.20329210606315407
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1986,NA,NA,national,United States,0,Gender,Female,0.08567757094537642
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1986,NA,NA,national,United States,0,Gender,Male,0.2602274224569441
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1988,NA,NA,national,United States,0,,Overall,0.1833643128130631
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1988,NA,NA,national,United States,0,Gender,Female,0.11543004790669809
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1988,NA,NA,national,United States,0,Gender,Male,0.24755978200812812
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1988,NA,NA,national,United States,0,,Overall,0.19680458518791533
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1988,NA,NA,national,United States,0,Gender,Female,0.0884304825067912
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1988,NA,NA,national,United States,0,Gender,Male,0.251423212971303
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1984,NA,NA,national,United States,0,,Overall,0.19089712634704514
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1984,NA,NA,national,United States,0,Gender,Female,0.10865417589368875
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1984,NA,NA,national,United States,0,Gender,Male,0.2542763952625079
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1984,NA,NA,national,United States,0,,Overall,0.18995853070445767
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1984,NA,NA,national,United States,0,Gender,Female,0.07992573953909654
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1984,NA,NA,national,United States,0,Gender,Male,0.23644154987853205
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1991,NA,NA,national,United States,0,,Overall,0.20587328418913464
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1991,NA,NA,national,United States,0,Gender,Female,0.10964725553715904
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1991,NA,NA,national,United States,0,Gender,Male,0.2720203021172264
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1991,NA,NA,national,United States,0,,Overall,0.20633854344267555
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1991,NA,NA,national,United States,0,Gender,Female,0.10603327524984629
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1991,NA,NA,national,United States,0,Gender,Male,0.26614540160884737
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1993,NA,NA,national,United States,0,,Overall,0.20003953492410997
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1993,NA,NA,national,United States,0,Gender,Female,0.11615815278880459
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1993,NA,NA,national,United States,0,Gender,Male,0.26904934750902476
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1993,NA,NA,national,United States,0,,Overall,0.19977950115383725
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1993,NA,NA,national,United States,0,Gender,Female,0.10746264752173673
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1993,NA,NA,national,United States,0,Gender,Male,0.2579575509977653
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1994,NA,NA,national,United States,0,,Overall,0.20586378090390955
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1994,NA,NA,national,United States,0,Gender,Female,0.13408506879361526
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1994,NA,NA,national,United States,0,Gender,Male,0.26638559646590854
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1994,NA,NA,national,United States,0,,Overall,0.2004941888636328
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1994,NA,NA,national,United States,0,Gender,Female,0.12021006050179561
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1994,NA,NA,national,United States,0,Gender,Male,0.24851060890355525
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1995,NA,NA,national,United States,0,,Overall,0.20769906123738358
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1995,NA,NA,national,United States,0,Gender,Female,0.12990013227279507
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1995,NA,NA,national,United States,0,Gender,Male,0.2633119646335246
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1995,NA,NA,national,United States,0,,Overall,0.2087062750905413
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1995,NA,NA,national,United States,0,Gender,Female,0.11496149436640402
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1995,NA,NA,national,United States,0,Gender,Male,0.26555607008215076
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1992,NA,NA,national,United States,0,,Overall,0.206208388252066
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1992,NA,NA,national,United States,0,Gender,Female,0.11610890869335688
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1992,NA,NA,national,United States,0,Gender,Male,0.2734004405152669
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1992,NA,NA,national,United States,0,,Overall,0.2042404401671476
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1992,NA,NA,national,United States,0,Gender,Female,0.10559803581718596
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1992,NA,NA,national,United States,0,Gender,Male,0.26531766492076336
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1999,NA,NA,national,United States,0,,Overall,0.19823475679328273
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1999,NA,NA,national,United States,0,Gender,Female,0.13772770446982852
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1999,NA,NA,national,United States,0,Gender,Male,0.25795662496046845
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1999,NA,NA,national,United States,0,,Overall,0.22057680739797025
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1999,NA,NA,national,United States,0,Gender,Female,0.14019405697929832
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1999,NA,NA,national,United States,0,Gender,Male,0.2638150367240276
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1996,NA,NA,national,United States,0,,Overall,0.21641912017114107
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1996,NA,NA,national,United States,0,Gender,Female,0.1439570145306498
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1996,NA,NA,national,United States,0,Gender,Male,0.2712087812284485
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1996,NA,NA,national,United States,0,,Overall,0.23043889221494462
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1996,NA,NA,national,United States,0,Gender,Female,0.14469409567744396
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1996,NA,NA,national,United States,0,Gender,Male,0.2821551239927067
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2000,NA,NA,national,United States,0,,Overall,0.20320479844494355
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2000,NA,NA,national,United States,0,Gender,Female,0.112596588838349
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2000,NA,NA,national,United States,0,Gender,Male,0.26481107079377286
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2000,NA,NA,national,United States,0,,Overall,0.21789155083425182
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2000,NA,NA,national,United States,0,Gender,Female,0.13147824243512563
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2000,NA,NA,national,United States,0,Gender,Male,0.26717067205509293
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1998,NA,NA,national,United States,0,,Overall,0.19909930328628733
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1998,NA,NA,national,United States,0,Gender,Female,0.12168200642160498
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1998,NA,NA,national,United States,0,Gender,Male,0.26498934156941856
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1998,NA,NA,national,United States,0,,Overall,0.2177501622629182
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1998,NA,NA,national,United States,0,Gender,Female,0.1344129650217103
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1998,NA,NA,national,United States,0,Gender,Male,0.26607289534515244
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1997,NA,NA,national,United States,0,,Overall,0.21765203787423182
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1997,NA,NA,national,United States,0,Gender,Female,0.14960542993551806
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1997,NA,NA,national,United States,0,Gender,Male,0.2754351105785029
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1997,NA,NA,national,United States,0,,Overall,0.22799441112388574
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1997,NA,NA,national,United States,0,Gender,Female,0.1484708290219452
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1997,NA,NA,national,United States,0,Gender,Male,0.2740854120610686
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2001,NA,NA,national,United States,0,,Overall,0.22388573795668987
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2001,NA,NA,national,United States,0,Gender,Female,0.14787361359908668
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2001,NA,NA,national,United States,0,Gender,Male,0.2621245354924382
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2001,NA,NA,national,United States,0,,Overall,0.23118512073867314
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2001,NA,NA,national,United States,0,Gender,Female,0.1466772478182491
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2001,NA,NA,national,United States,0,Gender,Male,0.28056543355033714
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2002,NA,NA,national,United States,0,,Overall,0.211018034072618
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2002,NA,NA,national,United States,0,Gender,Female,0.14795067939620987
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2002,NA,NA,national,United States,0,Gender,Male,0.2534618188255655
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2002,NA,NA,national,United States,0,,Overall,0.23238023937090369
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2002,NA,NA,national,United States,0,Gender,Female,0.14649735147818377
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2002,NA,NA,national,United States,0,Gender,Male,0.28531334129049424
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2003,NA,NA,national,United States,0,,Overall,0.1990652583305711
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2003,NA,NA,national,United States,0,Gender,Female,0.12638530869297415
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2003,NA,NA,national,United States,0,Gender,Male,0.2588090326788729
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2003,NA,NA,national,United States,0,,Overall,0.2201641731457903
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2003,NA,NA,national,United States,0,Gender,Female,0.13236779306056357
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2003,NA,NA,national,United States,0,Gender,Male,0.2762278942906403
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2004,NA,NA,national,United States,0,,Overall,0.19542372095297444
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2004,NA,NA,national,United States,0,Gender,Female,0.1219695859017258
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2004,NA,NA,national,United States,0,Gender,Male,0.2562065611276154
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2004,NA,NA,national,United States,0,,Overall,0.2204928367996174
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2004,NA,NA,national,United States,0,Gender,Female,0.13937131877506292
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2004,NA,NA,national,United States,0,Gender,Male,0.2686861737944539
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2006,NA,NA,national,United States,0,,Overall,0.20833975861212006
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2006,NA,NA,national,United States,0,Gender,Female,0.14020295818415995
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2006,NA,NA,national,United States,0,Gender,Male,0.2553447290386919
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2006,NA,NA,national,United States,0,,Overall,0.2209199966959149
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2006,NA,NA,national,United States,0,Gender,Female,0.14115347772167186
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2006,NA,NA,national,United States,0,Gender,Male,0.2700615892107996
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2005,NA,NA,national,United States,0,,Overall,0.22409501158207634
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2005,NA,NA,national,United States,0,Gender,Female,0.16452430383185046
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2005,NA,NA,national,United States,0,Gender,Male,0.2732947370850056
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2005,NA,NA,national,United States,0,,Overall,0.23490617291611904
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2005,NA,NA,national,United States,0,Gender,Female,0.15408089127682012
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2005,NA,NA,national,United States,0,Gender,Male,0.285605329955967
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2007,NA,NA,national,United States,0,,Overall,0.22559928714397737
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2007,NA,NA,national,United States,0,Gender,Female,0.15419538545835454
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2007,NA,NA,national,United States,0,Gender,Male,0.2755116270790129
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2007,NA,NA,national,United States,0,,Overall,0.23515849985767368
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2007,NA,NA,national,United States,0,Gender,Female,0.14773882137271543
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2007,NA,NA,national,United States,0,Gender,Male,0.2917288526973115
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2009,NA,NA,national,United States,0,,Overall,0.21230442949215633
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2009,NA,NA,national,United States,0,Gender,Female,0.15441862780459037
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2009,NA,NA,national,United States,0,Gender,Male,0.2666661879542419
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2009,NA,NA,national,United States,0,,Overall,0.23955405409472819
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2009,NA,NA,national,United States,0,Gender,Female,0.1553290054305294
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2009,NA,NA,national,United States,0,Gender,Male,0.29366592808312253
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2010,NA,NA,national,United States,0,,Overall,0.21827384270726202
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2010,NA,NA,national,United States,0,Gender,Female,0.14837448545762988
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2010,NA,NA,national,United States,0,Gender,Male,0.2707176985553229
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2010,NA,NA,national,United States,0,,Overall,0.23942814766633336
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2010,NA,NA,national,United States,0,Gender,Female,0.1549330203386946
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2010,NA,NA,national,United States,0,Gender,Male,0.29611552849965994
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2008,NA,NA,national,United States,0,,Overall,0.2286686117181933
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2008,NA,NA,national,United States,0,Gender,Female,0.17132880195582723
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2008,NA,NA,national,United States,0,Gender,Male,0.2750421918181485
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2008,NA,NA,national,United States,0,,Overall,0.24147574058783916
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2008,NA,NA,national,United States,0,Gender,Female,0.15830622559686913
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2008,NA,NA,national,United States,0,Gender,Male,0.2955001328792898
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2011,NA,NA,national,United States,0,,Overall,0.22693050183711116
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2011,NA,NA,national,United States,0,Gender,Female,0.16323399162185914
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2011,NA,NA,national,United States,0,Gender,Male,0.2723887782471255
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2011,NA,NA,national,United States,0,,Overall,0.23740979944949692
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2011,NA,NA,national,United States,0,Gender,Female,0.15954694779546108
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2011,NA,NA,national,United States,0,Gender,Male,0.2891704050230406
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2012,NA,NA,national,United States,0,,Overall,0.24499394285386344
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2012,NA,NA,national,United States,0,Gender,Female,0.18396340405054634
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2012,NA,NA,national,United States,0,Gender,Male,0.28327411769876765
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2012,NA,NA,national,United States,0,,Overall,0.245672584551764
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2012,NA,NA,national,United States,0,Gender,Female,0.16742220221347026
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2012,NA,NA,national,United States,0,Gender,Male,0.29293004725259064
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2013,NA,NA,national,United States,0,,Overall,0.23065854666474206
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2013,NA,NA,national,United States,0,Gender,Female,0.1704852549277941
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2013,NA,NA,national,United States,0,Gender,Male,0.26564264850648134
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2013,NA,NA,national,United States,0,,Overall,0.24824635505861292
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2013,NA,NA,national,United States,0,Gender,Female,0.1694059509699557
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2013,NA,NA,national,United States,0,Gender,Male,0.29854170222483933
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2014,NA,NA,national,United States,0,,Overall,0.2468538168269947
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2014,NA,NA,national,United States,0,Gender,Female,0.1874453332680146
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2014,NA,NA,national,United States,0,Gender,Male,0.2852950412484959
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2014,NA,NA,national,United States,0,,Overall,0.24797099506014042
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2014,NA,NA,national,United States,0,Gender,Female,0.17036651492408172
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2014,NA,NA,national,United States,0,Gender,Male,0.29988578103144403
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2015,NA,NA,national,United States,0,,Overall,0.25120167011761163
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2015,NA,NA,national,United States,0,Gender,Female,0.19865078482098897
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2015,NA,NA,national,United States,0,Gender,Male,0.291786636951344
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2015,NA,NA,national,United States,0,,Overall,0.261308017242725
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2015,NA,NA,national,United States,0,Gender,Female,0.1878622183101617
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2015,NA,NA,national,United States,0,Gender,Male,0.3059271370728065
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2016,NA,NA,national,United States,0,,Overall,0.24046995300605356
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2016,NA,NA,national,United States,0,Gender,Female,0.1894674971428194
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2016,NA,NA,national,United States,0,Gender,Male,0.28920713985907964
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2016,NA,NA,national,United States,0,,Overall,0.2622672713399884
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2016,NA,NA,national,United States,0,Gender,Female,0.19694586659703228
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2016,NA,NA,national,United States,0,Gender,Male,0.3013387930112924
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2017,NA,NA,national,United States,0,,Overall,0.25731058231611215
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2017,NA,NA,national,United States,0,Gender,Female,0.2018879510424384
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2017,NA,NA,national,United States,0,Gender,Male,0.3071950137979529
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2017,NA,NA,national,United States,0,,Overall,0.2748360025395399
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2017,NA,NA,national,United States,0,Gender,Female,0.21277766532542053
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2017,NA,NA,national,United States,0,Gender,Male,0.31248839083672475
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2019,NA,NA,national,United States,0,,Overall,0.23776769128351105
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2019,NA,NA,national,United States,0,Gender,Female,0.18339256641709922
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2019,NA,NA,national,United States,0,Gender,Male,0.2943153760244407
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2019,NA,NA,national,United States,0,,Overall,0.2651846369399593
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2019,NA,NA,national,United States,0,Gender,Female,0.1842405926535573
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2019,NA,NA,national,United States,0,Gender,Male,0.3166552226820202
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2018,NA,NA,national,United States,0,,Overall,0.263848114752656
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2018,NA,NA,national,United States,0,Gender,Female,0.21023884712543095
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2018,NA,NA,national,United States,0,Gender,Male,0.30377913895405895
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2018,NA,NA,national,United States,0,,Overall,0.2747478353753272
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2018,NA,NA,national,United States,0,Gender,Female,0.19483870264641356
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2018,NA,NA,national,United States,0,Gender,Male,0.3248959097394466
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2022,NA,NA,national,United States,0,,Overall,0.21492386057918944
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2022,NA,NA,national,United States,0,Gender,Female,0.15828117067153158
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2022,NA,NA,national,United States,0,Gender,Male,0.2611227581814276
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2022,NA,NA,national,United States,0,,Overall,0.25737510959429444
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2022,NA,NA,national,United States,0,Gender,Female,0.1865873081705396
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2022,NA,NA,national,United States,0,Gender,Male,0.29843686054377994
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2020,NA,NA,national,United States,0,,Overall,0.2353258261424509
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2020,NA,NA,national,United States,0,Gender,Female,0.16884522875405805
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2020,NA,NA,national,United States,0,Gender,Male,0.2763660148950928
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2020,NA,NA,national,United States,0,,Overall,0.2533071135124305
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2020,NA,NA,national,United States,0,Gender,Female,0.1791134522283111
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2020,NA,NA,national,United States,0,Gender,Male,0.2990174523268534
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2024,NA,NA,national,United States,0,,Overall,0.2156787653068073
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2024,NA,NA,national,United States,0,Gender,Female,0.16043504670453623
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2024,NA,NA,national,United States,0,Gender,Male,0.2596326136418874
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2024,NA,NA,national,United States,0,,Overall,0.24779074003824575
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2024,NA,NA,national,United States,0,Gender,Female,0.18861270747346637
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2024,NA,NA,national,United States,0,Gender,Male,0.28620456905549074
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2025,NA,NA,national,United States,0,,Overall,0.2252098911164665
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2025,NA,NA,national,United States,0,Gender,Female,0.16559511031304908
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2025,NA,NA,national,United States,0,Gender,Male,0.2636614620564961
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2025,NA,NA,national,United States,0,,Overall,0.24767902732528346
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2025,NA,NA,national,United States,0,Gender,Female,0.19039526444966837
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2025,NA,NA,national,United States,0,Gender,Male,0.2846461004926403
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2021,NA,NA,national,United States,0,,Overall,0.23426428363268847
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2021,NA,NA,national,United States,0,Gender,Female,0.17030952193306625
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2021,NA,NA,national,United States,0,Gender,Male,0.27781825563983165
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2021,NA,NA,national,United States,0,,Overall,0.2637797724785166
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2021,NA,NA,national,United States,0,Gender,Female,0.1929018918316402
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2021,NA,NA,national,United States,0,Gender,Male,0.3068204849236018
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2023,NA,NA,national,United States,0,,Overall,0.2177900102258521
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2023,NA,NA,national,United States,0,Gender,Female,0.16574934832954902
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,2023,NA,NA,national,United States,0,Gender,Male,0.2563332960698733
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2023,NA,NA,national,United States,0,,Overall,0.2447664161581985
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2023,NA,NA,national,United States,0,Gender,Female,0.19087551083607202
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,2023,NA,NA,national,United States,0,Gender,Male,0.2757168841207359
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1973,NA,NA,national,United States,0,,Overall,0.22234338735747416
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1973,NA,NA,national,United States,0,Gender,Female,0.1268968324065971
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1973,NA,NA,national,United States,0,Gender,Male,0.22545295006563437
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1973,NA,NA,national,United States,0,,Overall,0.21324890945564323
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1973,NA,NA,national,United States,0,Gender,Female,0.09567870903237774
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1973,NA,NA,national,United States,0,Gender,Male,0.24237481862109966
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1977,NA,NA,national,United States,0,,Overall,0.184408674052573
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1977,NA,NA,national,United States,0,Gender,Female,0.08564117593571896
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1977,NA,NA,national,United States,0,Gender,Male,0.24205779331408728
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1977,NA,NA,national,United States,0,,Overall,0.18819503845330965
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1977,NA,NA,national,United States,0,Gender,Female,0.03787909257248856
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1977,NA,NA,national,United States,0,Gender,Male,0.24179412994741645
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1978,NA,NA,national,United States,0,,Overall,0.2001103988297156
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1978,NA,NA,national,United States,0,Gender,Female,0.0921363578333616
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1978,NA,NA,national,United States,0,Gender,Male,0.21281634574710973
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1978,NA,NA,national,United States,0,,Overall,0.18634557774095606
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1978,NA,NA,national,United States,0,Gender,Female,0.05157490479800808
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1978,NA,NA,national,United States,0,Gender,Male,0.23137096195450602
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1975,NA,NA,national,United States,0,,Overall,0.19078167224113274
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1975,NA,NA,national,United States,0,Gender,Female,0.11451818012527282
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1975,NA,NA,national,United States,0,Gender,Male,0.22052279583560175
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1975,NA,NA,national,United States,0,,Overall,0.20594945678102128
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1975,NA,NA,national,United States,0,Gender,Female,0.07190447267475208
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1975,NA,NA,national,United States,0,Gender,Male,0.2456912591142063
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1976,NA,NA,national,United States,0,,Overall,0.18690165971302863
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1976,NA,NA,national,United States,0,Gender,Female,0.08957505689464695
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1976,NA,NA,national,United States,0,Gender,Male,0.21295458875611373
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1976,NA,NA,national,United States,0,,Overall,0.18182755815713703
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1976,NA,NA,national,United States,0,Gender,Female,0.05965976609692203
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1976,NA,NA,national,United States,0,Gender,Male,0.21669784954016713
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1974,NA,NA,national,United States,0,,Overall,0.20141320967497223
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1974,NA,NA,national,United States,0,Gender,Female,0.1201247263369718
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw median",year,1974,NA,NA,national,United States,0,Gender,Male,0.2300326492006638
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1974,NA,NA,national,United States,0,,Overall,0.21085130031119348
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1974,NA,NA,national,United States,0,Gender,Female,0.0906777300809708
+2026.8.14,Black-white wage gap,"Black-white wage gap, raw average",year,1974,NA,NA,national,United States,0,Gender,Male,0.24057205859094621
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1982,NA,NA,national,United States,0,,Overall,0.09246876757282718
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1981,NA,NA,national,United States,0,,Overall,0.07670003310082685
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1984,NA,NA,national,United States,0,,Overall,0.09539789990494052
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1985,NA,NA,national,United States,0,,Overall,0.09993722967589369
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1986,NA,NA,national,United States,0,,Overall,0.10253549716469701
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1983,NA,NA,national,United States,0,,Overall,0.08602010076654465
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1980,NA,NA,national,United States,0,,Overall,0.08131793648941932
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1979,NA,NA,national,United States,0,,Overall,0.07930048021285274
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1987,NA,NA,national,United States,0,,Overall,0.1027934377735894
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1989,NA,NA,national,United States,0,,Overall,0.10114767212501674
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1988,NA,NA,national,United States,0,,Overall,0.09800224665544821
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1990,NA,NA,national,United States,0,,Overall,0.10277228586751119
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1991,NA,NA,national,United States,0,,Overall,0.10081922838832746
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1992,NA,NA,national,United States,0,,Overall,0.1010782896270016
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1995,NA,NA,national,United States,0,,Overall,0.09770247844384694
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1993,NA,NA,national,United States,0,,Overall,0.0990706625587432
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1994,NA,NA,national,United States,0,,Overall,0.0981209647519935
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1996,NA,NA,national,United States,0,,Overall,0.11639212829718404
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1998,NA,NA,national,United States,0,,Overall,0.09715238773881507
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1999,NA,NA,national,United States,0,,Overall,0.09713024040232832
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2001,NA,NA,national,United States,0,,Overall,0.10739088118444029
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2000,NA,NA,national,United States,0,,Overall,0.09307787116338484
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1997,NA,NA,national,United States,0,,Overall,0.11080299812231509
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2003,NA,NA,national,United States,0,,Overall,0.10011985614981678
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2004,NA,NA,national,United States,0,,Overall,0.10076659041449088
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2002,NA,NA,national,United States,0,,Overall,0.10646987907730432
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2005,NA,NA,national,United States,0,,Overall,0.11310376466756977
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2006,NA,NA,national,United States,0,,Overall,0.1050325120486224
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2007,NA,NA,national,United States,0,,Overall,0.11250468380676759
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2008,NA,NA,national,United States,0,,Overall,0.11685622063164725
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2009,NA,NA,national,United States,0,,Overall,0.1087202098994916
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2010,NA,NA,national,United States,0,,Overall,0.10765198900417683
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2011,NA,NA,national,United States,0,,Overall,0.11100568913266207
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2012,NA,NA,national,United States,0,,Overall,0.11316981829445394
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2013,NA,NA,national,United States,0,,Overall,0.11707164735779485
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2014,NA,NA,national,United States,0,,Overall,0.12227585375546712
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2016,NA,NA,national,United States,0,,Overall,0.1210224178249597
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2015,NA,NA,national,United States,0,,Overall,0.12776171362855582
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2017,NA,NA,national,United States,0,,Overall,0.13835103725350872
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2018,NA,NA,national,United States,0,,Overall,0.14310404169317759
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2019,NA,NA,national,United States,0,,Overall,0.13294636953213623
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2022,NA,NA,national,United States,0,,Overall,0.11815052592115394
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2021,NA,NA,national,United States,0,,Overall,0.12996808352349298
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2023,NA,NA,national,United States,0,,Overall,0.11399482993017296
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2020,NA,NA,national,United States,0,,Overall,0.127674689623415
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2025,NA,NA,national,United States,0,,Overall,0.1190489673065811
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2024,NA,NA,national,United States,0,,Overall,0.11685563868044535
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1982,NA,NA,national,United States,0,Gender,Male,0.15067899761387804
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1982,NA,NA,national,United States,0,Gender,Female,0.02855171463389572
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1981,NA,NA,national,United States,0,Gender,Female,0.019574472618985705
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1981,NA,NA,national,United States,0,Gender,Male,0.12910870413311082
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1984,NA,NA,national,United States,0,Gender,Male,0.1480136185651536
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1984,NA,NA,national,United States,0,Gender,Female,0.04086974544614197
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1985,NA,NA,national,United States,0,Gender,Male,0.1670435019047578
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1985,NA,NA,national,United States,0,Gender,Female,0.030265122578998715
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1986,NA,NA,national,United States,0,Gender,Male,0.16433415764941062
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1986,NA,NA,national,United States,0,Gender,Female,0.03925589883695857
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1983,NA,NA,national,United States,0,Gender,Male,0.1447560588872514
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1983,NA,NA,national,United States,0,Gender,Female,0.023443228392833526
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1980,NA,NA,national,United States,0,Gender,Female,0.017250979214248674
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1980,NA,NA,national,United States,0,Gender,Male,0.1382668713128643
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1979,NA,NA,national,United States,0,Gender,Male,0.12964125591841136
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1979,NA,NA,national,United States,0,Gender,Female,0.02092147718172055
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1987,NA,NA,national,United States,0,Gender,Female,0.043445848521806996
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1987,NA,NA,national,United States,0,Gender,Male,0.16151094081867923
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1989,NA,NA,national,United States,0,Gender,Female,0.04445289435196942
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1989,NA,NA,national,United States,0,Gender,Male,0.1605360534047222
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1988,NA,NA,national,United States,0,Gender,Male,0.14762258194289923
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1988,NA,NA,national,United States,0,Gender,Female,0.04784853737703332
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1990,NA,NA,national,United States,0,Gender,Female,0.05088391959322813
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1990,NA,NA,national,United States,0,Gender,Male,0.15935498534599057
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1991,NA,NA,national,United States,0,Gender,Male,0.16189872635353686
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1991,NA,NA,national,United States,0,Gender,Female,0.04328780999969051
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1992,NA,NA,national,United States,0,Gender,Female,0.041774398664641166
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1992,NA,NA,national,United States,0,Gender,Male,0.16492174415032013
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1995,NA,NA,national,United States,0,Gender,Male,0.15632323330666398
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1995,NA,NA,national,United States,0,Gender,Female,0.04468594430321382
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1993,NA,NA,national,United States,0,Gender,Female,0.042524696732509026
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1993,NA,NA,national,United States,0,Gender,Male,0.16114559963325448
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1994,NA,NA,national,United States,0,Gender,Female,0.05308451133166914
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1994,NA,NA,national,United States,0,Gender,Male,0.1487948113822296
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1996,NA,NA,national,United States,0,Gender,Male,0.1747913413554939
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1996,NA,NA,national,United States,0,Gender,Female,0.06441642703487371
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1998,NA,NA,national,United States,0,Gender,Female,0.045784887782187034
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1998,NA,NA,national,United States,0,Gender,Male,0.15678533318657262
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1999,NA,NA,national,United States,0,Gender,Male,0.15751778198919453
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1999,NA,NA,national,United States,0,Gender,Female,0.046256396306350034
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2001,NA,NA,national,United States,0,Gender,Male,0.16729216943564806
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2001,NA,NA,national,United States,0,Gender,Female,0.05632942869863955
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2000,NA,NA,national,United States,0,Gender,Female,0.03754837514729059
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2000,NA,NA,national,United States,0,Gender,Male,0.15749652084416532
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1997,NA,NA,national,United States,0,Gender,Male,0.17393610658150982
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,1997,NA,NA,national,United States,0,Gender,Female,0.05632954560685377
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2003,NA,NA,national,United States,0,Gender,Female,0.04628065666744974
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2003,NA,NA,national,United States,0,Gender,Male,0.16308625115577025
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2004,NA,NA,national,United States,0,Gender,Male,0.16359401810821494
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2004,NA,NA,national,United States,0,Gender,Female,0.045307976168952324
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2002,NA,NA,national,United States,0,Gender,Female,0.0602527218224892
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2002,NA,NA,national,United States,0,Gender,Male,0.16077335229915357
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2005,NA,NA,national,United States,0,Gender,Male,0.1744516565545967
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2005,NA,NA,national,United States,0,Gender,Female,0.05900484389786553
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2006,NA,NA,national,United States,0,Gender,Male,0.16722974477165498
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2006,NA,NA,national,United States,0,Gender,Female,0.04970814469532325
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2007,NA,NA,national,United States,0,Gender,Male,0.17925135172400852
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2007,NA,NA,national,United States,0,Gender,Female,0.0527801459295989
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2008,NA,NA,national,United States,0,Gender,Male,0.18589183984080304
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2008,NA,NA,national,United States,0,Gender,Female,0.055211100876388364
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2009,NA,NA,national,United States,0,Gender,Female,0.04909597972142188
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2009,NA,NA,national,United States,0,Gender,Male,0.17808126666440371
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2010,NA,NA,national,United States,0,Gender,Female,0.05455022500872542
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2010,NA,NA,national,United States,0,Gender,Male,0.17004153502329378
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2011,NA,NA,national,United States,0,Gender,Male,0.16775260380791435
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2011,NA,NA,national,United States,0,Gender,Female,0.06218923485177341
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2012,NA,NA,national,United States,0,Gender,Female,0.0633007047357036
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2012,NA,NA,national,United States,0,Gender,Male,0.16992304069115116
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2013,NA,NA,national,United States,0,Gender,Male,0.17842450684297428
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2013,NA,NA,national,United States,0,Gender,Female,0.06180104568642364
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2014,NA,NA,national,United States,0,Gender,Female,0.06788079448111495
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2014,NA,NA,national,United States,0,Gender,Male,0.18259597196909594
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2016,NA,NA,national,United States,0,Gender,Male,0.17411629925450645
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2016,NA,NA,national,United States,0,Gender,Female,0.0744636046761813
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2015,NA,NA,national,United States,0,Gender,Male,0.1839578144037386
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2015,NA,NA,national,United States,0,Gender,Female,0.07820456767281003
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2017,NA,NA,national,United States,0,Gender,Male,0.19344625621853184
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2017,NA,NA,national,United States,0,Gender,Female,0.08853472143784158
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2018,NA,NA,national,United States,0,Gender,Female,0.08636638270351094
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2018,NA,NA,national,United States,0,Gender,Male,0.20419009587202586
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2019,NA,NA,national,United States,0,Gender,Female,0.07582250369510668
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2019,NA,NA,national,United States,0,Gender,Male,0.19368984548549595
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2022,NA,NA,national,United States,0,Gender,Male,0.16586662376037353
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2022,NA,NA,national,United States,0,Gender,Female,0.07316756362728416
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2021,NA,NA,national,United States,0,Gender,Male,0.18202485873150842
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2021,NA,NA,national,United States,0,Gender,Female,0.0825338516477725
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2023,NA,NA,national,United States,0,Gender,Male,0.15063389055450527
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2023,NA,NA,national,United States,0,Gender,Female,0.0804670746861158
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2020,NA,NA,national,United States,0,Gender,Female,0.08162396457773924
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2020,NA,NA,national,United States,0,Gender,Male,0.17822259054410117
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2025,NA,NA,national,United States,0,Gender,Female,0.07234240820296667
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2025,NA,NA,national,United States,0,Gender,Male,0.1666552219581977
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2024,NA,NA,national,United States,0,Gender,Female,0.07883855180242239
+2026.8.14,Black-white wage gap,"Black-white wage gap, average",year,2024,NA,NA,national,United States,0,Gender,Male,0.15937160253318172
