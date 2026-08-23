@@ -20,24 +20,24 @@ SERIES = [
     # concept a Gini uses changes it by more than most cross-country gaps, so
     # they are kept apart rather than spliced.
     ("gini-coefficient-wid", "gini__welfare_type_before_tax__extrapolated_no",
-     "GINI_PRETAX", "Gini, income before tax", "IX01", "0 to 1",
+     "GINI_PRETAX", "Gini, income before taxes and transfers", "IX01", "0 to 1",
      "World Inequality Database"),
     ("gini-coefficient-lis", "gini__welfare_type_dhi__equivalence_scale_square_root",
-     "GINI_DHI", "Gini, disposable household income", "IX01", "0 to 1",
+     "GINI_DHI", "Gini, income after taxes and transfers", "IX01", "0 to 1",
      "Luxembourg Income Study"),
     ("gini-coefficient-wb",
      "gini__welfare_type_income_or_consumption__table_income_or_consumption_consolidated"
      "__survey_comparability_no_spells",
-     "GINI_WB", "Gini, income or consumption surveys", "IX01", "0 to 1",
+     "GINI_WB", "Gini, income or consumption, after taxes and transfers", "IX01", "0 to 1",
      "World Bank PIP"),
     ("gini-coefficient-equivalized-income-chartbook",
      "gini_coefficient__equivalized_income_after_tax_and_transfers",
-     "GINI_LONGRUN", "Gini, equivalized income after tax and transfers, since 1901",
+     "GINI_LONGRUN", "Gini, income after taxes and transfers, back to 1901",
      "IX01", "0 to 1", "Chartbook of Economic Inequality"),
     # concentration at the top
     ("income-share-top-1-before-tax-wid-extrapolations",
      "share_top_1__welfare_type_before_tax__extrapolated_no",
-     "TOP1_INC", "Income share of the top 1 per cent, before tax",
+     "TOP1_INC", "Income share of the top 1 per cent, before taxes and transfers",
      "PT", "Percentage of national income", "World Inequality Database"),
     ("wealth-share-richest", "share_top_1__welfare_type_wealth__extrapolated_no",
      "TOP1_WEALTH", "Wealth share of the top 1 per cent",
@@ -87,6 +87,37 @@ for slug, col, mcode, mname, ucode, uname, src in SERIES:
         records.setdefault((code, mcode, ucode), {})[r["year"]] = val
         kept += 1
     print(f"  {slug:52} {kept:7} observations")
+
+# ---- WID, direct from the bulk files: the female share of labor income ----
+# What share of everything paid for work in a country is paid to women. This is one
+# number where the gender pay gap, the participation gap and the hours gap all land
+# together, which no wage-gap statistic does on its own. Nowhere is it near half.
+WIDF = pathlib.Path(__file__).resolve().parent.parent/"data/raw/wid_slices.csv"
+if WIDF.exists():
+    measures.append(("FEM_LABINC", "Female share of labor income"))
+    if "PT_LAB" not in [u[0] for u in units]:
+        units.append(("PT_LAB", "Percentage of all labor income"))
+    sources["Female share of labor income"] = "World Inequality Database"
+    kept = 0
+    for r in csv.DictReader(open(WIDF)):
+        if r["variable"] != "spllinf992" or r["percentile"] != "p0p100": continue
+        records.setdefault((r["area"], "FEM_LABINC", "PT_LAB"), {})[r["year"]] = \
+            float(r["value"])*100
+        names.setdefault(r["area"], r["area"])
+        kept += 1
+    print(f'  {"WID female share of labor income":52} {kept:7} observations')
+
+# WID's files are keyed by ISO code only, so borrow display names from any dataset
+# already on disk that carries them.
+known = {}
+for mf in sorted((SITE/"flows").glob("*/meta.json")):
+    try: fm = json.loads(mf.read_text())
+    except Exception: continue
+    for d in fm.get("dims", []):
+        if d.get("id") == "REF_AREA":
+            known.update(dict(zip(d.get("ids", []), d.get("names", []))))
+for a, n in list(names.items()):
+    if a == n and a in known: names[a] = known[a]
 
 area_ids = sorted(names)
 periods = sorted({y for d in records.values() for y in d}, key=int)
