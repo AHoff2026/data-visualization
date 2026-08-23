@@ -130,7 +130,7 @@ RENAME = {
     "OECD.ELS.SAE__RMW": "Real minimum wages",
     "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
     "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
-    "OECD.ELS.SAE__DEC_I": "Earnings dispersion (decile ratios)",
+    "OECD.ELS.SAE__DEC_I": "Earnings dispersion (full-time employees)",
     "OECD.ELS.JAI__DF_SBE": "Strictness of activation requirements",
     "OECD.ELS.JAI__DF_IA": "Adequacy of minimum income benefits",
     "OECD.ELS.SPD__DF_PRR": "Pension replacement rates",
