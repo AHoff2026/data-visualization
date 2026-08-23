@@ -131,7 +131,7 @@ TOPIC_OF = {
 RENAME = {
     "OECD.WISE.INE__DF_IDD": "Income inequality and poverty",
     "OECD.ELS.JAI__DF_EPL": "Employment protection strictness",
-    "OECD.ELS.SAE__RMW": "Real minimum wages",
+    "OECD.ELS.SAE__RMW": "Minimum wages",
     "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
     "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
     "OECD.ELS.SAE__DEC_I": "Earnings dispersion (full-time employees)",

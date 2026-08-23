@@ -37,7 +37,8 @@ def save(mp, meta, recs):
             json.dumps(recs, separators=(",", ":")).encode(), 6))
     else:
         ai = next((i for i, x in enumerate(meta["dims"]) if x["id"] == meta.get("area_dim")), None)
-        if ai is None: continue
+        if ai is None:
+            raise ValueError("parts layout requires an area dimension")
         codes = meta["dims"][ai]["ids"]
         by = defaultdict(list)
         for r in recs: by[codes[r["k"][ai]]].append(r)
