@@ -71,6 +71,7 @@ def main(agency, flow_id, version, featured=False, key="all"):
         run("python3", f"scripts/{step}")
     run("python3", "scripts/clean_impossible.py")
     run("python3", "scripts/build_site_data.py")
+    run("python3", "scripts/scale_notes.py")
     run("python3", "scripts/apply_editorial.py")
     run("python3", "scripts/coverage.py")
     run("python3", "scripts/build_default_bundles.py")
