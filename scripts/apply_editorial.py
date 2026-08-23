@@ -70,13 +70,15 @@ TOPIC_OF = {
     "OECD.ELS.SAE__DF_TUD": "UNION", "OECD.ELS.SAE__DF_CBC": "UNION",
     "OECD.ELS.JAI__DF_EPL": "UNION", "OECD.ELS.SAE__RMW": "UNION",
 
-    "OECD.ELS.SAE__GENDER_WAGE_GAP": "WAGE", "OECD.ELS.SAE__PAY_INCIDENCE": "WAGE",
-    "OECD.ELS.SAE__DEC_I": "WAGE", "OECD.SDD.TPS__DF_HOU_EAR": "WAGE",
+    "OECD.SDD.TPS__DF_HOU_EAR": "WAGE",
+    # dispersion and between-group gaps are inequality, not wage levels
+    "OECD.ELS.SAE__DEC_I": "INEQ", "OECD.ELS.SAE__PAY_INCIDENCE": "INEQ",
+    "OECD.ELS.SAE__GENDER_WAGE_GAP": "INEQ",
     "OECD.EDU.IMEP__DF_LSO_EARN_ALL": "WAGE",
     "OECD.ELS.JAI__DF_HOURSPOV": "WAGE",
 
     "OECD.WISE.INE__DF_IDD": "INEQ", "WID_LIS__DF_CONCENTRATION": "INEQ",
-    "OECD.ELS.SPD__DF_IPOP": "INEQ",
+    "OECD.ELS.SPD__DF_IPOP": "INEQ", "OECD.ELS.JAI__DF_HOURSPOV": "INEQ",
 
     "OECD.ELS.SAE__DF_TEMP_D": "JOBS", "OECD.ELS.SAE__DF_TEMP_I_GEN": "JOBS",
     "OECD.ELS.SAE__DF_INVPT_I": "JOBS", "OECD.ELS.SAE__DF_FTPT_COMMON": "JOBS",
@@ -131,6 +133,7 @@ RENAME = {
     "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
     "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
     "OECD.ELS.SAE__DEC_I": "Earnings dispersion (full-time employees)",
+    "WID_LIS__DF_CONCENTRATION": "Inequality measures",
     "OECD.ELS.JAI__DF_SBE": "Strictness of activation requirements",
     "OECD.ELS.JAI__DF_IA": "Adequacy of minimum income benefits",
     "OECD.ELS.SPD__DF_PRR": "Pension replacement rates",
