@@ -40,6 +40,16 @@ TECHNICAL = {
 # clearer names for the dials that stay
 RENAME = {
     "UNIT_MEASURE": "Measured as",
+    # tax-benefit simulation dials: SDMX ships these without English names
+    "HOUSEHOLD_TYPE": "Household",
+    "AGE_CHILDREN": "Ages of children",
+    "INCOME_PART": "Partner's earnings",
+    "CHILDCARE_USE": "Childcare used",
+    "UNEMP_DURATION": "Out of work for",
+    "SOC_ASS_BENEFIT": "Social assistance claimed",
+    "BENEFIT_TYPE": "Benefit received",
+    "CONTRIBUTION": "Break down by cause",
+    "FREQ": "Frequency of observation",
     "MEASURE": "Indicator",
     "REF_AREA": "Country",
     "WORK_TIME_ARNGMNT": "Working time",
