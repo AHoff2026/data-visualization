@@ -1,9 +1,9 @@
 // ---------- home-page featured charts ----------
-import { el, clear } from "./util.js?v=b86a58b5";
-import { editable, textOf } from "./edits.js?v=b86a58b5";
-import { getFlowMeta, getSeries } from "./store.js?v=b86a58b5";
-import { lineChart, autosize } from "./chart.js?v=b86a58b5";
-import { seedPicks, scanRecords, toSeries } from "./series.js?v=b86a58b5";
+import { el, clear } from "./util.js?v=3416cff1";
+import { editable, textOf } from "./edits.js?v=3416cff1";
+import { getFlowMeta, getSeries } from "./store.js?v=3416cff1";
+import { lineChart, autosize } from "./chart.js?v=3416cff1";
+import { seedPicks, scanRecords, toSeries } from "./series.js?v=3416cff1";
 
 /** Small, meaningful, quick-loading series that open the publication. */
 export const FEATURED = [
