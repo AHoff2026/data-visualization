@@ -1,9 +1,9 @@
 // ---------- home-page featured charts ----------
-import { el, clear } from "./util.js?v=3416cff1";
-import { editable, textOf } from "./edits.js?v=3416cff1";
-import { getFlowMeta, getSeries } from "./store.js?v=3416cff1";
-import { lineChart, autosize } from "./chart.js?v=3416cff1";
-import { seedPicks, scanRecords, toSeries } from "./series.js?v=3416cff1";
+import { el, clear } from "./util.js?v=e6c01108";
+import { editable, textOf } from "./edits.js?v=e6c01108";
+import { getFlowMeta, getSeries } from "./store.js?v=e6c01108";
+import { lineChart, autosize } from "./chart.js?v=e6c01108";
+import { seedPicks, scanRecords, toSeries } from "./series.js?v=e6c01108";
 
 /** Small, meaningful, quick-loading series that open the publication. */
 export const FEATURED = [
@@ -19,6 +19,18 @@ export const FEATURED = [
   { slug: "OECD.ELS.SAE__GENDER_WAGE_GAP",
     title: "The gender wage gap, narrowing slowly",
     note: "Difference between male and female median earnings, as a share of male median earnings." },
+  { slug: "OWID__SOCIAL_SPENDING_LONGRUN",
+    title: "The welfare state, built in a century",
+    note: "Public social spending as a share of GDP since 1880, when it was close to nothing almost everywhere." },
+  { slug: "OWID__WORKING_HOURS_LONGRUN",
+    title: "The working year, halved",
+    note: "Average annual hours worked per worker since 1870." },
+  { slug: "WID_LIS__DF_CONCENTRATION",
+    title: "What the top one per cent takes",
+    note: "Share of national income going to the richest one per cent, before tax." },
+  { slug: "ILO__STRIKES",
+    title: "Days lost to strikes",
+    note: "Working days not worked per thousand workers, through strikes and lockouts." },
 ];
 
 const HOME_COUNTRIES = 6;   // six lines read cleanly at teaser size

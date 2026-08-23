@@ -20,3 +20,44 @@ ok   OECD.ELS.SAE__DF_AVG_USL_WK_WKD              checks= 25
 ok   OECD.ELS.SAE__DF_CBC                         checks=  5
 ok   OECD.ELS.SAE__DF_DUR_D                       checks= 30
 ok   OECD.ELS.SAE__DF_DUR_I                       checks= 24
+ok   OECD.ELS.SAE__DF_FTPT_COMMON                 checks= 17
+ok   OECD.ELS.SAE__DF_FTPT_COMMON_INC             checks= 14
+ok   OECD.ELS.SAE__DF_FTPT_INC_GEN                checks= 22
+ok   OECD.ELS.SAE__DF_INVPT_I                     checks= 26
+ok   OECD.ELS.SAE__DF_TEMP_D                      checks= 24
+ok   OECD.ELS.SAE__DF_TEMP_I_GEN                  checks= 12
+ok   OECD.ELS.SAE__DF_TUD                         checks=  5
+ok   OECD.ELS.SAE__GENDER_WAGE_GAP                checks= 11
+ok   OECD.ELS.SAE__PAY_INCIDENCE                  checks= 13
+ok   OECD.ELS.SAE__RMW                            checks= 12
+ok   OECD.ELS.SPD__DF_DPS                         checks= 11
+ok   OECD.ELS.SPD__DF_IPOP                        checks= 18
+ok   OECD.ELS.SPD__DF_PRR                         checks= 17
+ok   OECD.ELS.SPD__DF_PW                          checks= 16
+ok   OECD.ELS.SPD__DF_SOCX_AGG                    checks= 29
+ok   OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025          checks= 15
+ok   OECD.GOV.GIP__DF_GOV_SPS_2023                checks= 18
+ok   OECD.SDD.NAD__DF_TABLE2                      checks= 24
+ok   OECD.SDD.NAD__DF_TABLE5_T501                 checks= 19
+ok   OECD.SDD.NAD__DF_TABLE9A                     checks= 31
+ok   OECD.SDD.TPS__DF_ALFS_EMP                    checks= 20
+ok   OECD.SDD.TPS__DF_HOU_EAR                     checks=  8
+ok   OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q           checks= 17
+ok   OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q             checks= 16
+ok   OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q             checks= 19
+ok   OECD.SDD.TPS__DF_PDB                         checks= 32
+ok   OECD.SDD.TPS__DF_SUMTAB                      checks= 23
+ok   OECD.STI.DEP__DF_HH                          checks= 21
+ok   OECD.STI.DEP__DF_IND                         checks= 33
+ok   OECD.WISE.INE__DF_IDD                        checks= 38
+ok   OECD_AIAS__ICTWSS                            checks= 20
+ok   OWID__LABOR_RIGHTS                           checks=  5
+ok   OWID__LABOR_SHARE                            checks=  5
+ok   OWID__SOCIAL_SPENDING_LONGRUN                checks=  5
+ok   OWID__WORKING_HOURS_LONGRUN                  checks=  5
+ok   VDEM__CIVIL_SOCIETY                          checks= 11
+ok   WID_LIS__DF_CONCENTRATION                    checks= 12
+
+==========================================================================
+DATASETS: 59   INTERACTIONS: 1120   PASS: 59   FAIL: 0
+ALL DEEP UI TESTS PASS (WebKit / Safari engine)
