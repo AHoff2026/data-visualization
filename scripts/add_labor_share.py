@@ -25,16 +25,22 @@ SITE = ROOT/"site/data"
 SLUG = "OWID__LABOR_SHARE"
 
 MEASURES = [
-    ("LS_GDP",      "Labor share of GDP", "PT_GDP"),
-    ("LS_FC",       "Labor share of factor income", "PT_FC"),
-    ("LS_ADJ_HRS_GDP", "Labor share of GDP, self-employment adjusted by hours", "PT_GDP"),
-    ("LS_ADJ_HRS_FC",  "Labor share of factor income, self-employment adjusted by hours", "PT_FC"),
-    ("LS_ADJ_PER_FC",  "Labor share of factor income, self-employment adjusted by headcount", "PT_FC"),
+    # "All workers" counts the self-employed as labor; "employees only" is the raw
+    # national accounts number, which books self-employed earnings as profit.
+    ("LS_ADJ_HRS_FC",  "Labor share of factor income (all workers, by hours)", "PT_FC"),
+    ("LS_FC",       "Labor share of factor income (employees only)", "PT_FC"),
+    ("LS_ADJ_HRS_GDP", "Labor share of GDP (all workers, by hours)", "PT_GDP"),
+    ("LS_GDP",      "Labor share of GDP (employees only)", "PT_GDP"),
+    ("LS_ADJ_PER_FC",  "Labor share of factor income (all workers, by headcount)", "PT_FC"),
     ("CAP_FC",      "Capital and mixed income share of factor income", "PT_FC"),
     ("TAX_GDP",     "Taxes less subsidies on production, share of GDP", "PT_GDP"),
     ("SELF_HRS",    "Self-employed share of hours worked", "PT_HRS"),
     ("LS_ILO",      "Labor share of GDP (ILO, SDG 10.4.1)", "PT_GDP"),
-    ("LS_WID",      "Labor share of the group's own income", "PT_GRP"),
+    # within a slice of the distribution
+    ("LS_Q_ALL",    "Labor share within income fifth (all workers)", "PT_GRP"),
+    ("LS_Q_EMP",    "Labor share within income fifth (employees only)", "PT_GRP"),
+    ("PROP_Q",      "Property income share within income fifth", "PT_GRP"),
+    ("LS_WID",      "Labor share within percentile group (United States)", "PT_GRP"),
     ("INC_SHARE",   "Group's share of national income", "PT_NI"),
 ]
 UNITS = [
@@ -46,6 +52,11 @@ UNITS = [
 ]
 GROUPS = [
     ("_T",       "Everyone"),
+    ("QG1",      "Poorest fifth"),
+    ("QG2",      "Second fifth"),
+    ("QG3",      "Middle fifth"),
+    ("QG4",      "Fourth fifth"),
+    ("QG5",      "Richest fifth"),
     ("P0P50",    "Bottom 50 per cent"),
     ("P50P90",   "Middle 40 per cent"),
     ("P0P90",    "Bottom 90 per cent"),
@@ -61,6 +72,7 @@ NA_PULLS = [
                "B1GQ+D1+D11+D12+B2A3G+B2G+B3G+D2X3+D21X31+P51C",
                "", "", "", "XDC", "V", "", ""])),
     ("na_emp_act.csv", "DSD_NAMAIN10@DF_TABLE3_EMPDC", ".".join(["A"] + [""]*11)),
+    ("egdna_inc.csv", "DSD_EGDNA_INC_INC@DF_INC_INC", ".".join(["A"] + [""]*13)),
 ]
 for fname, flow, key in NA_PULLS:
     dest = ROOT/"data/raw"/fname
@@ -139,6 +151,32 @@ if (old/"meta.json").exists():
         a = oa[r["k"][0]]
         for t, v in zip(r["t"], r["v"]): put(a, "LS_ILO", "_T", op[t], v)
 
+# ---- OECD distributional national accounts: by income fifth -------------
+# Household income broken down by quintile of the distribution, which lets the
+# labor share be computed inside each fifth rather than for the country as a
+# whole. Primary income is the denominator: compensation of employees, plus
+# operating surplus and mixed income, plus property income received less paid.
+# Pensions and other transfers are not in it, which is why the poorest fifth can
+# still show a high labor share -- it is a share of what that group earns, not of
+# what it lives on.
+E = collections.defaultdict(dict)
+ef = ROOT/"data/raw/egdna_inc.csv"
+if ef.exists():
+    for r in csv.DictReader(open(ef)):
+        if not r["OBS_VALUE"] or r["UNIT_MEASURE"] != "XDC": continue
+        E[(r["REF_AREA"], r["TIME_PERIOD"], r["INCOME_GROUP"])][
+            (r["TRANSACTION"], r["ACCOUNTING_ENTRY"])] = float(r["OBS_VALUE"])
+        names.setdefault(r["REF_AREA"], r["Reference area"])
+    for (a, y, grp), d in E.items():
+        if grp not in ("_T", "QG1", "QG2", "QG3", "QG4", "QG5"): continue
+        b5 = d.get(("B5G", "B"))
+        if not b5 or b5 <= 0: continue
+        d1 = d.get(("D1", "C")); b3 = d.get(("B3G", "B"))
+        dr = d.get(("D4", "C")); dp = d.get(("D4", "D"))
+        if d1 is not None: put(a, "LS_Q_EMP", grp, y, d1/b5*100)
+        if d1 is not None and b3 is not None: put(a, "LS_Q_ALL", grp, y, (d1+b3)/b5*100)
+        if dr is not None and dp is not None: put(a, "PROP_Q", grp, y, (dr-dp)/b5*100)
+
 # ---- WID: labor share within percentile groups, United States ----------
 # data/raw/wid_slices.csv is the percentile-group subset of WID's per-country bulk
 # files, extracted once so the build does not depend on re-downloading them.
@@ -192,31 +230,33 @@ meta = {
     "description": "",
     "desc_html": (
       "The share of what a country produces that goes to labor rather than to profit "
-      "and rent. The headline version of this number is misleading in two directions, "
-      "and both corrections are available here separately.<br>"
-      "Taxes on production sit in the denominator. A country levying 25 per cent VAT "
-      "records a larger GDP at market prices for the same underlying production, so its "
-      "labor share is mechanically smaller. Measuring instead against factor income, "
-      "which is what labor and capital actually receive, removes the wedge. Against GDP "
-      "Sweden's labor share is five points below the United States; against factor income "
-      "it is four points above. Nothing about either economy changed, only the "
-      "denominator.<br>"
-      "Self-employed people earn labor income that the accounts book as mixed income "
-      "rather than as compensation of employees, so the headline number understates "
-      "labor's take wherever self-employment is common. The adjusted measures impute to "
-      "the self-employed the same hourly earnings as employees; the hours basis and the "
-      "headcount basis are given separately because the self-employed work longer hours "
-      "in most countries.<br>"
-      "For the United States the figure can also be split by where people sit in the "
-      "income distribution, back to 1913. Labor share is close to total at the bottom and "
-      "collapses at the top: the bottom half of Americans take essentially all their "
-      "income as labor, the top one per cent under half. Aggregate labor share and "
-      "inequality are not separate subjects.<br>"
-      "Sources: OECD Annual National Accounts (income approach, and employment by "
-      "activity for the hours adjustment); ILO via the SDG indicator series; and the "
+      "and rent. The headline version of this number is wrong in two directions, and "
+      "both corrections are separate dials here so you can see which one does the "
+      "work.<br>"
+      "<b>Employees only, or all workers.</b> The raw figure counts compensation of "
+      "employees, meaning people on a payroll. A self-employed builder's earnings are "
+      "not in it: the accounts file those under mixed income, alongside profit. So the "
+      "raw number is not labor's share, it is employees' share, and it understates labor "
+      "wherever many people work for themselves -- in Greece nearly a third of all hours "
+      "worked. The <i>all workers</i> measures put them back by crediting the "
+      "self-employed with what an employee earns per hour.<br>"
+      "<b>GDP, or factor income.</b> Taxes on production sit inside GDP. A country "
+      "levying 25 per cent VAT records a larger GDP for the same underlying production, "
+      "so its labor share is mechanically smaller. Factor income -- what labor and "
+      "capital actually receive -- removes that wedge. Against GDP, Sweden's labor share "
+      "is five points below the United States. Against factor income it is four points "
+      "above. Nothing about either economy changed, only the denominator.<br>"
+      "<b>Where in the distribution.</b> Labor share falls as income rises, everywhere it "
+      "can be measured. Choose an income fifth to see it inside one slice of the "
+      "distribution: the poorest fifth of Canadians take 97 per cent of their income as "
+      "labor, the richest fifth 77 per cent. For the United States the split is available "
+      "by percentile back to 1913, and it is sharper still -- the bottom half take "
+      "essentially all their income as labor, the top one per cent under half. Aggregate "
+      "labor share and inequality are not separate subjects.<br>"
+      "Sources: OECD Annual National Accounts, OECD Distributional National Accounts, the "
+      "ILO SDG indicator series, and the "
       "<a href=\"https://wid.world/\" target=\"_blank\" rel=\"noopener noreferrer\">World "
-      "Inequality Database</a> for the distributional split, which WID publishes for the "
-      "United States only."),
+      "Inequality Database</a>."),
     "desc_text": "Labor share of income on several denominators, with and without an "
       "adjustment for self-employment, plus the labor share within income groups for the "
       "United States back to 1913.",
@@ -225,7 +265,7 @@ meta = {
         {"id": "REF_AREA", "name": "Country", "ids": areas,
          "names": [names.get(a, a) for a in areas]},
         {"id": "MEASURE", "name": "Indicator", "ids": [m[0] for m in MEASURES],
-         "names": [m[1] for m in MEASURES], "default": 1},
+         "names": [m[1] for m in MEASURES], "default": 0},
         {"id": "INCOME_GROUP", "name": "Income group", "ids": [g[0] for g in GROUPS],
          "names": [g[1] for g in GROUPS], "default": 0},
         {"id": "UNIT_MEASURE", "name": "Measured as", "ids": [u[0] for u in UNITS],
@@ -249,7 +289,13 @@ meta = {
       "same earnings per hour, or per person, as employees. It is an assumption, not a "
       "measurement, and it is an upper bound wherever the self-employed earn less than "
       "employees.",
-      "The distributional split is WID's decomposition of pre-tax national income into "
+      "The income-fifth measures come from OECD's distributional national accounts, "
+      "which allocate household income to quintiles of the distribution. The denominator "
+      "is primary income: what the group earns, before pensions and other transfers. "
+      "That is why the poorest fifth can show a high labor share -- it is a share of what "
+      "they earn, not of what they live on. Quintiles are coarse: the fall in labor share "
+      "is concentrated in the top few per cent, so the richest fifth understates it.",
+      "The percentile split is WID's decomposition of pre-tax national income into "
       "labor and capital components within each percentile group, which WID publishes "
       "for the United States alone. Its denominator is pre-tax national income, not GDP, "
       "so its level is not comparable with the national accounts measures above.",
