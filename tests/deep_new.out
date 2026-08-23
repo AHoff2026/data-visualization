@@ -40,3 +40,20 @@ ok   OECD.SDD.NAD__DF_TABLE2                      checks= 24
 ok   OECD.SDD.NAD__DF_TABLE5_T501                 checks= 19
 ok   OECD.SDD.NAD__DF_TABLE9A                     checks= 31
 ok   OECD.SDD.TPS__DF_ALFS_EMP                    checks= 20
+ok   OECD.SDD.TPS__DF_HOU_EAR                     checks=  8
+ok   OECD.SDD.TPS__DF_IALFS_EMP_ISIC4_Q           checks= 17
+ok   OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q             checks= 16
+ok   OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q             checks= 19
+ok   OECD.SDD.TPS__DF_PDB                         checks= 32
+ok   OECD.SDD.TPS__DF_SUMTAB                      checks= 23
+ok   OECD.STI.DEP__DF_HH                          checks= 21
+ok   OECD.STI.DEP__DF_IND                         checks= 33
+ok   OECD.WISE.INE__DF_IDD                        checks= 38
+ok   OWID__LABOR_RIGHTS                           checks=  5
+ok   OWID__SOCIAL_SPENDING_LONGRUN                checks=  5
+ok   OWID__WORKING_HOURS_LONGRUN                  checks=  5
+ok   WID_LIS__DF_CONCENTRATION                    checks= 12
+
+==========================================================================
+DATASETS: 55   INTERACTIONS: 1069   PASS: 55   FAIL: 0
+ALL DEEP UI TESTS PASS (WebKit / Safari engine)
