@@ -23,6 +23,15 @@ TECHNICAL = {
     "TIME_HORIZ":           ["H", "_T"],
     "JOB_COVERAGE":         ["MAIN", "_T"],
     "FREQ":                 ["A"],                  # annual: these are trend charts
+    # tax-benefit scenarios: these switch the assumptions behind the simulation
+    # rather than the question being asked, so they sit under Advanced at the
+    # case OECD itself treats as standard.
+    "AGE_CHILDREN":         ["Y4_6", "Y2_3"],
+    "CHILDCARE_USE":        ["NO", "YES"],
+    "HOUSE_BENEFIT":        ["NO", "YES"],
+    "TEMP_INTOWORK_BENEFIT": ["NO", "YES"],
+    "SOC_ASS_BENEFIT":      ["YES", "NO", "_Z"],     # the realistic case: top-ups claimed
+    "INCOME_PART":          ["_Z", "NOEARN_UNEMP_WO_CONBEN"],   # single-earner case
     "TABLE_IDENTIFIER":     [],
     "DECIMALS":             [],
     "UNIT_MULT":            [],

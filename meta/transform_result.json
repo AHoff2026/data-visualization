@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q",
+  "slug": "OECD.ELS.JAI__DF_PTRUB",
   "status": "ok",
-  "series": 3353,
-  "obs": 335959,
-  "rows": 335959,
+  "series": 82656,
+  "obs": 1792656,
+  "rows": 1792656,
   "layout": "parts",
-  "bytes": 1039731,
-  "src_mb": 128.5
+  "bytes": 694331,
+  "src_mb": 898.5
  }
 ]

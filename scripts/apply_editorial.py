@@ -133,6 +133,7 @@ RENAME = {
     "OECD.ELS.JAI__DF_EPL": "Employment protection strictness",
     "OECD.ELS.SAE__RMW": "Minimum wages",
     "OECD.ELS.JAI__DF_NRR": "Unemployment benefit replacement rates",
+    "OECD.ELS.JAI__DF_PTRUB": "What taking a job costs you",
     "OECD.ELS.JAI__DF_HGRR": "Unemployment benefit replacement rates, 1961-2005",
     "OECD.ELS.SAE__DEC_I": "Earnings dispersion (full-time employees)",
     "WID_LIS__DF_CONCENTRATION": "Inequality measures",

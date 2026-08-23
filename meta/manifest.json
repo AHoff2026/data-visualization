@@ -978,5 +978,15 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_LFS@DF_IALFS_LF_WAP_Q&df[ag]=OECD.SDD.TPS&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_TAXBEN_PTR",
+    "flow": "DF_PTRUB",
+    "dataflow_id": "DSD_TAXBEN_PTR@DF_PTRUB",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TAXBEN_PTR@DF_PTRUB&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
   }
 ]
