@@ -948,5 +948,35 @@
     "default_key": "",
     "period": "",
     "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_GOV@DF_GOV_EMPPS_REP_2025&df[ag]=OECD.GOV.GIP&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.SAE",
+    "dsd": "DSD_TENURE",
+    "flow": "DF_TENURE_AVE",
+    "dataflow_id": "DSD_TENURE@DF_TENURE_AVE",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TENURE@DF_TENURE_AVE&df[ag]=OECD.ELS.SAE&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.ELS.JAI",
+    "dsd": "DSD_LMP",
+    "flow": "DF_LMP",
+    "dataflow_id": "DSD_LMP@DF_LMP",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_LMP@DF_LMP&df[ag]=OECD.ELS.JAI&df[vs]=1.0"
+  },
+  {
+    "agency": "OECD.SDD.TPS",
+    "dsd": "DSD_LFS",
+    "flow": "DF_IALFS_LF_WAP_Q",
+    "dataflow_id": "DSD_LFS@DF_IALFS_LF_WAP_Q",
+    "version": "1.0",
+    "default_key": "",
+    "period": "",
+    "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_LFS@DF_IALFS_LF_WAP_Q&df[ag]=OECD.SDD.TPS&df[vs]=1.0"
   }
 ]

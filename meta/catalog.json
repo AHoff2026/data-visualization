@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-23T00:06:17",
+ "generated": "2026-08-23T12:08:43",
  "default_countries": [
   "DEU",
   "DNK",
@@ -15187,6 +15187,500 @@
     "TIME_PERIOD": []
    },
    "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_GOV@DF_GOV_EMPPS_REP_2025&df[ag]=OECD.GOV.GIP&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.ELS.SAE__DF_TENURE_AVE",
+   "id": "DSD_TENURE@DF_TENURE_AVE",
+   "agency": "OECD.ELS.SAE",
+   "version": "1.0",
+   "name": "Employment by job tenure intervals - average job tenure",
+   "description": "This dataset contains data on the average job tenure of workers by job tenure intervals (in years). Data are broken down by professional status - employees, total employment \u2013 sex, five-year and broad age groups (15-24, 25-54, 55-64, 15-64, total, etc.).\n<p />\nJob tenure is measured by the length of time workers have been in their current or main job or with their current employer and are expressed in numbers of years. They can be converted in months by multiplying by a factor of 12 (months).\n<p />\nThis information is valuable for estimating the degree of fluidity in the labour market and in identifying the areas of economic activity where the turnover of labour is rapid or otherwise. Data are so far reported for a number of European countries and will be expanded to cover a greater number of countries.\n<p />\nIn order to facilitate analysis and comparisons over time, historical data for OECD members have been provided over as long a period as possible, often even before a country became a member of the Organisation. Information on the membership dates of all OECD countries can be found at <a href=\"http://www.oecd.org/about/membersandpartners/list-oecd-member-countries.htm\">OECD Ratification Dates</a>.\n<p />\nInformation for all countries and all LFS subjects may be found in the attached file <a href=\"https://www.oecd.org/content/dam/oecd/en/data/datasets/employability-data/LFSNOTES_SOURCES.pdf\">LFS_NOTES_SOURCES</a>.",
+   "topic": "JOB.JOB_EMP",
+   "dsd": "DSD_TENURE",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 1,
+     "codelist": "OECD.ELS.SAE:CL_MEASURE_TENURE"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 2,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "SEX",
+     "name": "SEX",
+     "position": 3,
+     "codelist": "OECD:CL_SEX"
+    },
+    {
+     "id": "AGE",
+     "name": "AGE",
+     "position": 4,
+     "codelist": "OECD:CL_AGE"
+    },
+    {
+     "id": "TENURE",
+     "name": "TENURE",
+     "position": 5,
+     "codelist": "OECD.ELS.SAE:CL_TENURE"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 6,
+     "codelist": "SDMX:CL_FREQ"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUT",
+     "BEL",
+     "BGR",
+     "BRA",
+     "CHE",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "EU19OECD",
+     "EU22OECD",
+     "EU27",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IRL",
+     "ISL",
+     "ITA",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MLT",
+     "NLD",
+     "NOR",
+     "OECD",
+     "POL",
+     "PRT",
+     "ROU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR"
+    ],
+    "MEASURE": [
+     "TENURE_EMP",
+     "TENURE_EMP_DEP"
+    ],
+    "UNIT_MEASURE": [
+     "Y"
+    ],
+    "SEX": [
+     "F",
+     "M",
+     "_T"
+    ],
+    "AGE": [
+     "Y15T19",
+     "Y15T24",
+     "Y15T64",
+     "Y15T74",
+     "Y20T24",
+     "Y25T29",
+     "Y25T54",
+     "Y30T34",
+     "Y35T39",
+     "Y40T44",
+     "Y45T49",
+     "Y50T54",
+     "Y55T59",
+     "Y55T64",
+     "Y60T64",
+     "Y65T69",
+     "Y70T74",
+     "Y_GE65",
+     "Y_GE70",
+     "Y_GE75",
+     "_T",
+     "_U"
+    ],
+    "TENURE": [
+     "M_1T5",
+     "M_6T11",
+     "M_LT1",
+     "TOTD",
+     "Y_1T2",
+     "Y_1T9",
+     "Y_3T4",
+     "Y_5T9",
+     "Y_GE10",
+     "_T"
+    ],
+    "FREQ": [
+     "A"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_TENURE@DF_TENURE_AVE&df[ag]=OECD.ELS.SAE&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.ELS.JAI__DF_LMP",
+   "id": "DSD_LMP@DF_LMP",
+   "agency": "OECD.ELS.JAI",
+   "version": "1.0",
+   "name": "Labour Market Programmes",
+   "description": "Labour market policy (LMP) database provides information on active labour market policies and social security systems explicitly targeted to people with difficulties in the labour market: the unemployed, people at risk of involuntary job loss and inactive people who would like to enter the labour market. <br><br>For more information, see <a href=\"https://web-archive.oecd.org/2022-09-16/120573-Coverage-and-classification-of-OECD-data.pdf\">Coverage and classification of the OECD data on labour market programmes</a><br><b>Last data update: October 2023</b><br><br>OECD statistics contact: <a href=\"mailto:ELS.Contact@oecd.org\">ELS.Contact@oecd.org</a>",
+   "topic": "JOB",
+   "dsd": "DSD_LMP",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 1,
+     "codelist": "OECD.ELS.JAI:CL_MEASURE_LMP"
+    },
+    {
+     "id": "PROGRAMME",
+     "name": "PROGRAMME",
+     "position": 2,
+     "codelist": "OECD.ELS.JAI:CL_PROGRAMME_LMP"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 3,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    },
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "CONF_STATUS",
+     "name": "CONF_STATUS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CRI",
+     "CZE",
+     "DEU",
+     "DNK",
+     "ESP",
+     "EST",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MEX",
+     "NLD",
+     "NOR",
+     "NZL",
+     "OECD",
+     "POL",
+     "PRT",
+     "ROU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA"
+    ],
+    "MEASURE": [
+     "EXP",
+     "STO"
+    ],
+    "PROGRAMME": [
+     "LMP_10",
+     "LMP_10T70",
+     "LMP_10T70X42",
+     "LMP_11",
+     "LMP_12",
+     "LMP_13",
+     "LMP_20",
+     "LMP_20T70",
+     "LMP_20T70X42",
+     "LMP_21",
+     "LMP_22",
+     "LMP_23",
+     "LMP_24",
+     "LMP_40",
+     "LMP_41",
+     "LMP_42",
+     "LMP_42_82",
+     "LMP_43",
+     "LMP_50",
+     "LMP_51",
+     "LMP_52",
+     "LMP_60",
+     "LMP_70",
+     "LMP_80",
+     "LMP_80_90",
+     "LMP_80_90X82",
+     "LMP_81",
+     "LMP_811",
+     "LMP_812",
+     "LMP_82",
+     "LMP_83",
+     "LMP_84",
+     "LMP_85",
+     "LMP_90",
+     "_T",
+     "_TX42_82"
+    ],
+    "UNIT_MEASURE": [
+     "PS",
+     "PT_B1GQ",
+     "PT_LF",
+     "XDC"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_LMP@DF_LMP&df[ag]=OECD.ELS.JAI&df[vs]=1.0",
+   "tab_default_key": "",
+   "tab_period": ""
+  },
+  {
+   "slug": "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q",
+   "id": "DSD_LFS@DF_IALFS_LF_WAP_Q",
+   "agency": "OECD.SDD.TPS",
+   "version": "1.0",
+   "name": "Labour force participation rate",
+   "description": "<p>The infra-annual dataflow on the labour force participation rate is a subset of the infra-annual labour statistics database, which contains predominantly monthly and quarterly statistics on the labour force participation rate by age groups (15+, 15-24, 25-54, 55-64, 15-64 and 15-74 where available) and sex and associated statistical methodological information and associated statistical methodological information, for the OECD member countries and for selected other economies. </p><p>The labour force participation rate is calculated as the number of the labour force population as a percentage of the working age population. </p><p>The infra-annual labour statistics compiled for all OECD member countries, are drawn from Labour Force Surveys based on definition provided by the 19th Conference of Labour Statisticians in 2013. The uniform application of these definitions across all OECD member countries results in estimates that are internationally comparable.</p>",
+   "topic": "ECO.ECO_STS",
+   "dsd": "DSD_LFS",
+   "dimensions": [
+    {
+     "id": "REF_AREA",
+     "name": "REF_AREA",
+     "position": 0,
+     "codelist": "OECD:CL_AREA"
+    },
+    {
+     "id": "MEASURE",
+     "name": "MEASURE",
+     "position": 1,
+     "codelist": "OECD.SDD.TPS:CL_MEASURE_LFS_TPS"
+    },
+    {
+     "id": "UNIT_MEASURE",
+     "name": "UNIT_MEASURE",
+     "position": 2,
+     "codelist": "OECD:CL_UNIT_MEASURE"
+    },
+    {
+     "id": "TRANSFORMATION",
+     "name": "TRANSFORMATION",
+     "position": 3,
+     "codelist": "OECD:CL_TRANSFORMATION"
+    },
+    {
+     "id": "ADJUSTMENT",
+     "name": "ADJUSTMENT",
+     "position": 4,
+     "codelist": "OECD:CL_ADJUSTMENT"
+    },
+    {
+     "id": "SEX",
+     "name": "SEX",
+     "position": 5,
+     "codelist": "OECD:CL_SEX"
+    },
+    {
+     "id": "AGE",
+     "name": "AGE",
+     "position": 6,
+     "codelist": "OECD:CL_AGE"
+    },
+    {
+     "id": "ACTIVITY",
+     "name": "ACTIVITY",
+     "position": 7,
+     "codelist": "OECD:CL_ACTIVITY_ISIC4"
+    },
+    {
+     "id": "FREQ",
+     "name": "FREQ",
+     "position": 8,
+     "codelist": "SDMX:CL_FREQ"
+    }
+   ],
+   "time_dimension": "TIME_PERIOD",
+   "attributes": [
+    {
+     "id": "BASE_PER",
+     "name": "BASE_PER"
+    },
+    {
+     "id": "OBS_STATUS",
+     "name": "OBS_STATUS"
+    },
+    {
+     "id": "UNIT_MULT",
+     "name": "UNIT_MULT"
+    },
+    {
+     "id": "DECIMALS",
+     "name": "DECIMALS"
+    }
+   ],
+   "used_codes": {
+    "REF_AREA": [
+     "AUS",
+     "AUT",
+     "BEL",
+     "BGR",
+     "BRA",
+     "CAN",
+     "CHE",
+     "CHL",
+     "COL",
+     "CRI",
+     "CZE",
+     "DEU",
+     "DNK",
+     "EA",
+     "ESP",
+     "EST",
+     "EU",
+     "FIN",
+     "FRA",
+     "GBR",
+     "GRC",
+     "HRV",
+     "HUN",
+     "IRL",
+     "ISL",
+     "ISR",
+     "ITA",
+     "JPN",
+     "KOR",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MEX",
+     "NLD",
+     "NOR",
+     "NZL",
+     "OECD",
+     "POL",
+     "PRT",
+     "ROU",
+     "SVK",
+     "SVN",
+     "SWE",
+     "TUR",
+     "USA",
+     "ZAF"
+    ],
+    "MEASURE": [
+     "LF_WAP"
+    ],
+    "UNIT_MEASURE": [
+     "PT_WAP_SUB"
+    ],
+    "TRANSFORMATION": [
+     "G1",
+     "_Z"
+    ],
+    "ADJUSTMENT": [
+     "N",
+     "Y"
+    ],
+    "SEX": [
+     "F",
+     "M",
+     "_T"
+    ],
+    "AGE": [
+     "Y15T24",
+     "Y15T64",
+     "Y15T74",
+     "Y25T54",
+     "Y55T64",
+     "Y_GE15",
+     "Y_GE25",
+     "_T"
+    ],
+    "ACTIVITY": [
+     "_Z"
+    ],
+    "FREQ": [
+     "A",
+     "M",
+     "Q"
+    ],
+    "TIME_PERIOD": []
+   },
+   "source_url": "https://data-explorer.oecd.org/vis?df[id]=DSD_LFS@DF_IALFS_LF_WAP_Q&df[ag]=OECD.SDD.TPS&df[vs]=1.0",
    "tab_default_key": "",
    "tab_period": ""
   }
@@ -71517,6 +72011,275 @@
      "id": "GF1009",
      "name": "Social protection n.e.c.",
      "parent": "GF10"
+    }
+   ]
+  },
+  "OECD.ELS.SAE:CL_MEASURE_TENURE": {
+   "id": "CL_MEASURE_TENURE",
+   "agency": "OECD.ELS.SAE",
+   "name": "Codelist for Tenure",
+   "codes": [
+    {
+     "id": "TENURE_EMP",
+     "name": "Employment tenure"
+    },
+    {
+     "id": "TENURE_EMP_DEP",
+     "name": "Dependent employment tenure"
+    }
+   ]
+  },
+  "OECD.ELS.SAE:CL_TENURE": {
+   "id": "CL_TENURE",
+   "agency": "OECD.ELS.SAE",
+   "name": "Codelist for tenure bands",
+   "codes": [
+    {
+     "id": "_T",
+     "name": "Total"
+    },
+    {
+     "id": "TOTD",
+     "name": "Total declared"
+    },
+    {
+     "id": "M_LT1",
+     "name": "Less than 1 month"
+    },
+    {
+     "id": "M_LT3",
+     "name": "Less than 3 months"
+    },
+    {
+     "id": "M_1T5",
+     "name": "From 1 to 5 months"
+    },
+    {
+     "id": "M_3T6",
+     "name": "From 3 to 6 months"
+    },
+    {
+     "id": "M_6T11",
+     "name": "From 6 to 11 months"
+    },
+    {
+     "id": "M_LT12",
+     "name": "Less than 12 months"
+    },
+    {
+     "id": "Y_1T2",
+     "name": "From 1 to 2 years"
+    },
+    {
+     "id": "Y_1T9",
+     "name": "From 1 to 9 years"
+    },
+    {
+     "id": "Y_3T4",
+     "name": "From 3 to 4 years"
+    },
+    {
+     "id": "Y_5T9",
+     "name": "From 5 to 9 years"
+    },
+    {
+     "id": "Y_GE10",
+     "name": "10 years or over"
+    },
+    {
+     "id": "_Z",
+     "name": "Not applicable"
+    }
+   ]
+  },
+  "OECD.ELS.JAI:CL_MEASURE_LMP": {
+   "id": "CL_MEASURE_LMP",
+   "agency": "OECD.ELS.JAI",
+   "name": "Code list for LMP measure",
+   "codes": [
+    {
+     "id": "EXP",
+     "name": "Public expenditure"
+    },
+    {
+     "id": "STO",
+     "name": "Number of participants"
+    }
+   ]
+  },
+  "OECD.ELS.JAI:CL_PROGRAMME_LMP": {
+   "id": "CL_PROGRAMME_LMP",
+   "agency": "OECD.ELS.JAI",
+   "name": "Codelist for Labour market programmes",
+   "codes": [
+    {
+     "id": "LMP_10",
+     "name": "Public employment services and administration"
+    },
+    {
+     "id": "LMP_20",
+     "name": "Training"
+    },
+    {
+     "id": "LMP_40",
+     "name": "Employment incentives"
+    },
+    {
+     "id": "LMP_50",
+     "name": "Sheltered and supported employment and rehabilitation"
+    },
+    {
+     "id": "LMP_60",
+     "name": "Direct job creation"
+    },
+    {
+     "id": "LMP_70",
+     "name": "Start-up incentives"
+    },
+    {
+     "id": "LMP_80",
+     "name": "Out-of-work income maintenance and support"
+    },
+    {
+     "id": "LMP_90",
+     "name": "Early retirement"
+    },
+    {
+     "id": "_T",
+     "name": "Total"
+    },
+    {
+     "id": "LMP_10T70",
+     "name": "Total active programmes (categories 1-7)",
+     "parent": "_T"
+    },
+    {
+     "id": "LMP_20T70",
+     "name": "Total active measures (categories 2-7)",
+     "parent": "_T"
+    },
+    {
+     "id": "LMP_80_90",
+     "name": "Total passive measures (categories 8-9)",
+     "parent": "_T"
+    },
+    {
+     "id": "_TX42_82",
+     "name": "Total without temporary employment and income maintenance"
+    },
+    {
+     "id": "LMP_10T70X42",
+     "name": "Active programmes without employment maintenance incentives",
+     "parent": "_TX42_82"
+    },
+    {
+     "id": "LMP_20T70X42",
+     "name": "Active measures without employment maintenance incentives",
+     "parent": "_TX42_82"
+    },
+    {
+     "id": "LMP_80_90X82",
+     "name": "Passive measures without partial unemployment benefits",
+     "parent": "_TX42_82"
+    },
+    {
+     "id": "LMP_11",
+     "name": "Placement and related services",
+     "parent": "LMP_10"
+    },
+    {
+     "id": "LMP_12",
+     "name": "Benefit administration",
+     "parent": "LMP_10"
+    },
+    {
+     "id": "LMP_13",
+     "name": "Other or not separately identified administration costs",
+     "parent": "LMP_10"
+    },
+    {
+     "id": "LMP_21",
+     "name": "Institutional training",
+     "parent": "LMP_20"
+    },
+    {
+     "id": "LMP_22",
+     "name": "Workplace training",
+     "parent": "LMP_20"
+    },
+    {
+     "id": "LMP_23",
+     "name": "Integrated training",
+     "parent": "LMP_20"
+    },
+    {
+     "id": "LMP_24",
+     "name": "Special support for apprenticeship",
+     "parent": "LMP_20"
+    },
+    {
+     "id": "LMP_41",
+     "name": "Recruitment incentives",
+     "parent": "LMP_40"
+    },
+    {
+     "id": "LMP_42",
+     "name": "Employment maintenance incentives",
+     "parent": "LMP_40"
+    },
+    {
+     "id": "LMP_43",
+     "name": "Job rotation and job sharing",
+     "parent": "LMP_40"
+    },
+    {
+     "id": "LMP_51",
+     "name": "Sheltered and supported employment",
+     "parent": "LMP_50"
+    },
+    {
+     "id": "LMP_52",
+     "name": "Rehabilitation",
+     "parent": "LMP_50"
+    },
+    {
+     "id": "LMP_81",
+     "name": "Full unemployment benefits",
+     "parent": "LMP_80"
+    },
+    {
+     "id": "LMP_811",
+     "name": "Unemployment insurance",
+     "parent": "LMP_81"
+    },
+    {
+     "id": "LMP_812",
+     "name": "Unemployment assistance",
+     "parent": "LMP_81"
+    },
+    {
+     "id": "LMP_82",
+     "name": "Partial unemployment benefits",
+     "parent": "LMP_80"
+    },
+    {
+     "id": "LMP_83",
+     "name": "Part-time unemployment benefits",
+     "parent": "LMP_80"
+    },
+    {
+     "id": "LMP_84",
+     "name": "Redundancy compensation",
+     "parent": "LMP_80"
+    },
+    {
+     "id": "LMP_85",
+     "name": "Bankrupcy compensation",
+     "parent": "LMP_80"
+    },
+    {
+     "id": "LMP_42_82",
+     "name": "Temporary employment and income maintenance in continued employment relationship"
     }
    ]
   }

@@ -31,6 +31,8 @@ FEATURED = [
     "OECD.ELS.SAE__DF_AVG_USL_WK_WKD", "OWID__WORKING_HOURS_LONGRUN",
     # who works and who does not
     "OECD.SDD.TPS__DF_IALFS_EMP_WAP_Q", "OECD.SDD.TPS__DF_IALFS_OLF_WAP_Q",
+    "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q", "OECD.ELS.SAE__DF_TENURE_AVE",
+    "OECD.ELS.JAI__DF_LMP",
     "OECD.ELS.SAE__DF_DUR_D",
     # what the state provides
     "OECD.ELS.SPD__DF_SOCX_AGG", "OWID__SOCIAL_SPENDING_LONGRUN",
@@ -103,6 +105,9 @@ TOPIC_OF = {
     "ILO__STRIKES": "UNION",
     "OWID__LABOR_SHARE": "WAGE",
     "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025": "TAX",
+    "OECD.ELS.SAE__DF_TENURE_AVE": "JOBS",
+    "OECD.ELS.JAI__DF_LMP": "SOCIAL",
+    "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q": "UNEMP",
     "OWID__WORKING_HOURS_LONGRUN": "JOBS",
     "OWID__SOCIAL_SPENDING_LONGRUN": "SOCIAL",
     "OECD.ELS.SPD__DF_PW": "SOCIAL",
@@ -130,6 +135,9 @@ RENAME = {
     "OECD.ELS.JAI__DF_IA": "Adequacy of minimum income benefits",
     "OECD.ELS.SPD__DF_PRR": "Pension replacement rates",
     "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025": "Public employment and representation",
+    "OECD.ELS.SAE__DF_TENURE_AVE": "Average job tenure",
+    "OECD.ELS.JAI__DF_LMP": "Labor market programme spending",
+    "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q": "Labor force participation rate",
 }
 
 p = SITE/"catalog.json"

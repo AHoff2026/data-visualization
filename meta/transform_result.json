@@ -1,12 +1,12 @@
 [
  {
-  "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
+  "slug": "OECD.SDD.TPS__DF_IALFS_LF_WAP_Q",
   "status": "ok",
-  "series": 306,
-  "obs": 1950,
-  "rows": 1950,
-  "layout": "single",
-  "bytes": 6245,
-  "src_mb": 0.7
+  "series": 3353,
+  "obs": 335959,
+  "rows": 335959,
+  "layout": "parts",
+  "bytes": 1039731,
+  "src_mb": 128.5
  }
 ]
