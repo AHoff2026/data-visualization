@@ -51,6 +51,7 @@ def save(mp, meta, recs):
         meta["parts"] = parts
     mp.write_text(json.dumps(meta, separators=(",", ":")))
 
+LOG = []
 total = 0
 for mp in sorted(FLOWS.glob("*/meta.json")):
     meta = json.loads(mp.read_text())
@@ -89,10 +90,16 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         if zero_series:
             bits.append(f"{zero_series} series that were zero at every observation in a "
                         f"unit where zero cannot be a measurement")
-        meta.setdefault("source_notes", []).append(
-            "Removed from this table: " + "; ".join(bits) +
-            ". These are gaps the source published as figures, not observations.")
+        # Recorded in the build log, not on the page: what was dropped is a fact
+        # about the build, not about what the number means.
+        LOG.append(f'{meta["slug"]}: ' + "; ".join(bits))
         save(mp, meta, out)
         total += dropped + zero_series
         print(f'  {meta["name"][:44]:44} {dropped:5} values, {zero_series:5} all-zero series removed')
 print(f"\nimpossible observations removed: {total}")
+if LOG:
+    log = ROOT/"meta/build_log_impossible.txt" if "ROOT" in dir() else \
+          pathlib.Path.home()/"Documents/data-visualization/meta/build_log_impossible.txt"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    log.write_text("\n".join(LOG) + "\n")
+    print(f"recorded in {log}")

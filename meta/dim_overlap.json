@@ -11,6 +11,17 @@
   "b_det": 0.76
  },
  {
+  "slug": "OECD.WISE.INE__DF_IDD",
+  "flow": "Income inequality and poverty",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 33,
+  "b_n": 9,
+  "fill": 0.11,
+  "a_det": 1.0,
+  "b_det": 0.56
+ },
+ {
   "slug": "OECD.SDD.TPS__DF_PDB",
   "flow": "Productivity database",
   "a": "Indicator",
@@ -33,8 +44,41 @@
   "b_det": 0.38
  },
  {
+  "slug": "WID_LIS__DF_CONCENTRATION",
+  "flow": "Inequality measures",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 13,
+  "b_n": 7,
+  "fill": 0.14,
+  "a_det": 1.0,
+  "b_det": 0.71
+ },
+ {
+  "slug": "EPI__DF_US_PAY_POWER",
+  "flow": "Pay, productivity and union power (United States)",
+  "a": "Indicator",
+  "b": "Breakdown",
+  "a_n": 14,
+  "b_n": 23,
+  "fill": 0.15,
+  "a_det": 0.36,
+  "b_det": 0.43
+ },
+ {
+  "slug": "EPI__DF_US_PAY_POWER",
+  "flow": "Pay, productivity and union power (United States)",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 14,
+  "b_n": 6,
+  "fill": 0.17,
+  "a_det": 1.0,
+  "b_det": 0.33
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Field of study",
   "b": "Measured as",
   "a_n": 23,
@@ -67,7 +111,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Field of study",
   "b": "Income",
   "a_n": 23,
@@ -75,6 +119,28 @@
   "fill": 0.18,
   "a_det": 0.96,
   "b_det": 0.86
+ },
+ {
+  "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
+  "flow": "Public employment and representation",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 6,
+  "b_n": 6,
+  "fill": 0.19,
+  "a_det": 0.83,
+  "b_det": 0.83
+ },
+ {
+  "slug": "OWID__LABOR_SHARE",
+  "flow": "Labor share of income",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 14,
+  "b_n": 5,
+  "fill": 0.2,
+  "a_det": 1.0,
+  "b_det": 0.4
  },
  {
   "slug": "OECD.GOV.GIP__DF_GOV_SPS_2023",
@@ -99,8 +165,41 @@
   "b_det": 0.8
  },
  {
+  "slug": "EPI__DF_US_PAY_POWER",
+  "flow": "Pay, productivity and union power (United States)",
+  "a": "Breakdown",
+  "b": "Measured as",
+  "a_n": 23,
+  "b_n": 6,
+  "fill": 0.24,
+  "a_det": 0.65,
+  "b_det": 0.17
+ },
+ {
+  "slug": "OWID__LABOR_SHARE",
+  "flow": "Labor share of income",
+  "a": "Indicator",
+  "b": "Income group",
+  "a_n": 14,
+  "b_n": 12,
+  "fill": 0.24,
+  "a_det": 0.64,
+  "b_det": 0.0
+ },
+ {
+  "slug": "ILO__STRIKES",
+  "flow": "Strikes and lockouts",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 4,
+  "b_n": 4,
+  "fill": 0.25,
+  "a_det": 1.0,
+  "b_det": 1.0
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Income",
   "b": "Measured as",
   "a_n": 7,
@@ -111,7 +210,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Field of study",
   "b": "Age at migration",
   "a_n": 23,
@@ -165,6 +264,17 @@
   "b_det": 1.0
  },
  {
+  "slug": "OECD_AIAS__ICTWSS",
+  "flow": "Bargaining institutions (ICTWSS)",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 96,
+  "b_n": 3,
+  "fill": 0.33,
+  "a_det": 1.0,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.STI.DEP__DF_HH",
   "flow": "ICT Access and Usage by Households",
   "a": "Area type",
@@ -199,7 +309,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Education level",
   "b": "Field of study",
   "a_n": 13,
@@ -221,7 +331,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Field of study",
   "b": "Place of birth",
   "a_n": 23,
@@ -231,8 +341,19 @@
   "b_det": 0.67
  },
  {
+  "slug": "OECD.WISE.INE__DF_IDD",
+  "flow": "Income inequality and poverty",
+  "a": "Indicator",
+  "b": "Poverty line",
+  "a_n": 33,
+  "b_n": 3,
+  "fill": 0.36,
+  "a_det": 0.91,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Income",
   "b": "Age at migration",
   "a_n": 7,
@@ -243,7 +364,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Age at migration",
   "b": "Measured as",
   "a_n": 4,
@@ -253,8 +374,52 @@
   "b_det": 0.86
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
+  "flow": "Inactivity rate by education",
+  "a": "Education level",
+  "b": "Place of birth",
+  "a_n": 28,
+  "b_n": 4,
+  "fill": 0.36,
+  "a_det": 0.86,
+  "b_det": 0.0
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
+  "flow": "Inactivity rate by education",
+  "a": "Education level",
+  "b": "Age at migration",
+  "a_n": 28,
+  "b_n": 4,
+  "fill": 0.36,
+  "a_det": 0.86,
+  "b_det": 0.0
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
+  "flow": "Unemployment rate by education",
+  "a": "Education level",
+  "b": "Place of birth",
+  "a_n": 28,
+  "b_n": 4,
+  "fill": 0.36,
+  "a_det": 0.86,
+  "b_det": 0.0
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
+  "flow": "Unemployment rate by education",
+  "a": "Education level",
+  "b": "Age at migration",
+  "a_n": 28,
+  "b_n": 4,
+  "fill": 0.36,
+  "a_det": 0.86,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Indicator",
   "b": "Economic activity",
   "a_n": 5,
@@ -276,7 +441,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Indicator",
   "b": "Measured as",
   "a_n": 5,
@@ -286,8 +451,19 @@
   "b_det": 0.4
  },
  {
+  "slug": "OWID__LABOR_SHARE",
+  "flow": "Labor share of income",
+  "a": "Income group",
+  "b": "Measured as",
+  "a_n": 12,
+  "b_n": 5,
+  "fill": 0.37,
+  "a_det": 0.42,
+  "b_det": 0.6
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Place of birth",
   "b": "Measured as",
   "a_n": 3,
@@ -298,7 +474,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_ALFS_EMP",
-  "flow": "Employment by activites and status (ALFS)",
+  "flow": "Employment by activity and status",
   "a": "Measured as",
   "b": "Economic activity",
   "a_n": 3,
@@ -308,9 +484,31 @@
   "b_det": 0.85
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Education level",
+  "b": "Place of birth",
+  "a_n": 6,
+  "b_n": 4,
+  "fill": 0.38,
+  "a_det": 0.83,
+  "b_det": 0.75
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Education level",
+  "b": "Age at migration",
+  "a_n": 6,
+  "b_n": 4,
+  "fill": 0.38,
+  "a_det": 0.83,
+  "b_det": 0.75
+ },
+ {
   "slug": "OECD.CTP.TPS__DF_TW_COMP",
   "flow": "Labor taxation",
-  "a": "Household type",
+  "a": "Household",
   "b": "Spouse income",
   "a_n": 4,
   "b_n": 4,
@@ -320,7 +518,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
-  "flow": "Inactivity rates of adults, by educational attainment, age group, gender, country of birth and age at migration",
+  "flow": "Inactivity rate by education",
   "a": "Place of birth",
   "b": "Age at migration",
   "a_n": 4,
@@ -331,7 +529,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
-  "flow": "Unemployment rates of adults, by educational attainment, age group, gender, country of birth and age at migration",
+  "flow": "Unemployment rate by education",
   "a": "Place of birth",
   "b": "Age at migration",
   "a_n": 4,
@@ -342,7 +540,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
-  "flow": "Share of young adults who are not employment nor in formal education or training (NEET), by country of birth and age at migration",
+  "flow": "Young adults not in employment, education or training (NEET)",
   "a": "Place of birth",
   "b": "Age at migration",
   "a_n": 4,
@@ -361,6 +559,17 @@
   "fill": 0.39,
   "a_det": 0.71,
   "b_det": 0.25
+ },
+ {
+  "slug": "ESTAT__DF_INWORK_POV",
+  "flow": "In-work poverty",
+  "a": "Who",
+  "b": "Age",
+  "a_n": 29,
+  "b_n": 6,
+  "fill": 0.39,
+  "a_det": 0.69,
+  "b_det": 0.0
  },
  {
   "slug": "OECD.STI.DEP__DF_IND",
@@ -397,7 +606,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Place of birth",
   "b": "Age at migration",
   "a_n": 3,
@@ -408,7 +617,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Income",
   "b": "Place of birth",
   "a_n": 7,
@@ -419,7 +628,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Income",
   "b": "Working time",
   "a_n": 7,
@@ -438,6 +647,39 @@
   "fill": 0.43,
   "a_det": 0.0,
   "b_det": 0.59
+ },
+ {
+  "slug": "OECD.WISE.INE__DF_IDD",
+  "flow": "Income inequality and poverty",
+  "a": "Measured as",
+  "b": "Poverty line",
+  "a_n": 9,
+  "b_n": 3,
+  "fill": 0.44,
+  "a_det": 0.78,
+  "b_det": 0.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Measured as",
+  "b": "Statistic",
+  "a_n": 3,
+  "b_n": 3,
+  "fill": 0.44,
+  "a_det": 0.67,
+  "b_det": 0.67
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Pay period",
+  "b": "Statistic",
+  "a_n": 3,
+  "b_n": 3,
+  "fill": 0.44,
+  "a_det": 0.67,
+  "b_det": 0.67
  },
  {
   "slug": "OECD.ELS.SPD__DF_IPOP",
@@ -463,7 +705,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Sex",
   "b": "Economic activity",
   "a_n": 3,
@@ -485,7 +727,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Indicator",
   "b": "Measured as",
   "a_n": 2,
@@ -493,6 +735,116 @@
   "fill": 0.5,
   "a_det": 0.5,
   "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_LMP",
+  "flow": "Labor market programme spending",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 2,
+  "b_n": 4,
+  "fill": 0.5,
+  "a_det": 0.0,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_PTRUB",
+  "flow": "What taking a job costs you",
+  "a": "Out of work for",
+  "b": "Benefit received",
+  "a_n": 10,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.5
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 2,
+  "b_n": 3,
+  "fill": 0.5,
+  "a_det": 0.5,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Indicator",
+  "b": "Pay period",
+  "a_n": 2,
+  "b_n": 3,
+  "fill": 0.5,
+  "a_det": 0.5,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Indicator",
+  "b": "Prices",
+  "a_n": 2,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Indicator",
+  "b": "Statistic",
+  "a_n": 2,
+  "b_n": 3,
+  "fill": 0.5,
+  "a_det": 0.5,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Measured as",
+  "b": "Prices",
+  "a_n": 3,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.5
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Pay period",
+  "b": "Prices",
+  "a_n": 3,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.5
+ },
+ {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Prices",
+  "b": "Statistic",
+  "a_n": 2,
+  "b_n": 3,
+  "fill": 0.5,
+  "a_det": 0.5,
+  "b_det": 1.0
+ },
+ {
+  "slug": "OECD.ELS.SPD__DF_PRR",
+  "flow": "Pension replacement rates",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 6,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.0
  },
  {
   "slug": "OECD.ELS.SPD__DF_PW",
@@ -506,8 +858,30 @@
   "b_det": 0.0
  },
  {
+  "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
+  "flow": "Public employment and representation",
+  "a": "Indicator",
+  "b": "Institutional sector",
+  "a_n": 6,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.5
+ },
+ {
+  "slug": "OECD.GOV.GIP__DF_GOV_EMPPS_REP_2025",
+  "flow": "Public employment and representation",
+  "a": "Measured as",
+  "b": "Institutional sector",
+  "a_n": 6,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.SDD.NAD__DF_TABLE5_T501",
-  "flow": "Annual household final consumption expenditure by purpose (COICOP)",
+  "flow": "Household consumption by purpose",
   "a": "Measured as",
   "b": "Prices",
   "a_n": 2,
@@ -518,7 +892,7 @@
  },
  {
   "slug": "OECD.SDD.NAD__DF_TABLE9A",
-  "flow": "Annual fixed assets by economic activity and by asset",
+  "flow": "Fixed assets by activity and asset",
   "a": "Measured as",
   "b": "Prices",
   "a_n": 2,
@@ -561,9 +935,20 @@
   "b_det": 0.5
  },
  {
+  "slug": "OII_OLI__DF_ONLINE_GIG",
+  "flow": "Online gig work",
+  "a": "Indicator",
+  "b": "Measured as",
+  "a_n": 2,
+  "b_n": 2,
+  "fill": 0.5,
+  "a_det": 1.0,
+  "b_det": 1.0
+ },
+ {
   "slug": "OECD.CTP.TPS__DF_TW_COMP",
   "flow": "Labor taxation",
-  "a": "Household type",
+  "a": "Household",
   "b": "Principal earner income",
   "a_n": 4,
   "b_n": 3,
@@ -583,8 +968,30 @@
   "b_det": 0.75
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Age",
+  "b": "Place of birth",
+  "a_n": 6,
+  "b_n": 4,
+  "fill": 0.5,
+  "a_det": 0.67,
+  "b_det": 0.0
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Age",
+  "b": "Age at migration",
+  "a_n": 6,
+  "b_n": 4,
+  "fill": 0.5,
+  "a_det": 0.67,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.SDD.TPS__DF_ALFS_EMP",
-  "flow": "Employment by activites and status (ALFS)",
+  "flow": "Employment by activity and status",
   "a": "Measured as",
   "b": "Worker status",
   "a_n": 3,
@@ -628,7 +1035,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Field of study",
   "b": "Indicator",
   "a_n": 23,
@@ -638,8 +1045,19 @@
   "b_det": 0.5
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Education status",
+  "b": "Labor force status",
+  "a_n": 5,
+  "b_n": 5,
+  "fill": 0.52,
+  "a_det": 0.6,
+  "b_det": 0.0
+ },
+ {
   "slug": "OECD.SDD.TPS__DF_ALFS_EMP",
-  "flow": "Employment by activites and status (ALFS)",
+  "flow": "Employment by activity and status",
   "a": "Worker status",
   "b": "Economic activity",
   "a_n": 4,
@@ -671,17 +1089,6 @@
   "b_det": 0.9
  },
  {
-  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
-  "flow": "Share of young adults who are not employment nor in formal education or training (NEET), by country of birth and age at migration",
-  "a": "Education status",
-  "b": "Labor force status",
-  "a_n": 3,
-  "b_n": 3,
-  "fill": 0.56,
-  "a_det": 0.67,
-  "b_det": 0.67
- },
- {
   "slug": "OECD.ELS.SAE__DF_TEMP_D",
   "flow": "Employment by permanency of the job",
   "a": "Indicator",
@@ -693,8 +1100,19 @@
   "b_det": 0.67
  },
  {
+  "slug": "OECD.ELS.SAE__RMW",
+  "flow": "Minimum wages",
+  "a": "Measured as",
+  "b": "Pay period",
+  "a_n": 3,
+  "b_n": 3,
+  "fill": 0.56,
+  "a_det": 0.33,
+  "b_det": 0.33
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Indicator",
   "b": "Income",
   "a_n": 2,
@@ -702,6 +1120,28 @@
   "fill": 0.57,
   "a_det": 0.5,
   "b_det": 0.86
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_PTRUB",
+  "flow": "What taking a job costs you",
+  "a": "Household",
+  "b": "Break down by cause",
+  "a_n": 4,
+  "b_n": 6,
+  "fill": 0.58,
+  "a_det": 0.5,
+  "b_det": 0.0
+ },
+ {
+  "slug": "ESTAT__DF_INWORK_POV",
+  "flow": "In-work poverty",
+  "a": "Who",
+  "b": "Sex",
+  "a_n": 29,
+  "b_n": 3,
+  "fill": 0.59,
+  "a_det": 0.62,
+  "b_det": 0.0
  },
  {
   "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
@@ -716,7 +1156,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Indicator",
   "b": "Worker status",
   "a_n": 5,
@@ -727,7 +1167,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Measured as",
   "b": "Worker status",
   "a_n": 5,
@@ -738,7 +1178,7 @@
  },
  {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Worker status",
   "b": "Economic activity",
   "a_n": 2,
@@ -748,8 +1188,19 @@
   "b_det": 0.8
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Age at migration",
+  "b": "Education status",
+  "a_n": 4,
+  "b_n": 5,
+  "fill": 0.6,
+  "a_det": 0.0,
+  "b_det": 0.4
+ },
+ {
   "slug": "OECD.SDD.TPS__DF_SUMTAB",
-  "flow": "Annual labor force survey",
+  "flow": "Labor force survey summary",
   "a": "Measured as",
   "b": "Economic activity",
   "a_n": 5,
@@ -760,7 +1211,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Indicator",
   "b": "Age at migration",
   "a_n": 2,
@@ -771,7 +1222,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Age",
   "b": "Field of study",
   "a_n": 5,
@@ -782,7 +1233,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Measured as",
   "b": "Working time",
   "a_n": 7,
@@ -792,8 +1243,19 @@
   "b_det": 0.33
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Place of birth",
+  "b": "Education status",
+  "a_n": 4,
+  "b_n": 5,
+  "fill": 0.65,
+  "a_det": 0.0,
+  "b_det": 0.4
+ },
+ {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Indicator",
   "b": "Place of birth",
   "a_n": 2,
@@ -804,7 +1266,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Indicator",
   "b": "Working time",
   "a_n": 2,
@@ -825,8 +1287,30 @@
   "b_det": 0.67
  },
  {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Place of birth",
+  "b": "Labor force status",
+  "a_n": 4,
+  "b_n": 5,
+  "fill": 0.7,
+  "a_det": 0.0,
+  "b_det": 0.4
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "a": "Age at migration",
+  "b": "Labor force status",
+  "a_n": 4,
+  "b_n": 5,
+  "fill": 0.7,
+  "a_det": 0.0,
+  "b_det": 0.4
+ },
+ {
   "slug": "OECD.SDD.NAD__DF_TABLE2",
-  "flow": "Annual national disposable income, saving and net lending/net borrowing",
+  "flow": "National disposable income and saving",
   "a": "Measured as",
   "b": "Prices",
   "a_n": 4,
@@ -848,7 +1332,7 @@
  },
  {
   "slug": "OECD.EDU.IMEP__DF_LSO_EARN_ALL",
-  "flow": "Education and earnings (EARNINGS) (full dataset)",
+  "flow": "Education and earnings",
   "a": "Sex",
   "b": "Measured as",
   "a_n": 4,
@@ -859,7 +1343,7 @@
  },
  {
   "slug": "OECD.SDD.NAD__DF_TABLE2",
-  "flow": "Annual national disposable income, saving and net lending/net borrowing",
+  "flow": "National disposable income and saving",
   "a": "Transaction",
   "b": "Measured as",
   "a_n": 24,

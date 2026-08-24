@@ -30,10 +30,6 @@ if ai is not None:
     agg["name"] = "Ratio"
     agg["names"] = [LBL.get(c, n) for c, n in zip(agg["ids"], agg["names"])]
 
-m.setdefault("source_notes", []).append(
-    "OECD ships the unit of measure as 'Factor of decile 1' or 'Factor of decile 5', "
-    "which only restates the denominator of the ratio already named in the Ratio "
-    "control. It carried no further information and has been collapsed to one value.")
 mp.write_text(json.dumps(m, separators=(",", ":")))
 (d/"all.json.gz").write_bytes(gzip.compress(json.dumps(recs, separators=(",", ":")).encode(), 6))
 print("units collapsed; ratio relabelled:", m["dims"][ai]["names"] if ai is not None else "-")
