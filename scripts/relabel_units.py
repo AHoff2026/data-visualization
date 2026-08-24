@@ -30,6 +30,22 @@ CONCRETE = {
     # two distinct activity totals that a generic rename collapsed into one
     "OECD.SDD.TPS__DF_ALFS_EMP":     {"ACTIVITY": {"ATU": "All activities (ISIC)",
                                                    "_T": "All activities"}},
+    # "Central" is a continuous summary index, not one of the coded ordinal
+    # scales, so it carries no value key and the generic "ordinal code" label
+    # misdescribed it.
+    "OECD_AIAS__ICTWSS":             {"UNIT_MEASURE": {
+        "SCALE": "Ordinal code, see the key below the chart"}},
+    # These categories nest: "Public" is contained in "Public plus mandatory
+    # private". Read side by side under OECD's own wording the smaller figure looks
+    # like an error, so the labels say which contain which.
+    "OECD.ELS.SPD__DF_SOCX_AGG":     {"EXPEND_SOURCE": {
+        "ES10":    "Public only",
+        "ES20":    "Mandatory private only",
+        "ES30":    "Voluntary private only",
+        "ES10_20": "Public plus mandatory private",
+        "ES20_30": "Mandatory plus voluntary private",
+        "ES40":    "Public, net of tax paid back",
+        "ES50":    "Total, net of tax (public and private)"}},
     # verified against Germany's published rates: these are levels, not growth
     "OECD.SDD.TPS__DF_SUMTAB":       {"TRANSFORMATION": {"G1": "Level"}},
 }

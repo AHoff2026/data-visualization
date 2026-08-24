@@ -24,25 +24,52 @@ ROOT = pathlib.Path.home()/"Documents/data-visualization"
 SITE = ROOT/"site/data"
 SLUG = "OWID__LABOR_SHARE"
 
+# The old single dial forced five near-identical strings ("Labor share of GDP,
+# self-employment adjusted by hours") into one list. The three questions behind
+# them are separate, so they get separate dials: what is being measured, whose
+# labor counts, and what it is measured against.
 MEASURES = [
-    # "All workers" counts the self-employed as labor; "employees only" is the raw
-    # national accounts number, which books self-employed earnings as profit.
-    ("LS_ADJ_HRS_FC",  "Labor share of factor income (all workers, by hours)", "PT_FC"),
-    ("LS_FC",       "Labor share of factor income (employees only)", "PT_FC"),
-    ("LS_ADJ_HRS_GDP", "Labor share of GDP (all workers, by hours)", "PT_GDP"),
-    ("LS_GDP",      "Labor share of GDP (employees only)", "PT_GDP"),
-    ("LS_ADJ_PER_FC",  "Labor share of factor income (all workers, by headcount)", "PT_FC"),
-    ("CAP_FC",      "Capital and mixed income share of factor income", "PT_FC"),
-    ("TAX_GDP",     "Taxes less subsidies on production, share of GDP", "PT_GDP"),
-    ("SELF_HRS",    "Self-employed share of hours worked", "PT_HRS"),
-    ("LS_ILO",      "Labor share of GDP (ILO, SDG 10.4.1)", "PT_GDP"),
-    # within a slice of the distribution
-    ("LS_Q_ALL",    "Labor share within income fifth (all workers)", "PT_GRP"),
-    ("LS_Q_EMP",    "Labor share within income fifth (employees only)", "PT_GRP"),
-    ("PROP_Q",      "Property income share within income fifth", "PT_GRP"),
-    ("LS_WID",      "Labor share within percentile group (United States)", "PT_GRP"),
-    ("INC_SHARE",   "Group's share of national income", "PT_NI"),
+    ("LS",     "Labor share"),
+    ("CAP",    "Capital and mixed income share"),
+    ("PROP",   "Property income share"),
+    ("TAX",    "Taxes less subsidies on production"),
+    ("SELF",   "Self-employed share of hours worked"),
+    ("INCSH",  "Share of all national income"),
 ]
+BASIS = [
+    ("EMP",   "Employees only"),
+    ("HRS",   "All workers, imputed by hours"),
+    ("PER",   "All workers, imputed by headcount"),
+    ("ALLW",  "All workers, mixed income counted directly"),
+    ("ILO",   "As published by the ILO"),
+    ("_Z",    "Not applicable"),
+]
+DENOM = [
+    ("GDP",  "GDP at market prices"),
+    ("FC",   "Factor income (labor plus capital)"),
+    ("PRIM", "The group's own primary income"),
+    ("PTI",  "The group's own pre-tax income"),
+    ("NI",   "National income"),
+    ("HRST", "Total hours worked"),
+]
+# old measure code -> (indicator, whose labor, measured against, unit)
+MAP = {
+    "LS_GDP":         ("LS",    "EMP",  "GDP",  "PT_GDP"),
+    "LS_FC":          ("LS",    "EMP",  "FC",   "PT_FC"),
+    "LS_ADJ_HRS_GDP": ("LS",    "HRS",  "GDP",  "PT_GDP"),
+    "LS_ADJ_HRS_FC":  ("LS",    "HRS",  "FC",   "PT_FC"),
+    "LS_ADJ_PER_FC":  ("LS",    "PER",  "FC",   "PT_FC"),
+    "CAP_FC":         ("CAP",   "_Z",   "FC",   "PT_FC"),
+    "TAX_GDP":        ("TAX",   "_Z",   "GDP",  "PT_GDP"),
+    "SELF_HRS":       ("SELF",  "_Z",   "HRST", "PT_HRS"),
+    "LS_ILO":         ("LS",    "ILO",  "GDP",  "PT_GDP"),
+    "LS_Q_ALL":       ("LS",    "ALLW", "PRIM", "PT_GRP"),
+    "LS_Q_EMP":       ("LS",    "EMP",  "PRIM", "PT_GRP"),
+    "PROP_Q":         ("PROP",  "_Z",   "PRIM", "PT_GRP"),
+    "LS_WID":         ("LS",    "ALLW", "PTI",  "PT_GRP"),
+    "INCSH_WID":      ("INCSH", "_Z",   "NI",   "PT_NI"),
+    "INC_SHARE":      ("INCSH", "_Z",   "NI",   "PT_NI"),
+}
 UNITS = [
     ("PT_GDP", "Percentage of GDP at market prices"),
     ("PT_FC",  "Percentage of factor income"),
@@ -140,16 +167,26 @@ for (a, y), e in EMP.items():
     tot, slf = e.get(("EMP", "H")), e.get(("SELF", "H"))
     if tot and slf and tot > 0: put(a, "SELF_HRS", "_T", y, slf/tot*100)
 
-# ---- ILO SDG 10.4.1, carried over from the existing payload -------------
-old = SITE/"flows"/SLUG
-if (old/"meta.json").exists():
-    om = json.loads((old/"meta.json").read_text())
-    orecs = json.loads(gzip.decompress((old/"all.json.gz").read_bytes()))
-    oa = om["dims"][0]["ids"]; onm = om["dims"][0]["names"]; op = om["periods"]
-    for a, n in zip(oa, onm): names.setdefault(a, n)
-    for r in orecs:
-        a = oa[r["k"][0]]
-        for t, v in zip(r["t"], r["v"]): put(a, "LS_ILO", "_T", op[t], v)
+# ---- ILO SDG 10.4.1, straight from ILOSTAT ------------------------------
+# This used to be carried over from the previous build of this same file, which
+# was correct exactly once: as soon as the dataset gained other measures, that
+# read swallowed all of them and flattened them onto one key, splicing unrelated
+# indicators into a single line. It now comes from the source every time.
+ILO_URL = "https://sdmx.ilo.org/rest/data/ILO,DF_SDG_1041_NOC_RT,1.0/all?format=csv"
+ilo_f = ROOT/"data/raw/ilo_labour_share.csv"
+if not ilo_f.exists():
+    ilo_f.parent.mkdir(parents=True, exist_ok=True)
+    print("  fetching ILO SDG 10.4.1 ...")
+    req = urllib.request.Request(ILO_URL, headers={"User-Agent": "ForestAndTheTrees/1.0"})
+    with urllib.request.urlopen(req, timeout=900) as r: ilo_f.write_bytes(r.read())
+n_ilo = 0
+for r in csv.DictReader(open(ilo_f)):
+    a3, y, v = r.get("REF_AREA"), r.get("TIME_PERIOD"), r.get("OBS_VALUE")
+    if not (a3 and y and v) or len(a3) != 3: continue
+    try: val = float(v)
+    except ValueError: continue
+    put(a3, "LS_ILO", "_T", y, val); n_ilo += 1
+print(f"  ILO labour share: {n_ilo:,} observations")
 
 # ---- OECD distributional national accounts: by income fifth -------------
 # Household income broken down by quintile of the distribution, which lets the
@@ -213,16 +250,21 @@ areas = sorted({a for a, _, _ in rec})
 periods = sorted({y for s in rec.values() for y in s}, key=int)
 ai = {a: i for i, a in enumerate(areas)}
 mi = {m[0]: i for i, m in enumerate(MEASURES)}
+bi = {b[0]: i for i, b in enumerate(BASIS)}
+ni = {d[0]: i for i, d in enumerate(DENOM)}
 gi = {g[0]: i for i, g in enumerate(GROUPS)}
 ui = {u[0]: i for i, u in enumerate(UNITS)}
-mu = {m[0]: m[2] for m in MEASURES}
 pi = {y: i for i, y in enumerate(periods)}
 
 payload = []
+missing = set()
 for (a, m, g), s in rec.items():
+    if m not in MAP: missing.add(m); continue
+    ind, bas, den, unit = MAP[m]
     ys = sorted(s, key=int)
-    payload.append({"k": [ai[a], mi[m], gi[g], ui[mu[m]]],
+    payload.append({"k": [ai[a], mi[ind], bi[bas], ni[den], gi[g], ui[unit]],
                     "t": [pi[y] for y in ys], "v": [round(s[y], 4) for y in ys]})
+if missing: raise SystemExit(f"unmapped measures: {sorted(missing)}")
 
 meta = {
     "slug": SLUG, "id": "DF_LABOR_SHARE", "agency": "OECD / ILO / WID", "version": "2.0",
@@ -230,31 +272,28 @@ meta = {
     "description": "",
     "desc_html": (
       "The share of what a country produces that goes to labor rather than to profit "
-      "and rent. The headline version of this number is wrong in two directions, and "
-      "both corrections are separate dials here so you can see which one does the "
-      "work.<br>"
-      "<b>Employees only, or all workers.</b> The raw figure counts compensation of "
-      "employees, meaning people on a payroll. A self-employed builder's earnings are "
-      "not in it: the accounts file those under mixed income, alongside profit. So the "
-      "raw number is not labor's share, it is employees' share, and it understates labor "
-      "wherever many people work for themselves -- in Greece nearly a third of all hours "
-      "worked. The <i>all workers</i> measures put them back by crediting the "
-      "self-employed with what an employee earns per hour.<br>"
-      "<b>GDP, or factor income.</b> Taxes on production sit inside GDP. A country "
-      "levying 25 per cent VAT records a larger GDP for the same underlying production, "
-      "so its labor share is mechanically smaller. Factor income -- what labor and "
-      "capital actually receive -- removes that wedge. Against GDP, Sweden's labor share "
-      "is five points below the United States. Against factor income it is four points "
-      "above. Nothing about either economy changed, only the denominator.<br>"
-      "<b>Where in the distribution.</b> Labor share falls as income rises, everywhere it "
-      "can be measured. Choose an income fifth to see it inside one slice of the "
-      "distribution: the poorest fifth of Canadians take 97 per cent of their income as "
-      "labor, the richest fifth 77 per cent. For the United States the split is available "
-      "by percentile back to 1913, and it is sharper still -- the bottom half take "
-      "essentially all their income as labor, the top one per cent under half. Aggregate "
-      "labor share and inequality are not separate subjects.<br>"
-      "Sources: OECD Annual National Accounts, OECD Distributional National Accounts, the "
-      "ILO SDG indicator series, and the "
+      "and rent. Three separate choices decide the answer, and each has its own dial.<br>"
+      "<b>Whose labor counts.</b> The raw national accounts figure counts only "
+      "compensation of employees, so a self-employed builder's earnings sit under mixed "
+      "income next to profit. That is not labor's share, it is employees' share, and it "
+      "understates labor wherever self-employment is common: in Greece nearly a third of "
+      "all hours worked are self-employed. The adjusted options credit the self-employed "
+      "with what an employee earns, per hour or per person. Hours is the better basis; "
+      "headcount is there so the assumption can be checked.<br>"
+      "<b>What it is measured against.</b> Production taxes sit in GDP. A country levying "
+      "25 per cent VAT records a larger GDP for the same underlying production, so its "
+      "labor share is mechanically smaller. Measured against factor income, which is what "
+      "labor and capital actually receive, Sweden's labor share moves from four points "
+      "below the United States to four points above. Nothing about either economy "
+      "changed.<br>"
+      "<b>Whose income.</b> Set an income group and the question becomes how much of that "
+      "group's own income is labor income. It collapses at the top: in the United States "
+      "the bottom half take essentially all their income as labor, the top one per cent "
+      "under half. Aggregate labor share and inequality are not separate subjects. OECD "
+      "publishes this by fifths for seventeen countries; WID publishes it by percentile, "
+      "back to 1913, for the United States alone.<br>"
+      "Sources: OECD Annual National Accounts and Distributional National Accounts, the "
+      "ILO via the SDG indicator series, and the "
       "<a href=\"https://wid.world/\" target=\"_blank\" rel=\"noopener noreferrer\">World "
       "Inequality Database</a>."),
     "desc_text": "Labor share of income on several denominators, with and without an "
@@ -266,6 +305,10 @@ meta = {
          "names": [names.get(a, a) for a in areas]},
         {"id": "MEASURE", "name": "Indicator", "ids": [m[0] for m in MEASURES],
          "names": [m[1] for m in MEASURES], "default": 0},
+        {"id": "LABOR_BASIS", "name": "Whose labor counts", "ids": [b[0] for b in BASIS],
+         "names": [b[1] for b in BASIS], "default": 1},
+        {"id": "DENOMINATOR", "name": "Measured against", "ids": [d[0] for d in DENOM],
+         "names": [d[1] for d in DENOM], "default": 1},
         {"id": "INCOME_GROUP", "name": "Income group", "ids": [g[0] for g in GROUPS],
          "names": [g[1] for g in GROUPS], "default": 0},
         {"id": "UNIT_MEASURE", "name": "Measured as", "ids": [u[0] for u in UNITS],
@@ -311,7 +354,10 @@ d.mkdir(parents=True, exist_ok=True)
 (d/"meta.json").write_text(json.dumps(meta, separators=(",", ":")))
 print(f'{len(payload)} series, {meta["n_obs"]:,} observations, {len(areas)} countries, '
       f'{periods[0]}-{periods[-1]}')
-by = collections.Counter(m for _, m, _ in rec)
-for m, n, _ in MEASURES:
-    cs = len({a for a, mm, _ in rec if mm == m})
-    print(f'  {m:16} {cs:>4} countries  {n[:56]}')
+seen = collections.Counter()
+for (a, m, g) in rec:
+    if m in MAP: seen[MAP[m][:3]] += 1
+NB = dict(BASIS); ND = dict(DENOM); NM = dict(MEASURES)
+for (ind, bas, den), n in sorted(seen.items(), key=lambda kv: -kv[1]):
+    lbl = NM[ind] + (f'  |  {NB[bas]}' if bas != "_Z" else "")
+    print(f'  {lbl[:52]:54} against {ND[den][:34]:36} {n:>5} series')

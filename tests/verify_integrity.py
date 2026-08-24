@@ -16,9 +16,20 @@ fails = []
 for s in slugs:
     if not (SITE/"data/flows"/s/"meta.json").exists():
         fails.append(f"catalog lists {s} but there is no payload")
+# Retired datasets are deliberately on disk and off the rail: the data is kept so
+# the decision can be reversed, but it is not offered to a reader.
+RETIRED = set()
+_ed = pathlib.Path(__file__).resolve().parent.parent/"scripts/apply_editorial.py"
+if _ed.exists():
+    import ast
+    for node in ast.walk(ast.parse(_ed.read_text())):
+        if (isinstance(node, ast.Assign) and node.targets
+                and getattr(node.targets[0], "id", "") == "RETIRED"):
+            RETIRED = set(ast.literal_eval(node.value))
 for d in (SITE/"data/flows").iterdir():
-    if d.is_dir() and d.name not in slugs:
+    if d.is_dir() and d.name not in slugs and d.name not in RETIRED:
         fails.append(f"payload {d.name} is on disk but not in the catalog")
+print(f"retired but kept on disk: {len(RETIRED)}")
 
 # home-page cards
 for m in re.finditer(r'slug: "([^"]+)"', (SITE/"js/featured.js").read_text()):

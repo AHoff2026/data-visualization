@@ -47,6 +47,15 @@ RETIRED = {
     "OECD.SDD.TPS__DF_ALFS_EMP_ICSE93", "OECD.ELS.SPD__DF_PUB_FAM",
     "OECD.ELS.SPD__DF_PUB_DIS_SIC", "OECD.ELS.SPD__DF_PUB_PRV",
     "OECD.ELS.SAE__DF_FTPT",
+    # Kept on disk, taken off the rail: capital stock by 125 NACE activities,
+    # household ICT adoption, COICOP consumption and the national-accounts
+    # income aggregate are not about work, pay or institutions. Nothing is
+    # deleted; removing them from RETIRED brings them straight back.
+    "OECD.SDD.NAD__DF_TABLE9A",        # Fixed assets by activity and asset
+    "OECD.STI.DEP__DF_IND",            # ICT access and usage, individuals
+    "OECD.STI.DEP__DF_HH",             # ICT access and usage, households
+    "OECD.SDD.NAD__DF_TABLE5_T501",    # Household consumption by purpose
+    "OECD.SDD.NAD__DF_TABLE2",         # National disposable income and saving
 }
 
 # ---------------------------------------------------------------------------
@@ -128,6 +137,34 @@ TOPIC_OF = {
     "OECD.STI.DEP__DF_HH": "DIGI", "OECD.STI.DEP__DF_IND": "DIGI",
 }
 
+# Where the "source" link should point. Always the body that produced the numbers,
+# never an aggregator that republished them: Our World in Data and the like do
+# real harmonisation work and are credited in the notes, but a reader following
+# the source link wants the people who measured the thing.
+SOURCE_URL = {
+    "VDEM__CIVIL_SOCIETY": "https://v-dem.net/data/the-v-dem-dataset/",
+    "WID_LIS__DF_CONCENTRATION": "https://wid.world/data/",
+    "OWID__LABOR_RIGHTS": "https://ilostat.ilo.org/topics/union-and-labour-rights/",
+    "OWID__SOCIAL_SPENDING_LONGRUN":
+        "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+    "OWID__WORKING_HOURS_LONGRUN": "https://www.rug.nl/ggdc/productivity/pwt/",
+    "OWID__LABOR_SHARE":
+        "https://www.oecd.org/en/data/datasets/gdp-and-non-financial-accounts.html",
+    "EPI__DF_US_PAY_POWER": "https://data.epi.org/",
+    "OII_OLI__DF_ONLINE_GIG": "https://onlinelabourobservatory.org/",
+    "ILO__STRIKES": "https://ilostat.ilo.org/data/",
+}
+
+# Opening view for datasets whose natural default is wrong. Education and
+# earnings paired the reference attainment level with the unit that measures
+# against that same level, so the first chart was six flat lines at exactly 100.
+DEFAULT_PICKS = {
+    "OECD.EDU.IMEP__DF_LSO_EARN_ALL": {
+        "ATTAINMENT_LEV": "ISCED11A_5T8",          # tertiary
+        "UNIT_MEASURE": "PT_EARN_WR_ISCED11A_3",   # against upper secondary
+    },
+}
+
 RENAME = {
     "OECD.WISE.INE__DF_IDD": "Income inequality and poverty",
     "OECD.ELS.JAI__DF_EPL": "Employment protection strictness",
@@ -171,8 +208,18 @@ for slug in on_disk:
     if m.get("coverage"): f["sample_missing"] = m["coverage"].get("sample_missing", [])
     f["topic"] = TOPIC_OF.get(slug, "ECON")
     # the dataset page reads its own metadata, so topic and title live there too
-    if m.get("topic") != f["topic"] or m.get("name") != f["name"]:
+    picks = DEFAULT_PICKS.get(slug)
+    if picks:
+        for d in m["dims"]:
+            if d["id"] in picks and picks[d["id"]] in d["ids"]:
+                d["default"] = d["ids"].index(picks[d["id"]])
+        b = m.get("default_bundle")
+        if b and "picks" in b: b["picks"].update(picks)
+    url = SOURCE_URL.get(slug)
+    if (picks or m.get("topic") != f["topic"] or m.get("name") != f["name"]
+            or (url and m.get("source_url") != url)):
         m["topic"] = f["topic"]; m["name"] = f["name"]
+        if url: m["source_url"] = f["source_url"] = url
         (SITE/"flows"/slug/"meta.json").write_text(json.dumps(m, separators=(",", ":")))
     flows.append(f)
 cat["flows"] = flows

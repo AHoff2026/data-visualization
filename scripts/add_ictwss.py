@@ -23,6 +23,17 @@ CODEBOOK = ("https://www.oecd.org/content/dam/oecd/en/data/datasets/"
 # variables that are genuine percentages rather than ordinal codes
 PCT = re.compile(r"density|coverage|rate|share|proportion|percentage", re.I)
 COUNTS = re.compile(r"number of|members", re.I)
+# The regex reads the codebook prose, and the prose misleads in three ways: an
+# ordinal whose definition mentions "coverage" is not a percentage, a count of
+# organisations is not a count of people, and ICTWSS reports its headcounts in
+# thousands. Stated explicitly rather than inferred.
+UNIT_FIX = {
+    "Level": "SCALE", "MW_type": "SCALE", "UWRep": "SCALE", "Length": "MONTHS",
+    "NECFs": "ORGS", "NECFs_private": "ORGS", "NUCFs": "ORGS", "NTUs": "ORGS",
+    "NCBs": "DOCS", "NCBs_new": "DOCS",
+    "TUM": "THS", "NUM": "THS", "SAL": "THS", "SAL_female": "THS",
+    "SAL_public": "THS", "Cov": "THS", "TUM_excl": "PT",
+}
 
 def get(url, timeout=600):
     req = urllib.request.Request(url, headers={"User-Agent": "ForestAndTheTrees/1.0"})
@@ -85,8 +96,24 @@ def main():
     rows = list(csv.DictReader(io.StringIO(get(CSV_URL).decode("utf-8", "replace"))))
     codes = [c for c in rows[0] if c not in ("country", "iso3", "year")]
     defs, scales = definitions(codes)
-    print(f"variables in source: {len(codes)}   defined in codebook: {len(defs)}"
-          f"   with a value key: {len(scales)}")
+    # A variable whose codebook entry did not parse was being dropped entirely.
+    # That silently removed the spliced historical coverage series: Germany's
+    # adjusted bargaining coverage ended in 1990 at 85 per cent when the source
+    # carries it to 2024 at 49. Where a variant sits on a base that IS defined,
+    # inherit the base definition and say which variant it is.
+    VARIANT = {"_hist": "historical series, spliced across definition changes",
+               "_s": "survey-based"}
+    added = 0
+    for c in codes:
+        if c in defs: continue
+        for suf, note in VARIANT.items():
+            if c.endswith(suf) and c[:-len(suf)] in defs:
+                defs[c] = defs[c[:-len(suf)]]
+                if c[:-len(suf)] in scales: scales[c] = scales[c[:-len(suf)]]
+                added += 1
+                break
+    print(f"variables in source: {len(codes)}   defined in codebook: {len(defs)-added}"
+          f"   variants recovered: {added}   with a value key: {len(scales)}")
 
     names, records, used = {}, {}, {}
     for r in rows:
@@ -104,7 +131,10 @@ def main():
             # ICTWSS marks absent information with negative sentinels: -88 is
             # "not applicable", -99 "no information". They are not measurements.
             if val <= -80: continue
-            unit = "PT" if PCT.search(defs[c]) else ("PS" if COUNTS.search(defs[c]) else "SCALE")
+            base = c[:-5] if c.endswith("_hist") else (c[:-2] if c.endswith("_s") else c)
+            unit = UNIT_FIX.get(c) or UNIT_FIX.get(base) or (
+                "PT" if PCT.search(defs[c]) else
+                ("PS" if COUNTS.search(defs[c]) else "SCALE"))
             used[c] = unit
             records.setdefault((iso, c, unit), {})[year] = val
 
@@ -134,6 +164,8 @@ def main():
         if l in seen: measures[i] = (c, f"{l} [{c}]")
         seen[l] = c
     unit_lbl = {"PT": "Percentage", "PS": "Number of people",
+                "THS": "Thousands of people", "ORGS": "Number of organizations",
+                "DOCS": "Number of agreements", "MONTHS": "Months",
                 "SCALE": "Ordinal code defined by the source"}
     units = sorted({used[c] for c in used})
     area_ids = sorted(names)
