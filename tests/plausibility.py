@@ -12,8 +12,26 @@ import json, gzip, pathlib, collections, math, sys
 
 FLOWS = pathlib.Path.home()/"Documents/data-visualization/site/data/flows"
 TOTAL_CODES = {"_T", "T", "TOTAL", "_Z"}
+# Units that are rates within a subgroup. Their "Total" is a weighted average, so a
+# subgroup exceeding it is arithmetic, not error: the male employment rate is above
+# the overall rate in every country on earth. Established by audit, 2026-08-24.
+RATE_UNITS = {"PT_EMP_D", "PT_POP_SUB", "PT_UNE_D", "PT_EMP_SEX_AGE", "PT_POP",
+              "PT_LF_SUB", "PC", "PT_EMP", "PT_B1GQ_SUB"}
+RATE_WORDS = ("same population group", "in the same", "of the same", "of that group",
+              "percentage of people", "rate")
+# Relative-to-reference units: the reference group is 100 and a value above it means
+# "earns more than the reference", which is the whole point of the measure. Not a
+# bounded share, and its "Total" is a reference point rather than a ceiling.
+REFERENCE_UNITS = ("PT_EARN_WR", "IX", "PT_EARN_REL")
+# Indicators that are legitimately below one; the ratio rule must not flag them.
+SUB_ONE_OK = {"PAL_INC_DISP", "PALMA", "ATKINSON", "GINI_PRETAX", "GINI_DHI",
+              "GINI_WB", "GINI_LONGRUN"}
+# Scores of law rather than measurements: they are meant to sit still for years.
+STATIC_OK = {"OECD.ELS.JAI__DF_EPL", "OECD.ELS.JAI__DF_SBE", "OECD_AIAS__ICTWSS",
+             "OECD.ELS.SPD__DF_DPS"}
 # units whose values are bounded shares
-PCT = lambda u: u.startswith("PT") or u in {"PC", "PT_POP", "PT_B1GQ"}
+PCT = lambda u: ((u.startswith("PT") or u in {"PC", "PT_POP", "PT_B1GQ"})
+                 and not u.startswith(REFERENCE_UNITS))
 
 def load(d, m):
     if m["layout"] == "single":
@@ -37,6 +55,8 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
     D = {x["id"]: x for x in meta["dims"]}
     P = meta["periods"]
     ui = ids.index("UNIT_MEASURE") if "UNIT_MEASURE" in ids else None
+    mi = next((i for i, x in enumerate(meta["dims"])
+               if x["id"] in ("MEASURE", "ITEM", "INDICATOR")), None)
 
     # ---- R1 share out of range, R6 impossible year-on-year move, R5 frozen series
     n_out = n_jump = n_flat = 0
@@ -61,7 +81,8 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
                    f"{n_out} values, e.g. {ex_out[0]}: {ex_out[1]:.2f}", "high")
     if n_jump: flag("moves >60 points in one year", slug, nm,
                     f"{n_jump} steps, e.g. {ex_jump[0]}:{ex_jump[1]:.1f} -> {ex_jump[2]}:{ex_jump[3]:.1f}")
-    if n_flat: flag("identical value for 12+ periods", slug, nm, f"{n_flat} series")
+    if n_flat and slug not in STATIC_OK:
+        flag("identical value for 12+ periods", slug, nm, f"{n_flat} series")
 
     # ---- R2 a breakdown category exceeding its own total
     for i, d in enumerate(meta["dims"]):
@@ -72,7 +93,9 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         buckets = collections.defaultdict(dict)
         for r in recs:
             unit = D["UNIT_MEASURE"]["ids"][r["k"][ui]] if ui is not None else ""
+            uname = (D["UNIT_MEASURE"]["names"][r["k"][ui]] if ui is not None else "").lower()
             if not PCT(unit): continue
+            if unit in RATE_UNITS or any(w in uname for w in RATE_WORDS): continue
             key = tuple(v for j, v in enumerate(r["k"]) if j != i)
             for t, v in zip(r["t"], r["v"]): buckets[(key, t)][r["k"][i]] = v
         bad = 0; ex = None
@@ -93,9 +116,13 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
     if ui is not None:
         for r in recs:
             unit = D["UNIT_MEASURE"]["ids"][r["k"][ui]]
-            if unit in ("RATIO", "FCTR") and any(v < 1 for v in r["v"]):
-                flag("decile ratio below 1", slug, nm,
-                     f"min {min(r['v']):.3f}", "high"); break
+            if unit not in ("RATIO", "FCTR"): continue
+            mcode = D[ids[mi]]["ids"][r["k"][mi]] if mi is not None else ""
+            if mcode in SUB_ONE_OK: continue
+            bad = [v for v in r["v"] if v < 1]
+            if bad:
+                flag("ratio below 1", slug, nm,
+                     f'{mcode}: {len(bad)} values, min {min(bad):.3f}', "high")
 
 print(f"{len(findings)} flags\n")
 by = collections.Counter(f["rule"] for f in findings)

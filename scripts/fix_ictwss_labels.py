@@ -98,6 +98,20 @@ def short(text, cap=64):
     if len(t) <= cap: return t.rstrip(" .")
     return t[:cap].rsplit(" ", 1)[0].rstrip(" ,;:")
 
+# The codebook runs some scale keys together, so one code's gloss is swallowed
+# into the previous entry and the code itself never gets one. Repaired by hand
+# against the published ICTWSS codebook.
+VALUE_KEY_FIX = {
+    "UWRep": {
+        "0": "no, or only exceptionally",
+        "1": "yes, but only where unions are recognised and have negotiated an agreement",
+    },
+    "Coord": {
+        "4": "wage norms set by one-off central agreements, or by pattern bargaining "
+             "with a dominant leader",
+    },
+}
+
 def main():
     paths = [p for p in glob.glob(str(FLOWS/"*/meta.json"))
              if "ICTWSS" in json.loads(open(p).read()).get("name", "")]
@@ -136,6 +150,11 @@ def main():
         if n in seen: names[i] = f"{n} [{codes[i]}]"
         seen[n] = codes[i]
 
+    vd = dim.get("value_defs") or {}
+    for code, fixes in VALUE_KEY_FIX.items():
+        if code in vd:
+            vd[code].update(fixes)
+    dim["value_defs"] = vd
     dim["names"] = names; dim["code_defs"] = cd
     mp.write_text(json.dumps(meta, separators=(",", ":")))
     ln = [len(n) for n in names]
