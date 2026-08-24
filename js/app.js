@@ -1,10 +1,10 @@
 // ---------- router + pages ----------
-import { el, clear, $, $$, debounce, slugify } from "./util.js?v=e6c01108";
-import { getCatalog } from "./store.js?v=e6c01108";
-import { renderExplorer, topicLabel } from "./explorer.js?v=e6c01108";
-import { renderFeatured } from "./featured.js?v=e6c01108";
+import { el, clear, $, $$, debounce, slugify } from "./util.js?v=4eb29c95";
+import { getCatalog } from "./store.js?v=4eb29c95";
+import { renderExplorer, topicLabel } from "./explorer.js?v=4eb29c95";
+import { renderFeatured } from "./featured.js?v=4eb29c95";
 import { setEditing, isEditing, editCount, exportEdits, resetScope, editable, textOf, loadBaked }
-  from "./edits.js?v=e6c01108";
+  from "./edits.js?v=4eb29c95";
 
 let CAT = null;
 const main = () => document.getElementById("main");

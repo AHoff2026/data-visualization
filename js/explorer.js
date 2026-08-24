@@ -1,10 +1,10 @@
 // ---------- dataset explorer: data-aware controls + chart/table views ----------
-import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=e6c01108";
-import { getFlowMeta, getSeries } from "./store.js?v=e6c01108";
-import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=e6c01108";
-import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=e6c01108";
-import { dataTable } from "./table.js?v=e6c01108";
-import { editable, textOf } from "./edits.js?v=e6c01108";
+import { el, clear, fmtNum, periodToNum, debounce } from "./util.js?v=4eb29c95";
+import { getFlowMeta, getSeries } from "./store.js?v=4eb29c95";
+import { desiredPicks, seedPicks as sharedSeed } from "./series.js?v=4eb29c95";
+import { lineChart, smallMultiples, slotVar, SERIES_SLOTS, autosize, barChart } from "./chart.js?v=4eb29c95";
+import { dataTable } from "./table.js?v=4eb29c95";
+import { editable, textOf } from "./edits.js?v=4eb29c95";
 
 const TOTALISH = ["_T", "_Z", "TOT", "T"];
 
@@ -633,13 +633,21 @@ export async function renderExplorer(host, slug, catalog) {
       const order = d.ids.map((_, j) => j)
         .sort((x, y) => (resid.has(x) - resid.has(y))
           || (d.names[x] || "").localeCompare(d.names[y] || ""));
-      order.forEach((j) => {
-        const code = d.ids[j];
-        const ok = has.has(j);
-        sel.appendChild(el("option", { value: j, selected: j === ui.picks[i] },
-          (d.names[j] || code) +
-          (everSeen[i].has(j) || partial ? "" : "  — not published")));
-      });
+      // Options a source publishes for completeness rather than for reading sit
+      // under a heading at the foot of the list. Nothing is removed: the long tail
+      // stays reachable, it just stops competing with the headline categories.
+      const minor = new Set(d.secondary || []);
+      const opt = (j) => el("option", { value: j, selected: j === ui.picks[i] },
+        (d.names[j] || d.ids[j]) +
+        (everSeen[i].has(j) || partial ? "" : "  — not published"));
+      const head = order.filter((j) => !minor.has(j));
+      const tail = order.filter((j) => minor.has(j));
+      head.forEach((j) => sel.appendChild(opt(j)));
+      if (tail.length) {
+        const grp = el("optgroup", { label: d.secondary_label || "More detail" });
+        tail.forEach((j) => grp.appendChild(opt(j)));
+        sel.appendChild(grp);
+      }
       row1.appendChild(el("div", { class: "field" },
         el("label", { title: d.def || "" }, d.name), sel));
     }
