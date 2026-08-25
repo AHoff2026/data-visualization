@@ -47,7 +47,11 @@ CONCRETE = {
         "ES40":    "Public, net of tax paid back",
         "ES50":    "Total, net of tax (public and private)"}},
     # verified against Germany's published rates: these are levels, not growth
-    "OECD.SDD.TPS__DF_SUMTAB":       {"TRANSFORMATION": {"G1": "Level"}},
+    "OECD.SDD.TPS__DF_SUMTAB":       {"TRANSFORMATION": {"G1": "Level"},
+        # Published as "Employment rate" but carrying only male and female, which
+        # sum to 100 in 2,078 of 2,099 country-years. It is the sex split of
+        # employment, not a rate against the working-age population.
+        "MEASURE": {"EMP_WAP": "Share of employment, by sex"}},
 }
 SUFFIX = re.compile(r"\s+in the same\b[^,;]*$", re.I)
 

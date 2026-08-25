@@ -19,6 +19,13 @@ THRESHOLD = 0.5           # per cent of a dataset's observations
 # splits a reader starts from.
 ALWAYS_PRIMARY = re.compile(r"^(_T|_Z|T|TOTAL)$")
 
+# Survey micro-cells. These bands are real but carry sampling error large enough to
+# swing a share between 0 and 100 between years: part-time women over 75 across
+# nineteen countries is forty people. Kept, but not offered before the bands a
+# reader can actually rely on.
+MICRO_AGE = {"Y_GE75", "Y_GE70", "Y65T74", "Y70T74", "Y75T79", "Y_GE80",
+             "Y15T19", "Y16T19", "Y_LT15"}
+
 # Curated demotions where a share rule cannot see the hierarchy.
 CURATED = {
     # keep the months where benefits actually expire; the rest is a smooth curve
@@ -71,8 +78,10 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
             if d.pop("secondary", None) is not None:
                 d.pop("secondary_label", None); changed = True
             continue
-        if len(d["ids"]) < 15: 
-            if d.pop("secondary", None) is not None: changed = True
+        if len(d["ids"]) < 15 and not (d["id"] == "AGE"
+                                       and set(d["ids"]) & MICRO_AGE):
+            if d.pop("secondary", None) is not None:
+                d.pop("secondary_label", None); changed = True
             continue
         c = collections.Counter()
         for r in recs: c[r["k"][i]] += len(r["v"])
@@ -85,6 +94,8 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
                 if code not in rule["keep"]: minor.append(j)
             elif rule and "maxlen" in rule:
                 if len(code.strip("_")) > rule["maxlen"]: minor.append(j)
+            elif d["id"] == "AGE" and code in MICRO_AGE:
+                minor.append(j)
             elif total and c[j]/total*100 < THRESHOLD:
                 minor.append(j)
         # a dial must keep a real choice at the top

@@ -153,6 +153,12 @@ def run(slug):
 
     meta["n_series"] = len(out)
     meta["n_obs"] = sum(len(r["v"]) for r in out)
+    meta.setdefault("source_notes", [])
+    if not any("calculated here" in x for x in meta["source_notes"]):
+        meta["source_notes"].insert(0,
+            "The percentage unit on this table is calculated here, by dividing each "
+            "published count by the corresponding total and multiplying by a hundred. "
+            "The counts themselves are as published.")
     meta.setdefault("derived_units", {})[new_code] = {
         "label": new_label, "over": dim_id,
         "total_code": dim["ids"][tot] if tot is not None else "+".join(dim["ids"][i] for i in sum_codes),
