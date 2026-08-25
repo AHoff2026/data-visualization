@@ -30,6 +30,10 @@ CONCRETE = {
     # two distinct activity totals that a generic rename collapsed into one
     "OECD.SDD.TPS__DF_ALFS_EMP":     {"ACTIVITY": {"ATU": "All activities (ISIC)",
                                                    "_T": "All activities"}},
+    # OECD ships BASE_PER = 2015 on every observation but does not put it in the
+    # unit label, so the chart said only "Index". Confirmed: the median annual
+    # value for 2015 is exactly 100.0.
+    "OECD.SDD.TPS__DF_HOU_EAR":      {"UNIT_MEASURE": {"IX": "Index, 2015 = 100"}},
     # "Central" is a continuous summary index, not one of the coded ordinal
     # scales, so it carries no value key and the generic "ordinal code" label
     # misdescribed it.
