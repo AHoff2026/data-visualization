@@ -17,7 +17,12 @@ const ONLY = process.argv.slice(2).filter(a => !a.startsWith("-"));
 let slugs = catalog.flows.map(f => f.slug);
 if (ONLY.length) slugs = slugs.filter(s => ONLY.includes(s));
 
-const browser = await webkit.launch();
+// One WebKit process cannot hold sixty-three datasets: its memory climbs until
+// pages start failing to load, which reads as a wave of data failures when the
+// data is fine. Recycled every RECYCLE datasets to keep the footprint flat.
+const RECYCLE = +(process.env.RECYCLE || 8);
+let browser = await webkit.launch();
+let sinceLaunch = 0;
 const results = [];
 
 /** Is the figure in a good state? Either a chart, or a clear explanation. */
@@ -38,6 +43,12 @@ async function figureState(page) {
 }
 
 for (const slug of slugs) {
+  if (sinceLaunch >= RECYCLE) {
+    await browser.close();
+    browser = await webkit.launch();
+    sinceLaunch = 0;
+  }
+  sinceLaunch++;
   const rec = { slug, fail: [], errors: [], checked: 0 };
   const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
   page.on("console", m => { if (m.type() === "error") rec.errors.push(m.text().slice(0, 200)); });
