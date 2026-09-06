@@ -151,7 +151,8 @@ SOURCE_URL = {
     "OWID__LABOR_SHARE":
         "https://www.oecd.org/en/data/datasets/gdp-and-non-financial-accounts.html",
     "EPI__DF_US_PAY_POWER": "https://data.epi.org/",
-    "OII_OLI__DF_ONLINE_GIG": "https://onlinelabourobservatory.org/",
+    # Their HTTPS certificate does not validate; the site serves over plain HTTP.
+    "OII_OLI__DF_ONLINE_GIG": "http://onlinelabourobservatory.org/",
     "ILO__STRIKES": "https://ilostat.ilo.org/data/",
 }
 

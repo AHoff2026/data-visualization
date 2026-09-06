@@ -22,6 +22,71 @@
   ]
  },
  {
+  "slug": "OECD.ELS.JAI__DF_LMP",
+  "flow": "Labor market programme spending",
+  "zero_series": 786,
+  "total_series": 4614,
+  "share": 0.17,
+  "areas": [
+   "ISL",
+   "CRI",
+   "LVA",
+   "ROU",
+   "CHL",
+   "HRV",
+   "CZE",
+   "HUN"
+  ],
+  "units": [
+   "National currency",
+   "Percentage of GDP",
+   "Percentage of labor force"
+  ]
+ },
+ {
+  "slug": "OECD_AIAS__ICTWSS",
+  "flow": "Bargaining institutions (ICTWSS)",
+  "zero_series": 438,
+  "total_series": 3948,
+  "share": 0.111,
+  "areas": [
+   "CHL",
+   "USA",
+   "ISL",
+   "MEX",
+   "MNE",
+   "SRB",
+   "CAN",
+   "CRI"
+  ],
+  "units": [
+   "Ordinal code, see the key below the chart",
+   "Percentage"
+  ]
+ },
+ {
+  "slug": "ILO__STRIKES",
+  "flow": "Strikes and lockouts",
+  "zero_series": 26,
+  "total_series": 426,
+  "share": 0.061,
+  "areas": [
+   "BTN",
+   "CYM",
+   "MDA",
+   "BLZ",
+   "JOR",
+   "SHN",
+   "MYS",
+   "SGP"
+  ],
+  "units": [
+   "Count",
+   "Days",
+   "Days per 1,000 workers"
+  ]
+ },
+ {
   "slug": "OECD.ELS.SPD__DF_IPOP",
   "flow": "Income and poverty of older people",
   "zero_series": 36,
@@ -41,6 +106,86 @@
    "Percentage of average disposable income",
    "Percentage of gross disposable income of the population aged over 65 years",
    "Percentage of population"
+  ]
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
+  "flow": "Young adults not in employment, education or training (NEET)",
+  "zero_series": 5087,
+  "total_series": 108929,
+  "share": 0.047,
+  "areas": [
+   "HRV",
+   "ROU",
+   "HUN",
+   "AUS",
+   "MEX",
+   "FIN",
+   "SVK",
+   "CRI"
+  ],
+  "units": [
+   "Percentage of the same population group"
+  ]
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_NRR",
+  "flow": "Unemployment benefit replacement rates",
+  "zero_series": 9720,
+  "total_series": 275520,
+  "share": 0.035,
+  "areas": [
+   "USA",
+   "CYP",
+   "TUR",
+   "BGR",
+   "ROU",
+   "EST",
+   "HRV",
+   "ISR"
+  ],
+  "units": [
+   "Percentage of disposable household income before job loss"
+  ]
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_PTRUB",
+  "flow": "What taking a job costs you",
+  "zero_series": 7285,
+  "total_series": 255968,
+  "share": 0.028,
+  "areas": [
+   "CHL",
+   "ROU",
+   "SVK",
+   "CZE",
+   "USA",
+   "CYP",
+   "ISR",
+   "EST"
+  ],
+  "units": [
+   "Percentage of earnings in the new job"
+  ]
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_EPL",
+  "flow": "Employment protection strictness",
+  "zero_series": 15,
+  "total_series": 742,
+  "share": 0.02,
+  "areas": [
+   "NZL",
+   "CHL",
+   "IDN",
+   "SAU",
+   "THA",
+   "MYS",
+   "TUN",
+   "CRI"
+  ],
+  "units": [
+   "0-6 scale"
   ]
  },
  {
@@ -65,7 +210,7 @@
   "slug": "OECD.ELS.SPD__DF_SOCX_AGG",
   "flow": "Social expenditure aggregates",
   "zero_series": 647,
-  "total_series": 38624,
+  "total_series": 38622,
   "share": 0.017,
   "areas": [
    "CHL",
@@ -83,26 +228,6 @@
   ]
  },
  {
-  "slug": "OECD.EDU.IMEP__DF_LSO_TRANS_MIGR",
-  "flow": "Young adults not in employment, education or training (NEET)",
-  "zero_series": 118,
-  "total_series": 7493,
-  "share": 0.016,
-  "areas": [
-   "HUN",
-   "ROU",
-   "ISR",
-   "AUS",
-   "POL",
-   "LTU",
-   "IRL",
-   "ITA"
-  ],
-  "units": [
-   "Percentage of the same population group"
-  ]
- },
- {
   "slug": "OECD.EDU.IMEP__DF_UOE_NF_DIST_VET",
   "flow": "Students in vocational education and training",
   "zero_series": 6,
@@ -117,23 +242,63 @@
   ]
  },
  {
-  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
-  "flow": "Unemployment rate by education and migration",
-  "zero_series": 92,
-  "total_series": 15605,
-  "share": 0.006,
+  "slug": "OECD.ELS.SAE__DF_TENURE_AVE",
+  "flow": "Average job tenure",
+  "zero_series": 579,
+  "total_series": 41589,
+  "share": 0.014,
   "areas": [
+   "GBR",
+   "BRA",
+   "TUR",
+   "KOR",
+   "BEL",
+   "DNK",
+   "CYP",
+   "HRV"
+  ],
+  "units": [
+   "Years"
+  ]
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_UNEMP_MIGR",
+  "flow": "Unemployment rate by education",
+  "zero_series": 427,
+  "total_series": 40252,
+  "share": 0.011,
+  "areas": [
+   "POL",
    "NOR",
-   "HUN",
    "AUS",
-   "MEX",
-   "NZL",
-   "NLD",
-   "SVN",
-   "ITA"
+   "HUN",
+   "CRI",
+   "LTU",
+   "FIN",
+   "LVA"
   ],
   "units": [
    "Percentage of the same labor force group"
+  ]
+ },
+ {
+  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
+  "flow": "Inactivity rate by education",
+  "zero_series": 221,
+  "total_series": 43275,
+  "share": 0.005,
+  "areas": [
+   "FIN",
+   "POL",
+   "LTU",
+   "HUN",
+   "CRI",
+   "SVN",
+   "NOR",
+   "LVA"
+  ],
+  "units": [
+   "Percentage of the same population group"
   ]
  },
  {
@@ -169,6 +334,39 @@
   "units": [
    "Percentage of respondents",
    "Percentage of students"
+  ]
+ },
+ {
+  "slug": "ESTAT__DF_INWORK_POV",
+  "flow": "In-work poverty",
+  "zero_series": 21,
+  "total_series": 6053,
+  "share": 0.003,
+  "areas": [
+   "XKV",
+   "MLT",
+   "LTU",
+   "MNE",
+   "ROU",
+   "SVK",
+   "BEL",
+   "NLD"
+  ],
+  "units": [
+   "Percentage of people in work"
+  ]
+ },
+ {
+  "slug": "OECD.ELS.JAI__DF_IA",
+  "flow": "Adequacy of minimum income benefits",
+  "zero_series": 2,
+  "total_series": 670,
+  "share": 0.003,
+  "areas": [
+   "RUS"
+  ],
+  "units": [
+   "Percentage of median disposable household income"
   ]
  },
  {
@@ -210,23 +408,6 @@
   ]
  },
  {
-  "slug": "OECD.EDU.IMEP__DF_LSO_NEAC_INAC_MIGR",
-  "flow": "Inactivity rate by education and migration",
-  "zero_series": 27,
-  "total_series": 17357,
-  "share": 0.002,
-  "areas": [
-   "HUN",
-   "NOR",
-   "ITA",
-   "NLD",
-   "SVN"
-  ],
-  "units": [
-   "Percentage of the same population group"
-  ]
- },
- {
   "slug": "OECD.ELS.SAE__DF_INVPT_I",
   "flow": "Involuntary part-time employment",
   "zero_series": 4,
@@ -237,15 +418,15 @@
   ],
   "units": [
    "Percentage of employment",
-   "Percentage of part-time employment",
-   "Percentage of population"
+   "Percentage of labor force",
+   "Percentage of part-time employment"
   ]
  },
  {
   "slug": "OECD.SDD.TPS__DF_PDB",
   "flow": "Productivity database",
   "zero_series": 47,
-  "total_series": 57625,
+  "total_series": 55425,
   "share": 0.001,
   "areas": [
    "SWE",
@@ -260,6 +441,19 @@
   "units": [
    "Percent per annum",
    "Persons"
+  ]
+ },
+ {
+  "slug": "OECD.WISE.INE__DF_IDD",
+  "flow": "Income inequality and poverty",
+  "zero_series": 3,
+  "total_series": 10446,
+  "share": 0.0,
+  "areas": [
+   "RUS"
+  ],
+  "units": [
+   "0-1 scale"
   ]
  }
 ]

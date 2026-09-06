@@ -64,6 +64,13 @@ BOUNDS = {
      "why": "Average job tenure below zero or above sixty years is not a measurement."},
   "OECD.ELS.SAE__DF_INVPT_I": {"pct": True, "min": 0.0, "max": 100.0,
      "why": "A share of part-time employment above 100 per cent is not a measurement."},
+  # OECD publishes the labour-cost share on a mixed scale: 29,138 of its 31,894
+  # values sit at or below 1, as a share should, while 2,756 carry currency
+  # levels reaching 5.7 million under the same measure and the same unit. The
+  # levels are dropped; the shares are kept. Confirmed against the source after
+  # a refresh, so this is the source's own inconsistency, not a stale harvest.
+  "OECD.SDD.TPS__DF_PDB": {"measures": {"LCOST", "LCOSTE"}, "min": 0.0, "max": 1.0,
+     "why": "A share of total costs cannot exceed one."},
 }
 
 def load(d, m):
@@ -120,6 +127,8 @@ for slug in sorted(set(RULES) | set(BOUNDS)):
                     gone = True; break
                 if not gone and b:
                     applies = b.get("unit_any") or (b.get("pct") and unit.startswith("PT"))
+                    if b.get("measures"):
+                        applies = codes.get("MEASURE") in b["measures"]
                     if applies and (v < b["min"] or v > b["max"]): gone = True
                 if gone: removed += 1; continue
                 keep_t.append(t); keep_v.append(v)
