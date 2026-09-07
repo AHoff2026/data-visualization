@@ -7,7 +7,7 @@ measures are touched, so editorial decisions elsewhere in the dataset survive.
 
   python3 scripts/refresh_measures.py <slug> MEASURE_A MEASURE_B ...
 """
-import csv, gzip, io, json, pathlib, sys, urllib.request, collections
+import csv, gzip, io, json, os, pathlib, sys, urllib.request, collections
 
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 
@@ -44,6 +44,12 @@ for row in csv.DictReader(io.StringIO(raw)):
     except ValueError: pass
 print(f"source rows for {sorted(measures)}: {len(fresh):,}")
 
+# Units computed here do not exist upstream, so a refresh must not treat their
+# absence from the source as a deletion. That mistake removed 109,698 derived
+# values from one dataset before this guard existed.
+DERIVED_UNITS = set((meta.get("derived_units") or {}).keys())
+ui = ids.index("UNIT_MEASURE") if "UNIT_MEASURE" in ids else None
+
 single = meta["layout"] == "single"
 chunks = ({"all.json.gz": json.loads(gzip.decompress((d/"all.json.gz").read_bytes()))}
           if single else
@@ -53,6 +59,9 @@ replaced = dropped = kept = 0
 for fn, recs in chunks.items():
     out = []
     for r in recs:
+        unit = D["UNIT_MEASURE"]["ids"][r["k"][ui]] if ui is not None else ""
+        if unit in DERIVED_UNITS:
+            out.append(r); kept += len(r["v"]); continue
         code = D["MEASURE"]["ids"][r["k"][mi]]
         if not REFRESH_ALL and code not in measures:
             out.append(r); kept += len(r["v"]); continue
@@ -79,6 +88,15 @@ else:
             if isinstance(info, dict) and info.get("file") == fn:
                 info["n"] = sum(len(r["v"]) for r in recs)
                 info["bytes"] = p.stat().st_size
+# A refresh that would delete a large share of the dataset is more likely a bad
+# fetch than a real withdrawal. Refuse it unless explicitly forced.
+before = meta.get("n_obs") or 0
+after = sum(len(r["v"]) for recs in chunks.values() for r in recs)
+if before and after < before * 0.9 and os.environ.get("FORCE_SHRINK") != "1":
+    raise SystemExit(
+        f"refusing to write: {before:,} observations would become {after:,}. "
+        f"Re-run with FORCE_SHRINK=1 if the source really did withdraw them.")
+
 allrecs = [r for recs in chunks.values() for r in recs]
 meta["n_series"] = len(allrecs)
 meta["n_obs"] = sum(len(r["v"]) for r in allrecs)
