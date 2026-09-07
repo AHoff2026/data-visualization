@@ -24,7 +24,15 @@ FLOWS = [
     ("DF_STR_WORK_ECO_NB", "WORKERS",
      "Workers involved in strikes and lockouts", "PS", "Number of people"),
 ]
+# ILOSTAT repeats the whole-economy total under several classification codes:
+# ECO_AGGREGATE_TOTAL, ECO_SECTOR_TOTAL and one per ISIC vintage. They agree in
+# 915 of 917 country-years, and where they differ it is a 0.001 rounding between
+# vintages. Taking whichever arrived last made the choice depend on row order, so
+# one code is named and preferred.
+ECO_PREFERRED = ["ECO_AGGREGATE_TOTAL", "ECO_SECTOR_TOTAL",
+                 "ECO_ISIC4_TOTAL", "ECO_ISIC3_TOTAL", "ECO_ISIC2_TOTAL", "_T"]
 ECO_TOTAL = re.compile(r"^ECO_(AGGREGATE_TOTAL|SECTOR_TOTAL)$|^_T$|TOTAL", re.I)
+ECO_RANK = {c: i for i, c in enumerate(ECO_PREFERRED)}
 
 def fetch(flow):
     url = BASE.format(flow)
