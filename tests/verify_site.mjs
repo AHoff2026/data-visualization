@@ -20,7 +20,12 @@ let slugs = catalog.flows.map(f => f.slug);
 if (ONLY.length) slugs = slugs.filter(s => ONLY.includes(s));
 
 const results = [];
-const browser = await webkit.launch();
+// A single WebKit process cannot hold sixty-five datasets: memory climbs until
+// pages stop loading, which reads as data failures when the data is fine. Same
+// fix as the deep suite.
+const RECYCLE = +(process.env.RECYCLE || 8);
+let browser = await webkit.launch();
+let sinceLaunch = 0;
 
 async function probe(page) {
   return page.evaluate(() => {
@@ -43,6 +48,12 @@ async function probe(page) {
 }
 
 for (const slug of slugs) {
+  if (sinceLaunch >= RECYCLE) {
+    await browser.close();
+    browser = await webkit.launch();
+    sinceLaunch = 0;
+  }
+  sinceLaunch++;
   if (PACE) await new Promise(r => setTimeout(r, PACE));
   let rec = await runOne(slug);
   // one retry: a throttled CDN response is not a site defect
