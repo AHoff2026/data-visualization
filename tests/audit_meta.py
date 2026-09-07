@@ -56,14 +56,26 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         if len(jar) > 2:
             findings["classification jargon in labels"].append(
                 f"{nm} / {d['name']}: {len(jar)} of {len(names)}")
-        # -- very long labels
+        # -- very long labels. ADVISORY ONLY, do not bulk-shorten. Two attempts
+        # produced worse outcomes: truncation created labels that could not be
+        # told apart, and rebuilding them from code_defs destroyed the short
+        # ICTWSS names, because there code_defs holds the full definition rather
+        # than a name. Shorten by hand, one dial at a time, or leave it.
         long = [n for n in names if n and len(n) > 80]
         if long:
-            findings["label over 80 characters"].append(f"{nm} / {d['name']}: {len(long)}")
-        # -- an ordinal dial with no key
-        if d.get("value_defs") is None and any(
-                (u or "").lower().startswith("ordinal") for u in names):
-            findings["ordinal scale without a key"].append(f"{nm} / {d['name']}")
+            findings["label over 80 characters (advisory)"].append(
+                f"{nm} / {d['name']}: {len(long)}")
+        # -- an ordinal indicator with no key. The key is attached to the dial
+        # that names the indicator, not to the unit dial that says "ordinal", so
+        # look for codes carrying an ordinal unit and check the indicator dial.
+        if d["id"] in ("MEASURE", "INDICATOR") and any(
+                (u or "").lower().startswith("ordinal")
+                for dd in m["dims"] if dd["id"] == "UNIT_MEASURE"
+                for u in dd.get("names", [])):
+            keyed = set((d.get("value_defs") or {}).keys())
+            missing = [c for c in d["ids"] if c not in keyed]
+            if len(missing) == len(d["ids"]):
+                findings["ordinal indicator with no key"].append(f"{nm} / {d['name']}")
 
     # -- coverage honesty: areas that carry almost nothing
     if recs and "REF_AREA" in ids:
@@ -79,18 +91,11 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         if len(thin) > 3:
             findings["country with under 0.05% of the data"].append(f"{nm}: {len(thin)} areas")
 
-    # -- does the dataset's own default selection resolve to anything?
-    if recs:
-        pick = []
-        for i, d in enumerate(m["dims"]):
-            if d["id"] == "REF_AREA": pick.append(None); continue
-            hv = (m.get("hidden_dims") or {}).get(d["id"])
-            j = d["ids"].index(hv) if hv in d["ids"] else d.get("default", 0)
-            pick.append(j)
-        n = sum(len(r["v"]) for r in recs
-                if all(p is None or r["k"][i] == p for i, p in enumerate(pick)))
-        if n == 0:
-            findings["default selection yields nothing"].append(nm)
+    # The default view is deliberately not checked here. Taking index 0 of every
+    # dial is not what the interface does: it seeds by searching for a live
+    # combination, so a static guess reports failures that do not exist. Six of
+    # the twenty this used to flag were opened in a browser and all six rendered.
+    # verify_deep.mjs tests the real behaviour.
 
 print(f"{sum(len(v) for v in findings.values())} findings across "
       f"{len(findings)} categories\n")
