@@ -1,22 +1,47 @@
 #!/usr/bin/env bash
-# Publish site/ to the gh-pages branch.
-#
-# The guard below is not decorative. `git push origin "${SHA}:gh-pages"` with an
-# empty SHA expands to `git push origin :gh-pages`, which DELETES the branch and
-# takes the whole site down. That happened once. An empty split must abort.
+# Publish site/ to GitHub Pages. Runs the full test suite first and refuses to
+# deploy a failing build.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+echo "── unit tests ──────────────────────────────────────────"
+node tests/verify_units.mjs
+
+if ! curl -sf -o /dev/null http://localhost:8231/index.html; then
+  echo "starting local server on :8231"
+  nohup python3 -m http.server 8231 --directory site >/tmp/dvserver.log 2>&1 </dev/null &
+  sleep 2
+fi
+
+echo "── site tests (WebKit) ─────────────────────────────────"
+node tests/verify_site.mjs
+
+if [ "${DEEP:-0}" = "1" ]; then
+  echo "── deep UI tests ─────────────────────────────────────"
+  node tests/verify_deep.mjs
+fi
+
+echo "── publishing ──────────────────────────────────────────"
+git add -A
+git diff --cached --quiet || git commit -q -m "${1:-Update site}"
+git push -q origin main
+# An empty split expands to `git push origin :gh-pages`, which DELETES the branch
+# and takes the site down. That has happened once. Refuse to push nothing.
 SHA="$(git subtree split --prefix site main | tail -1)"
 if [ -z "${SHA}" ] || ! git cat-file -e "${SHA}^{commit}" 2>/dev/null; then
-  echo "deploy aborted: subtree split produced no commit" >&2
-  exit 1
+  echo "deploy aborted: subtree split produced no commit" >&2; exit 1
 fi
 COUNT="$(git ls-tree -r --name-only "${SHA}" | wc -l | tr -d ' ')"
 if [ "${COUNT}" -lt 100 ]; then
-  echo "deploy aborted: split tree holds only ${COUNT} files, expected hundreds" >&2
-  exit 1
+  echo "deploy aborted: split tree holds only ${COUNT} files" >&2; exit 1
 fi
 git push -q origin "${SHA}:refs/heads/gh-pages" --force
-git push -q origin main
-echo "deployed ${SHA} (${COUNT} files)"
+echo "pushed ${COUNT} files"
+echo "pushed. waiting for Pages…"
+for _ in $(seq 1 40); do
+  s=$(gh api repos/AHoff2026/data-visualization/pages --jq .status 2>/dev/null || echo "?")
+  [ "$s" = "built" ] && break
+  sleep 15
+done
+code=$(curl -s -o /dev/null -w "%{http_code}" https://ahoff2026.github.io/data-visualization/)
+echo "live: https://ahoff2026.github.io/data-visualization/  (HTTP $code)"
