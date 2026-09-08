@@ -4,8 +4,6 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-echo "── unit tests ──────────────────────────────────────────"
-node tests/verify_units.mjs
 
 if ! curl -sf -o /dev/null http://localhost:8231/index.html; then
   echo "starting local server on :8231"
@@ -13,13 +11,12 @@ if ! curl -sf -o /dev/null http://localhost:8231/index.html; then
   sleep 2
 fi
 
-echo "── site tests (WebKit) ─────────────────────────────────"
-node tests/verify_site.mjs
+# One runner for all three browser suites: it puts a settle between them, which
+# is what stops a chained run failing on the tail of the previous suite's
+# browsers rather than on anything real.
+echo "── browser suites ──────────────────────────────────────"
+bash tests/verify_all.sh
 
-if [ "${DEEP:-0}" = "1" ]; then
-  echo "── deep UI tests ─────────────────────────────────────"
-  node tests/verify_deep.mjs
-fi
 
 echo "── publishing ──────────────────────────────────────────"
 git add -A
