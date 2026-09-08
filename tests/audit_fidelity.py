@@ -11,7 +11,7 @@ history is gigabytes. The window is chosen to sit inside every dataset's span.
 Resumable: results land in the scratchpad after each dataset, so an interrupted
 run picks up where it stopped.
 """
-import csv, gzip, io, json, os, pathlib, sys, urllib.error, urllib.request
+import csv, gzip, io, json, os, pathlib, sys, time, urllib.error, urllib.request
 
 ROOT = pathlib.Path.home()/"Documents/data-visualization"
 FLOWS = ROOT/"site/data/flows"
@@ -38,10 +38,21 @@ def fetch(agency, flow, lo=None, hi=None):
     req = urllib.request.Request(url, headers={
         "Accept": "application/vnd.sdmx.data+csv; charset=utf-8; labels=both",
         "Accept-Encoding": "gzip", "User-Agent": "ForestAndTheTrees/1.0"})
-    with urllib.request.urlopen(req, timeout=1800) as r:
-        b = r.read()
-        if r.headers.get("Content-Encoding") == "gzip": b = gzip.decompress(b)
-    return b.decode("utf-8", "replace")
+    # OECD rate-limits a long audit. A 429 is not an answer about the data, so
+    # back off and ask again rather than recording it as a result.
+    delay = 60
+    for attempt in range(8):
+        try:
+            with urllib.request.urlopen(req, timeout=1800) as r:
+                b = r.read()
+                if r.headers.get("Content-Encoding") == "gzip": b = gzip.decompress(b)
+            return b.decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 503) or attempt == 5: raise
+            wait = max(int(e.headers.get("Retry-After") or 0), delay)
+            print(f"      rate limited, waiting {wait}s", flush=True)
+            time.sleep(wait); delay = min(delay*2, 900)
+    raise RuntimeError("unreachable")
 
 live = {f["slug"] for f in json.loads((ROOT/"site/data/catalog.json").read_text())["flows"]}
 targets = []
@@ -76,6 +87,8 @@ for slug, agency, flow in targets:
             cached += 1
             continue
         dest.unlink()
+    if os.environ.get("THROTTLE"):
+        time.sleep(float(os.environ["THROTTLE"]))
     m, recs = load(slug)
     # A fixed window returns 404 for a dataset that does not reach it. Clamp the
     # window into the dataset's own span instead.
@@ -121,8 +134,22 @@ for slug, agency, flow in targets:
     flag = "  MISMATCH" if mism else ""
     print(f"  {m['name'][:40]:42} matched {matched:>8,}  mismatched {mism:>5}"
           f"  source-only {unmatched:>7,}{flag}", flush=True)
+# A dataset that could not be fetched has not been verified. Saying "done" over
+# a pile of fetch errors is how 33 unchecked datasets once looked like a pass.
+errors = []
+for slug, _a, _f in targets:
+    d = OUT/f"{slug}.json"
+    if d.exists():
+        try:
+            r = json.loads(d.read_text())
+            if r.get("error"): errors.append((slug, r["error"][:60]))
+        except Exception: errors.append((slug, "unreadable result"))
 checked = len(targets) - cached
 print(f"\ndone: {checked} re-downloaded, {cached} from cache "
       f"(--fresh to re-download everything)", flush=True)
+if errors:
+    print(f"\n{len(errors)} of {len(targets)} datasets were NOT verified:", flush=True)
+    for slug, e in errors[:8]: print(f"   {slug:44} {e}", flush=True)
+    raise SystemExit(f"{len(errors)} datasets could not be fetched; rerun to finish them")
 if checked == 0 and cached == 0:
     raise SystemExit("nothing was checked")
