@@ -53,9 +53,29 @@ only = [a for a in sys.argv[1:] if not a.startswith("-")]
 if only: targets = [t for t in targets if t[0] in only]
 print(f"{len(targets)} OECD datasets to check, window {LO}-{HI}\n", flush=True)
 
+# A cached result is a result: report it rather than skipping in silence. A run
+# that printed nothing and said "done" once looked exactly like a clean pass.
+# Pass --fresh to ignore the cache and re-download.
+FRESH = "--fresh" in sys.argv
+cached = 0
 for slug, agency, flow in targets:
     dest = OUT/f"{slug}.json"
-    if dest.exists(): continue
+    if dest.exists() and not FRESH:
+        try: r = json.loads(dest.read_text())
+        except Exception: r = None
+        if r and "matched" in r:
+            cached += 1
+            flag = "  MISMATCH" if r.get("mismatched") else ""
+            print(f"  {r.get('name', slug)[:40]:42} matched {r['matched']:>8,}"
+                  f"  mismatched {r['mismatched']:>5}"
+                  f"  source-only {r.get('source_keys_not_on_site', 0):>7,}"
+                  f"  (cached){flag}", flush=True)
+            continue
+        if r and r.get("error"):
+            print(f"  {slug[:40]:42} FETCH FAILED {r['error'][:50]}  (cached)", flush=True)
+            cached += 1
+            continue
+        dest.unlink()
     m, recs = load(slug)
     # A fixed window returns 404 for a dataset that does not reach it. Clamp the
     # window into the dataset's own span instead.
@@ -94,11 +114,15 @@ for slug, agency, flow in targets:
             if len(ex) < 4: ex.append({"key": list(k), "period": row["TIME_PERIOD"],
                                        "source": src, "site": got})
         else: matched += 1
-    res.update({"source_rows": len(rows), "matched": matched,
+    res.update({"name": m["name"], "source_rows": len(rows), "matched": matched,
                 "mismatched": mism, "source_keys_not_on_site": unmatched,
                 "examples": ex})
     dest.write_text(json.dumps(res, indent=1))
     flag = "  MISMATCH" if mism else ""
     print(f"  {m['name'][:40]:42} matched {matched:>8,}  mismatched {mism:>5}"
           f"  source-only {unmatched:>7,}{flag}", flush=True)
-print("\ndone", flush=True)
+checked = len(targets) - cached
+print(f"\ndone: {checked} re-downloaded, {cached} from cache "
+      f"(--fresh to re-download everything)", flush=True)
+if checked == 0 and cached == 0:
+    raise SystemExit("nothing was checked")
