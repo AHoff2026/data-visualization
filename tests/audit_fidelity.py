@@ -76,11 +76,13 @@ for slug, agency, flow in targets:
         except Exception: r = None
         if r and "matched" in r:
             cached += 1
-            flag = "  MISMATCH" if r.get("mismatched") else ""
+            n_obs = r.get("n_obs") or json.loads(
+                (FLOWS/slug/"meta.json").read_text()).get("n_obs", 0)
+            cov = r["matched"]/(n_obs or 1)*100
+            flag = "  MISMATCH" if r.get("mismatched") else ("  THIN" if cov < 25 else "")
             print(f"  {r.get('name', slug)[:40]:42} matched {r['matched']:>8,}"
                   f"  mismatched {r['mismatched']:>5}"
-                  f"  source-only {r.get('source_keys_not_on_site', 0):>7,}"
-                  f"  (cached){flag}", flush=True)
+                  f"  covers {cov:>5.1f}% of the dataset  (cached){flag}", flush=True)
             continue
         if r and r.get("error"):
             print(f"  {slug[:40]:42} FETCH FAILED {r['error'][:50]}  (cached)", flush=True)
@@ -127,13 +129,18 @@ for slug, agency, flow in targets:
             if len(ex) < 4: ex.append({"key": list(k), "period": row["TIME_PERIOD"],
                                        "source": src, "site": got})
         else: matched += 1
-    res.update({"name": m["name"], "source_rows": len(rows), "matched": matched,
+    res.update({"name": m["name"], "n_obs": m.get("n_obs", 0),
+                "source_rows": len(rows), "matched": matched,
                 "mismatched": mism, "source_keys_not_on_site": unmatched,
                 "examples": ex})
     dest.write_text(json.dumps(res, indent=1))
-    flag = "  MISMATCH" if mism else ""
+    # Coverage belongs next to the verdict. "0 mismatched" over 4% of a dataset
+    # is not the same claim as "0 mismatched" over all of it, and reporting the
+    # two identically overstated how much of this site had actually been checked.
+    cov = matched/(m.get("n_obs") or 1)*100
+    flag = "  MISMATCH" if mism else ("  THIN" if cov < 25 else "")
     print(f"  {m['name'][:40]:42} matched {matched:>8,}  mismatched {mism:>5}"
-          f"  source-only {unmatched:>7,}{flag}", flush=True)
+          f"  covers {cov:>5.1f}% of the dataset{flag}", flush=True)
 # A dataset that could not be fetched has not been verified. Saying "done" over
 # a pile of fetch errors is how 33 unchecked datasets once looked like a pass.
 errors = []
@@ -145,8 +152,21 @@ for slug, _a, _f in targets:
             if r.get("error"): errors.append((slug, r["error"][:60]))
         except Exception: errors.append((slug, "unreadable result"))
 checked = len(targets) - cached
+tm = tn = 0
+for slug, _a, _f in targets:
+    d = OUT/f"{slug}.json"
+    if not d.exists(): continue
+    try: r = json.loads(d.read_text())
+    except Exception: continue
+    tm += r.get("matched", 0)
+    tn += r.get("n_obs") or json.loads(
+        (FLOWS/slug/"meta.json").read_text()).get("n_obs", 0)
 print(f"\ndone: {checked} re-downloaded, {cached} from cache "
       f"(--fresh to re-download everything)", flush=True)
+if tn:
+    print(f"coverage: {tm:,} of {tn:,} observations verified "
+          f"({tm/tn*100:.1f}%). The default window is {LO}-{HI}; "
+          f"set LO and HI to widen it.", flush=True)
 if errors:
     print(f"\n{len(errors)} of {len(targets)} datasets were NOT verified:", flush=True)
     for slug, e in errors[:8]: print(f"   {slug:44} {e}", flush=True)
