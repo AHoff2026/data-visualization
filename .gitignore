@@ -3,3 +3,4 @@ tests/shots/
 tests/*_result.json
 .DS_Store
 raw/
+.audit/
