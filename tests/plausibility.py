@@ -1,3 +1,4 @@
+import re
 #!/usr/bin/env python3
 """Does every series pass a smell test?
 
@@ -12,13 +13,25 @@ import json, gzip, pathlib, collections, math, sys
 
 FLOWS = pathlib.Path.home()/"Documents/data-visualization/site/data/flows"
 TOTAL_CODES = {"_T", "T", "TOTAL", "_Z"}
-# Units that are rates within a subgroup. Their "Total" is a weighted average, so a
-# subgroup exceeding it is arithmetic, not error: the male employment rate is above
-# the overall rate in every country on earth. Established by audit, 2026-08-24.
-RATE_UNITS = {"PT_EMP_D", "PT_POP_SUB", "PT_UNE_D", "PT_EMP_SEX_AGE", "PT_POP",
-              "PT_LF_SUB", "PC", "PT_EMP", "PT_B1GQ_SUB"}
-RATE_WORDS = ("same population group", "in the same", "of the same", "of that group",
-              "percentage of people", "rate")
+# Whether a dimension's categories partition its total is decided from the data,
+# not from a list of unit codes. Hand curation kept missing siblings: PT_EMP was
+# listed as a rate while PT_EMP_PT, the same measure over a different base, was
+# not, so the same dataset was flagged through the unit nobody had got to yet.
+#
+# The test: bucket every cell by (other dimensions, unit, period) and compare the
+# sum of the categories against the total. Sum near the total means the categories
+# partition it, so each is a share of it, bounded 0-100, and none may exceed it.
+# Anything else is a rate within a subgroup whose total is a weighted average --
+# the male employment rate is above the overall rate in every country on earth --
+# and neither rule means anything there.
+PARTITION_TOL = 0.05      # a category sum within 5% of the total counts as summing
+PARTITION_SHARE = 0.8     # and 80% of cells must do so before the rule applies
+PARTITION_MIN = 20        # on at least this many cells, else there is nothing to go on
+# Regional rows are averaged over whichever members reported each cell, so a
+# component may exceed its total there without anything being wrong. The site
+# says so on every dataset that offers one (scripts/note_aggregates.py), and all
+# 522 violations in social expenditure were the OECD row alone, no country.
+AGG_AREA = re.compile(r"^(OECD|OECD_REP|EU\d*|EU\d+_\d+|EU\d+OECD|EUOECD|EA\d*|G7|G20|WLD)$")
 # Relative-to-reference units: the reference group is 100 and a value above it means
 # "earns more than the reference", which is the whole point of the measure. Not a
 # bounded share, and its "Total" is a reference point rather than a ceiling.
@@ -32,6 +45,42 @@ STATIC_OK = {"OECD.ELS.JAI__DF_EPL", "OECD.ELS.JAI__DF_SBE", "OECD_AIAS__ICTWSS"
 # units whose values are bounded shares
 PCT = lambda u: ((u.startswith("PT") or u in {"PC", "PT_POP", "PT_B1GQ"})
                  and not u.startswith(REFERENCE_UNITS))
+
+
+def partition_map(recs, meta, ids, D, ui):
+    """Which (dimension, unit) pairs have categories that sum to their total.
+
+    Returns a dict keyed by (dimension index, unit code) -> True/False, plus the
+    set of units that partition somewhere, which is what makes a value provably a
+    share of a whole and so bounded 0-100.
+    """
+    out, bounded = {}, set()
+    for i, d in enumerate(meta["dims"]):
+        if d["id"] in ("REF_AREA", "UNIT_MEASURE", "TIME_PERIOD"): continue
+        tot = next((c for c in d["ids"] if c in TOTAL_CODES), None)
+        if tot is None or len(d["ids"]) < 3: continue
+        ti = d["ids"].index(tot)
+        buckets = collections.defaultdict(dict)
+        for r in recs:
+            u = D["UNIT_MEASURE"]["ids"][r["k"][ui]] if ui is not None else ""
+            key = (tuple(v for j, v in enumerate(r["k"]) if j != i), u)
+            for t, v in zip(r["t"], r["v"]): buckets[(key, t)][r["k"][i]] = v
+        by_unit = collections.defaultdict(list)
+        for ((key, u), t), mm in buckets.items():
+            if ti not in mm or len(mm) < 3: continue
+            T = mm[ti]
+            if T <= 0: continue
+            by_unit[u].append(sum(v for j, v in mm.items() if j != ti)/T)
+        for u, ratios in by_unit.items():
+            if len(ratios) < PARTITION_MIN:
+                out[(i, u)] = False
+                continue
+            near = sum(1 for x in ratios
+                       if 1-PARTITION_TOL <= x <= 1+PARTITION_TOL)/len(ratios)
+            ok = near > PARTITION_SHARE
+            out[(i, u)] = ok
+            if ok: bounded.add(u)
+    return out, bounded
 
 def load(d, m):
     if m["layout"] == "single":
@@ -58,17 +107,25 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
     mi = next((i for i, x in enumerate(meta["dims"])
                if x["id"] in ("MEASURE", "ITEM", "INDICATOR")), None)
 
+    partitions, bounded_units = partition_map(recs, meta, ids, D, ui)
+
     # ---- R1 share out of range, R6 impossible year-on-year move, R5 frozen series
     n_out = n_jump = n_flat = 0
     ex_out = ex_jump = None
     for r in recs:
         unit = D["UNIT_MEASURE"]["ids"][r["k"][ui]] if ui is not None else ""
         vals = r["v"]
-        if PCT(unit):
+        # Out of range is only impossible for a unit that is demonstrably a share
+        # of a whole. A replacement rate above 100, a negative wage gap and a
+        # participation tax over 100% are all the measure working as intended.
+        if PCT(unit) and unit in bounded_units:
             for t, v in zip(r["t"], vals):
                 if v < -0.001 or v > 100.001:
                     n_out += 1
                     if ex_out is None: ex_out = (P[t], v)
+        # A jump of sixty points in a year is worth a look on any percentage,
+        # bounded or not, so this is deliberately outside the check above.
+        if PCT(unit):
             for (t0, v0), (t1, v1) in zip(zip(r["t"], vals), list(zip(r["t"], vals))[1:]):
                 try: gap = int(P[t1][:4]) - int(P[t0][:4])
                 except ValueError: gap = 1
@@ -91,11 +148,13 @@ for mp in sorted(FLOWS.glob("*/meta.json")):
         if tot is None or len(d["ids"]) < 3: continue
         ti = d["ids"].index(tot)
         buckets = collections.defaultdict(dict)
+        ai = ids.index("REF_AREA") if "REF_AREA" in ids else None
         for r in recs:
             unit = D["UNIT_MEASURE"]["ids"][r["k"][ui]] if ui is not None else ""
-            uname = (D["UNIT_MEASURE"]["names"][r["k"][ui]] if ui is not None else "").lower()
             if not PCT(unit): continue
-            if unit in RATE_UNITS or any(w in uname for w in RATE_WORDS): continue
+            if not partitions.get((i, unit)): continue
+            if ai is not None and AGG_AREA.match(D["REF_AREA"]["ids"][r["k"][ai]]):
+                continue
             key = tuple(v for j, v in enumerate(r["k"]) if j != i)
             for t, v in zip(r["t"], r["v"]): buckets[(key, t)][r["k"][i]] = v
         bad = 0; ex = None
